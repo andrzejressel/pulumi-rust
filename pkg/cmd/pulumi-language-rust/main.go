@@ -7,7 +7,10 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"os/exec"
 	"os/signal"
+	"path"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -16,12 +19,14 @@ import (
 	hclsyntax "github.com/pulumi/pulumi/pkg/v3/codegen/hcl2/syntax"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
+	"github.com/pulumi/pulumi/sdk/v3/go/common/encoding"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource/plugin"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/cmdutil"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/logging"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/rpcutil"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/workspace"
 	pulumirpc "github.com/pulumi/pulumi/sdk/v3/proto/go"
+	"go.opentelemetry.io/otel"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/types/known/emptypb"
 )
@@ -91,6 +96,42 @@ func (host *rustLanguageHost) GetPluginInfo(context.Context, *emptypb.Empty) (*p
 	return &pulumirpc.PluginInfo{Version: pluginVersion}, nil
 }
 
+func (host *rustLanguageHost) GetProgramDependencies(context.Context, *pulumirpc.GetProgramDependenciesRequest) (*pulumirpc.GetProgramDependenciesResponse, error) {
+	return &pulumirpc.GetProgramDependenciesResponse{}, nil
+}
+
+func (host *rustLanguageHost) InstallDependencies(req *pulumirpc.InstallDependenciesRequest, server grpc.ServerStreamingServer[pulumirpc.InstallDependenciesResponse]) error {
+
+	tracer := otel.Tracer("pulumi-language-rust")
+	_, otelSpan := cmdutil.StartSpan(server.Context(), tracer, "rust-install-deps")
+	defer otelSpan.End()
+
+	closer, stdout, stderr, err := rpcutil.MakeInstallDependenciesStreams(server, req.IsTerminal)
+	if err != nil {
+		return err
+	}
+	defer closer.Close()
+
+	directoryName := path.Base(req.Info.ProgramDirectory)
+
+	// intentionally running dynamic program name.
+	cmd := exec.Command("cargo", "build") // nolint: gosec
+	cmd.Dir = req.Info.ProgramDirectory
+	cmd.Stdout = stdout
+	cmd.Stderr = stderr
+	cmd.Env = append(os.Environ(), fmt.Sprintf("CARGO_TARGET_DIR=/home/andrzej/test_target/%s", directoryName))
+
+	if err := runCommand(cmd); err != nil {
+		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
+		return err
+	}
+
+	defer closer.Close()
+
+	return nil
+	//return status.Errorf(codes.Unimplemented, "method InstallDependencies not implemented")
+}
+
 func (host *rustLanguageHost) GetRequiredPackages(
 	context.Context,
 	*pulumirpc.GetRequiredPackagesRequest,
@@ -110,10 +151,6 @@ func (host *rustLanguageHost) GenerateProgram(
 	files, diags, err := generateProgramFromSource(req.Source, schema.NewCachedLoader(loader), req.Strict)
 	if err != nil {
 		return nil, err
-	}
-
-	if true {
-		return nil, fmt.Errorf("FILES: %s", files)
 	}
 
 	return &pulumirpc.GenerateProgramResponse{
@@ -156,7 +193,7 @@ func (host *rustLanguageHost) GenerateProject(_ context.Context, req *pulumirpc.
 		return nil, err
 	}
 
-	err = generateProject(req.SourceDirectory, project, program)
+	err = generateProject(req.TargetDirectory, project, program)
 	if err != nil {
 		return nil, fmt.Errorf("could not generate project: %w", err)
 	}
@@ -191,31 +228,19 @@ func (host *rustLanguageHost) GeneratePackage(_ context.Context, req *pulumirpc.
 		}, nil
 	}
 
-	err = rust.GenerateJSONPackage(pkg, req.Directory)
+	err = rust.GeneratePackage(pkg, req.Directory)
 	if err != nil {
 		return nil, err
 	}
-	//diags = diags.Extend(generationDiags)
-	//
-	//if err = os.MkdirAll(req.Directory, 0o755); err != nil {
-	//	return nil, fmt.Errorf("could not create package output directory %q: %w", req.Directory, err)
-	//}
-	//
-	//for fileName, contents := range files {
-	//	target := filepath.Join(req.Directory, fileName)
-	//	if err = os.WriteFile(target, contents, 0o644); err != nil {
-	//		return nil, fmt.Errorf("could not write package file %q: %w", target, err)
-	//	}
-	//}
 
 	return &pulumirpc.GeneratePackageResponse{
 		Diagnostics: plugin.HclDiagnosticsToRPCDiagnostics(diags),
 	}, nil
 }
 
+// Pack Cargo does not have binary deployable packages
 func (host *rustLanguageHost) Pack(ctx context.Context, request *pulumirpc.PackRequest) (*pulumirpc.PackResponse, error) {
 	return &pulumirpc.PackResponse{}, nil
-	//return nil, status.Errorf(codes.Unimplemented, "method Pack not implemented")
 }
 
 func generateProgramFromSource(
@@ -253,7 +278,7 @@ func generateProgramFromSource(
 		return nil, nil, fmt.Errorf("internal error: program was nil")
 	}
 
-	files, generationDiags, err := rust.GenerateJSONProgram(program)
+	files, generationDiags, err := rust.GenerateProgram(program)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -266,21 +291,35 @@ func generateProject(
 	project workspace.Project,
 	program *pcl.Program,
 ) error {
+	rootDirectory := directory
 
-	files, generationDiags, err := rust.GenerateJSONProgram(program)
+	err := rust.GenerateProject(program, rootDirectory)
 	if err != nil {
 		return err
 	}
 
-	if generationDiags.HasErrors() {
-		return fmt.Errorf("generation diagnostics: %v", generationDiags)
+	// Set the runtime to "java" then marshal to Pulumi.yaml
+	project.Runtime = workspace.NewProjectRuntimeInfo("rust", nil)
+	projectBytes, err := encoding.YAML.Marshal(project)
+	if err != nil {
+		return err
 	}
 
-	file := files["main.pcl.json"]
+	filesWithPackages := make(map[string][]byte)
 
-	err = os.WriteFile(fmt.Sprintf("%s/main.pcl.json", directory), file, 0644)
-	if err != nil {
-		return fmt.Errorf("could not write main.pcl.json: %w", err)
+	filesWithPackages[filepath.Join(rootDirectory, "Pulumi.yaml")] = projectBytes
+	//filesWithPackages[filepath.Join(rootDirectory, "Cargo.toml")] = []byte("[package]\nname=\"TEST\"")
+
+	for filePath, data := range filesWithPackages {
+		dir := filepath.Dir(filePath)
+		err := os.MkdirAll(dir, os.ModePerm)
+		if err != nil {
+			return fmt.Errorf("could not create output directory %s: %w", dir, err)
+		}
+		err = os.WriteFile(filePath, data, 0o600)
+		if err != nil {
+			return fmt.Errorf("could not write output program: %w", err)
+		}
 	}
 
 	return nil

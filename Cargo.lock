@@ -551,11 +551,13 @@ dependencies = [
 name = "pulumi-rust"
 version = "0.1.0"
 dependencies = [
+ "prettyplease",
  "prost",
  "prost-build",
  "pulumi_gestalt_generator",
  "pulumi_gestalt_schema",
  "rust2go",
+ "syn",
 ]
 
 [[package]]

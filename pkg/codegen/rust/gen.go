@@ -14,7 +14,7 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-func GenerateJSONPackage(pkg *schema.Package, dir string) error {
+func GeneratePackage(pkg *schema.Package, dir string) error {
 	protobufPkg, err := ast.GenerateProtobufPackage(pkg)
 	if err != nil {
 		return fmt.Errorf("error generating protobuf package: %v", err)
@@ -30,22 +30,61 @@ func GenerateJSONPackage(pkg *schema.Package, dir string) error {
 		directory: dir,
 	}
 
-	_ = G2RCallImpl{}.generate_package(&req)
+	G2RCallImpl{}.generate_package(&req)
 
-	//data, err := proto.Marshal(req)
-	//if err != nil {
-	//	return nil, nil, fmt.Errorf("error generating protobuf package: %v", err)
-	//}
-
-	//panic("TEST")
 	return nil
 }
 
-func GenerateJSONProgram(pkg *pcl.Program) (map[string][]byte, hcl.Diagnostics, error) {
-	//panic("TEST")
+func GenerateProgram(pkg *pcl.Program) (map[string][]byte, hcl.Diagnostics, error) {
+	protobufProgram, err := ast.GenerateProtobuf(pkg)
+	if err != nil {
+		return nil, nil, fmt.Errorf("error generating protobuf program: %v", err)
+	}
 
-	empty_map := make(map[string][]byte)
+	obj, err := proto.Marshal(protobufProgram)
+	if err != nil {
+		return nil, nil, fmt.Errorf("error generating protobuf package: %v", err)
+	}
 
-	return empty_map, nil, nil
+	req := GenerateProgramRequest{
+		protobuf: obj,
+	}
 
+	result := G2RCallImpl{}.generate_program(&req)
+
+	emptyMap := make(map[string][]byte)
+
+	for _, content := range result.files_content {
+		emptyMap[content.path] = content.content
+	}
+
+	return emptyMap, nil, nil
+
+}
+
+func GenerateProject(pkg *pcl.Program, dir string) error {
+	protobufProgram, err := ast.GenerateProtobuf(pkg)
+	if err != nil {
+		return fmt.Errorf("error generating protobuf program: %v", err)
+	}
+
+	obj, err := proto.Marshal(protobufProgram)
+	if err != nil {
+		return fmt.Errorf("error generating protobuf package: %v", err)
+	}
+
+	req := GenerateProjectRequest{
+		protobuf:  obj,
+		directory: dir,
+	}
+
+	G2RCallImpl{}.generate_project(&req)
+
+	return nil
+
+	//for _, content := range result.files_content {
+	//	emptyMap[content.path] = content.content
+	//}
+
+	//return emptyMap, nil, nil
 }

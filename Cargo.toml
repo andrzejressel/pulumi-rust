@@ -11,6 +11,8 @@ prost = "0.14.3"
 rust2go = "0.4.2"
 pulumi_gestalt_schema = "0.0.7"
 pulumi_gestalt_generator = "0.0.7"
+prettyplease = "0.2.37"
+syn = "2.0.117"
 #rust2go.workspace = true
 
 #[workspace]

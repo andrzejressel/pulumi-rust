@@ -9,7 +9,6 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
-	"strings"
 	"sync"
 	"testing"
 
@@ -26,6 +25,11 @@ import (
 
 // TestLanguage runs the language conformance test suite against the PCL AST language host.
 func TestLanguage(t *testing.T) {
+
+	if runtime.GOOS == "windows" {
+		panic("Windows not yet supported")
+	}
+
 	t.Parallel()
 
 	_, engine := runTestingHost(t)
@@ -34,7 +38,8 @@ func TestLanguage(t *testing.T) {
 	require.NoError(t, err)
 
 	cancel := make(chan bool)
-	rootDir := t.TempDir()
+	//rootDir := t.TempDir()
+	rootDir := "/home/andrzej/MojeProgramy/pulumi-rust/pkg/target"
 
 	handle, err := rpcutil.ServeWithOptions(rpcutil.ServeOptions{
 		Init: func(srv *grpc.Server) error {
@@ -73,15 +78,9 @@ func TestLanguage(t *testing.T) {
 				Token: prepare.Token,
 				Test:  tt,
 			})
-			if err != nil && strings.Contains(err.Error(), "Pulumi.yaml: no such file or directory") {
-				return
-			}
 
 			require.NoError(t, err)
 			for _, msg := range result.Messages {
-				if strings.Contains(msg, "Pulumi.yaml: no such file or directory") {
-					return
-				}
 				t.Log(msg)
 			}
 			t.Logf("stdout: %s", result.Stdout)
@@ -131,9 +130,6 @@ func runTestingHost(t *testing.T) (string, testingrpc.LanguageTestClient) {
 	// We can't just go run the pulumi-test-language package because of
 	// https://github.com/golang/go/issues/39172, so we build it to a temp file then run that.
 	binary := t.TempDir() + "/pulumi-test-language"
-	if runtime.GOOS == "windows" {
-		binary += ".exe"
-	}
 	cmd := exec.Command("go", "build", "-o", binary, "github.com/pulumi/pulumi/pkg/v3/testing/pulumi-test-language") //nolint:gosec,lll
 	output, err := cmd.CombinedOutput()
 	t.Logf("build output: %s", output)
