@@ -1,8 +1,8 @@
 pub mod proto {
-    mod pcl {
+    pub mod pcl {
         include!(concat!(env!("OUT_DIR"), "/pulumipcl.rs"));
     }
-    mod package {
+    pub mod package {
         include!(concat!(env!("OUT_DIR"), "/pulumipackage.rs"));
     }
 }

@@ -8,11 +8,10 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
-	"path/filepath"
 	"strings"
 	"time"
 
-	"github.com/andrzejressel/pulumi-rust/codegen"
+	"github.com/andrzejressel/pulumi-rust/codegen/rust"
 	"github.com/hashicorp/hcl/v2"
 	hclsyntax "github.com/pulumi/pulumi/pkg/v3/codegen/hcl2/syntax"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
@@ -36,7 +35,7 @@ func main() {
 
 	args := flag.Args()
 	logging.InitLogging(false, 0, false)
-	cmdutil.InitTracing("pulumi-language-pclast", "pulumi-language-pclast", tracing)
+	cmdutil.InitTracing("pulumi-language-rust", "pulumi-language-rust", tracing)
 
 	var cancelChannel chan bool
 	if len(args) > 0 {
@@ -192,22 +191,22 @@ func (host *rustLanguageHost) GeneratePackage(_ context.Context, req *pulumirpc.
 		}, nil
 	}
 
-	files, generationDiags, err := codegen.GenerateJSONPackage(pkg)
+	err = rust.GenerateJSONPackage(pkg, req.Directory)
 	if err != nil {
 		return nil, err
 	}
-	diags = diags.Extend(generationDiags)
-
-	if err = os.MkdirAll(req.Directory, 0o755); err != nil {
-		return nil, fmt.Errorf("could not create package output directory %q: %w", req.Directory, err)
-	}
-
-	for fileName, contents := range files {
-		target := filepath.Join(req.Directory, fileName)
-		if err = os.WriteFile(target, contents, 0o644); err != nil {
-			return nil, fmt.Errorf("could not write package file %q: %w", target, err)
-		}
-	}
+	//diags = diags.Extend(generationDiags)
+	//
+	//if err = os.MkdirAll(req.Directory, 0o755); err != nil {
+	//	return nil, fmt.Errorf("could not create package output directory %q: %w", req.Directory, err)
+	//}
+	//
+	//for fileName, contents := range files {
+	//	target := filepath.Join(req.Directory, fileName)
+	//	if err = os.WriteFile(target, contents, 0o644); err != nil {
+	//		return nil, fmt.Errorf("could not write package file %q: %w", target, err)
+	//	}
+	//}
 
 	return &pulumirpc.GeneratePackageResponse{
 		Diagnostics: plugin.HclDiagnosticsToRPCDiagnostics(diags),
