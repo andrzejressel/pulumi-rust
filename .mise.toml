@@ -1,0 +1,8 @@
+[tools]
+just = "1.46.0"
+pulumi = "3.218.0"
+"cargo-binstall" = "1.17.5"
+protoc = "34.0"
+protoc-gen-go = "1.36.11"
+go = "1.26.1"
+"cargo:rust2go-cli" = "0.4.2"
