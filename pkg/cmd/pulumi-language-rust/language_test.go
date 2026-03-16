@@ -52,6 +52,7 @@ func TestLanguage(t *testing.T) {
 				engineAddress,
 				"", /*tracing*/
 				"", /*otel*/
+				true,
 			)
 			pulumirpc.RegisterLanguageRuntimeServer(srv, host)
 			return nil

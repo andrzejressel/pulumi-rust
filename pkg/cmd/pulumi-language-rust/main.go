@@ -72,7 +72,7 @@ func main() {
 	handle, err := rpcutil.ServeWithOptions(rpcutil.ServeOptions{
 		Cancel: cancelChannel,
 		Init: func(srv *grpc.Server) error {
-			host := newLanguageHost(engineAddress, tracing, otelEndpoint)
+			host := newLanguageHost(engineAddress, tracing, otelEndpoint, false)
 			pulumirpc.RegisterLanguageRuntimeServer(srv, host)
 			return nil
 		},
@@ -112,15 +112,17 @@ type rustLanguageHost struct {
 	engineAddress string
 	tracing       string
 	otelEndpoint  string
+	testing       bool
 }
 
 func newLanguageHost(
-	engineAddress, tracing, otelEndpoint string,
+	engineAddress, tracing, otelEndpoint string, testing bool,
 ) pulumirpc.LanguageRuntimeServer {
 	return &rustLanguageHost{
 		engineAddress: engineAddress,
 		tracing:       tracing,
 		otelEndpoint:  otelEndpoint,
+		testing:       testing,
 	}
 }
 
@@ -151,7 +153,13 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 	var stderrBuf bytes.Buffer
 
 	env := host.constructEnv(req, config, configSecretKeys)
-	env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=/home/andrzej/test_target/%s", directoryName))
+	if host.testing {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			return nil, errors.Wrap(err, "could not get user home directory")
+		}
+		env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
+	}
 	env = append(env, "RUST_BACKTRACE=full")
 
 	cmd := exec.Command("cargo", "run") // nolint: gosec
@@ -246,11 +254,20 @@ func (host *rustLanguageHost) InstallDependencies(req *pulumirpc.InstallDependen
 
 	directoryName := path.Base(req.Info.ProgramDirectory)
 
+	env := os.Environ()
+	if host.testing {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			return fmt.Errorf("could not get user home directory: %v", err)
+		}
+		env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
+	}
+
 	cmd := exec.Command("cargo", "build") // nolint: gosec
 	cmd.Dir = req.Info.ProgramDirectory
 	cmd.Stdout = stdout
 	cmd.Stderr = stderr
-	cmd.Env = append(os.Environ(), fmt.Sprintf("CARGO_TARGET_DIR=/home/andrzej/test_target/%s", directoryName))
+	cmd.Env = env
 
 	if err := runCommand(cmd); err != nil {
 		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
