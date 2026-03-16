@@ -1,3 +1,6 @@
 [submodule "pulumi"]
 	path = pulumi
 	url = https://github.com/pulumi/pulumi.git
+[submodule "pulumi-ast"]
+	path = pulumi-ast
+	url = https://github.com/andrzejressel/pulumi-ast.git
