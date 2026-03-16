@@ -10,6 +10,9 @@
   "labels": [
     "dependencies"
   ],
+  "ignorePaths": [
+    "pkg/cmd/pulumi-language-rust/testdata/**"
+  ],
   "customManagers": [
     {
       "customType": "regex",
