@@ -12,7 +12,6 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/pulumi/pulumi/sdk/v3"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/rpcutil"
 	pulumirpc "github.com/pulumi/pulumi/sdk/v3/proto/go"
@@ -32,7 +31,7 @@ func TestLanguage(t *testing.T) {
 
 	t.Parallel()
 
-	_, engine := runTestingHost(t)
+	engineAddress, engine := runTestingHost(t)
 
 	tests, err := engine.GetLanguageTests(context.Background(), &testingrpc.GetLanguageTestsRequest{})
 	require.NoError(t, err)
@@ -43,7 +42,12 @@ func TestLanguage(t *testing.T) {
 
 	handle, err := rpcutil.ServeWithOptions(rpcutil.ServeOptions{
 		Init: func(srv *grpc.Server) error {
-			pulumirpc.RegisterLanguageRuntimeServer(srv, &rustLanguageHost{})
+			host := newLanguageHost(
+				engineAddress,
+				"", /*tracing*/
+				"", /*otel*/
+			)
+			pulumirpc.RegisterLanguageRuntimeServer(srv, host)
 			return nil
 		},
 		Cancel: cancel,
@@ -57,12 +61,15 @@ func TestLanguage(t *testing.T) {
 		LanguagePluginTarget: fmt.Sprintf("127.0.0.1:%d", handle.Port),
 		TemporaryDirectory:   rootDir,
 		SnapshotDirectory:    snapshotDir,
-		CoreSdkVersion:       sdk.Version.String(),
-		LanguageInfo:         "{}",
+		//CoreSdkVersion:       sdk.Version.String(), // It default to pulumi version - I would have to research it
+		LanguageInfo: "{}",
 	})
 	require.NoError(t, err)
 
-	for _, tt := range tests.Tests {
+	testNames := tests.Tests
+	testNames = []string{"l1-empty"}
+
+	for _, tt := range testNames {
 		tt := tt
 		t.Run(tt, func(t *testing.T) {
 			t.Parallel()

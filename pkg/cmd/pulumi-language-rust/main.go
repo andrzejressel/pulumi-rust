@@ -1,9 +1,9 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
-	"errors"
 	"flag"
 	"fmt"
 	"os"
@@ -16,6 +16,7 @@ import (
 
 	"github.com/andrzejressel/pulumi-rust/codegen/rust"
 	"github.com/hashicorp/hcl/v2"
+	"github.com/pkg/errors"
 	hclsyntax "github.com/pulumi/pulumi/pkg/v3/codegen/hcl2/syntax"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
@@ -43,18 +44,36 @@ func main() {
 	cmdutil.InitTracing("pulumi-language-rust", "pulumi-language-rust", tracing)
 
 	var cancelChannel chan bool
+
+	// Use OTel when the CLI provides an OTLP endpoint; fall back to
+	// OpenTracing otherwise.  Only one system should be active to avoid
+	// duplicate spans.
+	otelEndpoint := os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
+	if otelEndpoint == "" {
+		cmdutil.InitTracing("pulumi-language-java", "pulumi-language-java", tracing)
+	} else {
+		if err := cmdutil.InitOtelTracing("pulumi-language-java", otelEndpoint); err != nil {
+			logging.V(3).Infof("failed to initialize OTel tracing: %v", err)
+		}
+		defer cmdutil.CloseOtelTracing()
+	}
+
+	// Optionally pluck out the engine so we can do logging, etc.
+	var engineAddress string
 	if len(args) > 0 {
+		engineAddress = args[0]
 		var err error
-		cancelChannel, err = setupHealthChecks(args[0])
+		cancelChannel, err = setupHealthChecks(engineAddress)
 		if err != nil {
-			cmdutil.Exit(fmt.Errorf("could not start health check host RPC server: %w", err))
+			cmdutil.Exit(errors.Wrapf(err, "could not start health check host RPC server"))
 		}
 	}
 
 	handle, err := rpcutil.ServeWithOptions(rpcutil.ServeOptions{
 		Cancel: cancelChannel,
 		Init: func(srv *grpc.Server) error {
-			pulumirpc.RegisterLanguageRuntimeServer(srv, &rustLanguageHost{})
+			host := newLanguageHost(engineAddress, tracing, otelEndpoint)
+			pulumirpc.RegisterLanguageRuntimeServer(srv, host)
 			return nil
 		},
 		Options: rpcutil.OpenTracingServerInterceptorOptions(nil),
@@ -90,6 +109,19 @@ func setupHealthChecks(engineAddress string) (chan bool, error) {
 
 type rustLanguageHost struct {
 	pulumirpc.UnimplementedLanguageRuntimeServer
+	engineAddress string
+	tracing       string
+	otelEndpoint  string
+}
+
+func newLanguageHost(
+	engineAddress, tracing, otelEndpoint string,
+) pulumirpc.LanguageRuntimeServer {
+	return &rustLanguageHost{
+		engineAddress: engineAddress,
+		tracing:       tracing,
+		otelEndpoint:  otelEndpoint,
+	}
 }
 
 func (host *rustLanguageHost) GetPluginInfo(context.Context, *emptypb.Empty) (*pulumirpc.PluginInfo, error) {
@@ -98,6 +130,106 @@ func (host *rustLanguageHost) GetPluginInfo(context.Context, *emptypb.Empty) (*p
 
 func (host *rustLanguageHost) GetProgramDependencies(context.Context, *pulumirpc.GetProgramDependenciesRequest) (*pulumirpc.GetProgramDependenciesResponse, error) {
 	return &pulumirpc.GetProgramDependenciesResponse{}, nil
+}
+
+func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) (*pulumirpc.RunResponse, error) {
+
+	directoryName := path.Base(req.Info.ProgramDirectory)
+
+	config, err := host.constructConfig(req)
+	if err != nil {
+		err = errors.Wrap(err, "failed to serialize configuration")
+		return nil, err
+	}
+	configSecretKeys, err := host.constructConfigSecretKeys(req)
+	if err != nil {
+		err = errors.Wrap(err, "failed to serialize configuration secret keys")
+		return nil, err
+	}
+
+	var stdoutBuf bytes.Buffer
+	var stderrBuf bytes.Buffer
+
+	env := host.constructEnv(req, config, configSecretKeys)
+	env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=/home/andrzej/test_target/%s", directoryName))
+	env = append(env, "RUST_BACKTRACE=full")
+
+	cmd := exec.Command("cargo", "run") // nolint: gosec
+	cmd.Stdout = &stdoutBuf
+	cmd.Stderr = &stderrBuf
+	cmd.Dir = req.Info.ProgramDirectory
+	cmd.Env = env
+
+	var errResult string
+
+	if err := runCommand(cmd); err != nil {
+		os.Stdout.Write(stdoutBuf.Bytes())
+		os.Stderr.Write(stderrBuf.Bytes())
+
+		logging.V(5).Infof("InstallDependencies(Directory=%s): failed", req.Info.ProgramDirectory) //nolint:staticcheck
+		return nil, err
+	}
+
+	return &pulumirpc.RunResponse{Error: errResult}, nil
+
+}
+
+// constructEnv constructs an environ for `pulumi-language-scala`
+// by enumerating all the optional and non-optional evn vars present
+// in a RunRequest.
+func (host *rustLanguageHost) constructEnv(req *pulumirpc.RunRequest, config, configSecretKeys string) []string {
+	env := os.Environ()
+
+	maybeAppendEnv := func(k, v string) {
+		if v != "" {
+			env = append(env, strings.ToUpper("PULUMI_"+k)+"="+v)
+		}
+	}
+
+	maybeAppendEnv("monitor", req.GetMonitorAddress())
+	maybeAppendEnv("engine", host.engineAddress)
+	maybeAppendEnv("project", req.GetProject())
+	maybeAppendEnv("stack", req.GetStack())
+	maybeAppendEnv("pwd", req.GetPwd())
+	maybeAppendEnv("dry_run", fmt.Sprintf("%v", req.GetDryRun()))
+	maybeAppendEnv("query_mode", fmt.Sprint(req.GetQueryMode()))
+	maybeAppendEnv("parallel", fmt.Sprint(req.GetParallel()))
+	maybeAppendEnv("tracing", host.tracing)
+	maybeAppendEnv("config", config)
+	maybeAppendEnv("config_secret_keys", configSecretKeys)
+
+	return env
+}
+
+// constructConfig json-serializes the configuration data given as part of a RunRequest.
+func (host *rustLanguageHost) constructConfig(req *pulumirpc.RunRequest) (string, error) {
+	configMap := req.GetConfig()
+	if configMap == nil {
+		return "", nil
+	}
+
+	configJSON, err := json.Marshal(configMap)
+	if err != nil {
+		return "", err
+	}
+
+	return string(configJSON), nil
+}
+
+// constructConfigSecretKeys JSON-serializes the list of keys that contain secret values given as part of
+// a RunRequest.
+func (host *rustLanguageHost) constructConfigSecretKeys(req *pulumirpc.RunRequest) (string, error) {
+	configSecretKeys := req.GetConfigSecretKeys()
+	if configSecretKeys == nil {
+		return "[]", nil
+	}
+
+	configSecretKeysJSON, err := json.Marshal(configSecretKeys)
+	if err != nil {
+		return "", err
+	}
+
+	return string(configSecretKeysJSON), nil
 }
 
 func (host *rustLanguageHost) InstallDependencies(req *pulumirpc.InstallDependenciesRequest, server grpc.ServerStreamingServer[pulumirpc.InstallDependenciesResponse]) error {
@@ -114,7 +246,6 @@ func (host *rustLanguageHost) InstallDependencies(req *pulumirpc.InstallDependen
 
 	directoryName := path.Base(req.Info.ProgramDirectory)
 
-	// intentionally running dynamic program name.
 	cmd := exec.Command("cargo", "build") // nolint: gosec
 	cmd.Dir = req.Info.ProgramDirectory
 	cmd.Stdout = stdout
@@ -129,7 +260,6 @@ func (host *rustLanguageHost) InstallDependencies(req *pulumirpc.InstallDependen
 	defer closer.Close()
 
 	return nil
-	//return status.Errorf(codes.Unimplemented, "method InstallDependencies not implemented")
 }
 
 func (host *rustLanguageHost) GetRequiredPackages(

@@ -6,6 +6,5 @@ fn main() {
 
 fn pulumi_main(context: &pulumi_gestalt_rust::Context) -> Result<()> {
     {{CONTENT}}
-    
     Ok(())
 }

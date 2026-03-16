@@ -4,5 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-anyhow = "1.0"
-pulumi_gestalt_rust = "0.0.7"
+anyhow = "1.0.102"
+#pulumi_gestalt_rust = "0.0.7"
+pulumi_gestalt_rust = { path = "/home/andrzej/MojeProgramy/pulumi-gestalt/crates/rust" }
