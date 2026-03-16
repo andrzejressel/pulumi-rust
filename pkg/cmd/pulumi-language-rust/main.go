@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"flag"
 	"fmt"
 	"os"
@@ -16,7 +17,6 @@ import (
 
 	"github.com/andrzejressel/pulumi-rust/codegen/rust"
 	"github.com/hashicorp/hcl/v2"
-	"github.com/pkg/errors"
 	hclsyntax "github.com/pulumi/pulumi/pkg/v3/codegen/hcl2/syntax"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
@@ -65,7 +65,7 @@ func main() {
 		var err error
 		cancelChannel, err = setupHealthChecks(engineAddress)
 		if err != nil {
-			cmdutil.Exit(errors.Wrapf(err, "could not start health check host RPC server"))
+			cmdutil.Exit(fmt.Errorf("could not start health check host RPC server: %w", err))
 		}
 	}
 
@@ -140,12 +140,12 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 
 	config, err := host.constructConfig(req)
 	if err != nil {
-		err = errors.Wrap(err, "failed to serialize configuration")
+		err = fmt.Errorf("failed to serialize configuration: %w", err)
 		return nil, err
 	}
 	configSecretKeys, err := host.constructConfigSecretKeys(req)
 	if err != nil {
-		err = errors.Wrap(err, "failed to serialize configuration secret keys")
+		err = fmt.Errorf("failed to serialize configuration secret keys: %w", err)
 		return nil, err
 	}
 
@@ -156,7 +156,7 @@ func (host *rustLanguageHost) Run(_ context.Context, req *pulumirpc.RunRequest) 
 	if host.testing {
 		home, err := os.UserHomeDir()
 		if err != nil {
-			return nil, errors.Wrap(err, "could not get user home directory")
+			return nil, fmt.Errorf("could not get user home directory: %w", err)
 		}
 		env = append(env, fmt.Sprintf("CARGO_TARGET_DIR=%s/test_target/%s", home, directoryName))
 	}
