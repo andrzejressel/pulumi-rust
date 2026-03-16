@@ -1,4 +1,3 @@
-
 #[derive(rust2go::R2G, Clone)]
 pub struct GeneratePackageRequest {
     pub protobuf: Vec<u8>,
