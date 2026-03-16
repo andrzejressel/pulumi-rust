@@ -23,3 +23,8 @@ gen:
 
 test:
     cd pkg && go test -v -count=1 ./...
+
+# Generates files in `pkg/target` for easier introspection    
+test-local $LOCAL_TEST="1":
+    just test
+    

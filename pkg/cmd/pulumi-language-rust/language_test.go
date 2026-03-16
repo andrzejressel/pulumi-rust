@@ -37,8 +37,14 @@ func TestLanguage(t *testing.T) {
 	require.NoError(t, err)
 
 	cancel := make(chan bool)
-	//rootDir := t.TempDir()
-	rootDir := "/home/andrzej/MojeProgramy/pulumi-rust/pkg/target"
+
+	var rootDir string
+	if os.Getenv("LOCAL_TEST") == "1" {
+		rootDir, err = filepath.Abs("../../target/")
+		require.NoError(t, err)
+	} else {
+		rootDir = t.TempDir()
+	}
 
 	handle, err := rpcutil.ServeWithOptions(rpcutil.ServeOptions{
 		Init: func(srv *grpc.Server) error {
