@@ -2,6 +2,12 @@ set windows-shell := ["pwsh.exe", "-c"]
 
 nightly := "nightly-2026-03-15"
 
+install:
+    rustup +{{nightly}} component add rustfmt
+    rustup component add clippy
+    rustup component add llvm-tools-preview
+    mise install
+
 check:
     cargo +{{nightly}} fmt -- --check
     cargo clippy --tests
