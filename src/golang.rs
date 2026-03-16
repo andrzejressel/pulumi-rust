@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 #[derive(rust2go::R2G, Clone)]
 pub struct GeneratePackageRequest {
     pub protobuf: Vec<u8>,
@@ -14,22 +12,19 @@ pub struct GenerateProjectRequest {
 
 #[derive(rust2go::R2G, Clone)]
 pub struct GenerateProgramRequest {
-    pub protobuf: Vec<u8>
+    pub protobuf: Vec<u8>,
 }
 
 #[derive(rust2go::R2G, Clone)]
 pub struct GenerateProgramResult {
-    pub files_content: Vec<FileWithContent>
+    pub files_content: Vec<FileWithContent>,
 }
-
 
 #[derive(rust2go::R2G, Clone)]
 pub struct FileWithContent {
     pub path: String,
-    pub content: Vec<u8>
+    pub content: Vec<u8>,
 }
-
-
 
 #[rust2go::g2r]
 pub trait G2RCall {

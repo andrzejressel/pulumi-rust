@@ -1,0 +1,50 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+  MISE_CARGO_BINSTALL_ONLY: "1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - run: git config --system core.longpaths true
+        if: runner.os == 'Windows'
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          submodules: 'true'
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
+      - name: Install
+        run: just install
+      - name: Check
+        run: just check
+      - name: Gen
+        run: just gen
+      - name: Test
+        run: just test
+      - name: Install
+        run: just install
+      - name: Format
+        run: just fmt
+      - run: git add . && git diff
+      - run: git diff --cached
+      - name: Ensure no files have changed
+        run: git add . && git diff --quiet && git diff --cached --quiet
