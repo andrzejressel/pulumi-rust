@@ -1,18 +1,16 @@
 use crate::pcl_model::node::Value;
 use crate::pcl_model::{
-    Expression, LiteralValueExpression, Node, OutputVariable, PclProtobufProgram, expression,
+    Node, OutputVariable, PclProtobufProgram, expression,
     literal_value_expression,
 };
-use codegen::Scope;
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
-use std::fmt::format;
 
 pub fn generate_main(model_program: &PclProtobufProgram) -> Result<String> {
     let nodes = model_program
         .nodes
         .iter()
-        .map(|node| convert_node(node))
+        .map(convert_node)
         .collect::<Result<Vec<_>>>()
         .context("Failed to convert model nodes")?
         .join("\n");
@@ -90,5 +88,8 @@ fn convert_output_variable(output_variable: &OutputVariable) -> Result<String> {
         }
     };
 
-    Ok(format!("pulumi_gestalt_rust::add_export(\"{}\", &context.new_output(&{}));", output_variable.name, static_string))
+    Ok(format!(
+        "pulumi_gestalt_rust::add_export(\"{}\", &context.new_output(&{}));",
+        output_variable.name, static_string
+    ))
 }
