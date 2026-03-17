@@ -340,7 +340,7 @@ func (host *rustLanguageHost) GenerateProject(_ context.Context, req *pulumirpc.
 		return nil, err
 	}
 
-	err = generateProject(req.TargetDirectory, project, program)
+	err = generateProject(req.TargetDirectory, project, program, host.testing)
 	if err != nil {
 		return nil, fmt.Errorf("could not generate project: %w", err)
 	}
@@ -437,10 +437,11 @@ func generateProject(
 	directory string,
 	project workspace.Project,
 	program *pcl.Program,
+	testing bool,
 ) error {
 	rootDirectory := directory
 
-	err := rust.GenerateProject(program, rootDirectory)
+	protobufContent, protobufJSON, err := rust.GenerateProject(program, rootDirectory)
 	if err != nil {
 		return err
 	}
@@ -455,6 +456,10 @@ func generateProject(
 	filesWithPackages := make(map[string][]byte)
 
 	filesWithPackages[filepath.Join(rootDirectory, "Pulumi.yaml")] = projectBytes
+	if testing {
+		filesWithPackages[filepath.Join(rootDirectory, "protobuf.bin")] = protobufContent
+		filesWithPackages[filepath.Join(rootDirectory, "protobuf.json")] = protobufJSON
+	}
 	//filesWithPackages[filepath.Join(rootDirectory, "Cargo.toml")] = []byte("[package]\nname=\"TEST\"")
 
 	for filePath, data := range filesWithPackages {

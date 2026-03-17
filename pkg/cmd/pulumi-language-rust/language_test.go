@@ -74,7 +74,7 @@ func TestLanguage(t *testing.T) {
 	require.NoError(t, err)
 
 	testNames := tests.Tests
-	testNames = []string{"l1-empty"}
+	testNames = []string{"l1-empty", "l1-main"}
 
 	for _, tt := range testNames {
 		tt := tt
