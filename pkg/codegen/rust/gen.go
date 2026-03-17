@@ -5,6 +5,8 @@ package rust
 */
 import "C"
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 
 	"github.com/andrzejressel/pulumi-ast/codegen/ast"
@@ -75,12 +77,14 @@ func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 	}
 
 	protobufJSON, err := protojson.MarshalOptions{
-		Multiline:     true,
-		Indent:        "  ",
 		UseProtoNames: true,
 	}.Marshal(protobufProgram)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error generating protobuf JSON: %v", err)
+	}
+	protobufJSON, err = normalizeJSON(protobufJSON)
+	if err != nil {
+		return nil, nil, fmt.Errorf("error normalizing protobuf JSON: %v", err)
 	}
 
 	req := GenerateProjectRequest{
@@ -97,4 +101,12 @@ func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 	//}
 
 	//return emptyMap, nil, nil
+}
+
+func normalizeJSON(input []byte) ([]byte, error) {
+	var output bytes.Buffer
+	if err := json.Indent(&output, input, "", "  "); err != nil {
+		return nil, err
+	}
+	return output.Bytes(), nil
 }
