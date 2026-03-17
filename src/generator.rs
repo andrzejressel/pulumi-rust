@@ -1,7 +1,6 @@
 use crate::pcl_model::node::Value;
 use crate::pcl_model::{
-    Node, OutputVariable, PclProtobufProgram, expression,
-    literal_value_expression,
+    Node, OutputVariable, PclProtobufProgram, expression, literal_value_expression,
 };
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
