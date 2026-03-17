@@ -32,6 +32,10 @@ jobs:
           submodules: 'true'
       - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2.8.2
       - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
+      - uses: actions/setup-go@41dfa10bad2bb2ae585af6ee5bb4d7d973ad74ed # v5.1.0
+        with:
+          go-version-file: 'pkg/go.mod'
+          cache-dependency-path: 'pkg/go.sum'
       - name: Install
         run: just install
       - name: Check
