@@ -11,6 +11,7 @@ import (
 	"github.com/hashicorp/hcl/v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
+	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -62,15 +63,24 @@ func GenerateProgram(pkg *pcl.Program) (map[string][]byte, hcl.Diagnostics, erro
 
 }
 
-func GenerateProject(pkg *pcl.Program, dir string) error {
+func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 	protobufProgram, err := ast.GenerateProtobuf(pkg)
 	if err != nil {
-		return fmt.Errorf("error generating protobuf program: %v", err)
+		return nil, nil, fmt.Errorf("error generating protobuf program: %v", err)
 	}
 
 	obj, err := proto.Marshal(protobufProgram)
 	if err != nil {
-		return fmt.Errorf("error generating protobuf package: %v", err)
+		return nil, nil, fmt.Errorf("error generating protobuf package: %v", err)
+	}
+
+	protobufJSON, err := protojson.MarshalOptions{
+		Multiline:     true,
+		Indent:        "  ",
+		UseProtoNames: true,
+	}.Marshal(protobufProgram)
+	if err != nil {
+		return nil, nil, fmt.Errorf("error generating protobuf JSON: %v", err)
 	}
 
 	req := GenerateProjectRequest{
@@ -80,7 +90,7 @@ func GenerateProject(pkg *pcl.Program, dir string) error {
 
 	G2RCallImpl{}.generate_project(&req)
 
-	return nil
+	return obj, protobufJSON, nil
 
 	//for _, content := range result.files_content {
 	//	emptyMap[content.path] = content.content

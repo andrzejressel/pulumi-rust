@@ -11,6 +11,7 @@ use std::path::Path;
 mod generator;
 mod golang;
 mod package_model;
+mod pcl_model;
 mod proto;
 
 impl G2RCall for G2RCallImpl {
@@ -35,8 +36,12 @@ impl G2RCall for G2RCallImpl {
         .expect("failed to write mod.rs");
     }
 
-    fn generate_program(_req: GenerateProgramRequest) -> GenerateProgramResult {
-        let main_rs = generate_main();
+    fn generate_program(req: GenerateProgramRequest) -> GenerateProgramResult {
+        let program = proto::proto::pcl::PclProtobufProgram::decode(&*req.protobuf)
+            .expect("invalid program bytes");
+        let model_program = pcl_model::map_program(program);
+
+        let main_rs = generate_main(&model_program).expect("failed to generate main.rs");
         let file = vec![FileWithContent {
             path: "main.rs".to_string(),
             content: main_rs.into_bytes(),
@@ -47,7 +52,10 @@ impl G2RCall for G2RCallImpl {
     }
 
     fn generate_project(req: GenerateProjectRequest) {
-        let main_rs = generate_main();
+        let program = proto::proto::pcl::PclProtobufProgram::decode(&*req.protobuf)
+            .expect("invalid program bytes");
+        let model_program = pcl_model::map_program(program);
+        let main_rs = generate_main(&model_program).expect("failed to generate main.rs");
         let cargo_rs = include_str!("./Cargo.toml.template");
         let files = vec![
             FileWithContent {
@@ -70,4 +78,11 @@ impl G2RCall for G2RCallImpl {
             fs::write(path, &file.content).expect("failed to write file");
         }
     }
+}
+
+pub fn generate_project_from_protobuf(protobuf: Vec<u8>, directory: String) {
+    G2RCallImpl::generate_project(GenerateProjectRequest {
+        protobuf,
+        directory,
+    });
 }
