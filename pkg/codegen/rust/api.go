@@ -28,12 +28,17 @@ typedef struct GeneratePackageRequestRef {
   struct StringRef directory;
 } GeneratePackageRequestRef;
 
+typedef struct GeneratePackageResultRef {
+  struct StringRef error;
+} GeneratePackageResultRef;
+
 typedef struct GenerateProgramRequestRef {
   struct ListRef protobuf;
 } GenerateProgramRequestRef;
 
 typedef struct GenerateProgramResultRef {
   struct ListRef files_content;
+  struct StringRef error;
 } GenerateProgramResultRef;
 
 typedef struct GenerateProjectRequestRef {
@@ -41,10 +46,14 @@ typedef struct GenerateProjectRequestRef {
   struct StringRef directory;
 } GenerateProjectRequestRef;
 
+typedef struct GenerateProjectResultRef {
+  struct StringRef error;
+} GenerateProjectResultRef;
+
 const void c_rust2go_internal_drop(void*);
-const void c_G2RCall_generate_package(const void*);
+const void c_G2RCall_generate_package(const void*, const void*);
 const void c_G2RCall_generate_program(const void*, const void*);
-const void c_G2RCall_generate_project(const void*);
+const void c_G2RCall_generate_project(const void*, const void*);
 */
 import "C"
 import (
@@ -289,16 +298,19 @@ func refGenerateProgramRequest(p *GenerateProgramRequest, buffer *[]byte) C.Gene
 
 type GenerateProgramResult struct {
 	files_content []FileWithContent
+	error         string
 }
 
 func newGenerateProgramResult(p C.GenerateProgramResultRef) GenerateProgramResult {
 	return GenerateProgramResult{
 		files_content: new_list_mapper(newFileWithContent)(p.files_content),
+		error:         newString(p.error),
 	}
 }
 func ownGenerateProgramResult(p C.GenerateProgramResultRef) GenerateProgramResult {
 	return GenerateProgramResult{
 		files_content: new_list_mapper(ownFileWithContent)(p.files_content),
+		error:         ownString(p.error),
 	}
 }
 func cntGenerateProgramResult(s *GenerateProgramResult, cnt *uint) [0]C.GenerateProgramResultRef {
@@ -308,6 +320,57 @@ func cntGenerateProgramResult(s *GenerateProgramResult, cnt *uint) [0]C.Generate
 func refGenerateProgramResult(p *GenerateProgramResult, buffer *[]byte) C.GenerateProgramResultRef {
 	return C.GenerateProgramResultRef{
 		files_content: ref_list_mapper(refFileWithContent)(&p.files_content, buffer),
+		error:         refString(&p.error, buffer),
+	}
+}
+
+type GeneratePackageResult struct {
+	error string
+}
+
+func newGeneratePackageResult(p C.GeneratePackageResultRef) GeneratePackageResult {
+	return GeneratePackageResult{
+		error: newString(p.error),
+	}
+}
+func ownGeneratePackageResult(p C.GeneratePackageResultRef) GeneratePackageResult {
+	return GeneratePackageResult{
+		error: ownString(p.error),
+	}
+}
+func cntGeneratePackageResult(s *GeneratePackageResult, cnt *uint) [0]C.GeneratePackageResultRef {
+	_ = s
+	_ = cnt
+	return [0]C.GeneratePackageResultRef{}
+}
+func refGeneratePackageResult(p *GeneratePackageResult, buffer *[]byte) C.GeneratePackageResultRef {
+	return C.GeneratePackageResultRef{
+		error: refString(&p.error, buffer),
+	}
+}
+
+type GenerateProjectResult struct {
+	error string
+}
+
+func newGenerateProjectResult(p C.GenerateProjectResultRef) GenerateProjectResult {
+	return GenerateProjectResult{
+		error: newString(p.error),
+	}
+}
+func ownGenerateProjectResult(p C.GenerateProjectResultRef) GenerateProjectResult {
+	return GenerateProjectResult{
+		error: ownString(p.error),
+	}
+}
+func cntGenerateProjectResult(s *GenerateProjectResult, cnt *uint) [0]C.GenerateProjectResultRef {
+	_ = s
+	_ = cnt
+	return [0]C.GenerateProjectResultRef{}
+}
+func refGenerateProjectResult(p *GenerateProjectResult, buffer *[]byte) C.GenerateProjectResultRef {
+	return C.GenerateProjectResultRef{
+		error: refString(&p.error, buffer),
 	}
 }
 
@@ -342,13 +405,18 @@ func refFileWithContent(p *FileWithContent, buffer *[]byte) C.FileWithContentRef
 
 type G2RCallImpl struct{}
 
-func (G2RCallImpl) generate_package(req *GeneratePackageRequest) {
+func (G2RCallImpl) generate_package(req *GeneratePackageRequest) GeneratePackageResult {
+	_internal_slot := [2]unsafe.Pointer{}
 	_internal_params := [1]unsafe.Pointer{}
 	req_ref, req_buffer := cvt_ref(cntGeneratePackageRequest, refGeneratePackageRequest)(req)
 	_internal_params[0] = unsafe.Pointer(&req_ref)
-	asmcall.CallFuncG0P1(unsafe.Pointer(C.c_G2RCall_generate_package), unsafe.Pointer(&_internal_params))
+	asmcall.CallFuncG0P2(unsafe.Pointer(C.c_G2RCall_generate_package), unsafe.Pointer(&_internal_slot), unsafe.Pointer(&_internal_params))
+	runtime.KeepAlive(_internal_slot)
 	runtime.KeepAlive(_internal_params)
 	runtime.KeepAlive(req_buffer)
+	val := ownGeneratePackageResult(*(*C.GeneratePackageResultRef)(_internal_slot[0]))
+	asmcall.CallFuncG0P1(unsafe.Pointer(C.c_rust2go_internal_drop), unsafe.Pointer(_internal_slot[1]))
+	return val
 }
 func (G2RCallImpl) generate_program(req *GenerateProgramRequest) GenerateProgramResult {
 	_internal_slot := [2]unsafe.Pointer{}
@@ -363,11 +431,16 @@ func (G2RCallImpl) generate_program(req *GenerateProgramRequest) GenerateProgram
 	asmcall.CallFuncG0P1(unsafe.Pointer(C.c_rust2go_internal_drop), unsafe.Pointer(_internal_slot[1]))
 	return val
 }
-func (G2RCallImpl) generate_project(req *GenerateProjectRequest) {
+func (G2RCallImpl) generate_project(req *GenerateProjectRequest) GenerateProjectResult {
+	_internal_slot := [2]unsafe.Pointer{}
 	_internal_params := [1]unsafe.Pointer{}
 	req_ref, req_buffer := cvt_ref(cntGenerateProjectRequest, refGenerateProjectRequest)(req)
 	_internal_params[0] = unsafe.Pointer(&req_ref)
-	asmcall.CallFuncG0P1(unsafe.Pointer(C.c_G2RCall_generate_project), unsafe.Pointer(&_internal_params))
+	asmcall.CallFuncG0P2(unsafe.Pointer(C.c_G2RCall_generate_project), unsafe.Pointer(&_internal_slot), unsafe.Pointer(&_internal_params))
+	runtime.KeepAlive(_internal_slot)
 	runtime.KeepAlive(_internal_params)
 	runtime.KeepAlive(req_buffer)
+	val := ownGenerateProjectResult(*(*C.GenerateProjectResultRef)(_internal_slot[0]))
+	asmcall.CallFuncG0P1(unsafe.Pointer(C.c_rust2go_internal_drop), unsafe.Pointer(_internal_slot[1]))
+	return val
 }
