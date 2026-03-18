@@ -1,7 +1,6 @@
+use std::fmt::format;
 use crate::pcl_model::node::Value;
-use crate::pcl_model::{
-    Node, OutputVariable, PclProtobufProgram, expression, literal_value_expression,
-};
+use crate::pcl_model::{Node, OutputVariable, PclProtobufProgram, expression, literal_value_expression, ConfigVariable};
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
 
@@ -33,13 +32,23 @@ fn convert_node(node: &Node) -> Result<String> {
         Value::LocalVariable(_) => {
             bail!("LocalVariable not yet supported")
         }
-        Value::ConfigVariable(_) => {
-            bail!("ConfigVariable not yet supported")
+        Value::ConfigVariable(config_variable) => {
+            Ok(convert_config_variable(config_variable)
+                .context("Failed to convert config variable")?)
+            // bail!("ConfigVariable not yet supported")
         }
         Value::OutputVariable(output) => {
-            Ok(convert_output_variable(output).context("Failed to convert output variable")?)
+            Ok(convert_output_variable(output).context("Failed to convert output variable")
+                .context("Failed to convert output variable")?)
         }
     }
+}
+
+fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
+    Ok(format!(
+        "let {} = context.get_config(\"{}\");",
+        config_variable.name, config_variable.name
+    ))
 }
 
 fn convert_output_variable(output_variable: &OutputVariable) -> Result<String> {

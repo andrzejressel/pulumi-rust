@@ -95,12 +95,6 @@ func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 	G2RCallImpl{}.generate_project(&req)
 
 	return obj, protobufJSON, nil
-
-	//for _, content := range result.files_content {
-	//	emptyMap[content.path] = content.content
-	//}
-
-	//return emptyMap, nil, nil
 }
 
 func normalizeJSON(input []byte) ([]byte, error) {
