@@ -27,12 +27,12 @@ impl G2RCall for G2RCallImpl {
         let _model_package = package_model::map_package(package);
 
         let dir = Path::new(&req.directory);
-        if !dir.exists() {
-            if let Err(error) = create_dir_all(dir) {
-                return GeneratePackageResult {
-                    error: format!("failed to create output directory: {error}"),
-                };
-            }
+        if !dir.exists()
+            && let Err(error) = create_dir_all(dir)
+        {
+            return GeneratePackageResult {
+                error: format!("failed to create output directory: {error}"),
+            };
         }
 
         if let Err(error) = pulumi_gestalt_generator::generate_rust(&_model_package, dir) {
@@ -120,12 +120,12 @@ impl G2RCall for G2RCallImpl {
         for file in &files {
             let path = dir.join(file.path.clone());
             // let path = Path::new(&file.path);
-            if let Some(parent) = path.parent() {
-                if let Err(error) = create_dir_all(parent) {
-                    return GenerateProjectResult {
-                        error: format!("failed to create output directory: {error}"),
-                    };
-                }
+            if let Some(parent) = path.parent()
+                && let Err(error) = create_dir_all(parent)
+            {
+                return GenerateProjectResult {
+                    error: format!("failed to create output directory: {error}"),
+                };
             }
             if let Err(error) = fs::write(path, &file.content) {
                 return GenerateProjectResult {
