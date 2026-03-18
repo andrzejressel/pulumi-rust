@@ -18,6 +18,17 @@ pub struct GenerateProgramRequest {
 #[derive(rust2go::R2G, Clone)]
 pub struct GenerateProgramResult {
     pub files_content: Vec<FileWithContent>,
+    pub error: String,
+}
+
+#[derive(rust2go::R2G, Clone)]
+pub struct GeneratePackageResult {
+    pub error: String,
+}
+
+#[derive(rust2go::R2G, Clone)]
+pub struct GenerateProjectResult {
+    pub error: String,
 }
 
 #[derive(rust2go::R2G, Clone)]
@@ -28,7 +39,7 @@ pub struct FileWithContent {
 
 #[rust2go::g2r]
 pub trait G2RCall {
-    fn generate_package(req: GeneratePackageRequest);
+    fn generate_package(req: GeneratePackageRequest) -> GeneratePackageResult;
     fn generate_program(req: GenerateProgramRequest) -> GenerateProgramResult;
-    fn generate_project(req: GenerateProjectRequest);
+    fn generate_project(req: GenerateProjectRequest) -> GenerateProjectResult;
 }
