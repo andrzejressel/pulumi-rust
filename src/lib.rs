@@ -20,7 +20,7 @@ impl G2RCall for G2RCallImpl {
             Ok(package) => package,
             Err(error) => {
                 return GeneratePackageResult {
-                    error: format!("invalid package bytes: {error}"),
+                    error: format!("invalid package bytes: {error:?}"),
                 };
             }
         };
@@ -31,13 +31,13 @@ impl G2RCall for G2RCallImpl {
             && let Err(error) = create_dir_all(dir)
         {
             return GeneratePackageResult {
-                error: format!("failed to create output directory: {error}"),
+                error: format!("failed to create output directory: {error:?}"),
             };
         }
 
         if let Err(error) = pulumi_gestalt_generator::generate_rust(&_model_package, dir) {
             return GeneratePackageResult {
-                error: format!("failed to generate package: {error}"),
+                error: format!("failed to generate package: {error:?}"),
             };
         }
 
@@ -46,7 +46,7 @@ impl G2RCall for G2RCallImpl {
             include_str!("./Cargo.toml.template"),
         ) {
             return GeneratePackageResult {
-                error: format!("failed to write Cargo.toml: {error}"),
+                error: format!("failed to write Cargo.toml: {error:?}"),
             };
         }
 
@@ -61,7 +61,7 @@ impl G2RCall for G2RCallImpl {
             Err(error) => {
                 return GenerateProgramResult {
                     files_content: vec![],
-                    error: format!("invalid program bytes: {error}"),
+                    error: format!("invalid program bytes: {error:?}"),
                 };
             }
         };
@@ -72,7 +72,7 @@ impl G2RCall for G2RCallImpl {
             Err(error) => {
                 return GenerateProgramResult {
                     files_content: vec![],
-                    error: format!("failed to generate main.rs: {error}"),
+                    error: format!("failed to generate main.rs: {error:?}"),
                 };
             }
         };
@@ -91,7 +91,7 @@ impl G2RCall for G2RCallImpl {
             Ok(program) => program,
             Err(error) => {
                 return GenerateProjectResult {
-                    error: format!("invalid program bytes: {error}"),
+                    error: format!("invalid program bytes: {error:?}"),
                 };
             }
         };
@@ -100,7 +100,7 @@ impl G2RCall for G2RCallImpl {
             Ok(main_rs) => main_rs,
             Err(error) => {
                 return GenerateProjectResult {
-                    error: format!("failed to generate main.rs: {error}"),
+                    error: format!("failed to generate main.rs: {error:?}"),
                 };
             }
         };
@@ -124,12 +124,12 @@ impl G2RCall for G2RCallImpl {
                 && let Err(error) = create_dir_all(parent)
             {
                 return GenerateProjectResult {
-                    error: format!("failed to create output directory: {error}"),
+                    error: format!("failed to create output directory: {error:?}"),
                 };
             }
             if let Err(error) = fs::write(path, &file.content) {
                 return GenerateProjectResult {
-                    error: format!("failed to write file: {error}"),
+                    error: format!("failed to write file: {error:?}"),
                 };
             }
         }
