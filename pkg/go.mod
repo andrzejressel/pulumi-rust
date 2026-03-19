@@ -1,6 +1,6 @@
 module github.com/andrzejressel/pulumi-rust
 
-go 1.25.6
+go 1.26.1
 
 replace github.com/andrzejressel/pulumi-ast => ../pulumi-ast/pkg
 

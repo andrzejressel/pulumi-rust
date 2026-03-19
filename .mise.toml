@@ -4,5 +4,5 @@ pulumi = "3.225.1"
 "cargo-binstall" = "1.17.5"
 protoc = "34.0"
 protoc-gen-go = "1.36.11"
-go = "1.25.6"
+go = "1.26.1"
 "cargo:https://github.com/ihciah/rust2go" = { version = "rev:d06121090dcd6d5fca5528be6ab8bcc56b3907bc", crate = "rust2go-cli" }

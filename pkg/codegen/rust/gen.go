@@ -33,7 +33,10 @@ func GeneratePackage(pkg *schema.Package, dir string) error {
 		directory: dir,
 	}
 
-	G2RCallImpl{}.generate_package(&req)
+	result := G2RCallImpl{}.generate_package(&req)
+	if result.error != "" {
+		return fmt.Errorf("error generating rust package: %s", result.error)
+	}
 
 	return nil
 }
@@ -54,6 +57,9 @@ func GenerateProgram(pkg *pcl.Program) (map[string][]byte, hcl.Diagnostics, erro
 	}
 
 	result := G2RCallImpl{}.generate_program(&req)
+	if result.error != "" {
+		return nil, nil, fmt.Errorf("error generating rust program: %s", result.error)
+	}
 
 	emptyMap := make(map[string][]byte)
 
@@ -92,7 +98,10 @@ func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 		directory: dir,
 	}
 
-	G2RCallImpl{}.generate_project(&req)
+	result := G2RCallImpl{}.generate_project(&req)
+	if result.error != "" {
+		return nil, nil, fmt.Errorf("error generating rust project: %s", result.error)
+	}
 
 	return obj, protobufJSON, nil
 }
