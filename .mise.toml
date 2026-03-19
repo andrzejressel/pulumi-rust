@@ -1,6 +1,6 @@
 [tools]
 just = "1.46.0"
-pulumi = "3.225.1"
+pulumi = "3.226.0"
 "cargo-binstall" = "1.17.5"
 protoc = "34.0"
 protoc-gen-go = "1.36.11"
