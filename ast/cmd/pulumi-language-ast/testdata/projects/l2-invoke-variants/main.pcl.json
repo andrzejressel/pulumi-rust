@@ -1,0 +1,135 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "simple-invoke:index:StringResource",
+        "inputs":  [
+          {
+            "name":  "text",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "hello"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "outputInput",
+        "logicalName":  "outputInput",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "invoke",
+                "args":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "simple-invoke::myInvoke"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "value":  {
+                          "scopeTraversalExpression":  {
+                            "rootName":  "res",
+                            "traversal":  {
+                              "each":  [
+                                {
+                                  "traverseRoot":  {
+                                    "name":  "res"
+                                  }
+                                },
+                                {
+                                  "traverseAttr":  {
+                                    "name":  "text"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "unit",
+        "logicalName":  "unit",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "invoke",
+                "args":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "simple-invoke::unit"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {}
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple-invoke",
+      "version":  "10.0.0"
+    }
+  ]
+}

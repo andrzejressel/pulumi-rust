@@ -1,0 +1,248 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "explicitProv",
+        "logicalName":  "explicitProv",
+        "token":  "pulumi:providers:call",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "explicitProvValue"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "explicitRes",
+        "logicalName":  "explicitRes",
+        "token":  "call:index:Custom",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "explicitValue"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "options":  {
+          "provider":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "explicitProv",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "explicitProv"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "explicitProviderValue",
+        "logicalName":  "explicitProviderValue",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "call",
+                "args":  [
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "explicitRes",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "explicitRes"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "providerValue"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {}
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "explicitProvFromIdentity",
+        "logicalName":  "explicitProvFromIdentity",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "call",
+                "args":  [
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "explicitProv",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "explicitProv"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "identity"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {}
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "explicitProvFromPrefixed",
+        "logicalName":  "explicitProvFromPrefixed",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "call",
+                "args":  [
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "explicitProv",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "explicitProv"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "prefixed"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "prefix":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "call-prefix-"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "call",
+      "version":  "15.7.9"
+    }
+  ]
+}

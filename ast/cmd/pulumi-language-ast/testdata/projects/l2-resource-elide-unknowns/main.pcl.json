@@ -1,0 +1,415 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "prov",
+        "logicalName":  "prov",
+        "token":  "pulumi:providers:output",
+        "inputs":  [
+          {
+            "name":  "elideUnknowns",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "unknown",
+        "logicalName":  "unknown",
+        "token":  "output:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  1
+              }
+            }
+          }
+        ],
+        "options":  {
+          "provider":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "prov",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "prov"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "complex",
+        "logicalName":  "complex",
+        "token":  "output:index:ComplexResource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  1
+              }
+            }
+          }
+        ],
+        "options":  {
+          "provider":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "prov",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "prov"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "binaryOpExpression":  {
+                "operation":  "EQUAL",
+                "left":  {
+                  "scopeTraversalExpression":  {
+                    "rootName":  "unknown",
+                    "traversal":  {
+                      "each":  [
+                        {
+                          "traverseRoot":  {
+                            "name":  "unknown"
+                          }
+                        },
+                        {
+                          "traverseAttr":  {
+                            "name":  "output"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "right":  {
+                  "templateExpression":  {
+                    "parts":  [
+                      {
+                        "literalValueExpression":  {
+                          "stringValue":  "hello"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "resArray",
+        "logicalName":  "resArray",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "binaryOpExpression":  {
+                "operation":  "EQUAL",
+                "left":  {
+                  "scopeTraversalExpression":  {
+                    "rootName":  "complex",
+                    "traversal":  {
+                      "each":  [
+                        {
+                          "traverseRoot":  {
+                            "name":  "complex"
+                          }
+                        },
+                        {
+                          "traverseAttr":  {
+                            "name":  "outputArray"
+                          }
+                        },
+                        {
+                          "traverseIndex":  {
+                            "intIndex":  "0"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "right":  {
+                  "templateExpression":  {
+                    "parts":  [
+                      {
+                        "literalValueExpression":  {
+                          "stringValue":  "hello"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "resMap",
+        "logicalName":  "resMap",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "binaryOpExpression":  {
+                "operation":  "EQUAL",
+                "left":  {
+                  "scopeTraversalExpression":  {
+                    "rootName":  "complex",
+                    "traversal":  {
+                      "each":  [
+                        {
+                          "traverseRoot":  {
+                            "name":  "complex"
+                          }
+                        },
+                        {
+                          "traverseAttr":  {
+                            "name":  "outputMap"
+                          }
+                        },
+                        {
+                          "traverseIndex":  {
+                            "stringIndex":  "x"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "right":  {
+                  "templateExpression":  {
+                    "parts":  [
+                      {
+                        "literalValueExpression":  {
+                          "stringValue":  "hello"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "resObject",
+        "logicalName":  "resObject",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "binaryOpExpression":  {
+                "operation":  "EQUAL",
+                "left":  {
+                  "scopeTraversalExpression":  {
+                    "rootName":  "complex",
+                    "traversal":  {
+                      "each":  [
+                        {
+                          "traverseRoot":  {
+                            "name":  "complex"
+                          }
+                        },
+                        {
+                          "traverseAttr":  {
+                            "name":  "outputObject"
+                          }
+                        },
+                        {
+                          "traverseAttr":  {
+                            "name":  "output"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "right":  {
+                  "templateExpression":  {
+                    "parts":  [
+                      {
+                        "literalValueExpression":  {
+                          "stringValue":  "hello"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "out",
+        "logicalName":  "out",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "unknown",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "unknown"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "output"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "outArray",
+        "logicalName":  "outArray",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "complex",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "complex"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "outputArray"
+                  }
+                },
+                {
+                  "traverseIndex":  {
+                    "intIndex":  "0"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "outMap",
+        "logicalName":  "outMap",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "complex",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "complex"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "outputMap"
+                  }
+                },
+                {
+                  "traverseIndex":  {
+                    "stringIndex":  "x"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "outObject",
+        "logicalName":  "outObject",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "complex",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "complex"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "outputObject"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "output"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "output",
+      "version":  "23.0.0"
+    },
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    }
+  ]
+}

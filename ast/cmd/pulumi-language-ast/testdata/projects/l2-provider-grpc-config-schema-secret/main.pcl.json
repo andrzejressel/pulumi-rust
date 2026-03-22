@@ -1,0 +1,162 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "config_grpc_provider",
+        "logicalName":  "config_grpc_provider",
+        "token":  "pulumi:providers:config-grpc",
+        "inputs":  [
+          {
+            "name":  "secretString1",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "SECRET"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name":  "secretInt1",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  16
+              }
+            }
+          },
+          {
+            "name":  "secretNum1",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  123456.789
+              }
+            }
+          },
+          {
+            "name":  "secretBool1",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          },
+          {
+            "name":  "listSecretString1",
+            "value":  {
+              "tupleConsExpression":  {
+                "items":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "SECRET"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "SECRET2"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name":  "mapSecretString1",
+            "value":  {
+              "objectConsExpression":  {
+                "properties":  {
+                  "key1":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "SECRET"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "key2":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "SECRET2"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name":  "objSecretString1",
+            "value":  {
+              "objectConsExpression":  {
+                "properties":  {
+                  "secretX":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "SECRET"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "config",
+        "logicalName":  "config",
+        "token":  "config-grpc:index:ConfigFetcher",
+        "options":  {
+          "provider":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "config_grpc_provider",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "config_grpc_provider"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "config-grpc",
+      "version":  "1.0.0"
+    }
+  ]
+}

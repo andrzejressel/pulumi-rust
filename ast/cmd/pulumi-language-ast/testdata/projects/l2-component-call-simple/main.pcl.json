@@ -1,0 +1,155 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "component1",
+        "logicalName":  "component1",
+        "token":  "component:index:ComponentCallable",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "bar"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "from_identity",
+        "logicalName":  "from_identity",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "call",
+                "args":  [
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "component1",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "component1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "identity"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {}
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "from_prefixed",
+        "logicalName":  "from_prefixed",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "call",
+                "args":  [
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "component1",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "component1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "prefixed"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "prefix":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "foo-"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "component",
+      "version":  "13.3.7"
+    }
+  ]
+}

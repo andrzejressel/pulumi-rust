@@ -1,0 +1,259 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "ref-ref:index:Resource",
+        "inputs":  [
+          {
+            "name":  "data",
+            "value":  {
+              "objectConsExpression":  {
+                "properties":  {
+                  "boolArray":  {
+                    "tupleConsExpression":  {
+                      "items":  [
+                        {
+                          "literalValueExpression":  {
+                            "boolValue":  true
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "boolean":  {
+                    "literalValueExpression":  {
+                      "boolValue":  true
+                    }
+                  },
+                  "float":  {
+                    "literalValueExpression":  {
+                      "numberValue":  4.5
+                    }
+                  },
+                  "innerData":  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "boolArray":  {
+                          "tupleConsExpression":  {
+                            "items":  [
+                              {
+                                "literalValueExpression":  {
+                                  "boolValue":  false
+                                }
+                              },
+                              {
+                                "literalValueExpression":  {
+                                  "boolValue":  true
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "boolean":  {
+                          "literalValueExpression":  {
+                            "boolValue":  false
+                          }
+                        },
+                        "float":  {
+                          "literalValueExpression":  {
+                            "numberValue":  2.17
+                          }
+                        },
+                        "integer":  {
+                          "literalValueExpression":  {
+                            "numberValue":  -12
+                          }
+                        },
+                        "string":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "Goodbye"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "stringMap":  {
+                          "objectConsExpression":  {}
+                        }
+                      }
+                    }
+                  },
+                  "integer":  {
+                    "literalValueExpression":  {
+                      "numberValue":  1024
+                    }
+                  },
+                  "string":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "Hello"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "stringMap":  {
+                    "objectConsExpression":  {}
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "bool",
+        "logicalName":  "bool",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "res",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "res"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "data"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "boolean"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "array",
+        "logicalName":  "array",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "res",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "res"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "data"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "boolArray"
+                  }
+                },
+                {
+                  "traverseIndex":  {
+                    "intIndex":  "0"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "map",
+        "logicalName":  "map",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "res",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "res"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "data"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "stringMap"
+                  }
+                },
+                {
+                  "traverseIndex":  {
+                    "stringIndex":  "x"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "nested",
+        "logicalName":  "nested",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "res",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "res"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "data"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "innerData"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "stringMap"
+                  }
+                },
+                {
+                  "traverseIndex":  {
+                    "stringIndex":  "three"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "ref-ref",
+      "version":  "12.0.0"
+    }
+  ]
+}

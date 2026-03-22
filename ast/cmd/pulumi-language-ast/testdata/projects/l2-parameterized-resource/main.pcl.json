@@ -1,0 +1,74 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "example",
+        "logicalName":  "example",
+        "token":  "subpackage:index:HelloWorld"
+      }
+    },
+    {
+      "resource":  {
+        "name":  "exampleComponent",
+        "logicalName":  "exampleComponent",
+        "token":  "subpackage:index:HelloWorldComponent"
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "parameterValue",
+        "logicalName":  "parameterValue",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "example",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "example"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "parameterValue"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "parameterValueFromComponent",
+        "logicalName":  "parameterValueFromComponent",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "exampleComponent",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "exampleComponent"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "parameterValue"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "subpackage",
+      "version":  "2.0.0"
+    }
+  ]
+}

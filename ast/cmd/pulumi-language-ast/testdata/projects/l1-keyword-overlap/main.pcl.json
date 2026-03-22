@@ -1,0 +1,306 @@
+{
+  "nodes":  [
+    {
+      "localVariable":  {
+        "name":  "class",
+        "logicalName":  "class",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "class_output_string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "export",
+        "logicalName":  "export",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "export_output_string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "import",
+        "logicalName":  "import",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "import_output_string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "mod",
+        "logicalName":  "mod",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "mod_output_string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "object",
+        "logicalName":  "object",
+        "value":  {
+          "objectConsExpression":  {
+            "properties":  {
+              "object":  {
+                "templateExpression":  {
+                  "parts":  [
+                    {
+                      "literalValueExpression":  {
+                        "stringValue":  "object_output_string"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "self",
+        "logicalName":  "self",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "self_output_string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "this",
+        "logicalName":  "this",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "this_output_string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "if",
+        "logicalName":  "if",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "if_output_string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "class",
+        "logicalName":  "class",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "class",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "class"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "export",
+        "logicalName":  "export",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "export",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "export"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "import",
+        "logicalName":  "import",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "import",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "import"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "mod",
+        "logicalName":  "mod",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "mod",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "mod"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "object",
+        "logicalName":  "object",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "object",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "object"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "self",
+        "logicalName":  "self",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "self",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "self"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "this",
+        "logicalName":  "this",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "this",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "this"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "if",
+        "logicalName":  "if",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "if",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "if"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

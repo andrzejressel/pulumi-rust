@@ -1,0 +1,168 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "first",
+        "logicalName":  "first",
+        "token":  "snake_names:cool_module:some_resource",
+        "inputs":  [
+          {
+            "name":  "the_input",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          },
+          {
+            "name":  "nested",
+            "value":  {
+              "objectConsExpression":  {
+                "properties":  {
+                  "nested_value":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "nested"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "third",
+        "logicalName":  "third",
+        "token":  "snake_names:cool_module:another_resource",
+        "inputs":  [
+          {
+            "name":  "the_input",
+            "value":  {
+              "relativeTraversalExpression":  {
+                "source":  {
+                  "functionCallExpression":  {
+                    "name":  "invoke",
+                    "args":  [
+                      {
+                        "templateExpression":  {
+                          "parts":  [
+                            {
+                              "literalValueExpression":  {
+                                "stringValue":  "snake_names:cool_module:some_data"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "objectConsExpression":  {
+                          "properties":  {
+                            "nested":  {
+                              "tupleConsExpression":  {
+                                "items":  [
+                                  {
+                                    "objectConsExpression":  {
+                                      "properties":  {
+                                        "value":  {
+                                          "templateExpression":  {
+                                            "parts":  [
+                                              {
+                                                "literalValueExpression":  {
+                                                  "stringValue":  "fuzz"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            "the_input":  {
+                              "scopeTraversalExpression":  {
+                                "rootName":  "first",
+                                "traversal":  {
+                                  "each":  [
+                                    {
+                                      "traverseRoot":  {
+                                        "name":  "first"
+                                      }
+                                    },
+                                    {
+                                      "traverseAttr":  {
+                                        "name":  "the_output"
+                                      }
+                                    },
+                                    {
+                                      "traverseIndex":  {
+                                        "stringIndex":  "someKey"
+                                      }
+                                    },
+                                    {
+                                      "traverseIndex":  {
+                                        "intIndex":  "0"
+                                      }
+                                    },
+                                    {
+                                      "traverseAttr":  {
+                                        "name":  "nested_output"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "traversal":  {
+                  "each":  [
+                    {
+                      "traverseAttr":  {
+                        "name":  "nested_output"
+                      }
+                    },
+                    {
+                      "traverseIndex":  {
+                        "intIndex":  "0"
+                      }
+                    },
+                    {
+                      "traverseIndex":  {
+                        "stringIndex":  "key"
+                      }
+                    },
+                    {
+                      "traverseAttr":  {
+                        "name":  "value"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "snake_names",
+      "version":  "33.0.0"
+    }
+  ]
+}

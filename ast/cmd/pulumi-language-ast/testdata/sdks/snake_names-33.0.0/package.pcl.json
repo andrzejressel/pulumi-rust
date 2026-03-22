@@ -1,0 +1,214 @@
+{
+  "name":  "snake_names",
+  "version":  "33.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "namespace":  [
+          "cool_module"
+        ],
+        "name":  "another_resource",
+        "raw":  "snake_names:cool_module:another_resource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "the_input",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "the_input",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "namespace":  [
+          "cool_module"
+        ],
+        "name":  "some_resource",
+        "raw":  "snake_names:cool_module:some_resource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "nested",
+          "type":  {
+            "refType":  {
+              "typeRef":  {
+                "namespace":  [
+                  "cool_module"
+                ],
+                "name":  "nested_input",
+                "raw":  "snake_names:cool_module:nested_input"
+              }
+            }
+          }
+        },
+        {
+          "name":  "the_input",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "the_output",
+          "type":  {
+            "mapType":  {
+              "arrayType":  {
+                "refType":  {
+                  "typeRef":  {
+                    "namespace":  [
+                      "cool_module"
+                    ],
+                    "name":  "output_item",
+                    "raw":  "snake_names:cool_module:output_item"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "functions":  [
+    {
+      "elementId":  {
+        "namespace":  [
+          "cool_module"
+        ],
+        "name":  "some_data",
+        "raw":  "snake_names:cool_module:some_data"
+      },
+      "inputProperties":  [
+        {
+          "name":  "nested",
+          "type":  {
+            "arrayType":  {
+              "refType":  {
+                "typeRef":  {
+                  "namespace":  [
+                    "cool_module"
+                  ],
+                  "name":  "entry",
+                  "raw":  "snake_names:cool_module:entry"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name":  "the_input",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "nested_output",
+          "type":  {
+            "arrayType":  {
+              "mapType":  {
+                "refType":  {
+                  "typeRef":  {
+                    "namespace":  [
+                      "cool_module"
+                    ],
+                    "name":  "entry",
+                    "raw":  "snake_names:cool_module:entry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "namespace":  [
+              "cool_module"
+            ],
+            "name":  "some_dataResult",
+            "raw":  "snake_names:cool_module:some_dataResult"
+          }
+        }
+      }
+    }
+  ],
+  "types":  [
+    {
+      "elementId":  {
+        "namespace":  [
+          "cool_module"
+        ],
+        "name":  "entry",
+        "raw":  "snake_names:cool_module:entry"
+      },
+      "globalTypeValue":  {
+        "object":  {
+          "properties":  [
+            {
+              "name":  "value",
+              "type":  {
+                "stringType":  {}
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "namespace":  [
+          "cool_module"
+        ],
+        "name":  "nested_input",
+        "raw":  "snake_names:cool_module:nested_input"
+      },
+      "globalTypeValue":  {
+        "object":  {
+          "properties":  [
+            {
+              "name":  "nested_value",
+              "type":  {
+                "stringType":  {}
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "namespace":  [
+          "cool_module"
+        ],
+        "name":  "output_item",
+        "raw":  "snake_names:cool_module:output_item"
+      },
+      "globalTypeValue":  {
+        "object":  {
+          "properties":  [
+            {
+              "name":  "nested_output",
+              "type":  {
+                "stringType":  {}
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "provider":  {}
+}

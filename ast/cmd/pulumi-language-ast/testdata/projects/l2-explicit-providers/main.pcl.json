@@ -1,0 +1,65 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "explicit",
+        "logicalName":  "explicit",
+        "token":  "pulumi:providers:component"
+      }
+    },
+    {
+      "resource":  {
+        "name":  "list",
+        "logicalName":  "list",
+        "token":  "component:index:ComponentCallable",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "value"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "options":  {}
+      }
+    },
+    {
+      "resource":  {
+        "name":  "map",
+        "logicalName":  "map",
+        "token":  "component:index:ComponentCallable",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "value"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "options":  {}
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "component",
+      "version":  "13.3.7"
+    }
+  ]
+}

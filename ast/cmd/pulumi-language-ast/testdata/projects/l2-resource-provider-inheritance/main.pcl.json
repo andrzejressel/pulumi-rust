@@ -1,0 +1,254 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "provider",
+        "logicalName":  "provider",
+        "token":  "pulumi:providers:simple"
+      }
+    },
+    {
+      "resource":  {
+        "name":  "parent1",
+        "logicalName":  "parent1",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "provider":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "provider",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "provider"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "child1",
+        "logicalName":  "child1",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "parent":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "parent1",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "parent1"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "parent2",
+        "logicalName":  "parent2",
+        "token":  "primitive:index:Resource",
+        "inputs":  [
+          {
+            "name":  "boolean",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  false
+              }
+            }
+          },
+          {
+            "name":  "float",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  0
+              }
+            }
+          },
+          {
+            "name":  "integer",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  0
+              }
+            }
+          },
+          {
+            "name":  "string",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  ""
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name":  "numberArray",
+            "value":  {
+              "tupleConsExpression":  {}
+            }
+          },
+          {
+            "name":  "booleanMap",
+            "value":  {
+              "objectConsExpression":  {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "child2",
+        "logicalName":  "child2",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "parent":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "parent2",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "parent2"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "child3",
+        "logicalName":  "child3",
+        "token":  "primitive:index:Resource",
+        "inputs":  [
+          {
+            "name":  "boolean",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  false
+              }
+            }
+          },
+          {
+            "name":  "float",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  0
+              }
+            }
+          },
+          {
+            "name":  "integer",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  0
+              }
+            }
+          },
+          {
+            "name":  "string",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  ""
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name":  "numberArray",
+            "value":  {
+              "tupleConsExpression":  {}
+            }
+          },
+          {
+            "name":  "booleanMap",
+            "value":  {
+              "objectConsExpression":  {}
+            }
+          }
+        ],
+        "options":  {
+          "parent":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "parent1",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "parent1"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "primitive",
+      "version":  "7.0.0"
+    },
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name":  "namespaced",
+  "version":  "16.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "Resource",
+        "raw":  "namespaced:index:Resource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "resourceRef",
+          "type":  {
+            "optionalType":  {
+              "refType":  {
+                "typeRef":  {
+                  "name":  "Custom",
+                  "raw":  "component:index:Custom"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "resourceRef",
+          "type":  {
+            "optionalType":  {
+              "refType":  {
+                "typeRef":  {
+                  "name":  "Custom",
+                  "raw":  "component:index:Custom"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider":  {}
+}

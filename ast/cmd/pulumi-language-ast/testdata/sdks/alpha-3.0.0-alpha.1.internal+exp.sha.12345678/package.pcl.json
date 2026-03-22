@@ -1,0 +1,29 @@
+{
+  "name":  "alpha",
+  "version":  "3.0.0-alpha.1.internal+exp.sha.12345678",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "Resource",
+        "raw":  "alpha:index:Resource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider":  {}
+}

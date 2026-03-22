@@ -1,0 +1,78 @@
+{
+  "name":  "byepackage",
+  "version":  "2.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "GoodbyeWorld",
+        "raw":  "byepackage:index:GoodbyeWorld"
+      },
+      "outputProperties":  [
+        {
+          "name":  "parameterValue",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "name":  "GoodbyeWorldComponent",
+        "raw":  "byepackage:index:GoodbyeWorldComponent"
+      },
+      "outputProperties":  [
+        {
+          "name":  "parameterValue",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions":  [
+    {
+      "elementId":  {
+        "name":  "doGoodbyeWorld",
+        "raw":  "byepackage:index:doGoodbyeWorld"
+      },
+      "inputProperties":  [
+        {
+          "name":  "input",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "output",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "doGoodbyeWorldResult",
+            "raw":  "byepackage:index:doGoodbyeWorldResult"
+          }
+        }
+      }
+    }
+  ],
+  "provider":  {
+    "inputProperties":  [
+      {
+        "name":  "text",
+        "type":  {
+          "optionalType":  {
+            "stringType":  {}
+          }
+        }
+      }
+    ]
+  }
+}

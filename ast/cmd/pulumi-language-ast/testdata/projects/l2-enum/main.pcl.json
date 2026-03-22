@@ -1,0 +1,103 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "sink1",
+        "logicalName":  "sink1",
+        "token":  "enum:index:Res",
+        "inputs":  [
+          {
+            "name":  "intEnum",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  1
+              }
+            }
+          },
+          {
+            "name":  "stringEnum",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "two"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "sink2",
+        "logicalName":  "sink2",
+        "token":  "enum:mod:Res",
+        "inputs":  [
+          {
+            "name":  "intEnum",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  1
+              }
+            }
+          },
+          {
+            "name":  "stringEnum",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "two"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "sink3",
+        "logicalName":  "sink3",
+        "token":  "enum:mod/nested:Res",
+        "inputs":  [
+          {
+            "name":  "intEnum",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  1
+              }
+            }
+          },
+          {
+            "name":  "stringEnum",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "two"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "enum",
+      "version":  "30.0.0"
+    }
+  ]
+}

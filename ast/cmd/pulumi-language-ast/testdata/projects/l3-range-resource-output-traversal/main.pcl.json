@@ -1,0 +1,204 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "container",
+        "logicalName":  "container",
+        "token":  "nestedobject:index:Container",
+        "inputs":  [
+          {
+            "name":  "inputs",
+            "value":  {
+              "tupleConsExpression":  {
+                "items":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "alpha"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "bravo"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "mapContainer",
+        "logicalName":  "mapContainer",
+        "token":  "nestedobject:index:MapContainer",
+        "inputs":  [
+          {
+            "name":  "tags",
+            "value":  {
+              "objectConsExpression":  {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "listOutput",
+        "logicalName":  "listOutput",
+        "token":  "nestedobject:index:Target",
+        "inputs":  [
+          {
+            "name":  "name",
+            "value":  {
+              "scopeTraversalExpression":  {
+                "rootName":  "range",
+                "traversal":  {
+                  "each":  [
+                    {
+                      "traverseRoot":  {
+                        "name":  "range"
+                      }
+                    },
+                    {
+                      "traverseAttr":  {
+                        "name":  "value"
+                      }
+                    },
+                    {
+                      "traverseAttr":  {
+                        "name":  "value"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "options":  {
+          "range":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "container",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "container"
+                    }
+                  },
+                  {
+                    "traverseAttr":  {
+                      "name":  "details"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "mapOutput",
+        "logicalName":  "mapOutput",
+        "token":  "nestedobject:index:Target",
+        "inputs":  [
+          {
+            "name":  "name",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "range",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "range"
+                            }
+                          },
+                          {
+                            "traverseAttr":  {
+                              "name":  "key"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "=>"
+                    }
+                  },
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "range",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "range"
+                            }
+                          },
+                          {
+                            "traverseAttr":  {
+                              "name":  "value"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "options":  {
+          "range":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "mapContainer",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "mapContainer"
+                    }
+                  },
+                  {
+                    "traverseAttr":  {
+                      "name":  "tags"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "nestedobject",
+      "version":  "1.42.0"
+    }
+  ]
+}

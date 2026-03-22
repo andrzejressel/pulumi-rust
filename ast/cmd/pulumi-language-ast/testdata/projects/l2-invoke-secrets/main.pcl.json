@@ -1,0 +1,229 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "nonSecret",
+        "logicalName":  "nonSecret",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "invoke",
+                "args":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "simple-invoke::secretInvoke"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "secretResponse":  {
+                          "literalValueExpression":  {
+                            "boolValue":  false
+                          }
+                        },
+                        "value":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "hello"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "response"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "firstSecret",
+        "logicalName":  "firstSecret",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "invoke",
+                "args":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "simple-invoke::secretInvoke"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "secretResponse":  {
+                          "scopeTraversalExpression":  {
+                            "rootName":  "res",
+                            "traversal":  {
+                              "each":  [
+                                {
+                                  "traverseRoot":  {
+                                    "name":  "res"
+                                  }
+                                },
+                                {
+                                  "traverseAttr":  {
+                                    "name":  "value"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "value":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "hello"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "response"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "secondSecret",
+        "logicalName":  "secondSecret",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "invoke",
+                "args":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "simple-invoke::secretInvoke"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "secretResponse":  {
+                          "literalValueExpression":  {
+                            "boolValue":  false
+                          }
+                        },
+                        "value":  {
+                          "functionCallExpression":  {
+                            "name":  "secret",
+                            "args":  [
+                              {
+                                "templateExpression":  {
+                                  "parts":  [
+                                    {
+                                      "literalValueExpression":  {
+                                        "stringValue":  "goodbye"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "response"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    },
+    {
+      "name":  "simple-invoke",
+      "version":  "10.0.0"
+    }
+  ]
+}

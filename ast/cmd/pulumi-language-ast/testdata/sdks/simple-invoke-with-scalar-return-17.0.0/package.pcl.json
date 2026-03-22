@@ -1,0 +1,48 @@
+{
+  "name":  "simple-invoke-with-scalar-return",
+  "version":  "17.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "StringResource",
+        "raw":  "simple-invoke-with-scalar-return:index:StringResource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions":  [
+    {
+      "elementId":  {
+        "name":  "myInvokeScalar",
+        "raw":  "simple-invoke-with-scalar-return:index:myInvokeScalar"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "boolType":  {}
+      }
+    }
+  ],
+  "provider":  {}
+}

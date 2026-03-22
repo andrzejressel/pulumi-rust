@@ -1,0 +1,125 @@
+{
+  "name":  "output-only-invoke",
+  "version":  "24.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "StringResource",
+        "raw":  "output-only-invoke:index:StringResource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions":  [
+    {
+      "elementId":  {
+        "name":  "myInvoke",
+        "raw":  "output-only-invoke:index:myInvoke"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "result",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "myInvokeResult",
+            "raw":  "output-only-invoke:index:myInvokeResult"
+          }
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "name":  "secretInvoke",
+        "raw":  "output-only-invoke:index:secretInvoke"
+      },
+      "inputProperties":  [
+        {
+          "name":  "secretResponse",
+          "type":  {
+            "boolType":  {}
+          }
+        },
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "response",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "secret",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "secretInvokeResult",
+            "raw":  "output-only-invoke:index:secretInvokeResult"
+          }
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "name":  "unit",
+        "raw":  "output-only-invoke:index:unit"
+      },
+      "outputProperties":  [
+        {
+          "name":  "result",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "unitResult",
+            "raw":  "output-only-invoke:index:unitResult"
+          }
+        }
+      }
+    }
+  ],
+  "provider":  {}
+}

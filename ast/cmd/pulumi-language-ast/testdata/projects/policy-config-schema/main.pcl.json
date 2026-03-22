@@ -1,0 +1,44 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "resY",
+        "logicalName":  "resY",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "resN",
+        "logicalName":  "resN",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  false
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    }
+  ]
+}

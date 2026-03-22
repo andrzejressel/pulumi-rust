@@ -1,0 +1,84 @@
+{
+  "nodes":  [
+    {
+      "configVariable":  {
+        "name":  "input",
+        "logicalName":  "input"
+      }
+    },
+    {
+      "localVariable":  {
+        "name":  "bytes",
+        "logicalName":  "bytes",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "fromBase64",
+            "args":  [
+              {
+                "scopeTraversalExpression":  {
+                  "rootName":  "input",
+                  "traversal":  {
+                    "each":  [
+                      {
+                        "traverseRoot":  {
+                          "name":  "input"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "data",
+        "logicalName":  "data",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "bytes",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "bytes"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "roundtrip",
+        "logicalName":  "roundtrip",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "toBase64",
+            "args":  [
+              {
+                "scopeTraversalExpression":  {
+                  "rootName":  "bytes",
+                  "traversal":  {
+                    "each":  [
+                      {
+                        "traverseRoot":  {
+                          "name":  "bytes"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

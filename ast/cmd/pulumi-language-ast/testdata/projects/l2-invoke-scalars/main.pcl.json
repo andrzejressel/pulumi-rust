@@ -1,0 +1,174 @@
+{
+  "nodes":  [
+    {
+      "outputVariable":  {
+        "name":  "secret",
+        "logicalName":  "secret",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "invoke",
+            "args":  [
+              {
+                "templateExpression":  {
+                  "parts":  [
+                    {
+                      "literalValueExpression":  {
+                        "stringValue":  "scalar-returns::invokeSecret"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "objectConsExpression":  {
+                  "properties":  {
+                    "value":  {
+                      "templateExpression":  {
+                        "parts":  [
+                          {
+                            "literalValueExpression":  {
+                              "stringValue":  "goodbye"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "array",
+        "logicalName":  "array",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "invoke",
+            "args":  [
+              {
+                "templateExpression":  {
+                  "parts":  [
+                    {
+                      "literalValueExpression":  {
+                        "stringValue":  "scalar-returns::invokeArray"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "objectConsExpression":  {
+                  "properties":  {
+                    "value":  {
+                      "templateExpression":  {
+                        "parts":  [
+                          {
+                            "literalValueExpression":  {
+                              "stringValue":  "the word"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "map",
+        "logicalName":  "map",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "invoke",
+            "args":  [
+              {
+                "templateExpression":  {
+                  "parts":  [
+                    {
+                      "literalValueExpression":  {
+                        "stringValue":  "scalar-returns::invokeMap"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "objectConsExpression":  {
+                  "properties":  {
+                    "value":  {
+                      "templateExpression":  {
+                        "parts":  [
+                          {
+                            "literalValueExpression":  {
+                              "stringValue":  "hello"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "secretMap",
+        "logicalName":  "secretMap",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "invoke",
+            "args":  [
+              {
+                "templateExpression":  {
+                  "parts":  [
+                    {
+                      "literalValueExpression":  {
+                        "stringValue":  "scalar-returns::invokeMap"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "objectConsExpression":  {
+                  "properties":  {
+                    "value":  {
+                      "templateExpression":  {
+                        "parts":  [
+                          {
+                            "literalValueExpression":  {
+                              "stringValue":  "secret"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "scalar-returns",
+      "version":  "21.0.0"
+    }
+  ]
+}

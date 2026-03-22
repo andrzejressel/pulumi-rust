@@ -1,0 +1,81 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res1",
+        "logicalName":  "res1",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "name",
+        "logicalName":  "name",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "pulumiResourceName",
+            "args":  [
+              {
+                "scopeTraversalExpression":  {
+                  "rootName":  "res1",
+                  "traversal":  {
+                    "each":  [
+                      {
+                        "traverseRoot":  {
+                          "name":  "res1"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "type",
+        "logicalName":  "type",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "pulumiResourceType",
+            "args":  [
+              {
+                "scopeTraversalExpression":  {
+                  "rootName":  "res1",
+                  "traversal":  {
+                    "each":  [
+                      {
+                        "traverseRoot":  {
+                          "name":  "res1"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    }
+  ]
+}

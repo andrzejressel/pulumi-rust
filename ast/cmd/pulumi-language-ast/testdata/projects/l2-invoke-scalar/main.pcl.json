@@ -1,0 +1,51 @@
+{
+  "nodes":  [
+    {
+      "outputVariable":  {
+        "name":  "scalar",
+        "logicalName":  "scalar",
+        "value":  {
+          "functionCallExpression":  {
+            "name":  "invoke",
+            "args":  [
+              {
+                "templateExpression":  {
+                  "parts":  [
+                    {
+                      "literalValueExpression":  {
+                        "stringValue":  "simple-invoke-with-scalar-return::myInvokeScalar"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "objectConsExpression":  {
+                  "properties":  {
+                    "value":  {
+                      "templateExpression":  {
+                        "parts":  [
+                          {
+                            "literalValueExpression":  {
+                              "stringValue":  "goodbye"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple-invoke-with-scalar-return",
+      "version":  "17.0.0"
+    }
+  ]
+}

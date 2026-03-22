@@ -1,0 +1,64 @@
+{
+  "nodes":  [
+    {
+      "outputVariable":  {
+        "name":  "parameterValue",
+        "logicalName":  "parameterValue",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "invoke",
+                "args":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "subpackage::doHelloWorld"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "input":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "goodbye"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "output"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "subpackage",
+      "version":  "2.0.0"
+    }
+  ]
+}

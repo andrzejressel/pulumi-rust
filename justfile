@@ -15,20 +15,23 @@ check:
 fmt:
     cargo +{{nightly}} fmt
     cargo clippy --tests --fix --allow-dirty --allow-staged
-    cd pkg && go fmt ./...
+    cd ast && just fmt
+    cd pkg && just fmt
 
 gen:
+    cd ast && just gen
     cargo build
     rust2go-cli --src src/golang.rs --dst pkg/codegen/rust/api.go --package-name "rust" --without-main
 
 test:
     cargo test
-    cd pkg && go test -v -count=1 ./...
+    cd ast && just test
+    cd pkg && just test
 
 regenerate-test $PULUMI_ACCEPT="1":
-    cd pkg && go test -v -count=1 ./...
+    cd ast && just regenerate-test PULUMI_ACCEPT={{PULUMI_ACCEPT}}
+    cd pkg && just regenerate-test PULUMI_ACCEPT={{PULUMI_ACCEPT}}
 
-# Generates files in `pkg/target` for easier introspection    
+# Generates files in `pkg/target` for easier introspection
 test-local $LOCAL_TEST="1":
     just test
-    
