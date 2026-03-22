@@ -1,0 +1,78 @@
+{
+  "name":  "hipackage",
+  "version":  "2.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "HelloWorld",
+        "raw":  "hipackage:index:HelloWorld"
+      },
+      "outputProperties":  [
+        {
+          "name":  "parameterValue",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "name":  "HelloWorldComponent",
+        "raw":  "hipackage:index:HelloWorldComponent"
+      },
+      "outputProperties":  [
+        {
+          "name":  "parameterValue",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions":  [
+    {
+      "elementId":  {
+        "name":  "doHelloWorld",
+        "raw":  "hipackage:index:doHelloWorld"
+      },
+      "inputProperties":  [
+        {
+          "name":  "input",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "output",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "doHelloWorldResult",
+            "raw":  "hipackage:index:doHelloWorldResult"
+          }
+        }
+      }
+    }
+  ],
+  "provider":  {
+    "inputProperties":  [
+      {
+        "name":  "text",
+        "type":  {
+          "optionalType":  {
+            "stringType":  {}
+          }
+        }
+      }
+    ]
+  }
+}

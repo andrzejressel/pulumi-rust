@@ -2,8 +2,6 @@ module github.com/andrzejressel/pulumi-rust
 
 go 1.26.1
 
-replace github.com/andrzejressel/pulumi-ast => ../pulumi-ast/pkg
-
 require (
 	github.com/andrzejressel/pulumi-ast v0.0.0-20260314231716-7b7fb80bc44c
 	github.com/hashicorp/hcl/v2 v2.24.0

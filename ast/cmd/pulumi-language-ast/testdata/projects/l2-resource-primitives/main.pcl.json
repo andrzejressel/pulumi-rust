@@ -1,0 +1,87 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "primitive:index:Resource",
+        "inputs":  [
+          {
+            "name":  "boolean",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          },
+          {
+            "name":  "float",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  3.14
+              }
+            }
+          },
+          {
+            "name":  "integer",
+            "value":  {
+              "literalValueExpression":  {
+                "numberValue":  42
+              }
+            }
+          },
+          {
+            "name":  "string",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "hello"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name":  "numberArray",
+            "value":  {
+              "tupleConsExpression":  {
+                "items":  [
+                  {
+                    "literalValueExpression":  {
+                      "numberValue":  -1
+                    }
+                  },
+                  {
+                    "literalValueExpression":  {
+                      "numberValue":  0
+                    }
+                  },
+                  {
+                    "literalValueExpression":  {
+                      "numberValue":  1
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name":  "booleanMap",
+            "value":  {
+              "objectConsExpression":  {}
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "primitive",
+      "version":  "7.0.0"
+    }
+  ]
+}

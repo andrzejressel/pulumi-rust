@@ -1,0 +1,104 @@
+{
+  "nodes":  [
+    {
+      "localVariable":  {
+        "name":  "localValue",
+        "logicalName":  "localValue",
+        "value":  {
+          "templateExpression":  {
+            "parts":  [
+              {
+                "literalValueExpression":  {
+                  "stringValue":  "hello"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "dynamic",
+        "logicalName":  "dynamic",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "invoke",
+                "args":  [
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "any-type-function::dynListToDyn"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "inputs":  {
+                          "tupleConsExpression":  {
+                            "items":  [
+                              {
+                                "templateExpression":  {
+                                  "parts":  [
+                                    {
+                                      "literalValueExpression":  {
+                                        "stringValue":  "hello"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "scopeTraversalExpression":  {
+                                  "rootName":  "localValue",
+                                  "traversal":  {
+                                    "each":  [
+                                      {
+                                        "traverseRoot":  {
+                                          "name":  "localValue"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              {
+                                "objectConsExpression":  {}
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "any-type-function",
+      "version":  "15.0.0"
+    }
+  ]
+}

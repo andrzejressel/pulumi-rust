@@ -1,0 +1,212 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "provider",
+        "logicalName":  "provider",
+        "token":  "pulumi:providers:simple"
+      }
+    },
+    {
+      "resource":  {
+        "name":  "parent1",
+        "logicalName":  "parent1",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "provider":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "provider",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "provider"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "child1",
+        "logicalName":  "child1",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "parent":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "parent1",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "parent1"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "orphan1",
+        "logicalName":  "orphan1",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "parent2",
+        "logicalName":  "parent2",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "protect":  {
+            "literalValueExpression":  {
+              "boolValue":  true
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "child2",
+        "logicalName":  "child2",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "parent":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "parent2",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "parent2"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "child3",
+        "logicalName":  "child3",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "protect":  {
+            "literalValueExpression":  {
+              "boolValue":  false
+            }
+          },
+          "parent":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "parent2",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "parent2"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource":  {
+        "name":  "orphan2",
+        "logicalName":  "orphan2",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    }
+  ]
+}

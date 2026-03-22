@@ -1,0 +1,111 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "ref-ref:index:Resource",
+        "inputs":  [
+          {
+            "name":  "data",
+            "value":  {
+              "objectConsExpression":  {
+                "properties":  {
+                  "boolArray":  {
+                    "tupleConsExpression":  {}
+                  },
+                  "boolean":  {
+                    "literalValueExpression":  {
+                      "boolValue":  true
+                    }
+                  },
+                  "float":  {
+                    "literalValueExpression":  {
+                      "numberValue":  4.5
+                    }
+                  },
+                  "innerData":  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "boolArray":  {
+                          "tupleConsExpression":  {
+                            "items":  [
+                              {
+                                "literalValueExpression":  {
+                                  "boolValue":  false
+                                }
+                              },
+                              {
+                                "literalValueExpression":  {
+                                  "boolValue":  true
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "boolean":  {
+                          "literalValueExpression":  {
+                            "boolValue":  false
+                          }
+                        },
+                        "float":  {
+                          "literalValueExpression":  {
+                            "numberValue":  2.17
+                          }
+                        },
+                        "integer":  {
+                          "literalValueExpression":  {
+                            "numberValue":  -12
+                          }
+                        },
+                        "string":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "Goodbye"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "stringMap":  {
+                          "objectConsExpression":  {}
+                        }
+                      }
+                    }
+                  },
+                  "integer":  {
+                    "literalValueExpression":  {
+                      "numberValue":  1024
+                    }
+                  },
+                  "string":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "Hello"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "stringMap":  {
+                    "objectConsExpression":  {}
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "ref-ref",
+      "version":  "12.0.0"
+    }
+  ]
+}

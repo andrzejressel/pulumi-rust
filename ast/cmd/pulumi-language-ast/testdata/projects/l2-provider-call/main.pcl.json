@@ -1,0 +1,87 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "defaultRes",
+        "logicalName":  "defaultRes",
+        "token":  "call:index:Custom",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "defaultValue"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "defaultProviderValue",
+        "logicalName":  "defaultProviderValue",
+        "value":  {
+          "relativeTraversalExpression":  {
+            "source":  {
+              "functionCallExpression":  {
+                "name":  "call",
+                "args":  [
+                  {
+                    "scopeTraversalExpression":  {
+                      "rootName":  "defaultRes",
+                      "traversal":  {
+                        "each":  [
+                          {
+                            "traverseRoot":  {
+                              "name":  "defaultRes"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "providerValue"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "objectConsExpression":  {}
+                  }
+                ]
+              }
+            },
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseAttr":  {
+                    "name":  "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "call",
+      "version":  "15.7.9"
+    }
+  ]
+}

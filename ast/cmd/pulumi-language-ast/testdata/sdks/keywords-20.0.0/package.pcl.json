@@ -1,0 +1,148 @@
+{
+  "name":  "keywords",
+  "version":  "20.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "Lambda",
+        "raw":  "keywords:index:Lambda"
+      },
+      "inputProperties":  [
+        {
+          "name":  "builtins",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "lambda",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "property",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "builtins",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "lambda",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "property",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "name":  "SomeResource",
+        "raw":  "keywords:index:SomeResource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "builtins",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "lambda",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "property",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "builtins",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "lambda",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "property",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "namespace":  [
+          "lambda"
+        ],
+        "name":  "SomeResource",
+        "raw":  "keywords:lambda:SomeResource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "builtins",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "lambda",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "property",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "builtins",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "lambda",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "property",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider":  {}
+}

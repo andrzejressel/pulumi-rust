@@ -1,0 +1,50 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "prov",
+        "logicalName":  "prov",
+        "token":  "pulumi:providers:simple"
+      }
+    },
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {
+          "provider":  {
+            "scopeTraversalExpression":  {
+              "rootName":  "prov",
+              "traversal":  {
+                "each":  [
+                  {
+                    "traverseRoot":  {
+                      "name":  "prov"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    }
+  ]
+}

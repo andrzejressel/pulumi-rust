@@ -1,0 +1,58 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "large:index:String",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "templateExpression":  {
+                "parts":  [
+                  {
+                    "literalValueExpression":  {
+                      "stringValue":  "hello world"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable":  {
+        "name":  "output",
+        "logicalName":  "output",
+        "value":  {
+          "scopeTraversalExpression":  {
+            "rootName":  "res",
+            "traversal":  {
+              "each":  [
+                {
+                  "traverseRoot":  {
+                    "name":  "res"
+                  }
+                },
+                {
+                  "traverseAttr":  {
+                    "name":  "value"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "large",
+      "version":  "4.3.2"
+    }
+  ]
+}

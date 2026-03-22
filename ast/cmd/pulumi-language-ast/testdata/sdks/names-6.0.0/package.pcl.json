@@ -1,0 +1,146 @@
+{
+  "name":  "names",
+  "version":  "6.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "ResArray",
+        "raw":  "names:index:ResArray"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "name":  "ResList",
+        "raw":  "names:index:ResList"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "name":  "ResMap",
+        "raw":  "names:index:ResMap"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "name":  "ResResource",
+        "raw":  "names:index:ResResource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "namespace":  [
+          "mod",
+          "nested"
+        ],
+        "name":  "Res",
+        "raw":  "names:mod/nested:Res"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId":  {
+        "namespace":  [
+          "mod"
+        ],
+        "name":  "Res",
+        "raw":  "names:mod:Res"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider":  {}
+}

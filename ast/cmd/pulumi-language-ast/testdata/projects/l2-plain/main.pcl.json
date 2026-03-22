@@ -1,0 +1,218 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "res",
+        "logicalName":  "res",
+        "token":  "plain:index:Resource",
+        "inputs":  [
+          {
+            "name":  "data",
+            "value":  {
+              "objectConsExpression":  {
+                "properties":  {
+                  "boolArray":  {
+                    "tupleConsExpression":  {
+                      "items":  [
+                        {
+                          "literalValueExpression":  {
+                            "boolValue":  true
+                          }
+                        },
+                        {
+                          "literalValueExpression":  {
+                            "boolValue":  false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "boolean":  {
+                    "literalValueExpression":  {
+                      "boolValue":  true
+                    }
+                  },
+                  "float":  {
+                    "literalValueExpression":  {
+                      "numberValue":  4.5
+                    }
+                  },
+                  "innerData":  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "boolArray":  {
+                          "tupleConsExpression":  {
+                            "items":  [
+                              {
+                                "literalValueExpression":  {
+                                  "boolValue":  false
+                                }
+                              },
+                              {
+                                "literalValueExpression":  {
+                                  "boolValue":  true
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "boolean":  {
+                          "literalValueExpression":  {
+                            "boolValue":  false
+                          }
+                        },
+                        "float":  {
+                          "literalValueExpression":  {
+                            "numberValue":  2.17
+                          }
+                        },
+                        "integer":  {
+                          "literalValueExpression":  {
+                            "numberValue":  -12
+                          }
+                        },
+                        "string":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  "Goodbye"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "stringMap":  {
+                          "objectConsExpression":  {}
+                        }
+                      }
+                    }
+                  },
+                  "integer":  {
+                    "literalValueExpression":  {
+                      "numberValue":  1024
+                    }
+                  },
+                  "string":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  "Hello"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "stringMap":  {
+                    "objectConsExpression":  {}
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":  {
+        "name":  "emptyListRes",
+        "logicalName":  "emptyListRes",
+        "token":  "plain:index:Resource",
+        "inputs":  [
+          {
+            "name":  "data",
+            "value":  {
+              "objectConsExpression":  {
+                "properties":  {
+                  "boolArray":  {
+                    "tupleConsExpression":  {}
+                  },
+                  "boolean":  {
+                    "literalValueExpression":  {
+                      "boolValue":  false
+                    }
+                  },
+                  "float":  {
+                    "literalValueExpression":  {
+                      "numberValue":  0
+                    }
+                  },
+                  "innerData":  {
+                    "objectConsExpression":  {
+                      "properties":  {
+                        "boolArray":  {
+                          "tupleConsExpression":  {}
+                        },
+                        "boolean":  {
+                          "literalValueExpression":  {
+                            "boolValue":  false
+                          }
+                        },
+                        "float":  {
+                          "literalValueExpression":  {
+                            "numberValue":  0
+                          }
+                        },
+                        "integer":  {
+                          "literalValueExpression":  {
+                            "numberValue":  0
+                          }
+                        },
+                        "string":  {
+                          "templateExpression":  {
+                            "parts":  [
+                              {
+                                "literalValueExpression":  {
+                                  "stringValue":  ""
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "stringMap":  {
+                          "objectConsExpression":  {}
+                        }
+                      }
+                    }
+                  },
+                  "integer":  {
+                    "literalValueExpression":  {
+                      "numberValue":  0
+                    }
+                  },
+                  "string":  {
+                    "templateExpression":  {
+                      "parts":  [
+                        {
+                          "literalValueExpression":  {
+                            "stringValue":  ""
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "stringMap":  {
+                    "objectConsExpression":  {}
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name":  "dataList",
+            "value":  {
+              "tupleConsExpression":  {}
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "plain",
+      "version":  "13.0.0"
+    }
+  ]
+}

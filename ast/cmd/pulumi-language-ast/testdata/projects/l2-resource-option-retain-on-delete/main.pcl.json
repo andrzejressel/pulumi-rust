@@ -1,0 +1,63 @@
+{
+  "nodes":  [
+    {
+      "resource":  {
+        "name":  "retainOnDelete",
+        "logicalName":  "retainOnDelete",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {}
+      }
+    },
+    {
+      "resource":  {
+        "name":  "notRetainOnDelete",
+        "logicalName":  "notRetainOnDelete",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ],
+        "options":  {}
+      }
+    },
+    {
+      "resource":  {
+        "name":  "defaulted",
+        "logicalName":  "defaulted",
+        "token":  "simple:index:Resource",
+        "inputs":  [
+          {
+            "name":  "value",
+            "value":  {
+              "literalValueExpression":  {
+                "boolValue":  true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins":  [
+    {
+      "name":  "simple",
+      "version":  "2.0.0"
+    }
+  ]
+}

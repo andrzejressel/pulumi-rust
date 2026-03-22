@@ -15,7 +15,7 @@ check:
 fmt:
     cargo +{{nightly}} fmt
     cargo clippy --tests --fix --allow-dirty --allow-staged
-    cd pkg && go fmt ./...
+    go fmt ./...
 
 gen:
     cargo build
@@ -23,10 +23,10 @@ gen:
 
 test:
     cargo test
-    cd pkg && go test -v -count=1 ./...
+    go test -v -count=1 ./...
 
 regenerate-test $PULUMI_ACCEPT="1":
-    cd pkg && go test -v -count=1 ./...
+    go test -v -count=1 ./...
 
 # Generates files in `pkg/target` for easier introspection    
 test-local $LOCAL_TEST="1":

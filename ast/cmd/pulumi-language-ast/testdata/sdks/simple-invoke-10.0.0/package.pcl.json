@@ -1,0 +1,125 @@
+{
+  "name":  "simple-invoke",
+  "version":  "10.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "StringResource",
+        "raw":  "simple-invoke:index:StringResource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions":  [
+    {
+      "elementId":  {
+        "name":  "myInvoke",
+        "raw":  "simple-invoke:index:myInvoke"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "result",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "myInvokeResult",
+            "raw":  "simple-invoke:index:myInvokeResult"
+          }
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "name":  "secretInvoke",
+        "raw":  "simple-invoke:index:secretInvoke"
+      },
+      "inputProperties":  [
+        {
+          "name":  "secretResponse",
+          "type":  {
+            "boolType":  {}
+          }
+        },
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "response",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "secret",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "secretInvokeResult",
+            "raw":  "simple-invoke:index:secretInvokeResult"
+          }
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "name":  "unit",
+        "raw":  "simple-invoke:index:unit"
+      },
+      "outputProperties":  [
+        {
+          "name":  "result",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "refType":  {
+          "typeRef":  {
+            "name":  "unitResult",
+            "raw":  "simple-invoke:index:unitResult"
+          }
+        }
+      }
+    }
+  ],
+  "provider":  {}
+}

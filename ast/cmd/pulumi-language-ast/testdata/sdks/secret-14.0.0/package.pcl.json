@@ -1,0 +1,111 @@
+{
+  "name":  "secret",
+  "version":  "14.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "Resource",
+        "raw":  "secret:index:Resource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "private",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "privateData",
+          "type":  {
+            "refType":  {
+              "typeRef":  {
+                "name":  "Data",
+                "raw":  "secret:index:Data"
+              }
+            }
+          }
+        },
+        {
+          "name":  "public",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "publicData",
+          "type":  {
+            "refType":  {
+              "typeRef":  {
+                "name":  "Data",
+                "raw":  "secret:index:Data"
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "private",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "privateData",
+          "type":  {
+            "refType":  {
+              "typeRef":  {
+                "name":  "Data",
+                "raw":  "secret:index:Data"
+              }
+            }
+          }
+        },
+        {
+          "name":  "public",
+          "type":  {
+            "stringType":  {}
+          }
+        },
+        {
+          "name":  "publicData",
+          "type":  {
+            "refType":  {
+              "typeRef":  {
+                "name":  "Data",
+                "raw":  "secret:index:Data"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "types":  [
+    {
+      "elementId":  {
+        "name":  "Data",
+        "raw":  "secret:index:Data"
+      },
+      "globalTypeValue":  {
+        "object":  {
+          "properties":  [
+            {
+              "name":  "private",
+              "type":  {
+                "stringType":  {}
+              }
+            },
+            {
+              "name":  "public",
+              "type":  {
+                "stringType":  {}
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "provider":  {}
+}

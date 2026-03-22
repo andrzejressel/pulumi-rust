@@ -1,0 +1,62 @@
+{
+  "name":  "scalar-returns",
+  "version":  "21.0.0",
+  "functions":  [
+    {
+      "elementId":  {
+        "name":  "invokeArray",
+        "raw":  "scalar-returns:index:invokeArray"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "arrayType":  {
+          "boolType":  {}
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "name":  "invokeMap",
+        "raw":  "scalar-returns:index:invokeMap"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "mapType":  {
+          "stringType":  {}
+        }
+      }
+    },
+    {
+      "elementId":  {
+        "name":  "invokeSecret",
+        "raw":  "scalar-returns:index:invokeSecret"
+      },
+      "inputProperties":  [
+        {
+          "name":  "value",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "returnType":  {
+        "numberType":  {}
+      }
+    }
+  ],
+  "provider":  {}
+}

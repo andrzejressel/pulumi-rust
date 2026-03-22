@@ -1,0 +1,69 @@
+{
+  "name":  "config",
+  "pluginDownloadUrl":  "http://example.com",
+  "version":  "9.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "name":  "Resource",
+        "raw":  "config:index:Resource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "text",
+          "type":  {
+            "stringType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider":  {
+    "inputProperties":  [
+      {
+        "name":  "name",
+        "type":  {
+          "stringType":  {}
+        }
+      },
+      {
+        "name":  "pluginDownloadURL",
+        "type":  {
+          "optionalType":  {
+            "stringType":  {}
+          }
+        }
+      }
+    ],
+    "outputProperties":  [
+      {
+        "name":  "name",
+        "type":  {
+          "stringType":  {}
+        }
+      },
+      {
+        "name":  "pluginDownloadURL",
+        "type":  {
+          "optionalType":  {
+            "stringType":  {}
+          }
+        }
+      },
+      {
+        "name":  "version",
+        "type":  {
+          "stringType":  {}
+        }
+      }
+    ]
+  }
+}

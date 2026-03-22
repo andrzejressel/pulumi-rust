@@ -1,0 +1,48 @@
+{
+  "name":  "camelNames",
+  "version":  "19.0.0",
+  "resources":  [
+    {
+      "elementId":  {
+        "namespace":  [
+          "CoolModule"
+        ],
+        "name":  "SomeResource",
+        "raw":  "camelNames:CoolModule:SomeResource"
+      },
+      "inputProperties":  [
+        {
+          "name":  "resourceName",
+          "type":  {
+            "optionalType":  {
+              "stringType":  {}
+            }
+          }
+        },
+        {
+          "name":  "theInput",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ],
+      "outputProperties":  [
+        {
+          "name":  "resourceName",
+          "type":  {
+            "optionalType":  {
+              "stringType":  {}
+            }
+          }
+        },
+        {
+          "name":  "theOutput",
+          "type":  {
+            "boolType":  {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider":  {}
+}
