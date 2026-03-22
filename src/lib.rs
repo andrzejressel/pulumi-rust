@@ -4,6 +4,8 @@ use crate::golang::{
 };
 use generator::generate_main;
 use prost::Message;
+use rootcause::Result;
+use rootcause::prelude::ResultExt;
 use std::fs;
 use std::fs::create_dir_all;
 use std::path::Path;
@@ -13,6 +15,35 @@ mod golang;
 mod package_model;
 mod pcl_model;
 mod proto;
+
+fn generate_project(req: GenerateProjectRequest) -> Result<()> {
+    let program = proto::proto::pcl::PclProtobufProgram::decode(&*req.protobuf)
+        .context("Cannot decode protobuf")?;
+    let model_program = pcl_model::map_program(program);
+    let main_rs = generate_main(&model_program).context("Failed to generate main.rs")?;
+    let cargo_rs = include_str!("./Cargo.toml.template");
+    let files = vec![
+        FileWithContent {
+            path: "src/main.rs".to_string(),
+            content: main_rs.into_bytes(),
+        },
+        FileWithContent {
+            path: "Cargo.toml".to_string(),
+            content: cargo_rs.as_bytes().to_vec(),
+        },
+    ];
+
+    let dir = Path::new(&req.directory);
+    for file in &files {
+        let path = dir.join(file.path.clone());
+        if let Some(parent) = path.parent() {
+            create_dir_all(parent).context("Failed to create parent directory")?;
+        }
+        fs::write(path, &file.content).context("Failed to write file")?
+    }
+
+    Ok(())
+}
 
 impl G2RCall for G2RCallImpl {
     fn generate_package(req: GeneratePackageRequest) -> GeneratePackageResult {
@@ -87,62 +118,20 @@ impl G2RCall for G2RCallImpl {
     }
 
     fn generate_project(req: GenerateProjectRequest) -> GenerateProjectResult {
-        let program = match proto::proto::pcl::PclProtobufProgram::decode(&*req.protobuf) {
-            Ok(program) => program,
-            Err(error) => {
-                return GenerateProjectResult {
-                    error: format!("invalid program bytes: {error:?}"),
-                };
-            }
-        };
-        let model_program = pcl_model::map_program(program);
-        let main_rs = match generate_main(&model_program) {
-            Ok(main_rs) => main_rs,
-            Err(error) => {
-                return GenerateProjectResult {
-                    error: format!("failed to generate main.rs: {error:?}"),
-                };
-            }
-        };
-        let cargo_rs = include_str!("./Cargo.toml.template");
-        let files = vec![
-            FileWithContent {
-                path: "src/main.rs".to_string(),
-                content: main_rs.into_bytes(),
+        match generate_project(req) {
+            Ok(()) => GenerateProjectResult {
+                error: String::new(),
             },
-            FileWithContent {
-                path: "Cargo.toml".to_string(),
-                content: cargo_rs.as_bytes().to_vec(),
+            Err(error) => GenerateProjectResult {
+                error: error.to_string(),
             },
-        ];
-
-        let dir = Path::new(&req.directory);
-        for file in &files {
-            let path = dir.join(file.path.clone());
-            // let path = Path::new(&file.path);
-            if let Some(parent) = path.parent()
-                && let Err(error) = create_dir_all(parent)
-            {
-                return GenerateProjectResult {
-                    error: format!("failed to create output directory: {error:?}"),
-                };
-            }
-            if let Err(error) = fs::write(path, &file.content) {
-                return GenerateProjectResult {
-                    error: format!("failed to write file: {error:?}"),
-                };
-            }
-        }
-
-        GenerateProjectResult {
-            error: String::new(),
         }
     }
 }
 
-pub fn generate_project_from_protobuf(protobuf: Vec<u8>, directory: String) {
-    G2RCallImpl::generate_project(GenerateProjectRequest {
+pub fn generate_project_from_protobuf(protobuf: Vec<u8>, directory: String) -> Result<()> {
+    generate_project(GenerateProjectRequest {
         protobuf,
         directory,
-    });
+    })
 }

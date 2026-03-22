@@ -21,7 +21,8 @@ fn regenerate_project(test_name: &str) {
         )
     });
 
-    generate_project_from_protobuf(protobuf, project_dir.to_string_lossy().into_owned());
+    generate_project_from_protobuf(protobuf, project_dir.to_string_lossy().into_owned())
+        .unwrap();
 
     assert!(
         project_dir.join("Cargo.toml").exists(),
@@ -35,13 +36,16 @@ fn regenerate_project(test_name: &str) {
 
 // Keep in sync with testNames in pkg/cmd/pulumi-language-rust/language_test.go.
 #[test]
-// #[cfg(feature = "fast-feedback-tests")]
 fn regenerate_l1_empty() {
     regenerate_project("l1-empty");
 }
 
 #[test]
-// #[cfg(feature = "fast-feedback-tests")]
 fn regenerate_l1_main() {
     regenerate_project("l1-main");
+}
+
+#[test]
+fn regenerate_l1_builtin_base64() {
+    regenerate_project("l1-builtin-base64");
 }
