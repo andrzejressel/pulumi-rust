@@ -19,6 +19,7 @@ fmt:
     cd pkg && just fmt
 
 gen:
+    cd ast && just gen
     cargo build
     rust2go-cli --src src/golang.rs --dst pkg/codegen/rust/api.go --package-name "rust" --without-main
 
