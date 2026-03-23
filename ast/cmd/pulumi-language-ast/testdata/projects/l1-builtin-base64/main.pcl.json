@@ -1,31 +1,36 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "configVariable":  {
-        "name":  "input",
-        "logicalName":  "input"
+      "configVariable": {
+        "name": "input",
+        "logicalName": "input"
       }
     },
     {
-      "localVariable":  {
-        "name":  "bytes",
-        "logicalName":  "bytes",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "fromBase64",
-            "args":  [
+      "localVariable": {
+        "name": "bytes",
+        "logicalName": "bytes",
+        "value": {
+          "functionCallExpression": {
+            "name": "fromBase64",
+            "args": [
               {
-                "scopeTraversalExpression":  {
-                  "rootName":  "input",
-                  "traversal":  {
-                    "each":  [
-                      {
-                        "traverseRoot":  {
-                          "name":  "input"
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "input",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "input"
+                          }
                         }
-                      }
-                    ]
+                      ]
+                    }
                   }
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]
@@ -34,17 +39,17 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "data",
-        "logicalName":  "data",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "bytes",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "data",
+        "logicalName": "data",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "bytes",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "bytes"
+                  "traverseRoot": {
+                    "name": "bytes"
                   }
                 }
               ]
@@ -54,25 +59,30 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "roundtrip",
-        "logicalName":  "roundtrip",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "toBase64",
-            "args":  [
+      "outputVariable": {
+        "name": "roundtrip",
+        "logicalName": "roundtrip",
+        "value": {
+          "functionCallExpression": {
+            "name": "toBase64",
+            "args": [
               {
-                "scopeTraversalExpression":  {
-                  "rootName":  "bytes",
-                  "traversal":  {
-                    "each":  [
-                      {
-                        "traverseRoot":  {
-                          "name":  "bytes"
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "bytes",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "bytes"
+                          }
                         }
-                      }
-                    ]
+                      ]
+                    }
                   }
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]

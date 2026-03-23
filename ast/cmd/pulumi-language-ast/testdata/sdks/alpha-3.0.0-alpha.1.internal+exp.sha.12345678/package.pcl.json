@@ -1,29 +1,29 @@
 {
-  "name":  "alpha",
-  "version":  "3.0.0-alpha.1.internal+exp.sha.12345678",
-  "resources":  [
+  "name": "alpha",
+  "version": "3.0.0-alpha.1.internal+exp.sha.12345678",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "alpha:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "alpha:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

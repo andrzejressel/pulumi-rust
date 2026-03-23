@@ -1,60 +1,60 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "res",
-        "logicalName":  "res",
-        "token":  "primitive-ref:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "primitive-ref:index:Resource",
+        "inputs": [
           {
-            "name":  "data",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "boolArray":  {
-                    "tupleConsExpression":  {
-                      "items":  [
+            "name": "data",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "boolArray": {
+                    "tupleConsExpression": {
+                      "items": [
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  false
+                          "literalValueExpression": {
+                            "boolValue": false
                           }
                         },
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  true
+                          "literalValueExpression": {
+                            "boolValue": true
                           }
                         }
                       ]
                     }
                   },
-                  "boolean":  {
-                    "literalValueExpression":  {
-                      "boolValue":  false
+                  "boolean": {
+                    "literalValueExpression": {
+                      "boolValue": false
                     }
                   },
-                  "float":  {
-                    "literalValueExpression":  {
-                      "numberValue":  2.17
+                  "float": {
+                    "literalValueExpression": {
+                      "numberValue": 2.17
                     }
                   },
-                  "integer":  {
-                    "literalValueExpression":  {
-                      "numberValue":  -12
+                  "integer": {
+                    "literalValueExpression": {
+                      "numberValue": -12
                     }
                   },
-                  "string":  {
-                    "templateExpression":  {
-                      "parts":  [
+                  "string": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "Goodbye"
+                          "literalValueExpression": {
+                            "stringValue": "Goodbye"
                           }
                         }
                       ]
                     }
                   },
-                  "stringMap":  {
-                    "objectConsExpression":  {}
+                  "stringMap": {
+                    "objectConsExpression": {}
                   }
                 }
               }
@@ -64,10 +64,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "primitive-ref",
-      "version":  "11.0.0"
+      "name": "primitive-ref",
+      "version": "11.0.0"
     }
   ]
 }

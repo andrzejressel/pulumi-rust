@@ -1,59 +1,59 @@
 {
-  "name":  "asset-archive",
-  "version":  "5.0.0",
-  "resources":  [
+  "name": "asset-archive",
+  "version": "5.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "ArchiveResource",
-        "raw":  "asset-archive:index:ArchiveResource"
+      "elementId": {
+        "name": "ArchiveResource",
+        "raw": "asset-archive:index:ArchiveResource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "refType":  {
-              "archive":  {}
+          "name": "value",
+          "type": {
+            "refType": {
+              "archive": {}
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "refType":  {
-              "archive":  {}
+          "name": "value",
+          "type": {
+            "refType": {
+              "archive": {}
             }
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "AssetResource",
-        "raw":  "asset-archive:index:AssetResource"
+      "elementId": {
+        "name": "AssetResource",
+        "raw": "asset-archive:index:AssetResource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "refType":  {
-              "asset":  {}
+          "name": "value",
+          "type": {
+            "refType": {
+              "asset": {}
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "refType":  {
-              "asset":  {}
+          "name": "value",
+          "type": {
+            "refType": {
+              "asset": {}
             }
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

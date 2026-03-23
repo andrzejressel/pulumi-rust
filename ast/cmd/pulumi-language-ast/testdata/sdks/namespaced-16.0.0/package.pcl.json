@@ -1,55 +1,55 @@
 {
-  "name":  "namespaced",
-  "version":  "16.0.0",
-  "resources":  [
+  "name": "namespaced",
+  "version": "16.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "namespaced:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "namespaced:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "resourceRef",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Custom",
-                  "raw":  "component:index:Custom"
+          "name": "resourceRef",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Custom",
+                  "raw": "component:index:Custom"
                 }
               }
             }
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "resourceRef",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Custom",
-                  "raw":  "component:index:Custom"
+          "name": "resourceRef",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Custom",
+                  "raw": "component:index:Custom"
                 }
               }
             }
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

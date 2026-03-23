@@ -1,236 +1,236 @@
 {
-  "name":  "module-format",
-  "version":  "29.0.0",
-  "resources":  [
+  "name": "module-format",
+  "version": "29.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod",
           "nested_Resource"
         ],
-        "name":  "Resource",
-        "raw":  "module-format:mod/nested_Resource:Resource"
+        "name": "Resource",
+        "raw": "module-format:mod/nested_Resource:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod_Resource"
         ],
-        "name":  "Resource",
-        "raw":  "module-format:mod_Resource:Resource"
+        "name": "Resource",
+        "raw": "module-format:mod_Resource:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod",
           "nested_Resource"
         ],
-        "name":  "Resource/call",
-        "raw":  "module-format:mod/nested_Resource:Resource/call"
+        "name": "Resource/call",
+        "raw": "module-format:mod/nested_Resource:Resource/call"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "namespace":  [
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "namespace": [
                   "mod_Resource"
                 ],
-                "name":  "Resource",
-                "raw":  "module-format:mod_Resource:Resource"
+                "name": "Resource",
+                "raw": "module-format:mod_Resource:Resource"
               }
             }
           }
         },
         {
-          "name":  "input",
-          "type":  {
-            "stringType":  {}
+          "name": "input",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "output",
-          "type":  {
-            "numberType":  {}
+          "name": "output",
+          "type": {
+            "numberType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "namespace":  [
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
               "mod",
               "nested_Resource"
             ],
-            "name":  "Resource/callResult",
-            "raw":  "module-format:mod/nested_Resource:Resource/callResult"
+            "name": "Resource/callResult",
+            "raw": "module-format:mod/nested_Resource:Resource/callResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod",
           "nested_concatWorld"
         ],
-        "name":  "concatWorld",
-        "raw":  "module-format:mod/nested_concatWorld:concatWorld"
+        "name": "concatWorld",
+        "raw": "module-format:mod/nested_concatWorld:concatWorld"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "namespace":  [
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
               "mod",
               "nested_concatWorld"
             ],
-            "name":  "concatWorldResult",
-            "raw":  "module-format:mod/nested_concatWorld:concatWorldResult"
+            "name": "concatWorldResult",
+            "raw": "module-format:mod/nested_concatWorld:concatWorldResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod_Resource"
         ],
-        "name":  "Resource/call",
-        "raw":  "module-format:mod_Resource:Resource/call"
+        "name": "Resource/call",
+        "raw": "module-format:mod_Resource:Resource/call"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "namespace":  [
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "namespace": [
                   "mod_Resource"
                 ],
-                "name":  "Resource",
-                "raw":  "module-format:mod_Resource:Resource"
+                "name": "Resource",
+                "raw": "module-format:mod_Resource:Resource"
               }
             }
           }
         },
         {
-          "name":  "input",
-          "type":  {
-            "stringType":  {}
+          "name": "input",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "output",
-          "type":  {
-            "numberType":  {}
+          "name": "output",
+          "type": {
+            "numberType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "namespace":  [
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
               "mod_Resource"
             ],
-            "name":  "Resource/callResult",
-            "raw":  "module-format:mod_Resource:Resource/callResult"
+            "name": "Resource/callResult",
+            "raw": "module-format:mod_Resource:Resource/callResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod_concatWorld"
         ],
-        "name":  "concatWorld",
-        "raw":  "module-format:mod_concatWorld:concatWorld"
+        "name": "concatWorld",
+        "raw": "module-format:mod_concatWorld:concatWorld"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "namespace":  [
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
               "mod_concatWorld"
             ],
-            "name":  "concatWorldResult",
-            "raw":  "module-format:mod_concatWorld:concatWorldResult"
+            "name": "concatWorldResult",
+            "raw": "module-format:mod_concatWorld:concatWorldResult"
           }
         }
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

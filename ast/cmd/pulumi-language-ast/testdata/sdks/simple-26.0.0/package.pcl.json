@@ -1,29 +1,29 @@
 {
-  "name":  "simple",
-  "version":  "26.0.0",
-  "resources":  [
+  "name": "simple",
+  "version": "26.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "simple:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "simple:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

@@ -1,27 +1,27 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "withV2",
-        "logicalName":  "withV2",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "withV2",
+        "logicalName": "withV2",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {
-          "version":  {
-            "templateExpression":  {
-              "parts":  [
+        "options": {
+          "version": {
+            "templateExpression": {
+              "parts": [
                 {
-                  "literalValueExpression":  {
-                    "stringValue":  "2.0.0"
+                  "literalValueExpression": {
+                    "stringValue": "2.0.0"
                   }
                 }
               ]
@@ -31,10 +31,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

@@ -1,64 +1,64 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "protected",
-        "logicalName":  "protected",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "protected",
+        "logicalName": "protected",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {
-          "protect":  {
-            "literalValueExpression":  {
-              "boolValue":  true
+        "options": {
+          "protect": {
+            "literalValueExpression": {
+              "boolValue": true
             }
           }
         }
       }
     },
     {
-      "resource":  {
-        "name":  "unprotected",
-        "logicalName":  "unprotected",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "unprotected",
+        "logicalName": "unprotected",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {
-          "protect":  {
-            "literalValueExpression":  {
-              "boolValue":  false
+        "options": {
+          "protect": {
+            "literalValueExpression": {
+              "boolValue": false
             }
           }
         }
       }
     },
     {
-      "resource":  {
-        "name":  "defaulted",
-        "logicalName":  "defaulted",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "defaulted",
+        "logicalName": "defaulted",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -66,10 +66,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

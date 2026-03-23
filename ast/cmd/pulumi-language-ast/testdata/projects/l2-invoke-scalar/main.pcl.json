@@ -1,39 +1,49 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "scalar",
-        "logicalName":  "scalar",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "invoke",
-            "args":  [
+      "outputVariable": {
+        "name": "scalar",
+        "logicalName": "scalar",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
               {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "simple-invoke-with-scalar-return::myInvokeScalar"
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "simple-invoke-with-scalar-return::myInvokeScalar"
+                        }
                       }
-                    }
-                  ]
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
                 }
               },
               {
-                "objectConsExpression":  {
-                  "properties":  {
-                    "value":  {
-                      "templateExpression":  {
-                        "parts":  [
-                          {
-                            "literalValueExpression":  {
-                              "stringValue":  "goodbye"
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "goodbye"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     }
                   }
+                },
+                "type": {
+                  "composite": {}
                 }
               }
             ]
@@ -42,10 +52,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple-invoke-with-scalar-return",
-      "version":  "17.0.0"
+      "name": "simple-invoke-with-scalar-return",
+      "version": "17.0.0"
     }
   ]
 }

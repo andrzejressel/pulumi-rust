@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "failing",
-        "logicalName":  "failing",
-        "token":  "fail_on_create:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "failing",
+        "logicalName": "failing",
+        "token": "fail_on_create:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  false
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
               }
             }
           }
@@ -18,32 +18,32 @@
       }
     },
     {
-      "resource":  {
-        "name":  "dependent",
-        "logicalName":  "dependent",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "dependent",
+        "logicalName": "dependent",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {
-          "dependsOn":  {
-            "tupleConsExpression":  {
-              "items":  [
+        "options": {
+          "dependsOn": {
+            "tupleConsExpression": {
+              "items": [
                 {
-                  "scopeTraversalExpression":  {
-                    "rootName":  "failing",
-                    "traversal":  {
-                      "each":  [
+                  "scopeTraversalExpression": {
+                    "rootName": "failing",
+                    "traversal": {
+                      "each": [
                         {
-                          "traverseRoot":  {
-                            "name":  "failing"
+                          "traverseRoot": {
+                            "name": "failing"
                           }
                         }
                       ]
@@ -57,26 +57,26 @@
       }
     },
     {
-      "resource":  {
-        "name":  "dependent_on_output",
-        "logicalName":  "dependent_on_output",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "dependent_on_output",
+        "logicalName": "dependent_on_output",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "failing",
-                "traversal":  {
-                  "each":  [
+            "name": "value",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "failing",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "failing"
+                      "traverseRoot": {
+                        "name": "failing"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "value"
+                      "traverseAttr": {
+                        "name": "value"
                       }
                     }
                   ]
@@ -88,16 +88,16 @@
       }
     },
     {
-      "resource":  {
-        "name":  "independent",
-        "logicalName":  "independent",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "independent",
+        "logicalName": "independent",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -105,32 +105,32 @@
       }
     },
     {
-      "resource":  {
-        "name":  "double_dependency",
-        "logicalName":  "double_dependency",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "double_dependency",
+        "logicalName": "double_dependency",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {
-          "dependsOn":  {
-            "tupleConsExpression":  {
-              "items":  [
+        "options": {
+          "dependsOn": {
+            "tupleConsExpression": {
+              "items": [
                 {
-                  "scopeTraversalExpression":  {
-                    "rootName":  "independent",
-                    "traversal":  {
-                      "each":  [
+                  "scopeTraversalExpression": {
+                    "rootName": "independent",
+                    "traversal": {
+                      "each": [
                         {
-                          "traverseRoot":  {
-                            "name":  "independent"
+                          "traverseRoot": {
+                            "name": "independent"
                           }
                         }
                       ]
@@ -138,13 +138,13 @@
                   }
                 },
                 {
-                  "scopeTraversalExpression":  {
-                    "rootName":  "dependent_on_output",
-                    "traversal":  {
-                      "each":  [
+                  "scopeTraversalExpression": {
+                    "rootName": "dependent_on_output",
+                    "traversal": {
+                      "each": [
                         {
-                          "traverseRoot":  {
-                            "name":  "dependent_on_output"
+                          "traverseRoot": {
+                            "name": "dependent_on_output"
                           }
                         }
                       ]
@@ -158,14 +158,14 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "fail_on_create",
-      "version":  "4.0.0"
+      "name": "fail_on_create",
+      "version": "4.0.0"
     },
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

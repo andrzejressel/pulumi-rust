@@ -1,75 +1,75 @@
 {
-  "name":  "hipackage",
-  "version":  "2.0.0",
-  "resources":  [
+  "name": "hipackage",
+  "version": "2.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "HelloWorld",
-        "raw":  "hipackage:index:HelloWorld"
+      "elementId": {
+        "name": "HelloWorld",
+        "raw": "hipackage:index:HelloWorld"
       },
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "parameterValue",
-          "type":  {
-            "stringType":  {}
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "HelloWorldComponent",
-        "raw":  "hipackage:index:HelloWorldComponent"
+      "elementId": {
+        "name": "HelloWorldComponent",
+        "raw": "hipackage:index:HelloWorldComponent"
       },
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "parameterValue",
-          "type":  {
-            "stringType":  {}
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "doHelloWorld",
-        "raw":  "hipackage:index:doHelloWorld"
+      "elementId": {
+        "name": "doHelloWorld",
+        "raw": "hipackage:index:doHelloWorld"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "input",
-          "type":  {
-            "stringType":  {}
+          "name": "input",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "output",
-          "type":  {
-            "stringType":  {}
+          "name": "output",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "doHelloWorldResult",
-            "raw":  "hipackage:index:doHelloWorldResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "doHelloWorldResult",
+            "raw": "hipackage:index:doHelloWorldResult"
           }
         }
       }
     }
   ],
-  "provider":  {
-    "inputProperties":  [
+  "provider": {
+    "inputProperties": [
       {
-        "name":  "text",
-        "type":  {
-          "optionalType":  {
-            "stringType":  {}
+        "name": "text",
+        "type": {
+          "optionalType": {
+            "stringType": {}
           }
         }
       }

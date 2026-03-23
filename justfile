@@ -28,9 +28,9 @@ test:
     cd ast && just test
     cd pkg && just test
 
-regenerate-test $PULUMI_ACCEPT="1":
-    cd ast && just regenerate-test PULUMI_ACCEPT={{PULUMI_ACCEPT}}
-    cd pkg && just regenerate-test PULUMI_ACCEPT={{PULUMI_ACCEPT}}
+regenerate-test:
+    cd ast && just regenerate-test
+    cd pkg && just regenerate-test
 
 # Generates files in `pkg/target` for easier introspection
 test-local $LOCAL_TEST="1":

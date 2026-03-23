@@ -1,180 +1,180 @@
 {
-  "name":  "call",
-  "version":  "15.7.9",
-  "resources":  [
+  "name": "call",
+  "version": "15.7.9",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Custom",
-        "raw":  "call:index:Custom"
+      "elementId": {
+        "name": "Custom",
+        "raw": "call:index:Custom"
       },
-      "description":  "A custom resource that supports method calls",
-      "inputProperties":  [
+      "description": "A custom resource that supports method calls",
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "Custom/providerValue",
-        "raw":  "call:index:Custom/providerValue"
+      "elementId": {
+        "name": "Custom/providerValue",
+        "raw": "call:index:Custom/providerValue"
       },
-      "description":  "The `providerValue` method of the `call` package's Custom resource. Returns the resource's provider's `value` and the resource's `value` concatenated.",
-      "inputProperties":  [
+      "description": "The `providerValue` method of the `call` package's Custom resource. Returns the resource's provider's `value` and the resource's `value` concatenated.",
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Custom",
-                "raw":  "call:index:Custom"
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "call:index:Custom"
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "Custom/providerValueResult",
-            "raw":  "call:index:Custom/providerValueResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "Custom/providerValueResult",
+            "raw": "call:index:Custom/providerValueResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "providers"
         ],
-        "name":  "call/identity",
-        "raw":  "pulumi:providers:call/identity"
+        "name": "call/identity",
+        "raw": "pulumi:providers:call/identity"
       },
-      "description":  "The `identity` method of the `call` package's provider. Returns the provider's `value` configuration unaltered.",
-      "inputProperties":  [
+      "description": "The `identity` method of the `call` package's provider. Returns the provider's `value` configuration unaltered.",
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "namespace":  [
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "namespace": [
                   "providers"
                 ],
-                "name":  "call",
-                "raw":  "pulumi:providers:call"
+                "name": "call",
+                "raw": "pulumi:providers:call"
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "namespace":  [
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
               "providers"
             ],
-            "name":  "call/identityResult",
-            "raw":  "pulumi:providers:call/identityResult"
+            "name": "call/identityResult",
+            "raw": "pulumi:providers:call/identityResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "providers"
         ],
-        "name":  "call/prefixed",
-        "raw":  "pulumi:providers:call/prefixed"
+        "name": "call/prefixed",
+        "raw": "pulumi:providers:call/prefixed"
       },
-      "description":  "The `prefixed` method of the `call` package's provider. Accepts a string and returns the provider's `value` configuration prefixed with that string.",
-      "inputProperties":  [
+      "description": "The `prefixed` method of the `call` package's provider. Accepts a string and returns the provider's `value` configuration prefixed with that string.",
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "namespace":  [
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "namespace": [
                   "providers"
                 ],
-                "name":  "call",
-                "raw":  "pulumi:providers:call"
+                "name": "call",
+                "raw": "pulumi:providers:call"
               }
             }
           }
         },
         {
-          "name":  "prefix",
-          "type":  {
-            "stringType":  {}
+          "name": "prefix",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "namespace":  [
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
               "providers"
             ],
-            "name":  "call/prefixedResult",
-            "raw":  "pulumi:providers:call/prefixedResult"
+            "name": "call/prefixedResult",
+            "raw": "pulumi:providers:call/prefixedResult"
           }
         }
       }
     }
   ],
-  "provider":  {
-    "description":  "The `call` package's provider resource",
-    "inputProperties":  [
+  "provider": {
+    "description": "The `call` package's provider resource",
+    "inputProperties": [
       {
-        "name":  "value",
-        "type":  {
-          "stringType":  {}
+        "name": "value",
+        "type": {
+          "stringType": {}
         }
       }
     ],
-    "outputProperties":  [
+    "outputProperties": [
       {
-        "name":  "value",
-        "type":  {
-          "stringType":  {}
+        "name": "value",
+        "type": {
+          "stringType": {}
         }
       }
     ]

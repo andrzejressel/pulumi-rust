@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "res",
-        "logicalName":  "res",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,129 +18,66 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "nonSecret",
-        "logicalName":  "nonSecret",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "invoke",
-                "args":  [
+      "outputVariable": {
+        "name": "nonSecret",
+        "logicalName": "nonSecret",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "invoke",
+                "args": [
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "simple-invoke::secretInvoke"
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "simple-invoke::secretInvoke"
+                            }
                           }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "secretResponse":  {
-                          "literalValueExpression":  {
-                            "boolValue":  false
-                          }
-                        },
-                        "value":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "hello"
-                                }
-                              }
-                            ]
-                          }
-                        }
+                        ]
                       }
-                    }
-                  }
-                ]
-              }
-            },
-            "traversal":  {
-              "each":  [
-                {
-                  "traverseAttr":  {
-                    "name":  "response"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      }
-    },
-    {
-      "outputVariable":  {
-        "name":  "firstSecret",
-        "logicalName":  "firstSecret",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "invoke",
-                "args":  [
-                  {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "simple-invoke::secretInvoke"
-                          }
-                        }
-                      ]
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "secretResponse":  {
-                          "scopeTraversalExpression":  {
-                            "rootName":  "res",
-                            "traversal":  {
-                              "each":  [
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "secretResponse": {
+                            "literalValueExpression": {
+                              "boolValue": false
+                            }
+                          },
+                          "value": {
+                            "templateExpression": {
+                              "parts": [
                                 {
-                                  "traverseRoot":  {
-                                    "name":  "res"
-                                  }
-                                },
-                                {
-                                  "traverseAttr":  {
-                                    "name":  "value"
+                                  "literalValueExpression": {
+                                    "stringValue": "hello"
                                   }
                                 }
                               ]
                             }
                           }
-                        },
-                        "value":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "hello"
-                                }
-                              }
-                            ]
-                          }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "response"
+                  "traverseAttr": {
+                    "name": "response"
                   }
                 }
               ]
@@ -150,63 +87,161 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "secondSecret",
-        "logicalName":  "secondSecret",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "invoke",
-                "args":  [
+      "outputVariable": {
+        "name": "firstSecret",
+        "logicalName": "firstSecret",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "invoke",
+                "args": [
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "simple-invoke::secretInvoke"
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "simple-invoke::secretInvoke"
+                            }
                           }
-                        }
-                      ]
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "secretResponse":  {
-                          "literalValueExpression":  {
-                            "boolValue":  false
-                          }
-                        },
-                        "value":  {
-                          "functionCallExpression":  {
-                            "name":  "secret",
-                            "args":  [
-                              {
-                                "templateExpression":  {
-                                  "parts":  [
-                                    {
-                                      "literalValueExpression":  {
-                                        "stringValue":  "goodbye"
-                                      }
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "secretResponse": {
+                            "scopeTraversalExpression": {
+                              "rootName": "res",
+                              "traversal": {
+                                "each": [
+                                  {
+                                    "traverseRoot": {
+                                      "name": "res"
                                     }
-                                  ]
-                                }
+                                  },
+                                  {
+                                    "traverseAttr": {
+                                      "name": "value"
+                                    }
+                                  }
+                                ]
                               }
-                            ]
+                            }
+                          },
+                          "value": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "hello"
+                                  }
+                                }
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "response"
+                  "traverseAttr": {
+                    "name": "response"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "secondSecret",
+        "logicalName": "secondSecret",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "invoke",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "simple-invoke::secretInvoke"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "secretResponse": {
+                            "literalValueExpression": {
+                              "boolValue": false
+                            }
+                          },
+                          "value": {
+                            "functionCallExpression": {
+                              "name": "secret",
+                              "args": [
+                                {
+                                  "value": {
+                                    "templateExpression": {
+                                      "parts": [
+                                        {
+                                          "literalValueExpression": {
+                                            "stringValue": "goodbye"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "type": {
+                                    "stringType": {}
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal": {
+              "each": [
+                {
+                  "traverseAttr": {
+                    "name": "response"
                   }
                 }
               ]
@@ -216,14 +251,14 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     },
     {
-      "name":  "simple-invoke",
-      "version":  "10.0.0"
+      "name": "simple-invoke",
+      "version": "10.0.0"
     }
   ]
 }

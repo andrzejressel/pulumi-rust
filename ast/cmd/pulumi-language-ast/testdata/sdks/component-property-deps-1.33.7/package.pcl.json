@@ -1,59 +1,59 @@
 {
-  "name":  "component-property-deps",
-  "version":  "1.33.7",
-  "resources":  [
+  "name": "component-property-deps",
+  "version": "1.33.7",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Component",
-        "raw":  "component-property-deps:index:Component"
+      "elementId": {
+        "name": "Component",
+        "raw": "component-property-deps:index:Component"
       },
-      "description":  "A component resource that accepts a list of resources. The construct request's property dependencies are returned as an output.",
-      "inputProperties":  [
+      "description": "A component resource that accepts a list of resources. The construct request's property dependencies are returned as an output.",
+      "inputProperties": [
         {
-          "name":  "resource",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Custom",
-                "raw":  "component-property-deps:index:Custom"
+          "name": "resource",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "component-property-deps:index:Custom"
               }
             }
           }
         },
         {
-          "name":  "resourceList",
-          "type":  {
-            "arrayType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Custom",
-                  "raw":  "component-property-deps:index:Custom"
+          "name": "resourceList",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Custom",
+                  "raw": "component-property-deps:index:Custom"
                 }
               }
             }
           }
         },
         {
-          "name":  "resourceMap",
-          "type":  {
-            "mapType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Custom",
-                  "raw":  "component-property-deps:index:Custom"
+          "name": "resourceMap",
+          "type": {
+            "mapType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Custom",
+                  "raw": "component-property-deps:index:Custom"
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "propertyDeps",
-          "type":  {
-            "mapType":  {
-              "arrayType":  {
-                "stringType":  {}
+          "name": "propertyDeps",
+          "type": {
+            "mapType": {
+              "arrayType": {
+                "stringType": {}
               }
             }
           }
@@ -61,107 +61,107 @@
       ]
     },
     {
-      "elementId":  {
-        "name":  "Custom",
-        "raw":  "component-property-deps:index:Custom"
+      "elementId": {
+        "name": "Custom",
+        "raw": "component-property-deps:index:Custom"
       },
-      "description":  "A custom resource with a single string input and output",
-      "inputProperties":  [
+      "description": "A custom resource with a single string input and output",
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "Component/refs",
-        "raw":  "component-property-deps:index:Component/refs"
+      "elementId": {
+        "name": "Component/refs",
+        "raw": "component-property-deps:index:Component/refs"
       },
-      "description":  "The `refs` method of the `Component` component resource. Returns the call request's property dependencies.",
-      "inputProperties":  [
+      "description": "The `refs` method of the `Component` component resource. Returns the call request's property dependencies.",
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Component",
-                "raw":  "component-property-deps:index:Component"
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Component",
+                "raw": "component-property-deps:index:Component"
               }
             }
           }
         },
         {
-          "name":  "resource",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Custom",
-                "raw":  "component-property-deps:index:Custom"
+          "name": "resource",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "component-property-deps:index:Custom"
               }
             }
           }
         },
         {
-          "name":  "resourceList",
-          "type":  {
-            "arrayType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Custom",
-                  "raw":  "component-property-deps:index:Custom"
+          "name": "resourceList",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Custom",
+                  "raw": "component-property-deps:index:Custom"
                 }
               }
             }
           }
         },
         {
-          "name":  "resourceMap",
-          "type":  {
-            "mapType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Custom",
-                  "raw":  "component-property-deps:index:Custom"
+          "name": "resourceMap",
+          "type": {
+            "mapType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Custom",
+                  "raw": "component-property-deps:index:Custom"
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "mapType":  {
-              "arrayType":  {
-                "stringType":  {}
+          "name": "result",
+          "type": {
+            "mapType": {
+              "arrayType": {
+                "stringType": {}
               }
             }
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "Component/refsResult",
-            "raw":  "component-property-deps:index:Component/refsResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "Component/refsResult",
+            "raw": "component-property-deps:index:Component/refsResult"
           }
         }
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

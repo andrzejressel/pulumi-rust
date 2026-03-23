@@ -1,15 +1,15 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "array",
-        "logicalName":  "array",
-        "value":  {
-          "tupleConsExpression":  {
-            "items":  [
+      "outputVariable": {
+        "name": "array",
+        "logicalName": "array",
+        "value": {
+          "tupleConsExpression": {
+            "items": [
               {
-                "literalValueExpression":  {
-                  "unknownValue":  true
+                "literalValueExpression": {
+                  "unknownValue": true
                 }
               }
             ]

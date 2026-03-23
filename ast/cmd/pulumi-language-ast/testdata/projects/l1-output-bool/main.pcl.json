@@ -1,23 +1,23 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "output_true",
-        "logicalName":  "output_true",
-        "value":  {
-          "literalValueExpression":  {
-            "boolValue":  true
+      "outputVariable": {
+        "name": "output_true",
+        "logicalName": "output_true",
+        "value": {
+          "literalValueExpression": {
+            "boolValue": true
           }
         }
       }
     },
     {
-      "outputVariable":  {
-        "name":  "output_false",
-        "logicalName":  "output_false",
-        "value":  {
-          "literalValueExpression":  {
-            "boolValue":  false
+      "outputVariable": {
+        "name": "output_false",
+        "logicalName": "output_false",
+        "value": {
+          "literalValueExpression": {
+            "boolValue": false
           }
         }
       }

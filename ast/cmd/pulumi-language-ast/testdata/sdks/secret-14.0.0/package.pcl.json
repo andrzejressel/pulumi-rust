@@ -1,79 +1,79 @@
 {
-  "name":  "secret",
-  "version":  "14.0.0",
-  "resources":  [
+  "name": "secret",
+  "version": "14.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "secret:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "secret:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "private",
-          "type":  {
-            "stringType":  {}
+          "name": "private",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "privateData",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Data",
-                "raw":  "secret:index:Data"
+          "name": "privateData",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "secret:index:Data"
               }
             }
           }
         },
         {
-          "name":  "public",
-          "type":  {
-            "stringType":  {}
+          "name": "public",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "publicData",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Data",
-                "raw":  "secret:index:Data"
+          "name": "publicData",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "secret:index:Data"
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "private",
-          "type":  {
-            "stringType":  {}
+          "name": "private",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "privateData",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Data",
-                "raw":  "secret:index:Data"
+          "name": "privateData",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "secret:index:Data"
               }
             }
           }
         },
         {
-          "name":  "public",
-          "type":  {
-            "stringType":  {}
+          "name": "public",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "publicData",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Data",
-                "raw":  "secret:index:Data"
+          "name": "publicData",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "secret:index:Data"
               }
             }
           }
@@ -81,25 +81,25 @@
       ]
     }
   ],
-  "types":  [
+  "types": [
     {
-      "elementId":  {
-        "name":  "Data",
-        "raw":  "secret:index:Data"
+      "elementId": {
+        "name": "Data",
+        "raw": "secret:index:Data"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "private",
-              "type":  {
-                "stringType":  {}
+              "name": "private",
+              "type": {
+                "stringType": {}
               }
             },
             {
-              "name":  "public",
-              "type":  {
-                "stringType":  {}
+              "name": "public",
+              "type": {
+                "stringType": {}
               }
             }
           ]
@@ -107,5 +107,5 @@
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

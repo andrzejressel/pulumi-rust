@@ -1,68 +1,68 @@
 {
-  "name":  "component",
-  "version":  "13.3.7",
-  "resources":  [
+  "name": "component",
+  "version": "13.3.7",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "ComponentCallable",
-        "raw":  "component:index:ComponentCallable"
+      "elementId": {
+        "name": "ComponentCallable",
+        "raw": "component:index:ComponentCallable"
       },
-      "description":  "A component resource that has callable methods.",
-      "inputProperties":  [
+      "description": "A component resource that has callable methods.",
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "ComponentCustomRefInputOutput",
-        "raw":  "component:index:ComponentCustomRefInputOutput"
+      "elementId": {
+        "name": "ComponentCustomRefInputOutput",
+        "raw": "component:index:ComponentCustomRefInputOutput"
       },
-      "description":  "A component resource that accepts a reference to a custom resource. The input resource's `value` is used to create a child custom resource inside the component, before a reference to this child is returned.",
-      "inputProperties":  [
+      "description": "A component resource that accepts a reference to a custom resource. The input resource's `value` is used to create a child custom resource inside the component, before a reference to this child is returned.",
+      "inputProperties": [
         {
-          "name":  "inputRef",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Custom",
-                "raw":  "component:index:Custom"
+          "name": "inputRef",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "component:index:Custom"
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "inputRef",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Custom",
-                "raw":  "component:index:Custom"
+          "name": "inputRef",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "component:index:Custom"
               }
             }
           }
         },
         {
-          "name":  "outputRef",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Custom",
-                "raw":  "component:index:Custom"
+          "name": "outputRef",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "component:index:Custom"
               }
             }
           }
@@ -70,142 +70,142 @@
       ]
     },
     {
-      "elementId":  {
-        "name":  "ComponentCustomRefOutput",
-        "raw":  "component:index:ComponentCustomRefOutput"
+      "elementId": {
+        "name": "ComponentCustomRefOutput",
+        "raw": "component:index:ComponentCustomRefOutput"
       },
-      "description":  "A component resource that accepts an input that is used to create a child custom resource. A reference to this child custom resource is returned.",
-      "inputProperties":  [
+      "description": "A component resource that accepts an input that is used to create a child custom resource. A reference to this child custom resource is returned.",
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "ref",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Custom",
-                "raw":  "component:index:Custom"
+          "name": "ref",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "component:index:Custom"
               }
             }
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "Custom",
-        "raw":  "component:index:Custom"
+      "elementId": {
+        "name": "Custom",
+        "raw": "component:index:Custom"
       },
-      "description":  "A custom resource with a single string input and output",
-      "inputProperties":  [
+      "description": "A custom resource with a single string input and output",
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "ComponentCallable/identity",
-        "raw":  "component:index:ComponentCallable/identity"
+      "elementId": {
+        "name": "ComponentCallable/identity",
+        "raw": "component:index:ComponentCallable/identity"
       },
-      "description":  "The `identity` method of the `ComponentCallable` component resource. Returns the component's `value` unaltered.",
-      "inputProperties":  [
+      "description": "The `identity` method of the `ComponentCallable` component resource. Returns the component's `value` unaltered.",
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "ComponentCallable",
-                "raw":  "component:index:ComponentCallable"
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "ComponentCallable",
+                "raw": "component:index:ComponentCallable"
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "ComponentCallable/identityResult",
-            "raw":  "component:index:ComponentCallable/identityResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "ComponentCallable/identityResult",
+            "raw": "component:index:ComponentCallable/identityResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "name":  "ComponentCallable/prefixed",
-        "raw":  "component:index:ComponentCallable/prefixed"
+      "elementId": {
+        "name": "ComponentCallable/prefixed",
+        "raw": "component:index:ComponentCallable/prefixed"
       },
-      "description":  "The `prefixed` method of the `ComponentCallable` component resource. Accepts a string and returns the component's `value` prefixed with that string.",
-      "inputProperties":  [
+      "description": "The `prefixed` method of the `ComponentCallable` component resource. Accepts a string and returns the component's `value` prefixed with that string.",
+      "inputProperties": [
         {
-          "name":  "__self__",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "ComponentCallable",
-                "raw":  "component:index:ComponentCallable"
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "ComponentCallable",
+                "raw": "component:index:ComponentCallable"
               }
             }
           }
         },
         {
-          "name":  "prefix",
-          "type":  {
-            "stringType":  {}
+          "name": "prefix",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "ComponentCallable/prefixedResult",
-            "raw":  "component:index:ComponentCallable/prefixedResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "ComponentCallable/prefixedResult",
+            "raw": "component:index:ComponentCallable/prefixedResult"
           }
         }
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

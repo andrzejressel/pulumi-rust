@@ -1,97 +1,97 @@
 {
-  "name":  "primitive",
-  "version":  "7.0.0",
-  "resources":  [
+  "name": "primitive",
+  "version": "7.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "primitive:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "primitive:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "boolean",
-          "type":  {
-            "boolType":  {}
+          "name": "boolean",
+          "type": {
+            "boolType": {}
           }
         },
         {
-          "name":  "booleanMap",
-          "type":  {
-            "mapType":  {
-              "boolType":  {}
+          "name": "booleanMap",
+          "type": {
+            "mapType": {
+              "boolType": {}
             }
           }
         },
         {
-          "name":  "float",
-          "type":  {
-            "numberType":  {}
+          "name": "float",
+          "type": {
+            "numberType": {}
           }
         },
         {
-          "name":  "integer",
-          "type":  {
-            "intType":  {}
+          "name": "integer",
+          "type": {
+            "intType": {}
           }
         },
         {
-          "name":  "numberArray",
-          "type":  {
-            "arrayType":  {
-              "numberType":  {}
+          "name": "numberArray",
+          "type": {
+            "arrayType": {
+              "numberType": {}
             }
           }
         },
         {
-          "name":  "string",
-          "type":  {
-            "stringType":  {}
+          "name": "string",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "boolean",
-          "type":  {
-            "boolType":  {}
+          "name": "boolean",
+          "type": {
+            "boolType": {}
           }
         },
         {
-          "name":  "booleanMap",
-          "type":  {
-            "mapType":  {
-              "boolType":  {}
+          "name": "booleanMap",
+          "type": {
+            "mapType": {
+              "boolType": {}
             }
           }
         },
         {
-          "name":  "float",
-          "type":  {
-            "numberType":  {}
+          "name": "float",
+          "type": {
+            "numberType": {}
           }
         },
         {
-          "name":  "integer",
-          "type":  {
-            "intType":  {}
+          "name": "integer",
+          "type": {
+            "intType": {}
           }
         },
         {
-          "name":  "numberArray",
-          "type":  {
-            "arrayType":  {
-              "numberType":  {}
+          "name": "numberArray",
+          "type": {
+            "arrayType": {
+              "numberType": {}
             }
           }
         },
         {
-          "name":  "string",
-          "type":  {
-            "stringType":  {}
+          "name": "string",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "first",
-        "logicalName":  "first",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "first",
+        "logicalName": "first",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  false
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
               }
             }
           }
@@ -18,74 +18,84 @@
       }
     },
     {
-      "resource":  {
-        "name":  "second",
-        "logicalName":  "second",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "second",
+        "logicalName": "second",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "relativeTraversalExpression":  {
-                "source":  {
-                  "functionCallExpression":  {
-                    "name":  "invoke",
-                    "args":  [
+            "name": "value",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
                       {
-                        "templateExpression":  {
-                          "parts":  [
-                            {
-                              "literalValueExpression":  {
-                                "stringValue":  "simple-invoke::secretInvoke"
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "simple-invoke::secretInvoke"
+                                }
                               }
-                            }
-                          ]
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       },
                       {
-                        "objectConsExpression":  {
-                          "properties":  {
-                            "secretResponse":  {
-                              "scopeTraversalExpression":  {
-                                "rootName":  "first",
-                                "traversal":  {
-                                  "each":  [
-                                    {
-                                      "traverseRoot":  {
-                                        "name":  "first"
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "secretResponse": {
+                                "scopeTraversalExpression": {
+                                  "rootName": "first",
+                                  "traversal": {
+                                    "each": [
+                                      {
+                                        "traverseRoot": {
+                                          "name": "first"
+                                        }
+                                      },
+                                      {
+                                        "traverseAttr": {
+                                          "name": "value"
+                                        }
                                       }
-                                    },
+                                    ]
+                                  }
+                                }
+                              },
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
                                     {
-                                      "traverseAttr":  {
-                                        "name":  "value"
+                                      "literalValueExpression": {
+                                        "stringValue": "hello"
                                       }
                                     }
                                   ]
                                 }
                               }
-                            },
-                            "value":  {
-                              "templateExpression":  {
-                                "parts":  [
-                                  {
-                                    "literalValueExpression":  {
-                                      "stringValue":  "hello"
-                                    }
-                                  }
-                                ]
-                              }
                             }
                           }
+                        },
+                        "type": {
+                          "composite": {}
                         }
                       }
                     ]
                   }
                 },
-                "traversal":  {
-                  "each":  [
+                "traversal": {
+                  "each": [
                     {
-                      "traverseAttr":  {
-                        "name":  "secret"
+                      "traverseAttr": {
+                        "name": "secret"
                       }
                     }
                   ]
@@ -97,14 +107,14 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     },
     {
-      "name":  "simple-invoke",
-      "version":  "10.0.0"
+      "name": "simple-invoke",
+      "version": "10.0.0"
     }
   ]
 }

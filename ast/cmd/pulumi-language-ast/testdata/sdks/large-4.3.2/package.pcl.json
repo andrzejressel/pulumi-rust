@@ -1,29 +1,29 @@
 {
-  "name":  "large",
-  "version":  "4.3.2",
-  "resources":  [
+  "name": "large",
+  "version": "4.3.2",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "String",
-        "raw":  "large:index:String"
+      "elementId": {
+        "name": "String",
+        "raw": "large:index:String"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

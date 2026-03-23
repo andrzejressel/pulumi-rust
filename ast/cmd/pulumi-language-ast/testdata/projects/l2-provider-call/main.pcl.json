@@ -1,19 +1,19 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "defaultRes",
-        "logicalName":  "defaultRes",
-        "token":  "call:index:Custom",
-        "inputs":  [
+      "resource": {
+        "name": "defaultRes",
+        "logicalName": "defaultRes",
+        "token": "call:index:Custom",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "defaultValue"
+                    "literalValueExpression": {
+                      "stringValue": "defaultValue"
                     }
                   }
                 ]
@@ -24,51 +24,66 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "defaultProviderValue",
-        "logicalName":  "defaultProviderValue",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "defaultProviderValue",
+        "logicalName": "defaultProviderValue",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "defaultRes",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "defaultRes",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "defaultRes"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "defaultRes"
+                            "literalValueExpression": {
+                              "stringValue": "providerValue"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "providerValue"
-                          }
-                        }
-                      ]
+                    "value": {
+                      "objectConsExpression": {}
+                    },
+                    "type": {
+                      "composite": {}
                     }
-                  },
-                  {
-                    "objectConsExpression":  {}
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "result"
+                  "traverseAttr": {
+                    "name": "result"
                   }
                 }
               ]
@@ -78,10 +93,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "call",
-      "version":  "15.7.9"
+      "name": "call",
+      "version": "15.7.9"
     }
   ]
 }

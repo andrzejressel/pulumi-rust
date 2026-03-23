@@ -117,8 +117,26 @@ message TupleConsExpression {
 
 message FunctionCallExpression {
   string name = 1;
-  repeated Expression args = 2;
+  repeated FunctionCallArgument args = 2;
 }
+
+message FunctionCallArgument {
+  Expression value = 1;
+  Type type = 2;
+}
+
+message Type {
+  oneof value {
+    Empty boolType = 1;
+    Empty intType = 2;
+    Empty numberType = 3;
+    Empty stringType = 4;
+    Empty composite = 5;
+    Type outputType = 6;
+  }
+}
+
+message Empty {}
 
 message RelativeTraversalExpression {
   Expression source = 1;

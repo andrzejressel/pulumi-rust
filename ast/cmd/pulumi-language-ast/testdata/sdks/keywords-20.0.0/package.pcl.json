@@ -1,148 +1,148 @@
 {
-  "name":  "keywords",
-  "version":  "20.0.0",
-  "resources":  [
+  "name": "keywords",
+  "version": "20.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Lambda",
-        "raw":  "keywords:index:Lambda"
+      "elementId": {
+        "name": "Lambda",
+        "raw": "keywords:index:Lambda"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "builtins",
-          "type":  {
-            "stringType":  {}
+          "name": "builtins",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "lambda",
-          "type":  {
-            "stringType":  {}
+          "name": "lambda",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "property",
-          "type":  {
-            "stringType":  {}
+          "name": "property",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "builtins",
-          "type":  {
-            "stringType":  {}
+          "name": "builtins",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "lambda",
-          "type":  {
-            "stringType":  {}
+          "name": "lambda",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "property",
-          "type":  {
-            "stringType":  {}
+          "name": "property",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "SomeResource",
-        "raw":  "keywords:index:SomeResource"
+      "elementId": {
+        "name": "SomeResource",
+        "raw": "keywords:index:SomeResource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "builtins",
-          "type":  {
-            "stringType":  {}
+          "name": "builtins",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "lambda",
-          "type":  {
-            "stringType":  {}
+          "name": "lambda",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "property",
-          "type":  {
-            "stringType":  {}
+          "name": "property",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "builtins",
-          "type":  {
-            "stringType":  {}
+          "name": "builtins",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "lambda",
-          "type":  {
-            "stringType":  {}
+          "name": "lambda",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "property",
-          "type":  {
-            "stringType":  {}
+          "name": "property",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "lambda"
         ],
-        "name":  "SomeResource",
-        "raw":  "keywords:lambda:SomeResource"
+        "name": "SomeResource",
+        "raw": "keywords:lambda:SomeResource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "builtins",
-          "type":  {
-            "stringType":  {}
+          "name": "builtins",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "lambda",
-          "type":  {
-            "stringType":  {}
+          "name": "lambda",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "property",
-          "type":  {
-            "stringType":  {}
+          "name": "property",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "builtins",
-          "type":  {
-            "stringType":  {}
+          "name": "builtins",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "lambda",
-          "type":  {
-            "stringType":  {}
+          "name": "lambda",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "property",
-          "type":  {
-            "stringType":  {}
+          "name": "property",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

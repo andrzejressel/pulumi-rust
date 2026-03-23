@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "res",
-        "logicalName":  "res",
-        "token":  "alpha:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "alpha:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,10 +18,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "alpha",
-      "version":  "3.0.0-alpha.1.internal+exp.sha.12345678"
+      "name": "alpha",
+      "version": "3.0.0-alpha.1.internal+exp.sha.12345678"
     }
   ]
 }

@@ -1,62 +1,62 @@
 {
-  "name":  "enum",
-  "version":  "30.0.0",
-  "resources":  [
+  "name": "enum",
+  "version": "30.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Res",
-        "raw":  "enum:index:Res"
+      "elementId": {
+        "name": "Res",
+        "raw": "enum:index:Res"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "intEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "IntEnum",
-                  "raw":  "enum:index:IntEnum"
+          "name": "intEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "IntEnum",
+                  "raw": "enum:index:IntEnum"
                 }
               }
             }
           }
         },
         {
-          "name":  "stringEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "StringEnum",
-                  "raw":  "enum:index:StringEnum"
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "StringEnum",
+                  "raw": "enum:index:StringEnum"
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "intEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "IntEnum",
-                  "raw":  "enum:index:IntEnum"
+          "name": "intEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "IntEnum",
+                  "raw": "enum:index:IntEnum"
                 }
               }
             }
           }
         },
         {
-          "name":  "stringEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "StringEnum",
-                  "raw":  "enum:index:StringEnum"
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "StringEnum",
+                  "raw": "enum:index:StringEnum"
                 }
               }
             }
@@ -65,80 +65,80 @@
       ]
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod",
           "nested"
         ],
-        "name":  "Res",
-        "raw":  "enum:mod/nested:Res"
+        "name": "Res",
+        "raw": "enum:mod/nested:Res"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "intEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "intEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod",
                     "nested"
                   ],
-                  "name":  "IntEnum",
-                  "raw":  "enum:mod/nested:IntEnum"
+                  "name": "IntEnum",
+                  "raw": "enum:mod/nested:IntEnum"
                 }
               }
             }
           }
         },
         {
-          "name":  "stringEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod",
                     "nested"
                   ],
-                  "name":  "StringEnum",
-                  "raw":  "enum:mod/nested:StringEnum"
+                  "name": "StringEnum",
+                  "raw": "enum:mod/nested:StringEnum"
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "intEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "intEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod",
                     "nested"
                   ],
-                  "name":  "IntEnum",
-                  "raw":  "enum:mod/nested:IntEnum"
+                  "name": "IntEnum",
+                  "raw": "enum:mod/nested:IntEnum"
                 }
               }
             }
           }
         },
         {
-          "name":  "stringEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod",
                     "nested"
                   ],
-                  "name":  "StringEnum",
-                  "raw":  "enum:mod/nested:StringEnum"
+                  "name": "StringEnum",
+                  "raw": "enum:mod/nested:StringEnum"
                 }
               }
             }
@@ -147,75 +147,75 @@
       ]
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod"
         ],
-        "name":  "Res",
-        "raw":  "enum:mod:Res"
+        "name": "Res",
+        "raw": "enum:mod:Res"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "intEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "intEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod"
                   ],
-                  "name":  "IntEnum",
-                  "raw":  "enum:mod:IntEnum"
+                  "name": "IntEnum",
+                  "raw": "enum:mod:IntEnum"
                 }
               }
             }
           }
         },
         {
-          "name":  "stringEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod"
                   ],
-                  "name":  "StringEnum",
-                  "raw":  "enum:mod:StringEnum"
+                  "name": "StringEnum",
+                  "raw": "enum:mod:StringEnum"
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "intEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "intEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod"
                   ],
-                  "name":  "IntEnum",
-                  "raw":  "enum:mod:IntEnum"
+                  "name": "IntEnum",
+                  "raw": "enum:mod:IntEnum"
                 }
               }
             }
           }
         },
         {
-          "name":  "stringEnum",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "mod"
                   ],
-                  "name":  "StringEnum",
-                  "raw":  "enum:mod:StringEnum"
+                  "name": "StringEnum",
+                  "raw": "enum:mod:StringEnum"
                 }
               }
             }
@@ -224,141 +224,141 @@
       ]
     }
   ],
-  "types":  [
+  "types": [
     {
-      "elementId":  {
-        "name":  "IntEnum",
-        "raw":  "enum:index:IntEnum"
+      "elementId": {
+        "name": "IntEnum",
+        "raw": "enum:index:IntEnum"
       },
-      "globalTypeValue":  {
-        "integerEnum":  {
-          "elements":  [
+      "globalTypeValue": {
+        "integerEnum": {
+          "elements": [
             {
-              "name":  "IntOne",
-              "value":  "1"
+              "name": "IntOne",
+              "value": "1"
             },
             {
-              "name":  "IntTwo",
-              "value":  "2"
+              "name": "IntTwo",
+              "value": "2"
             }
           ]
         }
       }
     },
     {
-      "elementId":  {
-        "name":  "StringEnum",
-        "raw":  "enum:index:StringEnum"
+      "elementId": {
+        "name": "StringEnum",
+        "raw": "enum:index:StringEnum"
       },
-      "globalTypeValue":  {
-        "stringEnum":  {
-          "elements":  [
+      "globalTypeValue": {
+        "stringEnum": {
+          "elements": [
             {
-              "name":  "StringOne",
-              "value":  "one"
+              "name": "StringOne",
+              "value": "one"
             },
             {
-              "name":  "StringTwo",
-              "value":  "two"
+              "name": "StringTwo",
+              "value": "two"
             }
           ]
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod",
           "nested"
         ],
-        "name":  "IntEnum",
-        "raw":  "enum:mod/nested:IntEnum"
+        "name": "IntEnum",
+        "raw": "enum:mod/nested:IntEnum"
       },
-      "globalTypeValue":  {
-        "integerEnum":  {
-          "elements":  [
+      "globalTypeValue": {
+        "integerEnum": {
+          "elements": [
             {
-              "name":  "IntOne",
-              "value":  "1"
+              "name": "IntOne",
+              "value": "1"
             },
             {
-              "name":  "IntTwo",
-              "value":  "2"
+              "name": "IntTwo",
+              "value": "2"
             }
           ]
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod",
           "nested"
         ],
-        "name":  "StringEnum",
-        "raw":  "enum:mod/nested:StringEnum"
+        "name": "StringEnum",
+        "raw": "enum:mod/nested:StringEnum"
       },
-      "globalTypeValue":  {
-        "stringEnum":  {
-          "elements":  [
+      "globalTypeValue": {
+        "stringEnum": {
+          "elements": [
             {
-              "name":  "StringOne",
-              "value":  "one"
+              "name": "StringOne",
+              "value": "one"
             },
             {
-              "name":  "StringTwo",
-              "value":  "two"
+              "name": "StringTwo",
+              "value": "two"
             }
           ]
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod"
         ],
-        "name":  "IntEnum",
-        "raw":  "enum:mod:IntEnum"
+        "name": "IntEnum",
+        "raw": "enum:mod:IntEnum"
       },
-      "globalTypeValue":  {
-        "integerEnum":  {
-          "elements":  [
+      "globalTypeValue": {
+        "integerEnum": {
+          "elements": [
             {
-              "name":  "IntOne",
-              "value":  "1"
+              "name": "IntOne",
+              "value": "1"
             },
             {
-              "name":  "IntTwo",
-              "value":  "2"
+              "name": "IntTwo",
+              "value": "2"
             }
           ]
         }
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "mod"
         ],
-        "name":  "StringEnum",
-        "raw":  "enum:mod:StringEnum"
+        "name": "StringEnum",
+        "raw": "enum:mod:StringEnum"
       },
-      "globalTypeValue":  {
-        "stringEnum":  {
-          "elements":  [
+      "globalTypeValue": {
+        "stringEnum": {
+          "elements": [
             {
-              "name":  "StringOne",
-              "value":  "one"
+              "name": "StringOne",
+              "value": "one"
             },
             {
-              "name":  "StringTwo",
-              "value":  "two"
+              "name": "StringTwo",
+              "value": "two"
             }
           ]
         }
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

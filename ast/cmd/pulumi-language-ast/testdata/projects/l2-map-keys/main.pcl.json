@@ -1,43 +1,43 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "prim",
-        "logicalName":  "prim",
-        "token":  "primitive:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "prim",
+        "logicalName": "prim",
+        "token": "primitive:index:Resource",
+        "inputs": [
           {
-            "name":  "boolean",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  false
+            "name": "boolean",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
               }
             }
           },
           {
-            "name":  "float",
-            "value":  {
-              "literalValueExpression":  {
-                "numberValue":  2.17
+            "name": "float",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 2.17
               }
             }
           },
           {
-            "name":  "integer",
-            "value":  {
-              "literalValueExpression":  {
-                "numberValue":  -12
+            "name": "integer",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": -12
               }
             }
           },
           {
-            "name":  "string",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "string",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "Goodbye"
+                    "literalValueExpression": {
+                      "stringValue": "Goodbye"
                     }
                   }
                 ]
@@ -45,18 +45,18 @@
             }
           },
           {
-            "name":  "numberArray",
-            "value":  {
-              "tupleConsExpression":  {
-                "items":  [
+            "name": "numberArray",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
                   {
-                    "literalValueExpression":  {
-                      "numberValue":  0
+                    "literalValueExpression": {
+                      "numberValue": 0
                     }
                   },
                   {
-                    "literalValueExpression":  {
-                      "numberValue":  1
+                    "literalValueExpression": {
+                      "numberValue": 1
                     }
                   }
                 ]
@@ -64,69 +64,69 @@
             }
           },
           {
-            "name":  "booleanMap",
-            "value":  {
-              "objectConsExpression":  {}
+            "name": "booleanMap",
+            "value": {
+              "objectConsExpression": {}
             }
           }
         ]
       }
     },
     {
-      "resource":  {
-        "name":  "ref",
-        "logicalName":  "ref",
-        "token":  "primitive-ref:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "ref",
+        "logicalName": "ref",
+        "token": "primitive-ref:index:Resource",
+        "inputs": [
           {
-            "name":  "data",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "boolArray":  {
-                    "tupleConsExpression":  {
-                      "items":  [
+            "name": "data",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "boolArray": {
+                    "tupleConsExpression": {
+                      "items": [
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  false
+                          "literalValueExpression": {
+                            "boolValue": false
                           }
                         },
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  true
+                          "literalValueExpression": {
+                            "boolValue": true
                           }
                         }
                       ]
                     }
                   },
-                  "boolean":  {
-                    "literalValueExpression":  {
-                      "boolValue":  false
+                  "boolean": {
+                    "literalValueExpression": {
+                      "boolValue": false
                     }
                   },
-                  "float":  {
-                    "literalValueExpression":  {
-                      "numberValue":  2.17
+                  "float": {
+                    "literalValueExpression": {
+                      "numberValue": 2.17
                     }
                   },
-                  "integer":  {
-                    "literalValueExpression":  {
-                      "numberValue":  -12
+                  "integer": {
+                    "literalValueExpression": {
+                      "numberValue": -12
                     }
                   },
-                  "string":  {
-                    "templateExpression":  {
-                      "parts":  [
+                  "string": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "Goodbye"
+                          "literalValueExpression": {
+                            "stringValue": "Goodbye"
                           }
                         }
                       ]
                     }
                   },
-                  "stringMap":  {
-                    "objectConsExpression":  {}
+                  "stringMap": {
+                    "objectConsExpression": {}
                   }
                 }
               }
@@ -136,85 +136,85 @@
       }
     },
     {
-      "resource":  {
-        "name":  "rref",
-        "logicalName":  "rref",
-        "token":  "ref-ref:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "rref",
+        "logicalName": "rref",
+        "token": "ref-ref:index:Resource",
+        "inputs": [
           {
-            "name":  "data",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "boolArray":  {
-                    "tupleConsExpression":  {}
+            "name": "data",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "boolArray": {
+                    "tupleConsExpression": {}
                   },
-                  "boolean":  {
-                    "literalValueExpression":  {
-                      "boolValue":  true
+                  "boolean": {
+                    "literalValueExpression": {
+                      "boolValue": true
                     }
                   },
-                  "float":  {
-                    "literalValueExpression":  {
-                      "numberValue":  4.5
+                  "float": {
+                    "literalValueExpression": {
+                      "numberValue": 4.5
                     }
                   },
-                  "innerData":  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "boolArray":  {
-                          "tupleConsExpression":  {}
+                  "innerData": {
+                    "objectConsExpression": {
+                      "properties": {
+                        "boolArray": {
+                          "tupleConsExpression": {}
                         },
-                        "boolean":  {
-                          "literalValueExpression":  {
-                            "boolValue":  false
+                        "boolean": {
+                          "literalValueExpression": {
+                            "boolValue": false
                           }
                         },
-                        "float":  {
-                          "literalValueExpression":  {
-                            "numberValue":  -2.17
+                        "float": {
+                          "literalValueExpression": {
+                            "numberValue": -2.17
                           }
                         },
-                        "integer":  {
-                          "literalValueExpression":  {
-                            "numberValue":  123
+                        "integer": {
+                          "literalValueExpression": {
+                            "numberValue": 123
                           }
                         },
-                        "string":  {
-                          "templateExpression":  {
-                            "parts":  [
+                        "string": {
+                          "templateExpression": {
+                            "parts": [
                               {
-                                "literalValueExpression":  {
-                                  "stringValue":  "Goodbye"
+                                "literalValueExpression": {
+                                  "stringValue": "Goodbye"
                                 }
                               }
                             ]
                           }
                         },
-                        "stringMap":  {
-                          "objectConsExpression":  {}
+                        "stringMap": {
+                          "objectConsExpression": {}
                         }
                       }
                     }
                   },
-                  "integer":  {
-                    "literalValueExpression":  {
-                      "numberValue":  1024
+                  "integer": {
+                    "literalValueExpression": {
+                      "numberValue": 1024
                     }
                   },
-                  "string":  {
-                    "templateExpression":  {
-                      "parts":  [
+                  "string": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "Hello"
+                          "literalValueExpression": {
+                            "stringValue": "Hello"
                           }
                         }
                       ]
                     }
                   },
-                  "stringMap":  {
-                    "objectConsExpression":  {}
+                  "stringMap": {
+                    "objectConsExpression": {}
                   }
                 }
               }
@@ -224,216 +224,216 @@
       }
     },
     {
-      "resource":  {
-        "name":  "plains",
-        "logicalName":  "plains",
-        "token":  "plain:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "plains",
+        "logicalName": "plains",
+        "token": "plain:index:Resource",
+        "inputs": [
           {
-            "name":  "data",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "boolArray":  {
-                    "tupleConsExpression":  {
-                      "items":  [
+            "name": "data",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "boolArray": {
+                    "tupleConsExpression": {
+                      "items": [
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  true
+                          "literalValueExpression": {
+                            "boolValue": true
                           }
                         },
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  false
+                          "literalValueExpression": {
+                            "boolValue": false
                           }
                         }
                       ]
                     }
                   },
-                  "boolean":  {
-                    "literalValueExpression":  {
-                      "boolValue":  true
+                  "boolean": {
+                    "literalValueExpression": {
+                      "boolValue": true
                     }
                   },
-                  "float":  {
-                    "literalValueExpression":  {
-                      "numberValue":  4.5
+                  "float": {
+                    "literalValueExpression": {
+                      "numberValue": 4.5
                     }
                   },
-                  "innerData":  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "boolArray":  {
-                          "tupleConsExpression":  {
-                            "items":  [
+                  "innerData": {
+                    "objectConsExpression": {
+                      "properties": {
+                        "boolArray": {
+                          "tupleConsExpression": {
+                            "items": [
                               {
-                                "literalValueExpression":  {
-                                  "boolValue":  false
+                                "literalValueExpression": {
+                                  "boolValue": false
                                 }
                               },
                               {
-                                "literalValueExpression":  {
-                                  "boolValue":  true
+                                "literalValueExpression": {
+                                  "boolValue": true
                                 }
                               }
                             ]
                           }
                         },
-                        "boolean":  {
-                          "literalValueExpression":  {
-                            "boolValue":  false
+                        "boolean": {
+                          "literalValueExpression": {
+                            "boolValue": false
                           }
                         },
-                        "float":  {
-                          "literalValueExpression":  {
-                            "numberValue":  2.17
+                        "float": {
+                          "literalValueExpression": {
+                            "numberValue": 2.17
                           }
                         },
-                        "integer":  {
-                          "literalValueExpression":  {
-                            "numberValue":  -12
+                        "integer": {
+                          "literalValueExpression": {
+                            "numberValue": -12
                           }
                         },
-                        "string":  {
-                          "templateExpression":  {
-                            "parts":  [
+                        "string": {
+                          "templateExpression": {
+                            "parts": [
                               {
-                                "literalValueExpression":  {
-                                  "stringValue":  "Goodbye"
+                                "literalValueExpression": {
+                                  "stringValue": "Goodbye"
                                 }
                               }
                             ]
                           }
                         },
-                        "stringMap":  {
-                          "objectConsExpression":  {}
+                        "stringMap": {
+                          "objectConsExpression": {}
                         }
                       }
                     }
                   },
-                  "integer":  {
-                    "literalValueExpression":  {
-                      "numberValue":  1024
+                  "integer": {
+                    "literalValueExpression": {
+                      "numberValue": 1024
                     }
                   },
-                  "string":  {
-                    "templateExpression":  {
-                      "parts":  [
+                  "string": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "Hello"
+                          "literalValueExpression": {
+                            "stringValue": "Hello"
                           }
                         }
                       ]
                     }
                   },
-                  "stringMap":  {
-                    "objectConsExpression":  {}
+                  "stringMap": {
+                    "objectConsExpression": {}
                   }
                 }
               }
             }
           },
           {
-            "name":  "nonPlainData",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "boolArray":  {
-                    "tupleConsExpression":  {
-                      "items":  [
+            "name": "nonPlainData",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "boolArray": {
+                    "tupleConsExpression": {
+                      "items": [
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  true
+                          "literalValueExpression": {
+                            "boolValue": true
                           }
                         },
                         {
-                          "literalValueExpression":  {
-                            "boolValue":  false
+                          "literalValueExpression": {
+                            "boolValue": false
                           }
                         }
                       ]
                     }
                   },
-                  "boolean":  {
-                    "literalValueExpression":  {
-                      "boolValue":  true
+                  "boolean": {
+                    "literalValueExpression": {
+                      "boolValue": true
                     }
                   },
-                  "float":  {
-                    "literalValueExpression":  {
-                      "numberValue":  4.5
+                  "float": {
+                    "literalValueExpression": {
+                      "numberValue": 4.5
                     }
                   },
-                  "innerData":  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "boolArray":  {
-                          "tupleConsExpression":  {
-                            "items":  [
+                  "innerData": {
+                    "objectConsExpression": {
+                      "properties": {
+                        "boolArray": {
+                          "tupleConsExpression": {
+                            "items": [
                               {
-                                "literalValueExpression":  {
-                                  "boolValue":  false
+                                "literalValueExpression": {
+                                  "boolValue": false
                                 }
                               },
                               {
-                                "literalValueExpression":  {
-                                  "boolValue":  true
+                                "literalValueExpression": {
+                                  "boolValue": true
                                 }
                               }
                             ]
                           }
                         },
-                        "boolean":  {
-                          "literalValueExpression":  {
-                            "boolValue":  false
+                        "boolean": {
+                          "literalValueExpression": {
+                            "boolValue": false
                           }
                         },
-                        "float":  {
-                          "literalValueExpression":  {
-                            "numberValue":  2.17
+                        "float": {
+                          "literalValueExpression": {
+                            "numberValue": 2.17
                           }
                         },
-                        "integer":  {
-                          "literalValueExpression":  {
-                            "numberValue":  -12
+                        "integer": {
+                          "literalValueExpression": {
+                            "numberValue": -12
                           }
                         },
-                        "string":  {
-                          "templateExpression":  {
-                            "parts":  [
+                        "string": {
+                          "templateExpression": {
+                            "parts": [
                               {
-                                "literalValueExpression":  {
-                                  "stringValue":  "Goodbye"
+                                "literalValueExpression": {
+                                  "stringValue": "Goodbye"
                                 }
                               }
                             ]
                           }
                         },
-                        "stringMap":  {
-                          "objectConsExpression":  {}
+                        "stringMap": {
+                          "objectConsExpression": {}
                         }
                       }
                     }
                   },
-                  "integer":  {
-                    "literalValueExpression":  {
-                      "numberValue":  1024
+                  "integer": {
+                    "literalValueExpression": {
+                      "numberValue": 1024
                     }
                   },
-                  "string":  {
-                    "templateExpression":  {
-                      "parts":  [
+                  "string": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "Hello"
+                          "literalValueExpression": {
+                            "stringValue": "Hello"
                           }
                         }
                       ]
                     }
                   },
-                  "stringMap":  {
-                    "objectConsExpression":  {}
+                  "stringMap": {
+                    "objectConsExpression": {}
                   }
                 }
               }
@@ -443,22 +443,22 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "plain",
-      "version":  "13.0.0"
+      "name": "plain",
+      "version": "13.0.0"
     },
     {
-      "name":  "primitive",
-      "version":  "7.0.0"
+      "name": "primitive",
+      "version": "7.0.0"
     },
     {
-      "name":  "primitive-ref",
-      "version":  "11.0.0"
+      "name": "primitive-ref",
+      "version": "11.0.0"
     },
     {
-      "name":  "ref-ref",
-      "version":  "12.0.0"
+      "name": "ref-ref",
+      "version": "12.0.0"
     }
   ]
 }

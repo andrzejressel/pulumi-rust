@@ -1,32 +1,32 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "ignoreChanges",
-        "logicalName":  "ignoreChanges",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "ignoreChanges",
+        "logicalName": "ignoreChanges",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {
-          "ignoreChanges":  {
-            "tupleConsExpression":  {
-              "items":  [
+        "options": {
+          "ignoreChanges": {
+            "tupleConsExpression": {
+              "items": [
                 {
-                  "scopeTraversalExpression":  {
-                    "rootName":  "value",
-                    "traversal":  {
-                      "each":  [
+                  "scopeTraversalExpression": {
+                    "rootName": "value",
+                    "traversal": {
+                      "each": [
                         {
-                          "traverseRoot":  {
-                            "name":  "value"
+                          "traverseRoot": {
+                            "name": "value"
                           }
                         }
                       ]
@@ -40,16 +40,16 @@
       }
     },
     {
-      "resource":  {
-        "name":  "notIgnoreChanges",
-        "logicalName":  "notIgnoreChanges",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "notIgnoreChanges",
+        "logicalName": "notIgnoreChanges",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -57,10 +57,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

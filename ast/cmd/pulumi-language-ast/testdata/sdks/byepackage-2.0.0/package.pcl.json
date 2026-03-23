@@ -1,75 +1,75 @@
 {
-  "name":  "byepackage",
-  "version":  "2.0.0",
-  "resources":  [
+  "name": "byepackage",
+  "version": "2.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "GoodbyeWorld",
-        "raw":  "byepackage:index:GoodbyeWorld"
+      "elementId": {
+        "name": "GoodbyeWorld",
+        "raw": "byepackage:index:GoodbyeWorld"
       },
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "parameterValue",
-          "type":  {
-            "stringType":  {}
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "GoodbyeWorldComponent",
-        "raw":  "byepackage:index:GoodbyeWorldComponent"
+      "elementId": {
+        "name": "GoodbyeWorldComponent",
+        "raw": "byepackage:index:GoodbyeWorldComponent"
       },
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "parameterValue",
-          "type":  {
-            "stringType":  {}
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "doGoodbyeWorld",
-        "raw":  "byepackage:index:doGoodbyeWorld"
+      "elementId": {
+        "name": "doGoodbyeWorld",
+        "raw": "byepackage:index:doGoodbyeWorld"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "input",
-          "type":  {
-            "stringType":  {}
+          "name": "input",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "output",
-          "type":  {
-            "stringType":  {}
+          "name": "output",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "doGoodbyeWorldResult",
-            "raw":  "byepackage:index:doGoodbyeWorldResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "doGoodbyeWorldResult",
+            "raw": "byepackage:index:doGoodbyeWorldResult"
           }
         }
       }
     }
   ],
-  "provider":  {
-    "inputProperties":  [
+  "provider": {
+    "inputProperties": [
       {
-        "name":  "text",
-        "type":  {
-          "optionalType":  {
-            "stringType":  {}
+        "name": "text",
+        "type": {
+          "optionalType": {
+            "stringType": {}
           }
         }
       }

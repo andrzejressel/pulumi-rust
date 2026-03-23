@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "noTimeouts",
-        "logicalName":  "noTimeouts",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "noTimeouts",
+        "logicalName": "noTimeouts",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,82 +18,82 @@
       }
     },
     {
-      "resource":  {
-        "name":  "createOnly",
-        "logicalName":  "createOnly",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "createOnly",
+        "logicalName": "createOnly",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {}
+        "options": {}
       }
     },
     {
-      "resource":  {
-        "name":  "updateOnly",
-        "logicalName":  "updateOnly",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "updateOnly",
+        "logicalName": "updateOnly",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {}
+        "options": {}
       }
     },
     {
-      "resource":  {
-        "name":  "deleteOnly",
-        "logicalName":  "deleteOnly",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "deleteOnly",
+        "logicalName": "deleteOnly",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {}
+        "options": {}
       }
     },
     {
-      "resource":  {
-        "name":  "allTimeouts",
-        "logicalName":  "allTimeouts",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "allTimeouts",
+        "logicalName": "allTimeouts",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {}
+        "options": {}
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

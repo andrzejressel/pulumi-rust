@@ -1,67 +1,67 @@
 {
-  "name":  "replaceonchanges",
-  "version":  "25.0.0",
-  "resources":  [
+  "name": "replaceonchanges",
+  "version": "25.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "ResourceA",
-        "raw":  "replaceonchanges:index:ResourceA"
+      "elementId": {
+        "name": "ResourceA",
+        "raw": "replaceonchanges:index:ResourceA"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "replaceProp",
-          "type":  {
-            "optionalType":  {
-              "boolType":  {}
+          "name": "replaceProp",
+          "type": {
+            "optionalType": {
+              "boolType": {}
             }
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "replaceProp",
-          "type":  {
-            "optionalType":  {
-              "boolType":  {}
+          "name": "replaceProp",
+          "type": {
+            "optionalType": {
+              "boolType": {}
             }
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "ResourceB",
-        "raw":  "replaceonchanges:index:ResourceB"
+      "elementId": {
+        "name": "ResourceB",
+        "raw": "replaceonchanges:index:ResourceB"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "boolType":  {}
+          "name": "value",
+          "type": {
+            "boolType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

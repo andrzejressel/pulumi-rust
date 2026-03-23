@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "resY",
-        "logicalName":  "resY",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "resY",
+        "logicalName": "resY",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,16 +18,16 @@
       }
     },
     {
-      "resource":  {
-        "name":  "resN",
-        "logicalName":  "resN",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "resN",
+        "logicalName": "resN",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  false
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
               }
             }
           }
@@ -35,10 +35,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

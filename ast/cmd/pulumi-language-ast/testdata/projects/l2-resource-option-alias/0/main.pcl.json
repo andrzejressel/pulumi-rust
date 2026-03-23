@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "parent",
-        "logicalName":  "parent",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "parent",
+        "logicalName": "parent",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,16 +18,16 @@
       }
     },
     {
-      "resource":  {
-        "name":  "aliasURN",
-        "logicalName":  "aliasURN",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "aliasURN",
+        "logicalName": "aliasURN",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -35,16 +35,16 @@
       }
     },
     {
-      "resource":  {
-        "name":  "aliasName",
-        "logicalName":  "aliasName",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "aliasName",
+        "logicalName": "aliasName",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -52,16 +52,16 @@
       }
     },
     {
-      "resource":  {
-        "name":  "aliasNoParent",
-        "logicalName":  "aliasNoParent",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "aliasNoParent",
+        "logicalName": "aliasNoParent",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -69,29 +69,29 @@
       }
     },
     {
-      "resource":  {
-        "name":  "aliasParent",
-        "logicalName":  "aliasParent",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "aliasParent",
+        "logicalName": "aliasParent",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {
-          "parent":  {
-            "scopeTraversalExpression":  {
-              "rootName":  "aliasURN",
-              "traversal":  {
-                "each":  [
+        "options": {
+          "parent": {
+            "scopeTraversalExpression": {
+              "rootName": "aliasURN",
+              "traversal": {
+                "each": [
                   {
-                    "traverseRoot":  {
-                      "name":  "aliasURN"
+                    "traverseRoot": {
+                      "name": "aliasURN"
                     }
                   }
                 ]
@@ -102,10 +102,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

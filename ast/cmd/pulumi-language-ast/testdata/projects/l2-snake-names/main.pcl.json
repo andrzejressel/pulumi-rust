@@ -1,30 +1,30 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "first",
-        "logicalName":  "first",
-        "token":  "snake_names:cool_module:some_resource",
-        "inputs":  [
+      "resource": {
+        "name": "first",
+        "logicalName": "first",
+        "token": "snake_names:cool_module:some_resource",
+        "inputs": [
           {
-            "name":  "the_input",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "the_input",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           },
           {
-            "name":  "nested",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "nested_value":  {
-                    "templateExpression":  {
-                      "parts":  [
+            "name": "nested",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "nested_value": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "nested"
+                          "literalValueExpression": {
+                            "stringValue": "nested"
                           }
                         }
                       ]
@@ -38,116 +38,126 @@
       }
     },
     {
-      "resource":  {
-        "name":  "third",
-        "logicalName":  "third",
-        "token":  "snake_names:cool_module:another_resource",
-        "inputs":  [
+      "resource": {
+        "name": "third",
+        "logicalName": "third",
+        "token": "snake_names:cool_module:another_resource",
+        "inputs": [
           {
-            "name":  "the_input",
-            "value":  {
-              "relativeTraversalExpression":  {
-                "source":  {
-                  "functionCallExpression":  {
-                    "name":  "invoke",
-                    "args":  [
+            "name": "the_input",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
                       {
-                        "templateExpression":  {
-                          "parts":  [
-                            {
-                              "literalValueExpression":  {
-                                "stringValue":  "snake_names:cool_module:some_data"
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "snake_names:cool_module:some_data"
+                                }
                               }
-                            }
-                          ]
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       },
                       {
-                        "objectConsExpression":  {
-                          "properties":  {
-                            "nested":  {
-                              "tupleConsExpression":  {
-                                "items":  [
-                                  {
-                                    "objectConsExpression":  {
-                                      "properties":  {
-                                        "value":  {
-                                          "templateExpression":  {
-                                            "parts":  [
-                                              {
-                                                "literalValueExpression":  {
-                                                  "stringValue":  "fuzz"
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "nested": {
+                                "tupleConsExpression": {
+                                  "items": [
+                                    {
+                                      "objectConsExpression": {
+                                        "properties": {
+                                          "value": {
+                                            "templateExpression": {
+                                              "parts": [
+                                                {
+                                                  "literalValueExpression": {
+                                                    "stringValue": "fuzz"
+                                                  }
                                                 }
-                                              }
-                                            ]
+                                              ]
+                                            }
                                           }
                                         }
                                       }
                                     }
-                                  }
-                                ]
-                              }
-                            },
-                            "the_input":  {
-                              "scopeTraversalExpression":  {
-                                "rootName":  "first",
-                                "traversal":  {
-                                  "each":  [
-                                    {
-                                      "traverseRoot":  {
-                                        "name":  "first"
-                                      }
-                                    },
-                                    {
-                                      "traverseAttr":  {
-                                        "name":  "the_output"
-                                      }
-                                    },
-                                    {
-                                      "traverseIndex":  {
-                                        "stringIndex":  "someKey"
-                                      }
-                                    },
-                                    {
-                                      "traverseIndex":  {
-                                        "intIndex":  "0"
-                                      }
-                                    },
-                                    {
-                                      "traverseAttr":  {
-                                        "name":  "nested_output"
-                                      }
-                                    }
                                   ]
+                                }
+                              },
+                              "the_input": {
+                                "scopeTraversalExpression": {
+                                  "rootName": "first",
+                                  "traversal": {
+                                    "each": [
+                                      {
+                                        "traverseRoot": {
+                                          "name": "first"
+                                        }
+                                      },
+                                      {
+                                        "traverseAttr": {
+                                          "name": "the_output"
+                                        }
+                                      },
+                                      {
+                                        "traverseIndex": {
+                                          "stringIndex": "someKey"
+                                        }
+                                      },
+                                      {
+                                        "traverseIndex": {
+                                          "intIndex": "0"
+                                        }
+                                      },
+                                      {
+                                        "traverseAttr": {
+                                          "name": "nested_output"
+                                        }
+                                      }
+                                    ]
+                                  }
                                 }
                               }
                             }
                           }
+                        },
+                        "type": {
+                          "composite": {}
                         }
                       }
                     ]
                   }
                 },
-                "traversal":  {
-                  "each":  [
+                "traversal": {
+                  "each": [
                     {
-                      "traverseAttr":  {
-                        "name":  "nested_output"
+                      "traverseAttr": {
+                        "name": "nested_output"
                       }
                     },
                     {
-                      "traverseIndex":  {
-                        "intIndex":  "0"
+                      "traverseIndex": {
+                        "intIndex": "0"
                       }
                     },
                     {
-                      "traverseIndex":  {
-                        "stringIndex":  "key"
+                      "traverseIndex": {
+                        "stringIndex": "key"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "value"
+                      "traverseAttr": {
+                        "name": "value"
                       }
                     }
                   ]
@@ -159,10 +169,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "snake_names",
-      "version":  "33.0.0"
+      "name": "snake_names",
+      "version": "33.0.0"
     }
   ]
 }

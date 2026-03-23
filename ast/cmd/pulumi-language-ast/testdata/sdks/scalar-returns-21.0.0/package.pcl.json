@@ -1,62 +1,62 @@
 {
-  "name":  "scalar-returns",
-  "version":  "21.0.0",
-  "functions":  [
+  "name": "scalar-returns",
+  "version": "21.0.0",
+  "functions": [
     {
-      "elementId":  {
-        "name":  "invokeArray",
-        "raw":  "scalar-returns:index:invokeArray"
+      "elementId": {
+        "name": "invokeArray",
+        "raw": "scalar-returns:index:invokeArray"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "arrayType":  {
-          "boolType":  {}
+      "returnType": {
+        "arrayType": {
+          "boolType": {}
         }
       }
     },
     {
-      "elementId":  {
-        "name":  "invokeMap",
-        "raw":  "scalar-returns:index:invokeMap"
+      "elementId": {
+        "name": "invokeMap",
+        "raw": "scalar-returns:index:invokeMap"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "mapType":  {
-          "stringType":  {}
+      "returnType": {
+        "mapType": {
+          "stringType": {}
         }
       }
     },
     {
-      "elementId":  {
-        "name":  "invokeSecret",
-        "raw":  "scalar-returns:index:invokeSecret"
+      "elementId": {
+        "name": "invokeSecret",
+        "raw": "scalar-returns:index:invokeSecret"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "numberType":  {}
+      "returnType": {
+        "numberType": {}
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }
