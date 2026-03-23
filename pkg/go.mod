@@ -3,7 +3,6 @@ module github.com/andrzejressel/pulumi-rust
 go 1.26.1
 
 require (
-	github.com/andrzejressel/pulumi-ast v0.0.0-20260314231716-7b7fb80bc44c
 	github.com/hashicorp/hcl/v2 v2.24.0
 	github.com/ihciah/rust2go v0.0.0-20260314034108-6f06b0697c1b
 	github.com/pulumi/pulumi/pkg/v3 v3.226.0
