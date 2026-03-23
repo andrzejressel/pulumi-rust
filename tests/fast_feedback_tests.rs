@@ -21,8 +21,7 @@ fn regenerate_project(test_name: &str) {
         )
     });
 
-    generate_project_from_protobuf(protobuf, project_dir.to_string_lossy().into_owned())
-        .unwrap();
+    generate_project_from_protobuf(protobuf, project_dir.to_string_lossy().into_owned()).unwrap();
 
     assert!(
         project_dir.join("Cargo.toml").exists(),

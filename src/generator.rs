@@ -35,10 +35,8 @@ fn convert_node(node: &Node) -> Result<String> {
             Ok(convert_local_variable(local_variable)
                 .context("Failed to convert local variable")?)
         }
-        Value::ConfigVariable(config_variable) => {
-            Ok(convert_config_variable(config_variable)
-                .context("Failed to convert config variable")?)
-        }
+        Value::ConfigVariable(config_variable) => Ok(convert_config_variable(config_variable)
+            .context("Failed to convert config variable")?),
         Value::OutputVariable(output) => {
             Ok(convert_output_variable(output).context("Failed to convert output variable")?)
         }
@@ -148,7 +146,10 @@ fn convert_stdlib_function_call(name: &str, args: String, arg_count: usize) -> R
     match name {
         "fromBase64" => {
             ensure_arity(name, arg_count, 1)?;
-            Ok(format!("pulumi_gestalt_rust::stdlib::from_base64({}).expect(\"Fail to convert from base64\")", args))
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::from_base64({}).expect(\"Fail to convert from base64\")",
+                args
+            ))
         }
         "toBase64" => {
             ensure_arity(name, arg_count, 1)?;
