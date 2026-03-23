@@ -17,7 +17,7 @@ The AST module is a standalone Go module that can be used independently of the R
 To use this module in your Go project:
 
 ```bash
-go get github.com/andrzejressel/pulumi-ast
+go get github.com/andrzejressel/pulumi-rust/ast
 ```
 
 ### Building from Source

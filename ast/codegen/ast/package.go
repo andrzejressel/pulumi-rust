@@ -6,8 +6,12 @@ import (
 	"sort"
 	"strings"
 
+<<<<<<< Updated upstream
 	"github.com/andrzejressel/pulumi-ast/codegen/shared"
 	astproto "github.com/andrzejressel/pulumi-ast/protobuf/schemapackage"
+=======
+	astproto "github.com/andrzejressel/pulumi-rust/ast/protobuf/schemapackage"
+>>>>>>> Stashed changes
 	"github.com/hashicorp/hcl/v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
 	"google.golang.org/protobuf/encoding/protojson"

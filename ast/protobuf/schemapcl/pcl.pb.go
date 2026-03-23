@@ -2489,7 +2489,7 @@ const file_pcl_proto_rawDesc = "" +
 	"\bMULTIPLY\x10\n" +
 	"\x12\r\n" +
 	"\tNOT_EQUAL\x10\v\x12\f\n" +
-	"\bSUBTRACT\x10\fBOZMgithub.com/andrzejressel/pulumi-ast/codegen/ast/schemapcl/schemapcl;schemapclb\x06proto3"
+	"\bSUBTRACT\x10\fBTZRgithub.com/andrzejressel/pulumi-rust/ast/codegen/ast/schemapcl/schemapcl;schemapclb\x06proto3"
 
 var (
 	file_pcl_proto_rawDescOnce sync.Once

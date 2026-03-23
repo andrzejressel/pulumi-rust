@@ -1,4 +1,4 @@
-module github.com/andrzejressel/pulumi-ast
+module github.com/andrzejressel/pulumi-rust/ast
 
 go 1.25.6
 

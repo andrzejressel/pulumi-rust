@@ -1686,7 +1686,7 @@ const file_package_proto_rawDesc = "" +
 	"\x12IntegerEnumElement\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\x03R\x05value\x12 \n" +
-	"\vdescription\x18\x03 \x01(\tR\vdescriptionB[ZYgithub.com/andrzejressel/pulumi-ast/codegen/ast/schemapackage/schemapackage;schemapackageb\x06proto3"
+	"\vdescription\x18\x03 \x01(\tR\vdescriptionB`Z^github.com/andrzejressel/pulumi-rust/ast/codegen/ast/schemapackage/schemapackage;schemapackageb\x06proto3"
 
 var (
 	file_package_proto_rawDescOnce sync.Once
