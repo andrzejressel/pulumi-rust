@@ -1,39 +1,49 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "secret",
-        "logicalName":  "secret",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "invoke",
-            "args":  [
+      "outputVariable": {
+        "name": "secret",
+        "logicalName": "secret",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
               {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "scalar-returns::invokeSecret"
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeSecret"
+                        }
                       }
-                    }
-                  ]
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
                 }
               },
               {
-                "objectConsExpression":  {
-                  "properties":  {
-                    "value":  {
-                      "templateExpression":  {
-                        "parts":  [
-                          {
-                            "literalValueExpression":  {
-                              "stringValue":  "goodbye"
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "goodbye"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     }
                   }
+                },
+                "type": {
+                  "composite": {}
                 }
               }
             ]
@@ -42,39 +52,49 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "array",
-        "logicalName":  "array",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "invoke",
-            "args":  [
+      "outputVariable": {
+        "name": "array",
+        "logicalName": "array",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
               {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "scalar-returns::invokeArray"
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeArray"
+                        }
                       }
-                    }
-                  ]
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
                 }
               },
               {
-                "objectConsExpression":  {
-                  "properties":  {
-                    "value":  {
-                      "templateExpression":  {
-                        "parts":  [
-                          {
-                            "literalValueExpression":  {
-                              "stringValue":  "the word"
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "the word"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     }
                   }
+                },
+                "type": {
+                  "composite": {}
                 }
               }
             ]
@@ -83,39 +103,49 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "map",
-        "logicalName":  "map",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "invoke",
-            "args":  [
+      "outputVariable": {
+        "name": "map",
+        "logicalName": "map",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
               {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "scalar-returns::invokeMap"
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeMap"
+                        }
                       }
-                    }
-                  ]
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
                 }
               },
               {
-                "objectConsExpression":  {
-                  "properties":  {
-                    "value":  {
-                      "templateExpression":  {
-                        "parts":  [
-                          {
-                            "literalValueExpression":  {
-                              "stringValue":  "hello"
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "hello"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     }
                   }
+                },
+                "type": {
+                  "composite": {}
                 }
               }
             ]
@@ -124,39 +154,49 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "secretMap",
-        "logicalName":  "secretMap",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "invoke",
-            "args":  [
+      "outputVariable": {
+        "name": "secretMap",
+        "logicalName": "secretMap",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
               {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "scalar-returns::invokeMap"
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeMap"
+                        }
                       }
-                    }
-                  ]
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
                 }
               },
               {
-                "objectConsExpression":  {
-                  "properties":  {
-                    "value":  {
-                      "templateExpression":  {
-                        "parts":  [
-                          {
-                            "literalValueExpression":  {
-                              "stringValue":  "secret"
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "secret"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     }
                   }
+                },
+                "type": {
+                  "composite": {}
                 }
               }
             ]
@@ -165,10 +205,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "scalar-returns",
-      "version":  "21.0.0"
+      "name": "scalar-returns",
+      "version": "21.0.0"
     }
   ]
 }

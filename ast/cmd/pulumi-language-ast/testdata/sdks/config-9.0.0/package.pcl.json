@@ -1,67 +1,67 @@
 {
-  "name":  "config",
-  "pluginDownloadUrl":  "http://example.com",
-  "version":  "9.0.0",
-  "resources":  [
+  "name": "config",
+  "pluginDownloadUrl": "http://example.com",
+  "version": "9.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "config:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "config:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "provider":  {
-    "inputProperties":  [
+  "provider": {
+    "inputProperties": [
       {
-        "name":  "name",
-        "type":  {
-          "stringType":  {}
+        "name": "name",
+        "type": {
+          "stringType": {}
         }
       },
       {
-        "name":  "pluginDownloadURL",
-        "type":  {
-          "optionalType":  {
-            "stringType":  {}
+        "name": "pluginDownloadURL",
+        "type": {
+          "optionalType": {
+            "stringType": {}
           }
         }
       }
     ],
-    "outputProperties":  [
+    "outputProperties": [
       {
-        "name":  "name",
-        "type":  {
-          "stringType":  {}
+        "name": "name",
+        "type": {
+          "stringType": {}
         }
       },
       {
-        "name":  "pluginDownloadURL",
-        "type":  {
-          "optionalType":  {
-            "stringType":  {}
+        "name": "pluginDownloadURL",
+        "type": {
+          "optionalType": {
+            "stringType": {}
           }
         }
       },
       {
-        "name":  "version",
-        "type":  {
-          "stringType":  {}
+        "name": "version",
+        "type": {
+          "stringType": {}
         }
       }
     ]

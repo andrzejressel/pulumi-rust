@@ -1,34 +1,34 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "import",
-        "logicalName":  "import",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "import",
+        "logicalName": "import",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
         ],
-        "options":  {}
+        "options": {}
       }
     },
     {
-      "resource":  {
-        "name":  "notImport",
-        "logicalName":  "notImport",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "notImport",
+        "logicalName": "notImport",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -36,10 +36,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

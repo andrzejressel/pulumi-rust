@@ -1,37 +1,37 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "myStash",
-        "logicalName":  "myStash",
-        "token":  "pulumi:index:Stash",
-        "inputs":  [
+      "resource": {
+        "name": "myStash",
+        "logicalName": "myStash",
+        "token": "pulumi:index:Stash",
+        "inputs": [
           {
-            "name":  "input",
-            "value":  {
-              "objectConsExpression":  {}
+            "name": "input",
+            "value": {
+              "objectConsExpression": {}
             }
           }
         ]
       }
     },
     {
-      "outputVariable":  {
-        "name":  "stashInput",
-        "logicalName":  "stashInput",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "myStash",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "stashInput",
+        "logicalName": "stashInput",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "myStash",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "myStash"
+                  "traverseRoot": {
+                    "name": "myStash"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "input"
+                  "traverseAttr": {
+                    "name": "input"
                   }
                 }
               ]
@@ -41,22 +41,22 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "stashOutput",
-        "logicalName":  "stashOutput",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "myStash",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "stashOutput",
+        "logicalName": "stashOutput",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "myStash",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "myStash"
+                  "traverseRoot": {
+                    "name": "myStash"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "output"
+                  "traverseAttr": {
+                    "name": "output"
                   }
                 }
               ]
@@ -66,10 +66,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "pulumi",
-      "version":  "3.0.0"
+      "name": "pulumi",
+      "version": "3.0.0"
     }
   ]
 }

@@ -6,6 +6,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/andrzejressel/pulumi-ast/codegen/shared"
 	astproto "github.com/andrzejressel/pulumi-ast/protobuf/schemapackage"
 	"github.com/hashicorp/hcl/v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
@@ -588,6 +589,10 @@ func GenerateJSONPackage(pkg *schema.Package) (map[string][]byte, hcl.Diagnostic
 	}
 
 	bytes, err := protojson.MarshalOptions{Multiline: true}.Marshal(protobuf)
+	if err != nil {
+		return nil, nil, err
+	}
+	bytes, err = shared.NormalizeJSON(bytes)
 	if err != nil {
 		return nil, nil, err
 	}

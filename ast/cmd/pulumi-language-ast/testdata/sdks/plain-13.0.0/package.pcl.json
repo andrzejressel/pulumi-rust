@@ -1,33 +1,33 @@
 {
-  "name":  "plain",
-  "version":  "13.0.0",
-  "resources":  [
+  "name": "plain",
+  "version": "13.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "plain:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "plain:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "data",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Data",
-                "raw":  "plain:index:Data"
+          "name": "data",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "plain:index:Data"
               }
             }
           }
         },
         {
-          "name":  "dataList",
-          "type":  {
-            "optionalType":  {
-              "arrayType":  {
-                "refType":  {
-                  "typeRef":  {
-                    "name":  "InnerData",
-                    "raw":  "plain:index:InnerData"
+          "name": "dataList",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "refType": {
+                  "typeRef": {
+                    "name": "InnerData",
+                    "raw": "plain:index:InnerData"
                   }
                 }
               }
@@ -35,41 +35,41 @@
           }
         },
         {
-          "name":  "nonPlainData",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Data",
-                  "raw":  "plain:index:Data"
+          "name": "nonPlainData",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Data",
+                  "raw": "plain:index:Data"
                 }
               }
             }
           },
-          "description":  "A non plain input to compare against the plain inputs, as well as testing plain/non-plain nesting."
+          "description": "A non plain input to compare against the plain inputs, as well as testing plain/non-plain nesting."
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "data",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Data",
-                "raw":  "plain:index:Data"
+          "name": "data",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "plain:index:Data"
               }
             }
           }
         },
         {
-          "name":  "dataList",
-          "type":  {
-            "optionalType":  {
-              "arrayType":  {
-                "refType":  {
-                  "typeRef":  {
-                    "name":  "InnerData",
-                    "raw":  "plain:index:InnerData"
+          "name": "dataList",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "refType": {
+                  "typeRef": {
+                    "name": "InnerData",
+                    "raw": "plain:index:InnerData"
                   }
                 }
               }
@@ -77,79 +77,79 @@
           }
         },
         {
-          "name":  "nonPlainData",
-          "type":  {
-            "optionalType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Data",
-                  "raw":  "plain:index:Data"
+          "name": "nonPlainData",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Data",
+                  "raw": "plain:index:Data"
                 }
               }
             }
           },
-          "description":  "A non plain input to compare against the plain inputs, as well as testing plain/non-plain nesting."
+          "description": "A non plain input to compare against the plain inputs, as well as testing plain/non-plain nesting."
         }
       ]
     }
   ],
-  "types":  [
+  "types": [
     {
-      "elementId":  {
-        "name":  "Data",
-        "raw":  "plain:index:Data"
+      "elementId": {
+        "name": "Data",
+        "raw": "plain:index:Data"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "boolArray",
-              "type":  {
-                "arrayType":  {
-                  "boolType":  {}
+              "name": "boolArray",
+              "type": {
+                "arrayType": {
+                  "boolType": {}
                 }
               }
             },
             {
-              "name":  "boolean",
-              "type":  {
-                "boolType":  {}
+              "name": "boolean",
+              "type": {
+                "boolType": {}
               }
             },
             {
-              "name":  "float",
-              "type":  {
-                "numberType":  {}
+              "name": "float",
+              "type": {
+                "numberType": {}
               }
             },
             {
-              "name":  "innerData",
-              "type":  {
-                "refType":  {
-                  "typeRef":  {
-                    "name":  "InnerData",
-                    "raw":  "plain:index:InnerData"
+              "name": "innerData",
+              "type": {
+                "refType": {
+                  "typeRef": {
+                    "name": "InnerData",
+                    "raw": "plain:index:InnerData"
                   }
                 }
               }
             },
             {
-              "name":  "integer",
-              "type":  {
-                "intType":  {}
+              "name": "integer",
+              "type": {
+                "intType": {}
               }
             },
             {
-              "name":  "string",
-              "type":  {
-                "stringType":  {}
+              "name": "string",
+              "type": {
+                "stringType": {}
               }
             },
             {
-              "name":  "stringMap",
-              "type":  {
-                "mapType":  {
-                  "stringType":  {}
+              "name": "stringMap",
+              "type": {
+                "mapType": {
+                  "stringType": {}
                 }
               }
             }
@@ -158,50 +158,50 @@
       }
     },
     {
-      "elementId":  {
-        "name":  "InnerData",
-        "raw":  "plain:index:InnerData"
+      "elementId": {
+        "name": "InnerData",
+        "raw": "plain:index:InnerData"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "boolArray",
-              "type":  {
-                "arrayType":  {
-                  "boolType":  {}
+              "name": "boolArray",
+              "type": {
+                "arrayType": {
+                  "boolType": {}
                 }
               }
             },
             {
-              "name":  "boolean",
-              "type":  {
-                "boolType":  {}
+              "name": "boolean",
+              "type": {
+                "boolType": {}
               }
             },
             {
-              "name":  "float",
-              "type":  {
-                "numberType":  {}
+              "name": "float",
+              "type": {
+                "numberType": {}
               }
             },
             {
-              "name":  "integer",
-              "type":  {
-                "intType":  {}
+              "name": "integer",
+              "type": {
+                "intType": {}
               }
             },
             {
-              "name":  "string",
-              "type":  {
-                "stringType":  {}
+              "name": "string",
+              "type": {
+                "stringType": {}
               }
             },
             {
-              "name":  "stringMap",
-              "type":  {
-                "mapType":  {
-                  "stringType":  {}
+              "name": "stringMap",
+              "type": {
+                "mapType": {
+                  "stringType": {}
                 }
               }
             }
@@ -210,5 +210,5 @@
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

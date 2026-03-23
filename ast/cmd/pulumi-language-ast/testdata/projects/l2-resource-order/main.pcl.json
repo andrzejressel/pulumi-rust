@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "res1",
-        "logicalName":  "res1",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res1",
+        "logicalName": "res1",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,22 +18,22 @@
       }
     },
     {
-      "localVariable":  {
-        "name":  "localVar",
-        "logicalName":  "localVar",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "res1",
-            "traversal":  {
-              "each":  [
+      "localVariable": {
+        "name": "localVar",
+        "logicalName": "localVar",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "res1",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "res1"
+                  "traverseRoot": {
+                    "name": "res1"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "value"
+                  "traverseAttr": {
+                    "name": "value"
                   }
                 }
               ]
@@ -43,21 +43,21 @@
       }
     },
     {
-      "resource":  {
-        "name":  "res2",
-        "logicalName":  "res2",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res2",
+        "logicalName": "res2",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "localVar",
-                "traversal":  {
-                  "each":  [
+            "name": "value",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "localVar",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "localVar"
+                      "traverseRoot": {
+                        "name": "localVar"
                       }
                     }
                   ]
@@ -69,22 +69,22 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "out",
-        "logicalName":  "out",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "res2",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "out",
+        "logicalName": "out",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "res2",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "res2"
+                  "traverseRoot": {
+                    "name": "res2"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "value"
+                  "traverseAttr": {
+                    "name": "value"
                   }
                 }
               ]
@@ -94,10 +94,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

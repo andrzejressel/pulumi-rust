@@ -1,26 +1,26 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "explicitProvider",
-        "logicalName":  "explicitProvider",
-        "token":  "pulumi:providers:simple-invoke"
+      "resource": {
+        "name": "explicitProvider",
+        "logicalName": "explicitProvider",
+        "token": "pulumi:providers:simple-invoke"
       }
     },
     {
-      "resource":  {
-        "name":  "first",
-        "logicalName":  "first",
-        "token":  "simple-invoke:index:StringResource",
-        "inputs":  [
+      "resource": {
+        "name": "first",
+        "logicalName": "first",
+        "token": "simple-invoke:index:StringResource",
+        "inputs": [
           {
-            "name":  "text",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "text",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "first hello"
+                    "literalValueExpression": {
+                      "stringValue": "first hello"
                     }
                   }
                 ]
@@ -31,65 +31,80 @@
       }
     },
     {
-      "localVariable":  {
-        "name":  "data",
-        "logicalName":  "data",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "invoke",
-            "args":  [
+      "localVariable": {
+        "name": "data",
+        "logicalName": "data",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
               {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "simple-invoke::myInvoke"
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "simple-invoke::myInvoke"
+                        }
                       }
-                    }
-                  ]
-                }
-              },
-              {
-                "objectConsExpression":  {
-                  "properties":  {
-                    "value":  {
-                      "templateExpression":  {
-                        "parts":  [
-                          {
-                            "literalValueExpression":  {
-                              "stringValue":  "hello"
-                            }
-                          }
-                        ]
-                      }
-                    }
+                    ]
                   }
+                },
+                "type": {
+                  "stringType": {}
                 }
               },
               {
-                "objectConsExpression":  {
-                  "properties":  {
-                    "dependsOn":  {
-                      "tupleConsExpression":  {
-                        "items":  [
-                          {
-                            "scopeTraversalExpression":  {
-                              "rootName":  "first",
-                              "traversal":  {
-                                "each":  [
-                                  {
-                                    "traverseRoot":  {
-                                      "name":  "first"
-                                    }
-                                  }
-                                ]
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "hello"
                               }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     }
                   }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "dependsOn": {
+                        "tupleConsExpression": {
+                          "items": [
+                            {
+                              "scopeTraversalExpression": {
+                                "rootName": "first",
+                                "traversal": {
+                                  "each": [
+                                    {
+                                      "traverseRoot": {
+                                        "name": "first"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
                 }
               }
             ]
@@ -98,26 +113,26 @@
       }
     },
     {
-      "resource":  {
-        "name":  "second",
-        "logicalName":  "second",
-        "token":  "simple-invoke:index:StringResource",
-        "inputs":  [
+      "resource": {
+        "name": "second",
+        "logicalName": "second",
+        "token": "simple-invoke:index:StringResource",
+        "inputs": [
           {
-            "name":  "text",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "data",
-                "traversal":  {
-                  "each":  [
+            "name": "text",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "data",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "data"
+                      "traverseRoot": {
+                        "name": "data"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "result"
+                      "traverseAttr": {
+                        "name": "result"
                       }
                     }
                   ]
@@ -129,22 +144,22 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "hello",
-        "logicalName":  "hello",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "data",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "hello",
+        "logicalName": "hello",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "data",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "data"
+                  "traverseRoot": {
+                    "name": "data"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "result"
+                  "traverseAttr": {
+                    "name": "result"
                   }
                 }
               ]
@@ -154,10 +169,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple-invoke",
-      "version":  "10.0.0"
+      "name": "simple-invoke",
+      "version": "10.0.0"
     }
   ]
 }

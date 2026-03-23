@@ -1,75 +1,75 @@
 {
-  "name":  "goodbye",
-  "version":  "2.0.0",
-  "resources":  [
+  "name": "goodbye",
+  "version": "2.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Goodbye",
-        "raw":  "goodbye:index:Goodbye"
+      "elementId": {
+        "name": "Goodbye",
+        "raw": "goodbye:index:Goodbye"
       },
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "parameterValue",
-          "type":  {
-            "stringType":  {}
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "GoodbyeComponent",
-        "raw":  "goodbye:index:GoodbyeComponent"
+      "elementId": {
+        "name": "GoodbyeComponent",
+        "raw": "goodbye:index:GoodbyeComponent"
       },
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "parameterValue",
-          "type":  {
-            "stringType":  {}
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "doGoodbye",
-        "raw":  "goodbye:index:doGoodbye"
+      "elementId": {
+        "name": "doGoodbye",
+        "raw": "goodbye:index:doGoodbye"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "input",
-          "type":  {
-            "stringType":  {}
+          "name": "input",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "output",
-          "type":  {
-            "stringType":  {}
+          "name": "output",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "doGoodbyeResult",
-            "raw":  "goodbye:index:doGoodbyeResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "doGoodbyeResult",
+            "raw": "goodbye:index:doGoodbyeResult"
           }
         }
       }
     }
   ],
-  "provider":  {
-    "inputProperties":  [
+  "provider": {
+    "inputProperties": [
       {
-        "name":  "text",
-        "type":  {
-          "optionalType":  {
-            "stringType":  {}
+        "name": "text",
+        "type": {
+          "optionalType": {
+            "stringType": {}
           }
         }
       }

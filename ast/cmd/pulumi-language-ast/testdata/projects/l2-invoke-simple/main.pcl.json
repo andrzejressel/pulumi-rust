@@ -1,51 +1,61 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "hello",
-        "logicalName":  "hello",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "invoke",
-                "args":  [
+      "outputVariable": {
+        "name": "hello",
+        "logicalName": "hello",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "invoke",
+                "args": [
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "simple-invoke::myInvoke"
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "simple-invoke::myInvoke"
+                            }
                           }
-                        }
-                      ]
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "value":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "hello"
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "value": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "hello"
+                                  }
                                 }
-                              }
-                            ]
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "result"
+                  "traverseAttr": {
+                    "name": "result"
                   }
                 }
               ]
@@ -55,51 +65,61 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "goodbye",
-        "logicalName":  "goodbye",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "invoke",
-                "args":  [
+      "outputVariable": {
+        "name": "goodbye",
+        "logicalName": "goodbye",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "invoke",
+                "args": [
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "simple-invoke::myInvoke"
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "simple-invoke::myInvoke"
+                            }
                           }
-                        }
-                      ]
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "value":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "goodbye"
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "value": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "goodbye"
+                                  }
                                 }
-                              }
-                            ]
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "result"
+                  "traverseAttr": {
+                    "name": "result"
                   }
                 }
               ]
@@ -109,10 +129,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple-invoke",
-      "version":  "10.0.0"
+      "name": "simple-invoke",
+      "version": "10.0.0"
     }
   ]
 }

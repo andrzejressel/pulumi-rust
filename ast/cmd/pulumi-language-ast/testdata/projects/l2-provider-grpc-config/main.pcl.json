@@ -1,19 +1,19 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "config_grpc_provider",
-        "logicalName":  "config_grpc_provider",
-        "token":  "pulumi:providers:config-grpc",
-        "inputs":  [
+      "resource": {
+        "name": "config_grpc_provider",
+        "logicalName": "config_grpc_provider",
+        "token": "pulumi:providers:config-grpc",
+        "inputs": [
           {
-            "name":  "string1",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "string1",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  ""
+                    "literalValueExpression": {
+                      "stringValue": ""
                     }
                   }
                 ]
@@ -21,13 +21,13 @@
             }
           },
           {
-            "name":  "string2",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "string2",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "x"
+                    "literalValueExpression": {
+                      "stringValue": "x"
                     }
                   }
                 ]
@@ -35,13 +35,13 @@
             }
           },
           {
-            "name":  "string3",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "string3",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "{}"
+                    "literalValueExpression": {
+                      "stringValue": "{}"
                     }
                   }
                 ]
@@ -49,81 +49,81 @@
             }
           },
           {
-            "name":  "int1",
-            "value":  {
-              "literalValueExpression":  {
-                "numberValue":  0
+            "name": "int1",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 0
               }
             }
           },
           {
-            "name":  "int2",
-            "value":  {
-              "literalValueExpression":  {
-                "numberValue":  42
+            "name": "int2",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 42
               }
             }
           },
           {
-            "name":  "num1",
-            "value":  {
-              "literalValueExpression":  {
-                "numberValue":  0
+            "name": "num1",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 0
               }
             }
           },
           {
-            "name":  "num2",
-            "value":  {
-              "literalValueExpression":  {
-                "numberValue":  42.42
+            "name": "num2",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 42.42
               }
             }
           },
           {
-            "name":  "bool1",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "bool1",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           },
           {
-            "name":  "bool2",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  false
+            "name": "bool2",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
               }
             }
           },
           {
-            "name":  "listString1",
-            "value":  {
-              "tupleConsExpression":  {}
+            "name": "listString1",
+            "value": {
+              "tupleConsExpression": {}
             }
           },
           {
-            "name":  "listString2",
-            "value":  {
-              "tupleConsExpression":  {
-                "items":  [
+            "name": "listString2",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
                   {
-                    "templateExpression":  {
-                      "parts":  [
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  ""
+                          "literalValueExpression": {
+                            "stringValue": ""
                           }
                         }
                       ]
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "foo"
+                          "literalValueExpression": {
+                            "stringValue": "foo"
                           }
                         }
                       ]
@@ -134,18 +134,18 @@
             }
           },
           {
-            "name":  "listInt1",
-            "value":  {
-              "tupleConsExpression":  {
-                "items":  [
+            "name": "listInt1",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
                   {
-                    "literalValueExpression":  {
-                      "numberValue":  1
+                    "literalValueExpression": {
+                      "numberValue": 1
                     }
                   },
                   {
-                    "literalValueExpression":  {
-                      "numberValue":  2
+                    "literalValueExpression": {
+                      "numberValue": 2
                     }
                   }
                 ]
@@ -153,33 +153,33 @@
             }
           },
           {
-            "name":  "mapString1",
-            "value":  {
-              "objectConsExpression":  {}
+            "name": "mapString1",
+            "value": {
+              "objectConsExpression": {}
             }
           },
           {
-            "name":  "mapString2",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "key1":  {
-                    "templateExpression":  {
-                      "parts":  [
+            "name": "mapString2",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "key1": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "value1"
+                          "literalValueExpression": {
+                            "stringValue": "value1"
                           }
                         }
                       ]
                     }
                   },
-                  "key2":  {
-                    "templateExpression":  {
-                      "parts":  [
+                  "key2": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "value2"
+                          "literalValueExpression": {
+                            "stringValue": "value2"
                           }
                         }
                       ]
@@ -190,18 +190,18 @@
             }
           },
           {
-            "name":  "mapInt1",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "key1":  {
-                    "literalValueExpression":  {
-                      "numberValue":  0
+            "name": "mapInt1",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "key1": {
+                    "literalValueExpression": {
+                      "numberValue": 0
                     }
                   },
-                  "key2":  {
-                    "literalValueExpression":  {
-                      "numberValue":  42
+                  "key2": {
+                    "literalValueExpression": {
+                      "numberValue": 42
                     }
                   }
                 }
@@ -209,22 +209,22 @@
             }
           },
           {
-            "name":  "objString1",
-            "value":  {
-              "objectConsExpression":  {}
+            "name": "objString1",
+            "value": {
+              "objectConsExpression": {}
             }
           },
           {
-            "name":  "objString2",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "x":  {
-                    "templateExpression":  {
-                      "parts":  [
+            "name": "objString2",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "x": {
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "x-value"
+                          "literalValueExpression": {
+                            "stringValue": "x-value"
                           }
                         }
                       ]
@@ -235,13 +235,13 @@
             }
           },
           {
-            "name":  "objInt1",
-            "value":  {
-              "objectConsExpression":  {
-                "properties":  {
-                  "x":  {
-                    "literalValueExpression":  {
-                      "numberValue":  42
+            "name": "objInt1",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "x": {
+                    "literalValueExpression": {
+                      "numberValue": 42
                     }
                   }
                 }
@@ -252,19 +252,19 @@
       }
     },
     {
-      "resource":  {
-        "name":  "config",
-        "logicalName":  "config",
-        "token":  "config-grpc:index:ConfigFetcher",
-        "options":  {
-          "provider":  {
-            "scopeTraversalExpression":  {
-              "rootName":  "config_grpc_provider",
-              "traversal":  {
-                "each":  [
+      "resource": {
+        "name": "config",
+        "logicalName": "config",
+        "token": "config-grpc:index:ConfigFetcher",
+        "options": {
+          "provider": {
+            "scopeTraversalExpression": {
+              "rootName": "config_grpc_provider",
+              "traversal": {
+                "each": [
                   {
-                    "traverseRoot":  {
-                      "name":  "config_grpc_provider"
+                    "traverseRoot": {
+                      "name": "config_grpc_provider"
                     }
                   }
                 ]
@@ -275,10 +275,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "config-grpc",
-      "version":  "1.0.0"
+      "name": "config-grpc",
+      "version": "1.0.0"
     }
   ]
 }

@@ -1,19 +1,19 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "firstResource",
-        "logicalName":  "firstResource",
-        "token":  "keywords:index:SomeResource",
-        "inputs":  [
+      "resource": {
+        "name": "firstResource",
+        "logicalName": "firstResource",
+        "token": "keywords:index:SomeResource",
+        "inputs": [
           {
-            "name":  "builtins",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "builtins",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "builtins"
+                    "literalValueExpression": {
+                      "stringValue": "builtins"
                     }
                   }
                 ]
@@ -21,13 +21,13 @@
             }
           },
           {
-            "name":  "lambda",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "lambda",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "lambda"
+                    "literalValueExpression": {
+                      "stringValue": "lambda"
                     }
                   }
                 ]
@@ -35,13 +35,13 @@
             }
           },
           {
-            "name":  "property",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "property",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "property"
+                    "literalValueExpression": {
+                      "stringValue": "property"
                     }
                   }
                 ]
@@ -52,26 +52,26 @@
       }
     },
     {
-      "resource":  {
-        "name":  "secondResource",
-        "logicalName":  "secondResource",
-        "token":  "keywords:index:SomeResource",
-        "inputs":  [
+      "resource": {
+        "name": "secondResource",
+        "logicalName": "secondResource",
+        "token": "keywords:index:SomeResource",
+        "inputs": [
           {
-            "name":  "builtins",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "firstResource",
-                "traversal":  {
-                  "each":  [
+            "name": "builtins",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "firstResource"
+                      "traverseRoot": {
+                        "name": "firstResource"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "builtins"
+                      "traverseAttr": {
+                        "name": "builtins"
                       }
                     }
                   ]
@@ -80,20 +80,20 @@
             }
           },
           {
-            "name":  "lambda",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "firstResource",
-                "traversal":  {
-                  "each":  [
+            "name": "lambda",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "firstResource"
+                      "traverseRoot": {
+                        "name": "firstResource"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "lambda"
+                      "traverseAttr": {
+                        "name": "lambda"
                       }
                     }
                   ]
@@ -102,20 +102,20 @@
             }
           },
           {
-            "name":  "property",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "firstResource",
-                "traversal":  {
-                  "each":  [
+            "name": "property",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "firstResource"
+                      "traverseRoot": {
+                        "name": "firstResource"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "property"
+                      "traverseAttr": {
+                        "name": "property"
                       }
                     }
                   ]
@@ -127,19 +127,19 @@
       }
     },
     {
-      "resource":  {
-        "name":  "lambdaModuleResource",
-        "logicalName":  "lambdaModuleResource",
-        "token":  "keywords:lambda:SomeResource",
-        "inputs":  [
+      "resource": {
+        "name": "lambdaModuleResource",
+        "logicalName": "lambdaModuleResource",
+        "token": "keywords:lambda:SomeResource",
+        "inputs": [
           {
-            "name":  "builtins",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "builtins",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "builtins"
+                    "literalValueExpression": {
+                      "stringValue": "builtins"
                     }
                   }
                 ]
@@ -147,13 +147,13 @@
             }
           },
           {
-            "name":  "lambda",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "lambda",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "lambda"
+                    "literalValueExpression": {
+                      "stringValue": "lambda"
                     }
                   }
                 ]
@@ -161,13 +161,13 @@
             }
           },
           {
-            "name":  "property",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "property",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "property"
+                    "literalValueExpression": {
+                      "stringValue": "property"
                     }
                   }
                 ]
@@ -178,19 +178,19 @@
       }
     },
     {
-      "resource":  {
-        "name":  "lambdaResource",
-        "logicalName":  "lambdaResource",
-        "token":  "keywords:index:Lambda",
-        "inputs":  [
+      "resource": {
+        "name": "lambdaResource",
+        "logicalName": "lambdaResource",
+        "token": "keywords:index:Lambda",
+        "inputs": [
           {
-            "name":  "builtins",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "builtins",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "builtins"
+                    "literalValueExpression": {
+                      "stringValue": "builtins"
                     }
                   }
                 ]
@@ -198,13 +198,13 @@
             }
           },
           {
-            "name":  "lambda",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "lambda",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "lambda"
+                    "literalValueExpression": {
+                      "stringValue": "lambda"
                     }
                   }
                 ]
@@ -212,13 +212,13 @@
             }
           },
           {
-            "name":  "property",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "property",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "property"
+                    "literalValueExpression": {
+                      "stringValue": "property"
                     }
                   }
                 ]
@@ -229,10 +229,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "keywords",
-      "version":  "20.0.0"
+      "name": "keywords",
+      "version": "20.0.0"
     }
   ]
 }

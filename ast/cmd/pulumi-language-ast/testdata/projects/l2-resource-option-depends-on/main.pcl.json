@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "noDependsOn",
-        "logicalName":  "noDependsOn",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "noDependsOn",
+        "logicalName": "noDependsOn",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,32 +18,32 @@
       }
     },
     {
-      "resource":  {
-        "name":  "withDependsOn",
-        "logicalName":  "withDependsOn",
-        "token":  "simple:index:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "withDependsOn",
+        "logicalName": "withDependsOn",
+        "token": "simple:index:Resource",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  false
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
               }
             }
           }
         ],
-        "options":  {
-          "dependsOn":  {
-            "tupleConsExpression":  {
-              "items":  [
+        "options": {
+          "dependsOn": {
+            "tupleConsExpression": {
+              "items": [
                 {
-                  "scopeTraversalExpression":  {
-                    "rootName":  "noDependsOn",
-                    "traversal":  {
-                      "each":  [
+                  "scopeTraversalExpression": {
+                    "rootName": "noDependsOn",
+                    "traversal": {
+                      "each": [
                         {
-                          "traverseRoot":  {
-                            "name":  "noDependsOn"
+                          "traverseRoot": {
+                            "name": "noDependsOn"
                           }
                         }
                       ]
@@ -57,10 +57,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }

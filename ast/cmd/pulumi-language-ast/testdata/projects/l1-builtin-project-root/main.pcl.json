@@ -1,12 +1,12 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "rootDirectoryOutput",
-        "logicalName":  "rootDirectoryOutput",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "rootDirectory"
+      "outputVariable": {
+        "name": "rootDirectoryOutput",
+        "logicalName": "rootDirectoryOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "rootDirectory"
           }
         }
       }

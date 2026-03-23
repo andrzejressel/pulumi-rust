@@ -1,19 +1,19 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "res",
-        "logicalName":  "res",
-        "token":  "large:index:String",
-        "inputs":  [
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "large:index:String",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "hello world"
+                    "literalValueExpression": {
+                      "stringValue": "hello world"
                     }
                   }
                 ]
@@ -24,22 +24,22 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "output",
-        "logicalName":  "output",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "res",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "output",
+        "logicalName": "output",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "res",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "res"
+                  "traverseRoot": {
+                    "name": "res"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "value"
+                  "traverseAttr": {
+                    "name": "value"
                   }
                 }
               ]
@@ -49,10 +49,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "large",
-      "version":  "4.3.2"
+      "name": "large",
+      "version": "4.3.2"
     }
   ]
 }

@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "stringOrIntegerExample1",
-        "logicalName":  "stringOrIntegerExample1",
-        "token":  "union:index:Example",
-        "inputs":  [
+      "resource": {
+        "name": "stringOrIntegerExample1",
+        "logicalName": "stringOrIntegerExample1",
+        "token": "union:index:Example",
+        "inputs": [
           {
-            "name":  "stringOrIntegerProperty",
-            "value":  {
-              "literalValueExpression":  {
-                "numberValue":  42
+            "name": "stringOrIntegerProperty",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 42
               }
             }
           }
@@ -18,19 +18,19 @@
       }
     },
     {
-      "resource":  {
-        "name":  "stringOrIntegerExample2",
-        "logicalName":  "stringOrIntegerExample2",
-        "token":  "union:index:Example",
-        "inputs":  [
+      "resource": {
+        "name": "stringOrIntegerExample2",
+        "logicalName": "stringOrIntegerExample2",
+        "token": "union:index:Example",
+        "inputs": [
           {
-            "name":  "stringOrIntegerProperty",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "stringOrIntegerProperty",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "forty two"
+                    "literalValueExpression": {
+                      "stringValue": "forty two"
                     }
                   }
                 ]
@@ -41,37 +41,37 @@
       }
     },
     {
-      "resource":  {
-        "name":  "mapMapUnionExample",
-        "logicalName":  "mapMapUnionExample",
-        "token":  "union:index:Example",
-        "inputs":  [
+      "resource": {
+        "name": "mapMapUnionExample",
+        "logicalName": "mapMapUnionExample",
+        "token": "union:index:Example",
+        "inputs": [
           {
-            "name":  "mapMapUnionProperty",
-            "value":  {
-              "objectConsExpression":  {}
+            "name": "mapMapUnionProperty",
+            "value": {
+              "objectConsExpression": {}
             }
           }
         ]
       }
     },
     {
-      "outputVariable":  {
-        "name":  "mapMapUnionOutput",
-        "logicalName":  "mapMapUnionOutput",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "mapMapUnionExample",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "mapMapUnionOutput",
+        "logicalName": "mapMapUnionOutput",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "mapMapUnionExample",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "mapMapUnionExample"
+                  "traverseRoot": {
+                    "name": "mapMapUnionExample"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "mapMapUnionProperty"
+                  "traverseAttr": {
+                    "name": "mapMapUnionProperty"
                   }
                 }
               ]
@@ -81,44 +81,44 @@
       }
     },
     {
-      "resource":  {
-        "name":  "stringEnumUnionListExample",
-        "logicalName":  "stringEnumUnionListExample",
-        "token":  "union:index:Example",
-        "inputs":  [
+      "resource": {
+        "name": "stringEnumUnionListExample",
+        "logicalName": "stringEnumUnionListExample",
+        "token": "union:index:Example",
+        "inputs": [
           {
-            "name":  "stringEnumUnionListProperty",
-            "value":  {
-              "tupleConsExpression":  {
-                "items":  [
+            "name": "stringEnumUnionListProperty",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
                   {
-                    "templateExpression":  {
-                      "parts":  [
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "Listen"
+                          "literalValueExpression": {
+                            "stringValue": "Listen"
                           }
                         }
                       ]
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "Send"
+                          "literalValueExpression": {
+                            "stringValue": "Send"
                           }
                         }
                       ]
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
+                    "templateExpression": {
+                      "parts": [
                         {
-                          "literalValueExpression":  {
-                            "stringValue":  "NotAnEnumValue"
+                          "literalValueExpression": {
+                            "stringValue": "NotAnEnumValue"
                           }
                         }
                       ]
@@ -132,19 +132,19 @@
       }
     },
     {
-      "resource":  {
-        "name":  "safeEnumExample",
-        "logicalName":  "safeEnumExample",
-        "token":  "union:index:Example",
-        "inputs":  [
+      "resource": {
+        "name": "safeEnumExample",
+        "logicalName": "safeEnumExample",
+        "token": "union:index:Example",
+        "inputs": [
           {
-            "name":  "typedEnumProperty",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "typedEnumProperty",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "Block"
+                    "literalValueExpression": {
+                      "stringValue": "Block"
                     }
                   }
                 ]
@@ -155,19 +155,19 @@
       }
     },
     {
-      "resource":  {
-        "name":  "enumOutputExample",
-        "logicalName":  "enumOutputExample",
-        "token":  "union:index:EnumOutput",
-        "inputs":  [
+      "resource": {
+        "name": "enumOutputExample",
+        "logicalName": "enumOutputExample",
+        "token": "union:index:EnumOutput",
+        "inputs": [
           {
-            "name":  "name",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "name",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "example"
+                    "literalValueExpression": {
+                      "stringValue": "example"
                     }
                   }
                 ]
@@ -178,26 +178,26 @@
       }
     },
     {
-      "resource":  {
-        "name":  "outputEnumExample",
-        "logicalName":  "outputEnumExample",
-        "token":  "union:index:Example",
-        "inputs":  [
+      "resource": {
+        "name": "outputEnumExample",
+        "logicalName": "outputEnumExample",
+        "token": "union:index:Example",
+        "inputs": [
           {
-            "name":  "typedEnumProperty",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "enumOutputExample",
-                "traversal":  {
-                  "each":  [
+            "name": "typedEnumProperty",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "enumOutputExample",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "enumOutputExample"
+                      "traverseRoot": {
+                        "name": "enumOutputExample"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "type"
+                      "traverseAttr": {
+                        "name": "type"
                       }
                     }
                   ]
@@ -209,10 +209,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "union",
-      "version":  "18.0.0"
+      "name": "union",
+      "version": "18.0.0"
     }
   ]
 }

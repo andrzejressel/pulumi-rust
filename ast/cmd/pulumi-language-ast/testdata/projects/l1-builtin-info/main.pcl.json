@@ -1,34 +1,34 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "stackOutput",
-        "logicalName":  "stackOutput",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "stack"
+      "outputVariable": {
+        "name": "stackOutput",
+        "logicalName": "stackOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "stack"
           }
         }
       }
     },
     {
-      "outputVariable":  {
-        "name":  "projectOutput",
-        "logicalName":  "projectOutput",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "project"
+      "outputVariable": {
+        "name": "projectOutput",
+        "logicalName": "projectOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "project"
           }
         }
       }
     },
     {
-      "outputVariable":  {
-        "name":  "organizationOutput",
-        "logicalName":  "organizationOutput",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "organization"
+      "outputVariable": {
+        "name": "organizationOutput",
+        "logicalName": "organizationOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "organization"
           }
         }
       }

@@ -1,19 +1,19 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "ref",
-        "logicalName":  "ref",
-        "token":  "pulumi:pulumi:StackReference",
-        "inputs":  [
+      "resource": {
+        "name": "ref",
+        "logicalName": "ref",
+        "token": "pulumi:pulumi:StackReference",
+        "inputs": [
           {
-            "name":  "name",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "name",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "organization/other/dev"
+                    "literalValueExpression": {
+                      "stringValue": "organization/other/dev"
                     }
                   }
                 ]
@@ -24,36 +24,46 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "plain",
-        "logicalName":  "plain",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "getOutput",
-            "args":  [
+      "outputVariable": {
+        "name": "plain",
+        "logicalName": "plain",
+        "value": {
+          "functionCallExpression": {
+            "name": "getOutput",
+            "args": [
               {
-                "scopeTraversalExpression":  {
-                  "rootName":  "ref",
-                  "traversal":  {
-                    "each":  [
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "ref",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "ref"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
                       {
-                        "traverseRoot":  {
-                          "name":  "ref"
+                        "literalValueExpression": {
+                          "stringValue": "plain"
                         }
                       }
                     ]
                   }
-                }
-              },
-              {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "plain"
-                      }
-                    }
-                  ]
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]
@@ -62,36 +72,46 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "secret",
-        "logicalName":  "secret",
-        "value":  {
-          "functionCallExpression":  {
-            "name":  "getOutput",
-            "args":  [
+      "outputVariable": {
+        "name": "secret",
+        "logicalName": "secret",
+        "value": {
+          "functionCallExpression": {
+            "name": "getOutput",
+            "args": [
               {
-                "scopeTraversalExpression":  {
-                  "rootName":  "ref",
-                  "traversal":  {
-                    "each":  [
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "ref",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "ref"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
                       {
-                        "traverseRoot":  {
-                          "name":  "ref"
+                        "literalValueExpression": {
+                          "stringValue": "secret"
                         }
                       }
                     ]
                   }
-                }
-              },
-              {
-                "templateExpression":  {
-                  "parts":  [
-                    {
-                      "literalValueExpression":  {
-                        "stringValue":  "secret"
-                      }
-                    }
-                  ]
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]
@@ -100,10 +120,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "pulumi",
-      "version":  "3.0.0"
+      "name": "pulumi",
+      "version": "3.0.0"
     }
   ]
 }

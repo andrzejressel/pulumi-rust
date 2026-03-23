@@ -1,101 +1,101 @@
 {
-  "name":  "nestedobject",
-  "version":  "1.42.0",
-  "resources":  [
+  "name": "nestedobject",
+  "version": "1.42.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Container",
-        "raw":  "nestedobject:index:Container"
+      "elementId": {
+        "name": "Container",
+        "raw": "nestedobject:index:Container"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "inputs",
-          "type":  {
-            "arrayType":  {
-              "stringType":  {}
+          "name": "inputs",
+          "type": {
+            "arrayType": {
+              "stringType": {}
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "details",
-          "type":  {
-            "arrayType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Detail",
-                  "raw":  "nestedobject:index:Detail"
+          "name": "details",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Detail",
+                  "raw": "nestedobject:index:Detail"
                 }
               }
             }
           }
         },
         {
-          "name":  "inputs",
-          "type":  {
-            "arrayType":  {
-              "stringType":  {}
+          "name": "inputs",
+          "type": {
+            "arrayType": {
+              "stringType": {}
             }
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "MapContainer",
-        "raw":  "nestedobject:index:MapContainer"
+      "elementId": {
+        "name": "MapContainer",
+        "raw": "nestedobject:index:MapContainer"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "tags",
-          "type":  {
-            "mapType":  {
-              "stringType":  {}
+          "name": "tags",
+          "type": {
+            "mapType": {
+              "stringType": {}
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "tags",
-          "type":  {
-            "mapType":  {
-              "stringType":  {}
+          "name": "tags",
+          "type": {
+            "mapType": {
+              "stringType": {}
             }
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "Receiver",
-        "raw":  "nestedobject:index:Receiver"
+      "elementId": {
+        "name": "Receiver",
+        "raw": "nestedobject:index:Receiver"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "details",
-          "type":  {
-            "arrayType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Detail",
-                  "raw":  "nestedobject:index:Detail"
+          "name": "details",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Detail",
+                  "raw": "nestedobject:index:Detail"
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "details",
-          "type":  {
-            "arrayType":  {
-              "refType":  {
-                "typeRef":  {
-                  "name":  "Detail",
-                  "raw":  "nestedobject:index:Detail"
+          "name": "details",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Detail",
+                  "raw": "nestedobject:index:Detail"
                 }
               }
             }
@@ -104,47 +104,47 @@
       ]
     },
     {
-      "elementId":  {
-        "name":  "Target",
-        "raw":  "nestedobject:index:Target"
+      "elementId": {
+        "name": "Target",
+        "raw": "nestedobject:index:Target"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "name",
-          "type":  {
-            "stringType":  {}
+          "name": "name",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "name",
-          "type":  {
-            "stringType":  {}
+          "name": "name",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "types":  [
+  "types": [
     {
-      "elementId":  {
-        "name":  "Detail",
-        "raw":  "nestedobject:index:Detail"
+      "elementId": {
+        "name": "Detail",
+        "raw": "nestedobject:index:Detail"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "key",
-              "type":  {
-                "stringType":  {}
+              "name": "key",
+              "type": {
+                "stringType": {}
               }
             },
             {
-              "name":  "value",
-              "type":  {
-                "stringType":  {}
+              "name": "value",
+              "type": {
+                "stringType": {}
               }
             }
           ]
@@ -152,5 +152,5 @@
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

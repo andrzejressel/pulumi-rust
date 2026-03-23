@@ -1,98 +1,98 @@
 {
-  "name":  "output",
-  "version":  "23.0.0",
-  "resources":  [
+  "name": "output",
+  "version": "23.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "ComplexResource",
-        "raw":  "output:index:ComplexResource"
+      "elementId": {
+        "name": "ComplexResource",
+        "raw": "output:index:ComplexResource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "numberType":  {}
+          "name": "value",
+          "type": {
+            "numberType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "outputArray",
-          "type":  {
-            "arrayType":  {
-              "stringType":  {}
+          "name": "outputArray",
+          "type": {
+            "arrayType": {
+              "stringType": {}
             }
           }
         },
         {
-          "name":  "outputMap",
-          "type":  {
-            "mapType":  {
-              "stringType":  {}
+          "name": "outputMap",
+          "type": {
+            "mapType": {
+              "stringType": {}
             }
           }
         },
         {
-          "name":  "outputObject",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "name":  "Data",
-                "raw":  "output:index:Data"
+          "name": "outputObject",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "output:index:Data"
               }
             }
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "numberType":  {}
+          "name": "value",
+          "type": {
+            "numberType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "name":  "Resource",
-        "raw":  "output:index:Resource"
+      "elementId": {
+        "name": "Resource",
+        "raw": "output:index:Resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "numberType":  {}
+          "name": "value",
+          "type": {
+            "numberType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "output",
-          "type":  {
-            "stringType":  {}
+          "name": "output",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "numberType":  {}
+          "name": "value",
+          "type": {
+            "numberType": {}
           }
         }
       ]
     }
   ],
-  "types":  [
+  "types": [
     {
-      "elementId":  {
-        "name":  "Data",
-        "raw":  "output:index:Data"
+      "elementId": {
+        "name": "Data",
+        "raw": "output:index:Data"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "output",
-              "type":  {
-                "stringType":  {}
+              "name": "output",
+              "type": {
+                "stringType": {}
               }
             }
           ]
@@ -100,13 +100,13 @@
       }
     }
   ],
-  "provider":  {
-    "inputProperties":  [
+  "provider": {
+    "inputProperties": [
       {
-        "name":  "elideUnknowns",
-        "type":  {
-          "optionalType":  {
-            "boolType":  {}
+        "name": "elideUnknowns",
+        "type": {
+          "optionalType": {
+            "boolType": {}
           }
         }
       }

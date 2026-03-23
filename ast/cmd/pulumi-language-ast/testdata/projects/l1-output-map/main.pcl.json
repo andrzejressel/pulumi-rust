@@ -1,38 +1,38 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "outputVariable":  {
-        "name":  "empty",
-        "logicalName":  "empty",
-        "value":  {
-          "objectConsExpression":  {}
+      "outputVariable": {
+        "name": "empty",
+        "logicalName": "empty",
+        "value": {
+          "objectConsExpression": {}
         }
       }
     },
     {
-      "outputVariable":  {
-        "name":  "strings",
-        "logicalName":  "strings",
-        "value":  {
-          "objectConsExpression":  {}
+      "outputVariable": {
+        "name": "strings",
+        "logicalName": "strings",
+        "value": {
+          "objectConsExpression": {}
         }
       }
     },
     {
-      "outputVariable":  {
-        "name":  "numbers",
-        "logicalName":  "numbers",
-        "value":  {
-          "objectConsExpression":  {}
+      "outputVariable": {
+        "name": "numbers",
+        "logicalName": "numbers",
+        "value": {
+          "objectConsExpression": {}
         }
       }
     },
     {
-      "outputVariable":  {
-        "name":  "keys",
-        "logicalName":  "keys",
-        "value":  {
-          "objectConsExpression":  {}
+      "outputVariable": {
+        "name": "keys",
+        "logicalName": "keys",
+        "value": {
+          "objectConsExpression": {}
         }
       }
     }

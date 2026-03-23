@@ -1,125 +1,125 @@
 {
-  "name":  "output-only-invoke",
-  "version":  "24.0.0",
-  "resources":  [
+  "name": "output-only-invoke",
+  "version": "24.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "StringResource",
-        "raw":  "output-only-invoke:index:StringResource"
+      "elementId": {
+        "name": "StringResource",
+        "raw": "output-only-invoke:index:StringResource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "myInvoke",
-        "raw":  "output-only-invoke:index:myInvoke"
+      "elementId": {
+        "name": "myInvoke",
+        "raw": "output-only-invoke:index:myInvoke"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "myInvokeResult",
-            "raw":  "output-only-invoke:index:myInvokeResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "myInvokeResult",
+            "raw": "output-only-invoke:index:myInvokeResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "name":  "secretInvoke",
-        "raw":  "output-only-invoke:index:secretInvoke"
+      "elementId": {
+        "name": "secretInvoke",
+        "raw": "output-only-invoke:index:secretInvoke"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "secretResponse",
-          "type":  {
-            "boolType":  {}
+          "name": "secretResponse",
+          "type": {
+            "boolType": {}
           }
         },
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "response",
-          "type":  {
-            "stringType":  {}
+          "name": "response",
+          "type": {
+            "stringType": {}
           }
         },
         {
-          "name":  "secret",
-          "type":  {
-            "boolType":  {}
+          "name": "secret",
+          "type": {
+            "boolType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "secretInvokeResult",
-            "raw":  "output-only-invoke:index:secretInvokeResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "secretInvokeResult",
+            "raw": "output-only-invoke:index:secretInvokeResult"
           }
         }
       }
     },
     {
-      "elementId":  {
-        "name":  "unit",
-        "raw":  "output-only-invoke:index:unit"
+      "elementId": {
+        "name": "unit",
+        "raw": "output-only-invoke:index:unit"
       },
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "stringType":  {}
+          "name": "result",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "unitResult",
-            "raw":  "output-only-invoke:index:unitResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "unitResult",
+            "raw": "output-only-invoke:index:unitResult"
           }
         }
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

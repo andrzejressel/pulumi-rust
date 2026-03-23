@@ -1,55 +1,65 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "res1",
-        "logicalName":  "res1",
-        "token":  "module-format:mod_Resource:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res1",
+        "logicalName": "res1",
+        "token": "module-format:mod_Resource:Resource",
+        "inputs": [
           {
-            "name":  "text",
-            "value":  {
-              "relativeTraversalExpression":  {
-                "source":  {
-                  "functionCallExpression":  {
-                    "name":  "invoke",
-                    "args":  [
+            "name": "text",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
                       {
-                        "templateExpression":  {
-                          "parts":  [
-                            {
-                              "literalValueExpression":  {
-                                "stringValue":  "module-format:mod:concatWorld"
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "module-format:mod:concatWorld"
+                                }
                               }
-                            }
-                          ]
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       },
                       {
-                        "objectConsExpression":  {
-                          "properties":  {
-                            "value":  {
-                              "templateExpression":  {
-                                "parts":  [
-                                  {
-                                    "literalValueExpression":  {
-                                      "stringValue":  "hello"
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "hello"
+                                      }
                                     }
-                                  }
-                                ]
+                                  ]
+                                }
                               }
                             }
                           }
+                        },
+                        "type": {
+                          "composite": {}
                         }
                       }
                     ]
                   }
                 },
-                "traversal":  {
-                  "each":  [
+                "traversal": {
+                  "each": [
                     {
-                      "traverseAttr":  {
-                        "name":  "result"
+                      "traverseAttr": {
+                        "name": "result"
                       }
                     }
                   ]
@@ -61,65 +71,80 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "out1",
-        "logicalName":  "out1",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "out1",
+        "logicalName": "out1",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "res1",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "res1",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "res1"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "res1"
+                            "literalValueExpression": {
+                              "stringValue": "call"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "call"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "input":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "x"
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "input": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "x"
+                                  }
                                 }
-                              }
-                            ]
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "output"
+                  "traverseAttr": {
+                    "name": "output"
                   }
                 }
               ]
@@ -129,55 +154,65 @@
       }
     },
     {
-      "resource":  {
-        "name":  "res2",
-        "logicalName":  "res2",
-        "token":  "module-format:mod_Resource:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res2",
+        "logicalName": "res2",
+        "token": "module-format:mod_Resource:Resource",
+        "inputs": [
           {
-            "name":  "text",
-            "value":  {
-              "relativeTraversalExpression":  {
-                "source":  {
-                  "functionCallExpression":  {
-                    "name":  "invoke",
-                    "args":  [
+            "name": "text",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
                       {
-                        "templateExpression":  {
-                          "parts":  [
-                            {
-                              "literalValueExpression":  {
-                                "stringValue":  "module-format:mod:concatWorld"
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "module-format:mod:concatWorld"
+                                }
                               }
-                            }
-                          ]
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       },
                       {
-                        "objectConsExpression":  {
-                          "properties":  {
-                            "value":  {
-                              "templateExpression":  {
-                                "parts":  [
-                                  {
-                                    "literalValueExpression":  {
-                                      "stringValue":  "goodbye"
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "goodbye"
+                                      }
                                     }
-                                  }
-                                ]
+                                  ]
+                                }
                               }
                             }
                           }
+                        },
+                        "type": {
+                          "composite": {}
                         }
                       }
                     ]
                   }
                 },
-                "traversal":  {
-                  "each":  [
+                "traversal": {
+                  "each": [
                     {
-                      "traverseAttr":  {
-                        "name":  "result"
+                      "traverseAttr": {
+                        "name": "result"
                       }
                     }
                   ]
@@ -189,65 +224,80 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "out2",
-        "logicalName":  "out2",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "out2",
+        "logicalName": "out2",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "res2",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "res2",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "res2"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "res2"
+                            "literalValueExpression": {
+                              "stringValue": "call"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "call"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "input":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "xx"
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "input": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "xx"
+                                  }
                                 }
-                              }
-                            ]
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "output"
+                  "traverseAttr": {
+                    "name": "output"
                   }
                 }
               ]
@@ -257,55 +307,65 @@
       }
     },
     {
-      "resource":  {
-        "name":  "res3",
-        "logicalName":  "res3",
-        "token":  "module-format:mod/nested_Resource:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res3",
+        "logicalName": "res3",
+        "token": "module-format:mod/nested_Resource:Resource",
+        "inputs": [
           {
-            "name":  "text",
-            "value":  {
-              "relativeTraversalExpression":  {
-                "source":  {
-                  "functionCallExpression":  {
-                    "name":  "invoke",
-                    "args":  [
+            "name": "text",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
                       {
-                        "templateExpression":  {
-                          "parts":  [
-                            {
-                              "literalValueExpression":  {
-                                "stringValue":  "module-format:mod/nested:concatWorld"
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "module-format:mod/nested:concatWorld"
+                                }
                               }
-                            }
-                          ]
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       },
                       {
-                        "objectConsExpression":  {
-                          "properties":  {
-                            "value":  {
-                              "templateExpression":  {
-                                "parts":  [
-                                  {
-                                    "literalValueExpression":  {
-                                      "stringValue":  "hello"
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "hello"
+                                      }
                                     }
-                                  }
-                                ]
+                                  ]
+                                }
                               }
                             }
                           }
+                        },
+                        "type": {
+                          "composite": {}
                         }
                       }
                     ]
                   }
                 },
-                "traversal":  {
-                  "each":  [
+                "traversal": {
+                  "each": [
                     {
-                      "traverseAttr":  {
-                        "name":  "result"
+                      "traverseAttr": {
+                        "name": "result"
                       }
                     }
                   ]
@@ -317,65 +377,80 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "out3",
-        "logicalName":  "out3",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "out3",
+        "logicalName": "out3",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "res3",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "res3",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "res3"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "res3"
+                            "literalValueExpression": {
+                              "stringValue": "call"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "call"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "input":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "x"
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "input": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "x"
+                                  }
                                 }
-                              }
-                            ]
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "output"
+                  "traverseAttr": {
+                    "name": "output"
                   }
                 }
               ]
@@ -385,55 +460,65 @@
       }
     },
     {
-      "resource":  {
-        "name":  "res4",
-        "logicalName":  "res4",
-        "token":  "module-format:mod/nested_Resource:Resource",
-        "inputs":  [
+      "resource": {
+        "name": "res4",
+        "logicalName": "res4",
+        "token": "module-format:mod/nested_Resource:Resource",
+        "inputs": [
           {
-            "name":  "text",
-            "value":  {
-              "relativeTraversalExpression":  {
-                "source":  {
-                  "functionCallExpression":  {
-                    "name":  "invoke",
-                    "args":  [
+            "name": "text",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
                       {
-                        "templateExpression":  {
-                          "parts":  [
-                            {
-                              "literalValueExpression":  {
-                                "stringValue":  "module-format:mod/nested:concatWorld"
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "module-format:mod/nested:concatWorld"
+                                }
                               }
-                            }
-                          ]
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
                         }
                       },
                       {
-                        "objectConsExpression":  {
-                          "properties":  {
-                            "value":  {
-                              "templateExpression":  {
-                                "parts":  [
-                                  {
-                                    "literalValueExpression":  {
-                                      "stringValue":  "goodbye"
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "goodbye"
+                                      }
                                     }
-                                  }
-                                ]
+                                  ]
+                                }
                               }
                             }
                           }
+                        },
+                        "type": {
+                          "composite": {}
                         }
                       }
                     ]
                   }
                 },
-                "traversal":  {
-                  "each":  [
+                "traversal": {
+                  "each": [
                     {
-                      "traverseAttr":  {
-                        "name":  "result"
+                      "traverseAttr": {
+                        "name": "result"
                       }
                     }
                   ]
@@ -445,65 +530,80 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "out4",
-        "logicalName":  "out4",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "out4",
+        "logicalName": "out4",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "res4",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "res4",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "res4"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "res4"
+                            "literalValueExpression": {
+                              "stringValue": "call"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "call"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "input":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "xx"
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "input": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "xx"
+                                  }
                                 }
-                              }
-                            ]
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "output"
+                  "traverseAttr": {
+                    "name": "output"
                   }
                 }
               ]
@@ -513,10 +613,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "module-format",
-      "version":  "29.0.0"
+      "name": "module-format",
+      "version": "29.0.0"
     }
   ]
 }

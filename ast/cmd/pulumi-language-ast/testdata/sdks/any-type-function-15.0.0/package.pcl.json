@@ -1,45 +1,45 @@
 {
-  "name":  "any-type-function",
-  "version":  "15.0.0",
-  "functions":  [
+  "name": "any-type-function",
+  "version": "15.0.0",
+  "functions": [
     {
-      "elementId":  {
-        "name":  "dynListToDyn",
-        "raw":  "any-type-function:index:dynListToDyn"
+      "elementId": {
+        "name": "dynListToDyn",
+        "raw": "any-type-function:index:dynListToDyn"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "inputs",
-          "type":  {
-            "optionalType":  {
-              "arrayType":  {
-                "refType":  {
-                  "any":  {}
+          "name": "inputs",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "refType": {
+                  "any": {}
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "result",
-          "type":  {
-            "refType":  {
-              "any":  {}
+          "name": "result",
+          "type": {
+            "refType": {
+              "any": {}
             }
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "name":  "dynListToDynResult",
-            "raw":  "any-type-function:index:dynListToDynResult"
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "dynListToDynResult",
+            "raw": "any-type-function:index:dynListToDynResult"
           }
         }
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

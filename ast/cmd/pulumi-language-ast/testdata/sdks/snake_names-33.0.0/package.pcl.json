@@ -1,75 +1,75 @@
 {
-  "name":  "snake_names",
-  "version":  "33.0.0",
-  "resources":  [
+  "name": "snake_names",
+  "version": "33.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "cool_module"
         ],
-        "name":  "another_resource",
-        "raw":  "snake_names:cool_module:another_resource"
+        "name": "another_resource",
+        "raw": "snake_names:cool_module:another_resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "the_input",
-          "type":  {
-            "stringType":  {}
+          "name": "the_input",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "the_input",
-          "type":  {
-            "stringType":  {}
+          "name": "the_input",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "cool_module"
         ],
-        "name":  "some_resource",
-        "raw":  "snake_names:cool_module:some_resource"
+        "name": "some_resource",
+        "raw": "snake_names:cool_module:some_resource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "nested",
-          "type":  {
-            "refType":  {
-              "typeRef":  {
-                "namespace":  [
+          "name": "nested",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "namespace": [
                   "cool_module"
                 ],
-                "name":  "nested_input",
-                "raw":  "snake_names:cool_module:nested_input"
+                "name": "nested_input",
+                "raw": "snake_names:cool_module:nested_input"
               }
             }
           }
         },
         {
-          "name":  "the_input",
-          "type":  {
-            "boolType":  {}
+          "name": "the_input",
+          "type": {
+            "boolType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "the_output",
-          "type":  {
-            "mapType":  {
-              "arrayType":  {
-                "refType":  {
-                  "typeRef":  {
-                    "namespace":  [
+          "name": "the_output",
+          "type": {
+            "mapType": {
+              "arrayType": {
+                "refType": {
+                  "typeRef": {
+                    "namespace": [
                       "cool_module"
                     ],
-                    "name":  "output_item",
-                    "raw":  "snake_names:cool_module:output_item"
+                    "name": "output_item",
+                    "raw": "snake_names:cool_module:output_item"
                   }
                 }
               }
@@ -79,52 +79,52 @@
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "cool_module"
         ],
-        "name":  "some_data",
-        "raw":  "snake_names:cool_module:some_data"
+        "name": "some_data",
+        "raw": "snake_names:cool_module:some_data"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "nested",
-          "type":  {
-            "arrayType":  {
-              "refType":  {
-                "typeRef":  {
-                  "namespace":  [
+          "name": "nested",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "namespace": [
                     "cool_module"
                   ],
-                  "name":  "entry",
-                  "raw":  "snake_names:cool_module:entry"
+                  "name": "entry",
+                  "raw": "snake_names:cool_module:entry"
                 }
               }
             }
           }
         },
         {
-          "name":  "the_input",
-          "type":  {
-            "stringType":  {}
+          "name": "the_input",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "nested_output",
-          "type":  {
-            "arrayType":  {
-              "mapType":  {
-                "refType":  {
-                  "typeRef":  {
-                    "namespace":  [
+          "name": "nested_output",
+          "type": {
+            "arrayType": {
+              "mapType": {
+                "refType": {
+                  "typeRef": {
+                    "namespace": [
                       "cool_module"
                     ],
-                    "name":  "entry",
-                    "raw":  "snake_names:cool_module:entry"
+                    "name": "entry",
+                    "raw": "snake_names:cool_module:entry"
                   }
                 }
               }
@@ -132,35 +132,35 @@
           }
         }
       ],
-      "returnType":  {
-        "refType":  {
-          "typeRef":  {
-            "namespace":  [
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
               "cool_module"
             ],
-            "name":  "some_dataResult",
-            "raw":  "snake_names:cool_module:some_dataResult"
+            "name": "some_dataResult",
+            "raw": "snake_names:cool_module:some_dataResult"
           }
         }
       }
     }
   ],
-  "types":  [
+  "types": [
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "cool_module"
         ],
-        "name":  "entry",
-        "raw":  "snake_names:cool_module:entry"
+        "name": "entry",
+        "raw": "snake_names:cool_module:entry"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "value",
-              "type":  {
-                "stringType":  {}
+              "name": "value",
+              "type": {
+                "stringType": {}
               }
             }
           ]
@@ -168,20 +168,20 @@
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "cool_module"
         ],
-        "name":  "nested_input",
-        "raw":  "snake_names:cool_module:nested_input"
+        "name": "nested_input",
+        "raw": "snake_names:cool_module:nested_input"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "nested_value",
-              "type":  {
-                "stringType":  {}
+              "name": "nested_value",
+              "type": {
+                "stringType": {}
               }
             }
           ]
@@ -189,20 +189,20 @@
       }
     },
     {
-      "elementId":  {
-        "namespace":  [
+      "elementId": {
+        "namespace": [
           "cool_module"
         ],
-        "name":  "output_item",
-        "raw":  "snake_names:cool_module:output_item"
+        "name": "output_item",
+        "raw": "snake_names:cool_module:output_item"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "nested_output",
-              "type":  {
-                "stringType":  {}
+              "name": "nested_output",
+              "type": {
+                "stringType": {}
               }
             }
           ]
@@ -210,5 +210,5 @@
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

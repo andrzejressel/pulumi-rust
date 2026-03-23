@@ -1,19 +1,19 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "component1",
-        "logicalName":  "component1",
-        "token":  "component:index:ComponentCallable",
-        "inputs":  [
+      "resource": {
+        "name": "component1",
+        "logicalName": "component1",
+        "token": "component:index:ComponentCallable",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "bar"
+                    "literalValueExpression": {
+                      "stringValue": "bar"
                     }
                   }
                 ]
@@ -24,51 +24,66 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "from_identity",
-        "logicalName":  "from_identity",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "from_identity",
+        "logicalName": "from_identity",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "component1",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "component1",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "component1"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "component1"
+                            "literalValueExpression": {
+                              "stringValue": "identity"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "identity"
-                          }
-                        }
-                      ]
+                    "value": {
+                      "objectConsExpression": {}
+                    },
+                    "type": {
+                      "composite": {}
                     }
-                  },
-                  {
-                    "objectConsExpression":  {}
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "result"
+                  "traverseAttr": {
+                    "name": "result"
                   }
                 }
               ]
@@ -78,65 +93,80 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "from_prefixed",
-        "logicalName":  "from_prefixed",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "from_prefixed",
+        "logicalName": "from_prefixed",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "component1",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "component1",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "component1"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "component1"
+                            "literalValueExpression": {
+                              "stringValue": "prefixed"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "prefixed"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "prefix":  {
-                          "templateExpression":  {
-                            "parts":  [
-                              {
-                                "literalValueExpression":  {
-                                  "stringValue":  "foo-"
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "prefix": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "foo-"
+                                  }
                                 }
-                              }
-                            ]
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "result"
+                  "traverseAttr": {
+                    "name": "result"
                   }
                 }
               ]
@@ -146,10 +176,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "component",
-      "version":  "13.3.7"
+      "name": "component",
+      "version": "13.3.7"
     }
   ]
 }

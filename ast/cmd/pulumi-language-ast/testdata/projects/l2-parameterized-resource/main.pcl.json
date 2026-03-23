@@ -1,36 +1,36 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "example",
-        "logicalName":  "example",
-        "token":  "subpackage:index:HelloWorld"
+      "resource": {
+        "name": "example",
+        "logicalName": "example",
+        "token": "subpackage:index:HelloWorld"
       }
     },
     {
-      "resource":  {
-        "name":  "exampleComponent",
-        "logicalName":  "exampleComponent",
-        "token":  "subpackage:index:HelloWorldComponent"
+      "resource": {
+        "name": "exampleComponent",
+        "logicalName": "exampleComponent",
+        "token": "subpackage:index:HelloWorldComponent"
       }
     },
     {
-      "outputVariable":  {
-        "name":  "parameterValue",
-        "logicalName":  "parameterValue",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "example",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "parameterValue",
+        "logicalName": "parameterValue",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "example",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "example"
+                  "traverseRoot": {
+                    "name": "example"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "parameterValue"
+                  "traverseAttr": {
+                    "name": "parameterValue"
                   }
                 }
               ]
@@ -40,22 +40,22 @@
       }
     },
     {
-      "outputVariable":  {
-        "name":  "parameterValueFromComponent",
-        "logicalName":  "parameterValueFromComponent",
-        "value":  {
-          "scopeTraversalExpression":  {
-            "rootName":  "exampleComponent",
-            "traversal":  {
-              "each":  [
+      "outputVariable": {
+        "name": "parameterValueFromComponent",
+        "logicalName": "parameterValueFromComponent",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "exampleComponent",
+            "traversal": {
+              "each": [
                 {
-                  "traverseRoot":  {
-                    "name":  "exampleComponent"
+                  "traverseRoot": {
+                    "name": "exampleComponent"
                   }
                 },
                 {
-                  "traverseAttr":  {
-                    "name":  "parameterValue"
+                  "traverseAttr": {
+                    "name": "parameterValue"
                   }
                 }
               ]
@@ -65,10 +65,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "subpackage",
-      "version":  "2.0.0"
+      "name": "subpackage",
+      "version": "2.0.0"
     }
   ]
 }

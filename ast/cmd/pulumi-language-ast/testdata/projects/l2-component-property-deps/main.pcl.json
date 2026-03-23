@@ -1,19 +1,19 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "custom1",
-        "logicalName":  "custom1",
-        "token":  "component-property-deps:index:Custom",
-        "inputs":  [
+      "resource": {
+        "name": "custom1",
+        "logicalName": "custom1",
+        "token": "component-property-deps:index:Custom",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "hello"
+                    "literalValueExpression": {
+                      "stringValue": "hello"
                     }
                   }
                 ]
@@ -24,19 +24,19 @@
       }
     },
     {
-      "resource":  {
-        "name":  "custom2",
-        "logicalName":  "custom2",
-        "token":  "component-property-deps:index:Custom",
-        "inputs":  [
+      "resource": {
+        "name": "custom2",
+        "logicalName": "custom2",
+        "token": "component-property-deps:index:Custom",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "world"
+                    "literalValueExpression": {
+                      "stringValue": "world"
                     }
                   }
                 ]
@@ -47,21 +47,21 @@
       }
     },
     {
-      "resource":  {
-        "name":  "component1",
-        "logicalName":  "component1",
-        "token":  "component-property-deps:index:Component",
-        "inputs":  [
+      "resource": {
+        "name": "component1",
+        "logicalName": "component1",
+        "token": "component-property-deps:index:Component",
+        "inputs": [
           {
-            "name":  "resource",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "custom1",
-                "traversal":  {
-                  "each":  [
+            "name": "resource",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "custom1",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "custom1"
+                      "traverseRoot": {
+                        "name": "custom1"
                       }
                     }
                   ]
@@ -70,18 +70,18 @@
             }
           },
           {
-            "name":  "resourceList",
-            "value":  {
-              "tupleConsExpression":  {
-                "items":  [
+            "name": "resourceList",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "custom1",
-                      "traversal":  {
-                        "each":  [
+                    "scopeTraversalExpression": {
+                      "rootName": "custom1",
+                      "traversal": {
+                        "each": [
                           {
-                            "traverseRoot":  {
-                              "name":  "custom1"
+                            "traverseRoot": {
+                              "name": "custom1"
                             }
                           }
                         ]
@@ -89,13 +89,13 @@
                     }
                   },
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "custom2",
-                      "traversal":  {
-                        "each":  [
+                    "scopeTraversalExpression": {
+                      "rootName": "custom2",
+                      "traversal": {
+                        "each": [
                           {
-                            "traverseRoot":  {
-                              "name":  "custom2"
+                            "traverseRoot": {
+                              "name": "custom2"
                             }
                           }
                         ]
@@ -107,114 +107,129 @@
             }
           },
           {
-            "name":  "resourceMap",
-            "value":  {
-              "objectConsExpression":  {}
+            "name": "resourceMap",
+            "value": {
+              "objectConsExpression": {}
             }
           }
         ]
       }
     },
     {
-      "outputVariable":  {
-        "name":  "propertyDepsFromCall",
-        "logicalName":  "propertyDepsFromCall",
-        "value":  {
-          "relativeTraversalExpression":  {
-            "source":  {
-              "functionCallExpression":  {
-                "name":  "call",
-                "args":  [
+      "outputVariable": {
+        "name": "propertyDepsFromCall",
+        "logicalName": "propertyDepsFromCall",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
                   {
-                    "scopeTraversalExpression":  {
-                      "rootName":  "component1",
-                      "traversal":  {
-                        "each":  [
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "component1",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "component1"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
                           {
-                            "traverseRoot":  {
-                              "name":  "component1"
+                            "literalValueExpression": {
+                              "stringValue": "refs"
                             }
                           }
                         ]
                       }
+                    },
+                    "type": {
+                      "stringType": {}
                     }
                   },
                   {
-                    "templateExpression":  {
-                      "parts":  [
-                        {
-                          "literalValueExpression":  {
-                            "stringValue":  "refs"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "objectConsExpression":  {
-                      "properties":  {
-                        "resource":  {
-                          "scopeTraversalExpression":  {
-                            "rootName":  "custom1",
-                            "traversal":  {
-                              "each":  [
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "resource": {
+                            "scopeTraversalExpression": {
+                              "rootName": "custom1",
+                              "traversal": {
+                                "each": [
+                                  {
+                                    "traverseRoot": {
+                                      "name": "custom1"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "resourceList": {
+                            "tupleConsExpression": {
+                              "items": [
                                 {
-                                  "traverseRoot":  {
-                                    "name":  "custom1"
+                                  "scopeTraversalExpression": {
+                                    "rootName": "custom1",
+                                    "traversal": {
+                                      "each": [
+                                        {
+                                          "traverseRoot": {
+                                            "name": "custom1"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                },
+                                {
+                                  "scopeTraversalExpression": {
+                                    "rootName": "custom2",
+                                    "traversal": {
+                                      "each": [
+                                        {
+                                          "traverseRoot": {
+                                            "name": "custom2"
+                                          }
+                                        }
+                                      ]
+                                    }
                                   }
                                 }
                               ]
                             }
+                          },
+                          "resourceMap": {
+                            "objectConsExpression": {}
                           }
-                        },
-                        "resourceList":  {
-                          "tupleConsExpression":  {
-                            "items":  [
-                              {
-                                "scopeTraversalExpression":  {
-                                  "rootName":  "custom1",
-                                  "traversal":  {
-                                    "each":  [
-                                      {
-                                        "traverseRoot":  {
-                                          "name":  "custom1"
-                                        }
-                                      }
-                                    ]
-                                  }
-                                }
-                              },
-                              {
-                                "scopeTraversalExpression":  {
-                                  "rootName":  "custom2",
-                                  "traversal":  {
-                                    "each":  [
-                                      {
-                                        "traverseRoot":  {
-                                          "name":  "custom2"
-                                        }
-                                      }
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        "resourceMap":  {
-                          "objectConsExpression":  {}
                         }
                       }
+                    },
+                    "type": {
+                      "composite": {}
                     }
                   }
                 ]
               }
             },
-            "traversal":  {
-              "each":  [
+            "traversal": {
+              "each": [
                 {
-                  "traverseAttr":  {
-                    "name":  "result"
+                  "traverseAttr": {
+                    "name": "result"
                   }
                 }
               ]
@@ -224,10 +239,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "component-property-deps",
-      "version":  "1.33.7"
+      "name": "component-property-deps",
+      "version": "1.33.7"
     }
   ]
 }

@@ -1,41 +1,41 @@
 {
-  "name":  "discriminated-union",
-  "version":  "31.0.0",
-  "resources":  [
+  "name": "discriminated-union",
+  "version": "31.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "Example",
-        "raw":  "discriminated-union:index:Example"
+      "elementId": {
+        "name": "Example",
+        "raw": "discriminated-union:index:Example"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "arrayOfUnionOf",
-          "type":  {
-            "optionalType":  {
-              "arrayType":  {
-                "unionType":  {
-                  "types":  [
+          "name": "arrayOfUnionOf",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "unionType": {
+                  "types": [
                     {
-                      "refType":  {
-                        "typeRef":  {
-                          "name":  "VariantOne",
-                          "raw":  "discriminated-union:index:VariantOne"
+                      "refType": {
+                        "typeRef": {
+                          "name": "VariantOne",
+                          "raw": "discriminated-union:index:VariantOne"
                         }
                       }
                     },
                     {
-                      "refType":  {
-                        "typeRef":  {
-                          "name":  "VariantTwo",
-                          "raw":  "discriminated-union:index:VariantTwo"
+                      "refType": {
+                        "typeRef": {
+                          "name": "VariantTwo",
+                          "raw": "discriminated-union:index:VariantTwo"
                         }
                       }
                     }
                   ],
-                  "discriminator":  "discriminantKind",
-                  "mapping":  {
-                    "variant1":  "#/types/discriminated-union:index:VariantOne",
-                    "variant2":  "#/types/discriminated-union:index:VariantTwo"
+                  "discriminator": "discriminantKind",
+                  "mapping": {
+                    "variant1": "#/types/discriminated-union:index:VariantOne",
+                    "variant2": "#/types/discriminated-union:index:VariantTwo"
                   }
                 }
               }
@@ -43,67 +43,67 @@
           }
         },
         {
-          "name":  "unionOf",
-          "type":  {
-            "optionalType":  {
-              "unionType":  {
-                "types":  [
+          "name": "unionOf",
+          "type": {
+            "optionalType": {
+              "unionType": {
+                "types": [
                   {
-                    "refType":  {
-                      "typeRef":  {
-                        "name":  "VariantOne",
-                        "raw":  "discriminated-union:index:VariantOne"
+                    "refType": {
+                      "typeRef": {
+                        "name": "VariantOne",
+                        "raw": "discriminated-union:index:VariantOne"
                       }
                     }
                   },
                   {
-                    "refType":  {
-                      "typeRef":  {
-                        "name":  "VariantTwo",
-                        "raw":  "discriminated-union:index:VariantTwo"
+                    "refType": {
+                      "typeRef": {
+                        "name": "VariantTwo",
+                        "raw": "discriminated-union:index:VariantTwo"
                       }
                     }
                   }
                 ],
-                "discriminator":  "discriminantKind",
-                "mapping":  {
-                  "variant1":  "#/types/discriminated-union:index:VariantOne",
-                  "variant2":  "#/types/discriminated-union:index:VariantTwo"
+                "discriminator": "discriminantKind",
+                "mapping": {
+                  "variant1": "#/types/discriminated-union:index:VariantOne",
+                  "variant2": "#/types/discriminated-union:index:VariantTwo"
                 }
               }
             }
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "arrayOfUnionOf",
-          "type":  {
-            "optionalType":  {
-              "arrayType":  {
-                "unionType":  {
-                  "types":  [
+          "name": "arrayOfUnionOf",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "unionType": {
+                  "types": [
                     {
-                      "refType":  {
-                        "typeRef":  {
-                          "name":  "VariantOne",
-                          "raw":  "discriminated-union:index:VariantOne"
+                      "refType": {
+                        "typeRef": {
+                          "name": "VariantOne",
+                          "raw": "discriminated-union:index:VariantOne"
                         }
                       }
                     },
                     {
-                      "refType":  {
-                        "typeRef":  {
-                          "name":  "VariantTwo",
-                          "raw":  "discriminated-union:index:VariantTwo"
+                      "refType": {
+                        "typeRef": {
+                          "name": "VariantTwo",
+                          "raw": "discriminated-union:index:VariantTwo"
                         }
                       }
                     }
                   ],
-                  "discriminator":  "discriminantKind",
-                  "mapping":  {
-                    "variant1":  "#/types/discriminated-union:index:VariantOne",
-                    "variant2":  "#/types/discriminated-union:index:VariantTwo"
+                  "discriminator": "discriminantKind",
+                  "mapping": {
+                    "variant1": "#/types/discriminated-union:index:VariantOne",
+                    "variant2": "#/types/discriminated-union:index:VariantTwo"
                   }
                 }
               }
@@ -111,32 +111,32 @@
           }
         },
         {
-          "name":  "unionOf",
-          "type":  {
-            "optionalType":  {
-              "unionType":  {
-                "types":  [
+          "name": "unionOf",
+          "type": {
+            "optionalType": {
+              "unionType": {
+                "types": [
                   {
-                    "refType":  {
-                      "typeRef":  {
-                        "name":  "VariantOne",
-                        "raw":  "discriminated-union:index:VariantOne"
+                    "refType": {
+                      "typeRef": {
+                        "name": "VariantOne",
+                        "raw": "discriminated-union:index:VariantOne"
                       }
                     }
                   },
                   {
-                    "refType":  {
-                      "typeRef":  {
-                        "name":  "VariantTwo",
-                        "raw":  "discriminated-union:index:VariantTwo"
+                    "refType": {
+                      "typeRef": {
+                        "name": "VariantTwo",
+                        "raw": "discriminated-union:index:VariantTwo"
                       }
                     }
                   }
                 ],
-                "discriminator":  "discriminantKind",
-                "mapping":  {
-                  "variant1":  "#/types/discriminated-union:index:VariantOne",
-                  "variant2":  "#/types/discriminated-union:index:VariantTwo"
+                "discriminator": "discriminantKind",
+                "mapping": {
+                  "variant1": "#/types/discriminated-union:index:VariantOne",
+                  "variant2": "#/types/discriminated-union:index:VariantTwo"
                 }
               }
             }
@@ -145,26 +145,26 @@
       ]
     }
   ],
-  "types":  [
+  "types": [
     {
-      "elementId":  {
-        "name":  "VariantOne",
-        "raw":  "discriminated-union:index:VariantOne"
+      "elementId": {
+        "name": "VariantOne",
+        "raw": "discriminated-union:index:VariantOne"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "discriminantKind",
-              "type":  {
-                "stringType":  {}
+              "name": "discriminantKind",
+              "type": {
+                "stringType": {}
               }
             },
             {
-              "name":  "field1",
-              "type":  {
-                "optionalType":  {
-                  "stringType":  {}
+              "name": "field1",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
                 }
               }
             }
@@ -173,24 +173,24 @@
       }
     },
     {
-      "elementId":  {
-        "name":  "VariantTwo",
-        "raw":  "discriminated-union:index:VariantTwo"
+      "elementId": {
+        "name": "VariantTwo",
+        "raw": "discriminated-union:index:VariantTwo"
       },
-      "globalTypeValue":  {
-        "object":  {
-          "properties":  [
+      "globalTypeValue": {
+        "object": {
+          "properties": [
             {
-              "name":  "discriminantKind",
-              "type":  {
-                "stringType":  {}
+              "name": "discriminantKind",
+              "type": {
+                "stringType": {}
               }
             },
             {
-              "name":  "field2",
-              "type":  {
-                "optionalType":  {
-                  "stringType":  {}
+              "name": "field2",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
                 }
               }
             }
@@ -199,5 +199,5 @@
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

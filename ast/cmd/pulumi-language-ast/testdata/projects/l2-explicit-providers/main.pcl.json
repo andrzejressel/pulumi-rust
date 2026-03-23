@@ -1,26 +1,26 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "explicit",
-        "logicalName":  "explicit",
-        "token":  "pulumi:providers:component"
+      "resource": {
+        "name": "explicit",
+        "logicalName": "explicit",
+        "token": "pulumi:providers:component"
       }
     },
     {
-      "resource":  {
-        "name":  "list",
-        "logicalName":  "list",
-        "token":  "component:index:ComponentCallable",
-        "inputs":  [
+      "resource": {
+        "name": "list",
+        "logicalName": "list",
+        "token": "component:index:ComponentCallable",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "value"
+                    "literalValueExpression": {
+                      "stringValue": "value"
                     }
                   }
                 ]
@@ -28,23 +28,23 @@
             }
           }
         ],
-        "options":  {}
+        "options": {}
       }
     },
     {
-      "resource":  {
-        "name":  "map",
-        "logicalName":  "map",
-        "token":  "component:index:ComponentCallable",
-        "inputs":  [
+      "resource": {
+        "name": "map",
+        "logicalName": "map",
+        "token": "component:index:ComponentCallable",
+        "inputs": [
           {
-            "name":  "value",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "value"
+                    "literalValueExpression": {
+                      "stringValue": "value"
                     }
                   }
                 ]
@@ -52,14 +52,14 @@
             }
           }
         ],
-        "options":  {}
+        "options": {}
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "component",
-      "version":  "13.3.7"
+      "name": "component",
+      "version": "13.3.7"
     }
   ]
 }

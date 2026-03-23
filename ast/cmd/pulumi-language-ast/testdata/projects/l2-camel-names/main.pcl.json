@@ -1,16 +1,16 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "firstResource",
-        "logicalName":  "firstResource",
-        "token":  "camelNames:CoolModule:SomeResource",
-        "inputs":  [
+      "resource": {
+        "name": "firstResource",
+        "logicalName": "firstResource",
+        "token": "camelNames:CoolModule:SomeResource",
+        "inputs": [
           {
-            "name":  "theInput",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "theInput",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           }
@@ -18,26 +18,26 @@
       }
     },
     {
-      "resource":  {
-        "name":  "secondResource",
-        "logicalName":  "secondResource",
-        "token":  "camelNames:CoolModule:SomeResource",
-        "inputs":  [
+      "resource": {
+        "name": "secondResource",
+        "logicalName": "secondResource",
+        "token": "camelNames:CoolModule:SomeResource",
+        "inputs": [
           {
-            "name":  "theInput",
-            "value":  {
-              "scopeTraversalExpression":  {
-                "rootName":  "firstResource",
-                "traversal":  {
-                  "each":  [
+            "name": "theInput",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
                     {
-                      "traverseRoot":  {
-                        "name":  "firstResource"
+                      "traverseRoot": {
+                        "name": "firstResource"
                       }
                     },
                     {
-                      "traverseAttr":  {
-                        "name":  "theOutput"
+                      "traverseAttr": {
+                        "name": "theOutput"
                       }
                     }
                   ]
@@ -49,27 +49,27 @@
       }
     },
     {
-      "resource":  {
-        "name":  "thirdResource",
-        "logicalName":  "thirdResource",
-        "token":  "camelNames:CoolModule:SomeResource",
-        "inputs":  [
+      "resource": {
+        "name": "thirdResource",
+        "logicalName": "thirdResource",
+        "token": "camelNames:CoolModule:SomeResource",
+        "inputs": [
           {
-            "name":  "theInput",
-            "value":  {
-              "literalValueExpression":  {
-                "boolValue":  true
+            "name": "theInput",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
               }
             }
           },
           {
-            "name":  "resourceName",
-            "value":  {
-              "templateExpression":  {
-                "parts":  [
+            "name": "resourceName",
+            "value": {
+              "templateExpression": {
+                "parts": [
                   {
-                    "literalValueExpression":  {
-                      "stringValue":  "my-cluster"
+                    "literalValueExpression": {
+                      "stringValue": "my-cluster"
                     }
                   }
                 ]
@@ -80,10 +80,10 @@
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "camelNames",
-      "version":  "19.0.0"
+      "name": "camelNames",
+      "version": "19.0.0"
     }
   ]
 }

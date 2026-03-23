@@ -1,48 +1,48 @@
 {
-  "name":  "simple-invoke-with-scalar-return",
-  "version":  "17.0.0",
-  "resources":  [
+  "name": "simple-invoke-with-scalar-return",
+  "version": "17.0.0",
+  "resources": [
     {
-      "elementId":  {
-        "name":  "StringResource",
-        "raw":  "simple-invoke-with-scalar-return:index:StringResource"
+      "elementId": {
+        "name": "StringResource",
+        "raw": "simple-invoke-with-scalar-return:index:StringResource"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "outputProperties":  [
+      "outputProperties": [
         {
-          "name":  "text",
-          "type":  {
-            "stringType":  {}
+          "name": "text",
+          "type": {
+            "stringType": {}
           }
         }
       ]
     }
   ],
-  "functions":  [
+  "functions": [
     {
-      "elementId":  {
-        "name":  "myInvokeScalar",
-        "raw":  "simple-invoke-with-scalar-return:index:myInvokeScalar"
+      "elementId": {
+        "name": "myInvokeScalar",
+        "raw": "simple-invoke-with-scalar-return:index:myInvokeScalar"
       },
-      "inputProperties":  [
+      "inputProperties": [
         {
-          "name":  "value",
-          "type":  {
-            "stringType":  {}
+          "name": "value",
+          "type": {
+            "stringType": {}
           }
         }
       ],
-      "returnType":  {
-        "boolType":  {}
+      "returnType": {
+        "boolType": {}
       }
     }
   ],
-  "provider":  {}
+  "provider": {}
 }

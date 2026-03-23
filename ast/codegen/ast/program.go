@@ -4,6 +4,7 @@ import (
 	"encoding/base64"
 	"fmt"
 
+	"github.com/andrzejressel/pulumi-ast/codegen/shared"
 	astproto "github.com/andrzejressel/pulumi-ast/protobuf/schemapcl"
 	"github.com/hashicorp/hcl/v2"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
@@ -14,6 +15,38 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
 )
+
+func transformProgramType(t model.Type) (*astproto.Type, error) {
+	if t == nil {
+		return nil, fmt.Errorf("type is nil")
+	}
+
+	switch t := t.(type) {
+	case *model.OpaqueType:
+		switch t {
+		case model.BoolType:
+			return &astproto.Type{Value: &astproto.Type_BoolType{BoolType: &astproto.Empty{}}}, nil
+		case model.IntType:
+			return &astproto.Type{Value: &astproto.Type_IntType{IntType: &astproto.Empty{}}}, nil
+		case model.NumberType:
+			return &astproto.Type{Value: &astproto.Type_NumberType{NumberType: &astproto.Empty{}}}, nil
+		case model.StringType:
+			return &astproto.Type{Value: &astproto.Type_StringType{StringType: &astproto.Empty{}}}, nil
+		default:
+			return &astproto.Type{Value: &astproto.Type_Composite{Composite: &astproto.Empty{}}}, nil
+		}
+	case *model.OutputType:
+		elementType, err := transformProgramType(t.ElementType)
+		if err != nil {
+			return nil, err
+		}
+		return &astproto.Type{
+			Value: &astproto.Type_OutputType{OutputType: elementType},
+		}, nil
+	default:
+		return &astproto.Type{Value: &astproto.Type_Composite{Composite: &astproto.Empty{}}}, nil
+	}
+}
 
 func transformTraversal(traversal hcl.Traversal) (*astproto.Traversal, error) {
 	result := make([]*astproto.Traverser, len(traversal))
@@ -240,13 +273,20 @@ func transformExpression(expr model.Expression) (*astproto.Expression, error) {
 		}, nil
 
 	case *model.FunctionCallExpression:
-		args := make([]*astproto.Expression, len(expr.Args))
+		args := make([]*astproto.FunctionCallArgument, len(expr.Args))
 		for i, arg := range expr.Args {
 			transformedArg, err := transformExpression(arg)
 			if err != nil {
 				return nil, err
 			}
-			args[i] = transformedArg
+			transformedType, err := transformProgramType(arg.Type())
+			if err != nil {
+				return nil, fmt.Errorf("could not transform function call argument type: %w", err)
+			}
+			args[i] = &astproto.FunctionCallArgument{
+				Value: transformedArg,
+				Type:  transformedType,
+			}
 		}
 		return &astproto.Expression{
 			Value: &astproto.Expression_FunctionCallExpression{
@@ -616,6 +656,10 @@ func GenerateJSONProgram(program *pcl.Program) (map[string][]byte, hcl.Diagnosti
 		return nil, nil, err
 	}
 	bytes, err := protojson.MarshalOptions{Multiline: true}.Marshal(protobuf)
+	if err != nil {
+		return nil, nil, err
+	}
+	bytes, err = shared.NormalizeJSON(bytes)
 	if err != nil {
 		return nil, nil, err
 	}

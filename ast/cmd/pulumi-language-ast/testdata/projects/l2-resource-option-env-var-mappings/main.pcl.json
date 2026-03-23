@@ -1,18 +1,18 @@
 {
-  "nodes":  [
+  "nodes": [
     {
-      "resource":  {
-        "name":  "prov",
-        "logicalName":  "prov",
-        "token":  "pulumi:providers:simple",
-        "options":  {}
+      "resource": {
+        "name": "prov",
+        "logicalName": "prov",
+        "token": "pulumi:providers:simple",
+        "options": {}
       }
     }
   ],
-  "plugins":  [
+  "plugins": [
     {
-      "name":  "simple",
-      "version":  "2.0.0"
+      "name": "simple",
+      "version": "2.0.0"
     }
   ]
 }
