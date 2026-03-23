@@ -7,8 +7,8 @@ import "C"
 import (
 	"fmt"
 
-	"github.com/andrzejressel/pulumi-ast/codegen/shared"
 	"github.com/andrzejressel/pulumi-rust/ast/codegen/ast"
+	"github.com/andrzejressel/pulumi-rust/ast/codegen/shared"
 	"github.com/hashicorp/hcl/v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"

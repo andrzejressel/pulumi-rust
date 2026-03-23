@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/andrzejressel/pulumi-ast/codegen/shared"
+	"github.com/andrzejressel/pulumi-rust/ast/codegen/shared"
 	astproto "github.com/andrzejressel/pulumi-rust/ast/protobuf/schemapackage"
 	"github.com/hashicorp/hcl/v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
