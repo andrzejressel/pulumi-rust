@@ -47,8 +47,8 @@ fn convert_node(node: &Node) -> Result<String> {
 
 fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
     Ok(format!(
-        "let {} = context.get_config(None, \"{}\");",
-        config_variable.name, config_variable.name
+        "let {} = context.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+        config_variable.name, config_variable.name, config_variable.name
     ))
 }
 
@@ -91,6 +91,7 @@ fn convert_expression(expression: &Expression) -> Result<String> {
             let args = function_call
                 .args
                 .iter()
+                .map(|a| &a.value)
                 .map(convert_expression)
                 .collect::<Result<Vec<_>>>()
                 .context("Failed to convert function call arguments")?

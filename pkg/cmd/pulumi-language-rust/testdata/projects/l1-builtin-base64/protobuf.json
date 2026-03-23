@@ -15,17 +15,22 @@
             "name": "fromBase64",
             "args": [
               {
-                "scopeTraversalExpression": {
-                  "rootName": "input",
-                  "traversal": {
-                    "each": [
-                      {
-                        "traverseRoot": {
-                          "name": "input"
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "input",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "input"
+                          }
                         }
-                      }
-                    ]
+                      ]
+                    }
                   }
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]
@@ -62,17 +67,22 @@
             "name": "toBase64",
             "args": [
               {
-                "scopeTraversalExpression": {
-                  "rootName": "bytes",
-                  "traversal": {
-                    "each": [
-                      {
-                        "traverseRoot": {
-                          "name": "bytes"
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "bytes",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "bytes"
+                          }
                         }
-                      }
-                    ]
+                      ]
+                    }
                   }
+                },
+                "type": {
+                  "stringType": {}
                 }
               }
             ]
