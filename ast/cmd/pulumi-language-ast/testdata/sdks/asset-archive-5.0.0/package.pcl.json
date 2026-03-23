@@ -1,0 +1,59 @@
+{
+  "name": "asset-archive",
+  "version": "5.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "ArchiveResource",
+        "raw": "asset-archive:index:ArchiveResource"
+      },
+      "inputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "refType": {
+              "archive": {}
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "refType": {
+              "archive": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "AssetResource",
+        "raw": "asset-archive:index:AssetResource"
+      },
+      "inputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "refType": {
+              "asset": {}
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "refType": {
+              "asset": {}
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "provider": {}
+}

@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "withSecret",
+        "logicalName": "withSecret",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "withoutSecret",
+        "logicalName": "withoutSecret",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

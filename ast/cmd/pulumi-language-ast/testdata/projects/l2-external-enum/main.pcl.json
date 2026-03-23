@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "myRes",
+        "logicalName": "myRes",
+        "token": "enum:index:Res",
+        "inputs": [
+          {
+            "name": "intEnum",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 1
+              }
+            }
+          },
+          {
+            "name": "stringEnum",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "one"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "mySink",
+        "logicalName": "mySink",
+        "token": "extenumref:index:Sink",
+        "inputs": [
+          {
+            "name": "stringEnum",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "two"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "enum",
+      "version": "30.0.0"
+    },
+    {
+      "name": "extenumref",
+      "version": "32.0.0"
+    }
+  ]
+}

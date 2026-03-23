@@ -1,0 +1,112 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "res1",
+        "logicalName": "res1",
+        "token": "names:index:ResMap",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res2",
+        "logicalName": "res2",
+        "token": "names:index:ResArray",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res3",
+        "logicalName": "res3",
+        "token": "names:index:ResList",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res4",
+        "logicalName": "res4",
+        "token": "names:index:ResResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res5",
+        "logicalName": "res5",
+        "token": "names:mod:Res",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res6",
+        "logicalName": "res6",
+        "token": "names:mod/nested:Res",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "names",
+      "version": "6.0.0"
+    }
+  ]
+}

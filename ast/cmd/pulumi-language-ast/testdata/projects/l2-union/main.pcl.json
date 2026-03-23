@@ -1,0 +1,218 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "stringOrIntegerExample1",
+        "logicalName": "stringOrIntegerExample1",
+        "token": "union:index:Example",
+        "inputs": [
+          {
+            "name": "stringOrIntegerProperty",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 42
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "stringOrIntegerExample2",
+        "logicalName": "stringOrIntegerExample2",
+        "token": "union:index:Example",
+        "inputs": [
+          {
+            "name": "stringOrIntegerProperty",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "forty two"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "mapMapUnionExample",
+        "logicalName": "mapMapUnionExample",
+        "token": "union:index:Example",
+        "inputs": [
+          {
+            "name": "mapMapUnionProperty",
+            "value": {
+              "objectConsExpression": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "mapMapUnionOutput",
+        "logicalName": "mapMapUnionOutput",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "mapMapUnionExample",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "mapMapUnionExample"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "mapMapUnionProperty"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "stringEnumUnionListExample",
+        "logicalName": "stringEnumUnionListExample",
+        "token": "union:index:Example",
+        "inputs": [
+          {
+            "name": "stringEnumUnionListProperty",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
+                  {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "Listen"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "Send"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "NotAnEnumValue"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "safeEnumExample",
+        "logicalName": "safeEnumExample",
+        "token": "union:index:Example",
+        "inputs": [
+          {
+            "name": "typedEnumProperty",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "Block"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "enumOutputExample",
+        "logicalName": "enumOutputExample",
+        "token": "union:index:EnumOutput",
+        "inputs": [
+          {
+            "name": "name",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "example"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "outputEnumExample",
+        "logicalName": "outputEnumExample",
+        "token": "union:index:Example",
+        "inputs": [
+          {
+            "name": "typedEnumProperty",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "enumOutputExample",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "enumOutputExample"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "type"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "union",
+      "version": "18.0.0"
+    }
+  ]
+}

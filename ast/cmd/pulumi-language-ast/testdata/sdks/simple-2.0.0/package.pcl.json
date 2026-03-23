@@ -1,0 +1,29 @@
+{
+  "name": "simple",
+  "version": "2.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Resource",
+        "raw": "simple:index:Resource"
+      },
+      "inputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider": {}
+}

@@ -1,0 +1,78 @@
+{
+  "name": "subpackage",
+  "version": "2.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "HelloWorld",
+        "raw": "subpackage:index:HelloWorld"
+      },
+      "outputProperties": [
+        {
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "HelloWorldComponent",
+        "raw": "subpackage:index:HelloWorldComponent"
+      },
+      "outputProperties": [
+        {
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "elementId": {
+        "name": "doHelloWorld",
+        "raw": "subpackage:index:doHelloWorld"
+      },
+      "inputProperties": [
+        {
+          "name": "input",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "output",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "doHelloWorldResult",
+            "raw": "subpackage:index:doHelloWorldResult"
+          }
+        }
+      }
+    }
+  ],
+  "provider": {
+    "inputProperties": [
+      {
+        "name": "text",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "prov",
+        "logicalName": "prov",
+        "token": "pulumi:providers:goodbye",
+        "inputs": [
+          {
+            "name": "text",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "World"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "goodbye:index:Goodbye",
+        "options": {
+          "provider": {
+            "scopeTraversalExpression": {
+              "rootName": "prov",
+              "traversal": {
+                "each": [
+                  {
+                    "traverseRoot": {
+                      "name": "prov"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "parameterValue",
+        "logicalName": "parameterValue",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "res",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "res"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "parameterValue"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "goodbye",
+      "version": "2.0.0"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "class",
+        "logicalName": "class",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "class",
+        "logicalName": "class",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "class",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "class"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "export",
+        "logicalName": "export",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "export",
+        "logicalName": "export",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "export",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "export"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "mod",
+        "logicalName": "mod",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "mod",
+        "logicalName": "mod",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "mod",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "mod"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "import",
+        "logicalName": "import",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "object",
+        "logicalName": "object",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "object",
+        "logicalName": "object",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "object",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "object"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "self",
+        "logicalName": "self",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "self",
+        "logicalName": "self",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "self",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "self"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "this",
+        "logicalName": "this",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "this",
+        "logicalName": "this",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "this",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "this"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "if",
+        "logicalName": "if",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "if",
+        "logicalName": "if",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "if",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "if"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "name": "ref-ref",
+  "version": "12.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Resource",
+        "raw": "ref-ref:index:Resource"
+      },
+      "inputProperties": [
+        {
+          "name": "data",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "ref-ref:index:Data"
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "data",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "ref-ref:index:Data"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "elementId": {
+        "name": "Data",
+        "raw": "ref-ref:index:Data"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "boolArray",
+              "type": {
+                "arrayType": {
+                  "boolType": {}
+                }
+              }
+            },
+            {
+              "name": "boolean",
+              "type": {
+                "boolType": {}
+              }
+            },
+            {
+              "name": "float",
+              "type": {
+                "numberType": {}
+              }
+            },
+            {
+              "name": "innerData",
+              "type": {
+                "refType": {
+                  "typeRef": {
+                    "name": "InnerData",
+                    "raw": "ref-ref:index:InnerData"
+                  }
+                }
+              }
+            },
+            {
+              "name": "integer",
+              "type": {
+                "intType": {}
+              }
+            },
+            {
+              "name": "string",
+              "type": {
+                "stringType": {}
+              }
+            },
+            {
+              "name": "stringMap",
+              "type": {
+                "mapType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "InnerData",
+        "raw": "ref-ref:index:InnerData"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "boolArray",
+              "type": {
+                "arrayType": {
+                  "boolType": {}
+                }
+              }
+            },
+            {
+              "name": "boolean",
+              "type": {
+                "boolType": {}
+              }
+            },
+            {
+              "name": "float",
+              "type": {
+                "numberType": {}
+              }
+            },
+            {
+              "name": "integer",
+              "type": {
+                "intType": {}
+              }
+            },
+            {
+              "name": "string",
+              "type": {
+                "stringType": {}
+              }
+            },
+            {
+              "name": "stringMap",
+              "type": {
+                "mapType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "provider": {}
+}

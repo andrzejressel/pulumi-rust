@@ -1,0 +1,212 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "ass",
+        "logicalName": "ass",
+        "token": "asset-archive:index:AssetResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "functionCallExpression": {
+                "name": "fileAsset",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "../test.txt"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "arc",
+        "logicalName": "arc",
+        "token": "asset-archive:index:ArchiveResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "functionCallExpression": {
+                "name": "fileArchive",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "../archive.tar"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "dir",
+        "logicalName": "dir",
+        "token": "asset-archive:index:ArchiveResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "functionCallExpression": {
+                "name": "fileArchive",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "../folder"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "assarc",
+        "logicalName": "assarc",
+        "token": "asset-archive:index:ArchiveResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "functionCallExpression": {
+                "name": "assetArchive",
+                "args": [
+                  {
+                    "value": {
+                      "objectConsExpression": {}
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "remoteass",
+        "logicalName": "remoteass",
+        "token": "asset-archive:index:AssetResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "functionCallExpression": {
+                "name": "remoteAsset",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "https://raw.githubusercontent.com/pulumi/pulumi/7b0eb7fb10694da2f31c0d15edf671df843e0d4c/cmd/pulumi-test-language/tests/testdata/l2-resource-asset-archive/test.txt"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "remotearc",
+        "logicalName": "remotearc",
+        "token": "asset-archive:index:ArchiveResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "functionCallExpression": {
+                "name": "remoteArchive",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "https://raw.githubusercontent.com/pulumi/pulumi/7b0eb7fb10694da2f31c0d15edf671df843e0d4c/cmd/pulumi-test-language/tests/testdata/l2-resource-asset-archive/archive.tar"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "asset-archive",
+      "version": "5.0.0"
+    }
+  ]
+}

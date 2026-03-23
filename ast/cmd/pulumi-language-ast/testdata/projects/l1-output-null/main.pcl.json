@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "array",
+        "logicalName": "array",
+        "value": {
+          "tupleConsExpression": {
+            "items": [
+              {
+                "literalValueExpression": {
+                  "unknownValue": true
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

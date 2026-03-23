@@ -1,0 +1,103 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "prov",
+        "logicalName": "prov",
+        "token": "pulumi:providers:config",
+        "inputs": [
+          {
+            "name": "name",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "my config"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "pluginDownloadURL",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "not the same as the pulumi resource option"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "config:index:Resource",
+        "inputs": [
+          {
+            "name": "text",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "prov",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "prov"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "version"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "pluginDownloadURL",
+        "logicalName": "pluginDownloadURL",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "prov",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "prov"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "pluginDownloadURL"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "config",
+      "version": "9.0.0"
+    }
+  ]
+}

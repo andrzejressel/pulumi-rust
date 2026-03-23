@@ -1,0 +1,261 @@
+{
+  "name": "union",
+  "version": "18.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "EnumOutput",
+        "raw": "union:index:EnumOutput"
+      },
+      "inputProperties": [
+        {
+          "name": "name",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "name",
+          "type": {
+            "stringType": {}
+          }
+        },
+        {
+          "name": "type",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "Example",
+        "raw": "union:index:Example"
+      },
+      "inputProperties": [
+        {
+          "name": "mapMapUnionProperty",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "mapType": {
+                  "unionType": {
+                    "types": [
+                      {
+                        "stringType": {}
+                      },
+                      {
+                        "arrayType": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "stringEnumUnionListProperty",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "unionType": {
+                  "types": [
+                    {
+                      "stringType": {}
+                    },
+                    {
+                      "refType": {
+                        "typeRef": {
+                          "name": "AccessRights",
+                          "raw": "union:index:AccessRights"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "stringOrIntegerProperty",
+          "type": {
+            "optionalType": {
+              "unionType": {
+                "types": [
+                  {
+                    "stringType": {}
+                  },
+                  {
+                    "intType": {}
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "typedEnumProperty",
+          "type": {
+            "optionalType": {
+              "unionType": {
+                "types": [
+                  {
+                    "stringType": {}
+                  },
+                  {
+                    "refType": {
+                      "typeRef": {
+                        "name": "BlobType",
+                        "raw": "union:index:BlobType"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "mapMapUnionProperty",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "mapType": {
+                  "unionType": {
+                    "types": [
+                      {
+                        "stringType": {}
+                      },
+                      {
+                        "arrayType": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "stringEnumUnionListProperty",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "unionType": {
+                  "types": [
+                    {
+                      "stringType": {}
+                    },
+                    {
+                      "refType": {
+                        "typeRef": {
+                          "name": "AccessRights",
+                          "raw": "union:index:AccessRights"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "stringOrIntegerProperty",
+          "type": {
+            "optionalType": {
+              "unionType": {
+                "types": [
+                  {
+                    "stringType": {}
+                  },
+                  {
+                    "intType": {}
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "typedEnumProperty",
+          "type": {
+            "optionalType": {
+              "unionType": {
+                "types": [
+                  {
+                    "stringType": {}
+                  },
+                  {
+                    "refType": {
+                      "typeRef": {
+                        "name": "BlobType",
+                        "raw": "union:index:BlobType"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "elementId": {
+        "name": "AccessRights",
+        "raw": "union:index:AccessRights"
+      },
+      "globalTypeValue": {
+        "stringEnum": {
+          "elements": [
+            {
+              "value": "Listen"
+            },
+            {
+              "value": "Manage"
+            },
+            {
+              "value": "Send"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "BlobType",
+        "raw": "union:index:BlobType"
+      },
+      "globalTypeValue": {
+        "stringEnum": {
+          "elements": [
+            {
+              "value": "Block"
+            },
+            {
+              "value": "Append"
+            },
+            {
+              "value": "Page"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "provider": {}
+}

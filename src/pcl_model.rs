@@ -138,8 +138,34 @@ pub struct TupleConsExpression {
 #[derive(Clone, PartialEq, Debug)]
 pub struct FunctionCallExpression {
     pub name: String,
-    pub args: Vec<Expression>,
+    pub args: Vec<FunctionCallArgument>,
 }
+
+#[derive(Clone, PartialEq, Debug)]
+pub struct FunctionCallArgument {
+    pub value: Expression,
+    pub r#type: Type,
+}
+
+#[derive(Clone, PartialEq, Debug)]
+pub struct Type {
+    pub value: r#type::Value,
+}
+
+pub mod r#type {
+    #[derive(Clone, PartialEq, Debug)]
+    pub enum Value {
+        BoolType(super::Empty),
+        IntType(super::Empty),
+        NumberType(super::Empty),
+        StringType(super::Empty),
+        OutputType(Box<super::Type>),
+        Composite(super::Empty),
+    }
+}
+
+#[derive(Clone, PartialEq, Eq, Hash, Debug)]
+pub struct Empty {}
 
 #[derive(Clone, PartialEq, Debug)]
 pub struct RelativeTraversalExpression {
@@ -457,7 +483,37 @@ fn map_tuple_cons_expression(value: pb::TupleConsExpression) -> TupleConsExpress
 fn map_function_call_expression(value: pb::FunctionCallExpression) -> FunctionCallExpression {
     FunctionCallExpression {
         name: value.name,
-        args: value.args.into_iter().map(map_expression).collect(),
+        args: value
+            .args
+            .into_iter()
+            .map(map_function_call_argument)
+            .collect(),
+    }
+}
+
+fn map_function_call_argument(value: pb::FunctionCallArgument) -> FunctionCallArgument {
+    FunctionCallArgument {
+        value: map_expression(required(value.value, "function_call_argument.value")),
+        r#type: map_type(required(value.r#type, "function_call_argument.type")),
+    }
+}
+
+fn map_type(value: pb::Type) -> Type {
+    Type {
+        value: map_type_value(required(value.value, "type.value")),
+    }
+}
+
+fn map_type_value(value: pb::r#type::Value) -> r#type::Value {
+    match value {
+        pb::r#type::Value::BoolType(_) => r#type::Value::BoolType(Empty {}),
+        pb::r#type::Value::IntType(_) => r#type::Value::IntType(Empty {}),
+        pb::r#type::Value::NumberType(_) => r#type::Value::NumberType(Empty {}),
+        pb::r#type::Value::StringType(_) => r#type::Value::StringType(Empty {}),
+        pb::r#type::Value::OutputType(inner) => {
+            r#type::Value::OutputType(Box::new(map_type(*inner)))
+        }
+        pb::r#type::Value::Composite(_) => r#type::Value::Composite(Empty {}),
     }
 }
 
@@ -750,6 +806,49 @@ mod tests {
                 assert!(options.protect.is_some());
             }
             other => panic!("expected resource node, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn maps_function_call_argument_with_type() {
+        let mapped = map_program(pb::PclProtobufProgram {
+            nodes: vec![pb::Node {
+                value: Some(pb::node::Value::OutputVariable(pb::OutputVariable {
+                    name: "out".to_string(),
+                    logical_name: "out".to_string(),
+                    value: Some(pb::Expression {
+                        value: Some(pb::expression::Value::FunctionCallExpression(
+                            pb::FunctionCallExpression {
+                                name: "invoke".to_string(),
+                                args: vec![pb::FunctionCallArgument {
+                                    value: Some(string_expr()),
+                                    r#type: Some(pb::Type {
+                                        value: Some(pb::r#type::Value::StringType(pb::Empty {})),
+                                    }),
+                                }],
+                            },
+                        )),
+                    }),
+                })),
+            }],
+            plugins: vec![],
+        });
+
+        let output = match &mapped.nodes[0].value {
+            node::Value::OutputVariable(output) => output,
+            other => panic!("expected output variable node, got {other:?}"),
+        };
+
+        let function_call = match &output.value.value {
+            expression::Value::FunctionCallExpression(function_call) => function_call,
+            other => panic!("expected function call expression, got {other:?}"),
+        };
+
+        assert_eq!(function_call.name, "invoke");
+        assert_eq!(function_call.args.len(), 1);
+        match function_call.args[0].r#type.value {
+            r#type::Value::StringType(_) => {}
+            ref other => panic!("expected string type, got {other:?}"),
         }
     }
 }

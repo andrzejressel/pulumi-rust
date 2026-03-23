@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "import",
+        "logicalName": "import",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "notImport",
+        "logicalName": "notImport",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

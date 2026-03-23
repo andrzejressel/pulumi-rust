@@ -5,11 +5,10 @@ package rust
 */
 import "C"
 import (
-	"bytes"
-	"encoding/json"
 	"fmt"
 
-	"github.com/andrzejressel/pulumi-ast/codegen/ast"
+	"github.com/andrzejressel/pulumi-rust/ast/codegen/ast"
+	"github.com/andrzejressel/pulumi-rust/ast/codegen/shared"
 	"github.com/hashicorp/hcl/v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
@@ -88,7 +87,7 @@ func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 	if err != nil {
 		return nil, nil, fmt.Errorf("error generating protobuf JSON: %v", err)
 	}
-	protobufJSON, err = normalizeJSON(protobufJSON)
+	protobufJSON, err = shared.NormalizeJSON(protobufJSON)
 	if err != nil {
 		return nil, nil, fmt.Errorf("error normalizing protobuf JSON: %v", err)
 	}
@@ -104,12 +103,4 @@ func GenerateProject(pkg *pcl.Program, dir string) ([]byte, []byte, error) {
 	}
 
 	return obj, protobufJSON, nil
-}
-
-func normalizeJSON(input []byte) ([]byte, error) {
-	var output bytes.Buffer
-	if err := json.Indent(&output, input, "", "  "); err != nil {
-		return nil, err
-	}
-	return output.Bytes(), nil
 }

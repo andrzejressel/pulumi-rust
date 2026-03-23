@@ -1,0 +1,29 @@
+{
+  "name": "fail_on_create",
+  "version": "4.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Resource",
+        "raw": "fail_on_create:index:Resource"
+      },
+      "inputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider": {}
+}

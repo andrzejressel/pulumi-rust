@@ -1,0 +1,389 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "output:index:ComplexResource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "entriesOutput",
+        "logicalName": "entriesOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "entries",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res"
+                          }
+                        },
+                        {
+                          "traverseAttr": {
+                            "name": "outputMap"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "composite": {}
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupOutput",
+        "logicalName": "lookupOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res"
+                          }
+                        },
+                        {
+                          "traverseAttr": {
+                            "name": "outputMap"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "composite": {}
+                  }
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "x"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupOutputDefault",
+        "logicalName": "lookupOutputDefault",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res"
+                          }
+                        },
+                        {
+                          "traverseAttr": {
+                            "name": "outputMap"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "composite": {}
+                  }
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "y"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "entriesObjectOutput",
+        "logicalName": "entriesObjectOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "entries",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res"
+                          }
+                        },
+                        {
+                          "traverseAttr": {
+                            "name": "outputObject"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "composite": {}
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupObjectOutput",
+        "logicalName": "lookupObjectOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res"
+                          }
+                        },
+                        {
+                          "traverseAttr": {
+                            "name": "outputObject"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "composite": {}
+                  }
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "output"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lookupObjectOutputDefault",
+        "logicalName": "lookupObjectOutputDefault",
+        "value": {
+          "functionCallExpression": {
+            "name": "lookup",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res"
+                          }
+                        },
+                        {
+                          "traverseAttr": {
+                            "name": "outputObject"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "outputType": {
+                    "composite": {}
+                  }
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "missing"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "default"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "output",
+      "version": "23.0.0"
+    }
+  ]
+}

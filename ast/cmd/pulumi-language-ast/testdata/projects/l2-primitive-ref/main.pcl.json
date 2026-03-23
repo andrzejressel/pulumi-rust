@@ -1,0 +1,73 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "primitive-ref:index:Resource",
+        "inputs": [
+          {
+            "name": "data",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "boolArray": {
+                    "tupleConsExpression": {
+                      "items": [
+                        {
+                          "literalValueExpression": {
+                            "boolValue": false
+                          }
+                        },
+                        {
+                          "literalValueExpression": {
+                            "boolValue": true
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "boolean": {
+                    "literalValueExpression": {
+                      "boolValue": false
+                    }
+                  },
+                  "float": {
+                    "literalValueExpression": {
+                      "numberValue": 2.17
+                    }
+                  },
+                  "integer": {
+                    "literalValueExpression": {
+                      "numberValue": -12
+                    }
+                  },
+                  "string": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "Goodbye"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "stringMap": {
+                    "objectConsExpression": {}
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "primitive-ref",
+      "version": "11.0.0"
+    }
+  ]
+}

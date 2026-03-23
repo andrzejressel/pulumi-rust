@@ -1,0 +1,43 @@
+{
+  "name": "extenumref",
+  "version": "32.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Sink",
+        "raw": "extenumref:index:Sink"
+      },
+      "inputProperties": [
+        {
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "StringEnum",
+                  "raw": "enum:index:StringEnum"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "stringEnum",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "StringEnum",
+                  "raw": "enum:index:StringEnum"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "provider": {}
+}

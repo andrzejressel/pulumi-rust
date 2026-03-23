@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "block-1",
+        "logicalName": "block-1",
+        "token": "sync:index:Block"
+      }
+    },
+    {
+      "resource": {
+        "name": "block-2",
+        "logicalName": "block-2",
+        "token": "sync:index:Block"
+      }
+    },
+    {
+      "resource": {
+        "name": "block-3",
+        "logicalName": "block-3",
+        "token": "sync:index:Block"
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "sync",
+      "version": "3.0.0-alpha.1.internal+exp.sha.2143768"
+    }
+  ]
+}

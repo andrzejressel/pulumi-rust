@@ -1,0 +1,87 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "withV2",
+        "logicalName": "withV2",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {
+          "version": {
+            "templateExpression": {
+              "parts": [
+                {
+                  "literalValueExpression": {
+                    "stringValue": "2.0.0"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "withV26",
+        "logicalName": "withV26",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
+              }
+            }
+          }
+        ],
+        "options": {
+          "version": {
+            "templateExpression": {
+              "parts": [
+                {
+                  "literalValueExpression": {
+                    "stringValue": "26.0.0"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "withDefault",
+        "logicalName": "withDefault",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "26.0.0"
+    }
+  ]
+}

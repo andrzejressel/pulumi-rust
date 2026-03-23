@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "hideDiffs",
+        "logicalName": "hideDiffs",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "notHideDiffs",
+        "logicalName": "notHideDiffs",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

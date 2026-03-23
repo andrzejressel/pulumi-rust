@@ -1,0 +1,81 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "withDefaultURL",
+        "logicalName": "withDefaultURL",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "withExplicitDefaultURL",
+        "logicalName": "withExplicitDefaultURL",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "withCustomURL1",
+        "logicalName": "withCustomURL1",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "withCustomURL2",
+        "logicalName": "withCustomURL2",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "27.0.0"
+    }
+  ]
+}

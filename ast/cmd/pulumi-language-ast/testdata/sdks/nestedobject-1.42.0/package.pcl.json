@@ -1,0 +1,156 @@
+{
+  "name": "nestedobject",
+  "version": "1.42.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Container",
+        "raw": "nestedobject:index:Container"
+      },
+      "inputProperties": [
+        {
+          "name": "inputs",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "details",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Detail",
+                  "raw": "nestedobject:index:Detail"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "inputs",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "MapContainer",
+        "raw": "nestedobject:index:MapContainer"
+      },
+      "inputProperties": [
+        {
+          "name": "tags",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "tags",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "Receiver",
+        "raw": "nestedobject:index:Receiver"
+      },
+      "inputProperties": [
+        {
+          "name": "details",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Detail",
+                  "raw": "nestedobject:index:Detail"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "details",
+          "type": {
+            "arrayType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Detail",
+                  "raw": "nestedobject:index:Detail"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "Target",
+        "raw": "nestedobject:index:Target"
+      },
+      "inputProperties": [
+        {
+          "name": "name",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "name",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "elementId": {
+        "name": "Detail",
+        "raw": "nestedobject:index:Detail"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "key",
+              "type": {
+                "stringType": {}
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "stringType": {}
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "provider": {}
+}

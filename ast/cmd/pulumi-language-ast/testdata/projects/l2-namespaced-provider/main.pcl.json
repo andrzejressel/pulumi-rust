@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "componentRes",
+        "logicalName": "componentRes",
+        "token": "component:index:ComponentCustomRefOutput",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "foo-bar-baz"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "res",
+        "logicalName": "res",
+        "token": "namespaced:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          },
+          {
+            "name": "resourceRef",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "componentRes",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "componentRes"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "ref"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "component",
+      "version": "13.3.7"
+    },
+    {
+      "name": "namespaced",
+      "version": "16.0.0"
+    }
+  ]
+}

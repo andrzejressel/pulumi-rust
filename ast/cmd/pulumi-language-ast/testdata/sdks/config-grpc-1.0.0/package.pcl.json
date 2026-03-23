@@ -1,0 +1,3336 @@
+{
+  "name": "config-grpc",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "ConfigFetcher",
+        "raw": "config-grpc:index:ConfigFetcher"
+      },
+      "outputProperties": [
+        {
+          "name": "config",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "elementId": {
+        "name": "toSecret",
+        "raw": "config-grpc:index:toSecret"
+      },
+      "inputProperties": [
+        {
+          "name": "bool1",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "bool2",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "bool3",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "int1",
+          "type": {
+            "optionalType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "int2",
+          "type": {
+            "optionalType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "int3",
+          "type": {
+            "optionalType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "listBool1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listBool2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listBool3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listInt1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listInt2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listInt3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listNum1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listNum2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listNum3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretBool1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretBool2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretBool3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretInt1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretInt2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretInt3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretNum1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretNum2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretNum3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretString1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretString2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listSecretString3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listString1",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listString2",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "listString3",
+          "type": {
+            "optionalType": {
+              "arrayType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapBool1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapBool2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapBool3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapInt1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapInt2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapInt3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapNum1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapNum2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapNum3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretBool1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretBool2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretBool3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "boolType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretInt1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretInt2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretInt3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "intType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretNum1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretNum2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretNum3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "numberType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretString1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretString2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapSecretString3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapString1",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapString2",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "mapString3",
+          "type": {
+            "optionalType": {
+              "mapType": {
+                "stringType": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "num1",
+          "type": {
+            "optionalType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "num2",
+          "type": {
+            "optionalType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "num3",
+          "type": {
+            "optionalType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "objBool1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tbool1",
+                  "raw": "config-grpc:index:Tbool1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objBool2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tbool2",
+                  "raw": "config-grpc:index:Tbool2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objBool3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tbool3",
+                  "raw": "config-grpc:index:Tbool3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objInt1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tint1",
+                  "raw": "config-grpc:index:Tint1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objInt2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tint2",
+                  "raw": "config-grpc:index:Tint2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objInt3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tint3",
+                  "raw": "config-grpc:index:Tint3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objNum1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tnum1",
+                  "raw": "config-grpc:index:Tnum1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objNum2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tnum2",
+                  "raw": "config-grpc:index:Tnum2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objNum3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tnum3",
+                  "raw": "config-grpc:index:Tnum3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretBool1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretBool1",
+                  "raw": "config-grpc:index:TsecretBool1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretBool2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretBool2",
+                  "raw": "config-grpc:index:TsecretBool2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretBool3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretBool3",
+                  "raw": "config-grpc:index:TsecretBool3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretInt1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretInt1",
+                  "raw": "config-grpc:index:TsecretInt1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretInt2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretInt2",
+                  "raw": "config-grpc:index:TsecretInt2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretInt3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretInt3",
+                  "raw": "config-grpc:index:TsecretInt3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretNum1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretNum1",
+                  "raw": "config-grpc:index:TsecretNum1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretNum2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretNum2",
+                  "raw": "config-grpc:index:TsecretNum2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretNum3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretNum3",
+                  "raw": "config-grpc:index:TsecretNum3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretString1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretString1",
+                  "raw": "config-grpc:index:TsecretString1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretString2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretString2",
+                  "raw": "config-grpc:index:TsecretString2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretString3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "TsecretString3",
+                  "raw": "config-grpc:index:TsecretString3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objString1",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tstring1",
+                  "raw": "config-grpc:index:Tstring1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objString2",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tstring2",
+                  "raw": "config-grpc:index:Tstring2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "objString3",
+          "type": {
+            "optionalType": {
+              "refType": {
+                "typeRef": {
+                  "name": "Tstring3",
+                  "raw": "config-grpc:index:Tstring3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "secretBool1",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "secretBool2",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "secretBool3",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "secretInt1",
+          "type": {
+            "optionalType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "secretInt2",
+          "type": {
+            "optionalType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "secretInt3",
+          "type": {
+            "optionalType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "secretNum1",
+          "type": {
+            "optionalType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "secretNum2",
+          "type": {
+            "optionalType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "secretNum3",
+          "type": {
+            "optionalType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "secretString1",
+          "type": {
+            "optionalType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "secretString2",
+          "type": {
+            "optionalType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "secretString3",
+          "type": {
+            "optionalType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "string1",
+          "type": {
+            "optionalType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "string2",
+          "type": {
+            "optionalType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "string3",
+          "type": {
+            "optionalType": {
+              "stringType": {}
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "bool1",
+          "type": {
+            "boolType": {}
+          }
+        },
+        {
+          "name": "bool2",
+          "type": {
+            "boolType": {}
+          }
+        },
+        {
+          "name": "bool3",
+          "type": {
+            "boolType": {}
+          }
+        },
+        {
+          "name": "int1",
+          "type": {
+            "intType": {}
+          }
+        },
+        {
+          "name": "int2",
+          "type": {
+            "intType": {}
+          }
+        },
+        {
+          "name": "int3",
+          "type": {
+            "intType": {}
+          }
+        },
+        {
+          "name": "listBool1",
+          "type": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "listBool2",
+          "type": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "listBool3",
+          "type": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "listInt1",
+          "type": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "listInt2",
+          "type": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "listInt3",
+          "type": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "listNum1",
+          "type": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "listNum2",
+          "type": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "listNum3",
+          "type": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretBool1",
+          "type": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretBool2",
+          "type": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretBool3",
+          "type": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretInt1",
+          "type": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretInt2",
+          "type": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretInt3",
+          "type": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretNum1",
+          "type": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretNum2",
+          "type": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretNum3",
+          "type": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretString1",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretString2",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "listSecretString3",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "listString1",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "listString2",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "listString3",
+          "type": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "mapBool1",
+          "type": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "mapBool2",
+          "type": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "mapBool3",
+          "type": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "mapInt1",
+          "type": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "mapInt2",
+          "type": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "mapInt3",
+          "type": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "mapNum1",
+          "type": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "mapNum2",
+          "type": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "mapNum3",
+          "type": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretBool1",
+          "type": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretBool2",
+          "type": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretBool3",
+          "type": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretInt1",
+          "type": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretInt2",
+          "type": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretInt3",
+          "type": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretNum1",
+          "type": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretNum2",
+          "type": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretNum3",
+          "type": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretString1",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretString2",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "mapSecretString3",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "mapString1",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "mapString2",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "mapString3",
+          "type": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        },
+        {
+          "name": "num1",
+          "type": {
+            "numberType": {}
+          }
+        },
+        {
+          "name": "num2",
+          "type": {
+            "numberType": {}
+          }
+        },
+        {
+          "name": "num3",
+          "type": {
+            "numberType": {}
+          }
+        },
+        {
+          "name": "objBool1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tbool1",
+                "raw": "config-grpc:index:Tbool1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objBool2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tbool2",
+                "raw": "config-grpc:index:Tbool2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objBool3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tbool3",
+                "raw": "config-grpc:index:Tbool3"
+              }
+            }
+          }
+        },
+        {
+          "name": "objInt1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tint1",
+                "raw": "config-grpc:index:Tint1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objInt2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tint2",
+                "raw": "config-grpc:index:Tint2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objInt3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tint3",
+                "raw": "config-grpc:index:Tint3"
+              }
+            }
+          }
+        },
+        {
+          "name": "objNum1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tnum1",
+                "raw": "config-grpc:index:Tnum1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objNum2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tnum2",
+                "raw": "config-grpc:index:Tnum2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objNum3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tnum3",
+                "raw": "config-grpc:index:Tnum3"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretBool1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretBool1",
+                "raw": "config-grpc:index:TsecretBool1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretBool2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretBool2",
+                "raw": "config-grpc:index:TsecretBool2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretBool3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretBool3",
+                "raw": "config-grpc:index:TsecretBool3"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretInt1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretInt1",
+                "raw": "config-grpc:index:TsecretInt1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretInt2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretInt2",
+                "raw": "config-grpc:index:TsecretInt2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretInt3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretInt3",
+                "raw": "config-grpc:index:TsecretInt3"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretNum1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretNum1",
+                "raw": "config-grpc:index:TsecretNum1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretNum2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretNum2",
+                "raw": "config-grpc:index:TsecretNum2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretNum3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretNum3",
+                "raw": "config-grpc:index:TsecretNum3"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretString1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretString1",
+                "raw": "config-grpc:index:TsecretString1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretString2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretString2",
+                "raw": "config-grpc:index:TsecretString2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objSecretString3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretString3",
+                "raw": "config-grpc:index:TsecretString3"
+              }
+            }
+          }
+        },
+        {
+          "name": "objString1",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tstring1",
+                "raw": "config-grpc:index:Tstring1"
+              }
+            }
+          }
+        },
+        {
+          "name": "objString2",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tstring2",
+                "raw": "config-grpc:index:Tstring2"
+              }
+            }
+          }
+        },
+        {
+          "name": "objString3",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Tstring3",
+                "raw": "config-grpc:index:Tstring3"
+              }
+            }
+          }
+        },
+        {
+          "name": "secretBool1",
+          "type": {
+            "boolType": {}
+          }
+        },
+        {
+          "name": "secretBool2",
+          "type": {
+            "boolType": {}
+          }
+        },
+        {
+          "name": "secretBool3",
+          "type": {
+            "boolType": {}
+          }
+        },
+        {
+          "name": "secretInt1",
+          "type": {
+            "intType": {}
+          }
+        },
+        {
+          "name": "secretInt2",
+          "type": {
+            "intType": {}
+          }
+        },
+        {
+          "name": "secretInt3",
+          "type": {
+            "intType": {}
+          }
+        },
+        {
+          "name": "secretNum1",
+          "type": {
+            "numberType": {}
+          }
+        },
+        {
+          "name": "secretNum2",
+          "type": {
+            "numberType": {}
+          }
+        },
+        {
+          "name": "secretNum3",
+          "type": {
+            "numberType": {}
+          }
+        },
+        {
+          "name": "secretString1",
+          "type": {
+            "stringType": {}
+          }
+        },
+        {
+          "name": "secretString2",
+          "type": {
+            "stringType": {}
+          }
+        },
+        {
+          "name": "secretString3",
+          "type": {
+            "stringType": {}
+          }
+        },
+        {
+          "name": "string1",
+          "type": {
+            "stringType": {}
+          }
+        },
+        {
+          "name": "string2",
+          "type": {
+            "stringType": {}
+          }
+        },
+        {
+          "name": "string3",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "toSecretResult",
+            "raw": "config-grpc:index:toSecretResult"
+          }
+        }
+      }
+    }
+  ],
+  "types": [
+    {
+      "elementId": {
+        "name": "Tbool1",
+        "raw": "config-grpc:index:Tbool1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "boolType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tbool2",
+        "raw": "config-grpc:index:Tbool2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "boolType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tbool3",
+        "raw": "config-grpc:index:Tbool3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "boolType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tint1",
+        "raw": "config-grpc:index:Tint1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "intType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tint2",
+        "raw": "config-grpc:index:Tint2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "intType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tint3",
+        "raw": "config-grpc:index:Tint3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "intType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tnum1",
+        "raw": "config-grpc:index:Tnum1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "numberType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tnum2",
+        "raw": "config-grpc:index:Tnum2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "numberType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tnum3",
+        "raw": "config-grpc:index:Tnum3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "numberType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretBool1",
+        "raw": "config-grpc:index:TsecretBool1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "boolType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretBool2",
+        "raw": "config-grpc:index:TsecretBool2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "boolType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretBool3",
+        "raw": "config-grpc:index:TsecretBool3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "boolType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretInt1",
+        "raw": "config-grpc:index:TsecretInt1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "intType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretInt2",
+        "raw": "config-grpc:index:TsecretInt2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "intType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretInt3",
+        "raw": "config-grpc:index:TsecretInt3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "intType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretNum1",
+        "raw": "config-grpc:index:TsecretNum1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "numberType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretNum2",
+        "raw": "config-grpc:index:TsecretNum2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "numberType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretNum3",
+        "raw": "config-grpc:index:TsecretNum3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "numberType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretString1",
+        "raw": "config-grpc:index:TsecretString1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretString2",
+        "raw": "config-grpc:index:TsecretString2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "TsecretString3",
+        "raw": "config-grpc:index:TsecretString3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "secretX",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tstring1",
+        "raw": "config-grpc:index:Tstring1"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tstring2",
+        "raw": "config-grpc:index:Tstring2"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": {
+        "name": "Tstring3",
+        "raw": "config-grpc:index:Tstring3"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "x",
+              "type": {
+                "optionalType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "provider": {
+    "inputProperties": [
+      {
+        "name": "bool1",
+        "type": {
+          "optionalType": {
+            "boolType": {}
+          }
+        }
+      },
+      {
+        "name": "bool2",
+        "type": {
+          "optionalType": {
+            "boolType": {}
+          }
+        }
+      },
+      {
+        "name": "bool3",
+        "type": {
+          "optionalType": {
+            "boolType": {}
+          }
+        }
+      },
+      {
+        "name": "int1",
+        "type": {
+          "optionalType": {
+            "intType": {}
+          }
+        }
+      },
+      {
+        "name": "int2",
+        "type": {
+          "optionalType": {
+            "intType": {}
+          }
+        }
+      },
+      {
+        "name": "int3",
+        "type": {
+          "optionalType": {
+            "intType": {}
+          }
+        }
+      },
+      {
+        "name": "listBool1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listBool2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listBool3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listInt1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listInt2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listInt3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listNum1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listNum2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listNum3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretBool1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretBool2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretBool3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretInt1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretInt2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretInt3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretNum1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretNum2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretNum3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretString1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretString2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listSecretString3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listString1",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listString2",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "listString3",
+        "type": {
+          "optionalType": {
+            "arrayType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapBool1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapBool2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapBool3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapInt1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapInt2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapInt3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapNum1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapNum2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapNum3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretBool1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretBool2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretBool3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "boolType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretInt1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretInt2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretInt3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "intType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretNum1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretNum2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretNum3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "numberType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretString1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretString2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapSecretString3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapString1",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapString2",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "mapString3",
+        "type": {
+          "optionalType": {
+            "mapType": {
+              "stringType": {}
+            }
+          }
+        }
+      },
+      {
+        "name": "num1",
+        "type": {
+          "optionalType": {
+            "numberType": {}
+          }
+        }
+      },
+      {
+        "name": "num2",
+        "type": {
+          "optionalType": {
+            "numberType": {}
+          }
+        }
+      },
+      {
+        "name": "num3",
+        "type": {
+          "optionalType": {
+            "numberType": {}
+          }
+        }
+      },
+      {
+        "name": "objBool1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tbool1",
+                "raw": "config-grpc:index:Tbool1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objBool2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tbool2",
+                "raw": "config-grpc:index:Tbool2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objBool3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tbool3",
+                "raw": "config-grpc:index:Tbool3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objInt1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tint1",
+                "raw": "config-grpc:index:Tint1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objInt2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tint2",
+                "raw": "config-grpc:index:Tint2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objInt3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tint3",
+                "raw": "config-grpc:index:Tint3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objNum1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tnum1",
+                "raw": "config-grpc:index:Tnum1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objNum2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tnum2",
+                "raw": "config-grpc:index:Tnum2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objNum3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tnum3",
+                "raw": "config-grpc:index:Tnum3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretBool1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretBool1",
+                "raw": "config-grpc:index:TsecretBool1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretBool2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretBool2",
+                "raw": "config-grpc:index:TsecretBool2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretBool3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretBool3",
+                "raw": "config-grpc:index:TsecretBool3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretInt1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretInt1",
+                "raw": "config-grpc:index:TsecretInt1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretInt2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretInt2",
+                "raw": "config-grpc:index:TsecretInt2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretInt3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretInt3",
+                "raw": "config-grpc:index:TsecretInt3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretNum1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretNum1",
+                "raw": "config-grpc:index:TsecretNum1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretNum2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretNum2",
+                "raw": "config-grpc:index:TsecretNum2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretNum3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretNum3",
+                "raw": "config-grpc:index:TsecretNum3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretString1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretString1",
+                "raw": "config-grpc:index:TsecretString1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretString2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretString2",
+                "raw": "config-grpc:index:TsecretString2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objSecretString3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "TsecretString3",
+                "raw": "config-grpc:index:TsecretString3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objString1",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tstring1",
+                "raw": "config-grpc:index:Tstring1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objString2",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tstring2",
+                "raw": "config-grpc:index:Tstring2"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "objString3",
+        "type": {
+          "optionalType": {
+            "refType": {
+              "typeRef": {
+                "name": "Tstring3",
+                "raw": "config-grpc:index:Tstring3"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "secretBool1",
+        "type": {
+          "optionalType": {
+            "boolType": {}
+          }
+        }
+      },
+      {
+        "name": "secretBool2",
+        "type": {
+          "optionalType": {
+            "boolType": {}
+          }
+        }
+      },
+      {
+        "name": "secretBool3",
+        "type": {
+          "optionalType": {
+            "boolType": {}
+          }
+        }
+      },
+      {
+        "name": "secretInt1",
+        "type": {
+          "optionalType": {
+            "intType": {}
+          }
+        }
+      },
+      {
+        "name": "secretInt2",
+        "type": {
+          "optionalType": {
+            "intType": {}
+          }
+        }
+      },
+      {
+        "name": "secretInt3",
+        "type": {
+          "optionalType": {
+            "intType": {}
+          }
+        }
+      },
+      {
+        "name": "secretNum1",
+        "type": {
+          "optionalType": {
+            "numberType": {}
+          }
+        }
+      },
+      {
+        "name": "secretNum2",
+        "type": {
+          "optionalType": {
+            "numberType": {}
+          }
+        }
+      },
+      {
+        "name": "secretNum3",
+        "type": {
+          "optionalType": {
+            "numberType": {}
+          }
+        }
+      },
+      {
+        "name": "secretString1",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "secretString2",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "secretString3",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "string1",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "string2",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "string3",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      }
+    ],
+    "outputProperties": [
+      {
+        "name": "secretString1",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "secretString2",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "secretString3",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "string1",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "string2",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      },
+      {
+        "name": "string3",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      }
+    ]
+  }
+}

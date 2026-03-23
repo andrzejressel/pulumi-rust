@@ -1,0 +1,93 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "configLexicalName",
+        "logicalName": "cC-Charlie_charlie.😃⁉️",
+        "configType": "BOOL"
+      }
+    },
+    {
+      "resource": {
+        "name": "resourceLexicalName",
+        "logicalName": "aA-Alpha_alpha.🤯⁉️",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "configLexicalName",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "configLexicalName"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "outputLexicalName",
+        "logicalName": "bB-Beta_beta.💜⁉",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "resourceLexicalName",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "resourceLexicalName"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "value"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "dD-Delta_delta.🔥⁉",
+        "logicalName": "dD-Delta_delta.🔥⁉",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "resourceLexicalName",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "resourceLexicalName"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "value"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

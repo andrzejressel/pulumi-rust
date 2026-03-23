@@ -1,0 +1,142 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "example1",
+        "logicalName": "example1",
+        "token": "hipackage:index:HelloWorld"
+      }
+    },
+    {
+      "resource": {
+        "name": "exampleComponent1",
+        "logicalName": "exampleComponent1",
+        "token": "hipackage:index:HelloWorldComponent"
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "parameterValue1",
+        "logicalName": "parameterValue1",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "example1",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "example1"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "parameterValue"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "parameterValueFromComponent1",
+        "logicalName": "parameterValueFromComponent1",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "exampleComponent1",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "exampleComponent1"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "parameterValue"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "example2",
+        "logicalName": "example2",
+        "token": "byepackage:index:GoodbyeWorld"
+      }
+    },
+    {
+      "resource": {
+        "name": "exampleComponent2",
+        "logicalName": "exampleComponent2",
+        "token": "byepackage:index:GoodbyeWorldComponent"
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "parameterValue2",
+        "logicalName": "parameterValue2",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "example2",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "example2"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "parameterValue"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "parameterValueFromComponent2",
+        "logicalName": "parameterValueFromComponent2",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "exampleComponent2",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "exampleComponent2"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "parameterValue"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "byepackage",
+      "version": "2.0.0"
+    },
+    {
+      "name": "hipackage",
+      "version": "2.0.0"
+    }
+  ]
+}

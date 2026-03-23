@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "noDependsOn",
+        "logicalName": "noDependsOn",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "withDependsOn",
+        "logicalName": "withDependsOn",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
+              }
+            }
+          }
+        ],
+        "options": {
+          "dependsOn": {
+            "tupleConsExpression": {
+              "items": [
+                {
+                  "scopeTraversalExpression": {
+                    "rootName": "noDependsOn",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "noDependsOn"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

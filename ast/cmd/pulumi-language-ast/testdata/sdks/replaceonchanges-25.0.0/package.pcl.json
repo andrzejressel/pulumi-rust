@@ -1,0 +1,67 @@
+{
+  "name": "replaceonchanges",
+  "version": "25.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "ResourceA",
+        "raw": "replaceonchanges:index:ResourceA"
+      },
+      "inputProperties": [
+        {
+          "name": "replaceProp",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "replaceProp",
+          "type": {
+            "optionalType": {
+              "boolType": {}
+            }
+          }
+        },
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "ResourceB",
+        "raw": "replaceonchanges:index:ResourceB"
+      },
+      "inputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "boolType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "provider": {}
+}

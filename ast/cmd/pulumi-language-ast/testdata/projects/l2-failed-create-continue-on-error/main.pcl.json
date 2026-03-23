@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "failing",
+        "logicalName": "failing",
+        "token": "fail_on_create:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "dependent",
+        "logicalName": "dependent",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {
+          "dependsOn": {
+            "tupleConsExpression": {
+              "items": [
+                {
+                  "scopeTraversalExpression": {
+                    "rootName": "failing",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "failing"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "dependent_on_output",
+        "logicalName": "dependent_on_output",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "failing",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "failing"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "value"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "independent",
+        "logicalName": "independent",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "double_dependency",
+        "logicalName": "double_dependency",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {
+          "dependsOn": {
+            "tupleConsExpression": {
+              "items": [
+                {
+                  "scopeTraversalExpression": {
+                    "rootName": "independent",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "independent"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "scopeTraversalExpression": {
+                    "rootName": "dependent_on_output",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "dependent_on_output"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "fail_on_create",
+      "version": "4.0.0"
+    },
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "goodbye",
+  "version": "2.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Goodbye",
+        "raw": "goodbye:index:Goodbye"
+      },
+      "outputProperties": [
+        {
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    },
+    {
+      "elementId": {
+        "name": "GoodbyeComponent",
+        "raw": "goodbye:index:GoodbyeComponent"
+      },
+      "outputProperties": [
+        {
+          "name": "parameterValue",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "elementId": {
+        "name": "doGoodbye",
+        "raw": "goodbye:index:doGoodbye"
+      },
+      "inputProperties": [
+        {
+          "name": "input",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "output",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "doGoodbyeResult",
+            "raw": "goodbye:index:doGoodbyeResult"
+          }
+        }
+      }
+    }
+  ],
+  "provider": {
+    "inputProperties": [
+      {
+        "name": "text",
+        "type": {
+          "optionalType": {
+            "stringType": {}
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "example1",
+        "logicalName": "example1",
+        "token": "discriminated-union:index:Example",
+        "inputs": [
+          {
+            "name": "unionOf",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "discriminantKind": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "variant1"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "field1": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "v1 union"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "arrayOfUnionOf",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
+                  {
+                    "objectConsExpression": {
+                      "properties": {
+                        "discriminantKind": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "variant1"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "field1": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "v1 array(union)"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "example2",
+        "logicalName": "example2",
+        "token": "discriminated-union:index:Example",
+        "inputs": [
+          {
+            "name": "unionOf",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "discriminantKind": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "variant2"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "field2": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "v2 union"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "arrayOfUnionOf",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
+                  {
+                    "objectConsExpression": {
+                      "properties": {
+                        "discriminantKind": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "variant2"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "field2": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "v2 array(union)"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "objectConsExpression": {
+                      "properties": {
+                        "discriminantKind": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "variant1"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "field1": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "v1 array(union)"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "discriminated-union",
+      "version": "31.0.0"
+    }
+  ]
+}

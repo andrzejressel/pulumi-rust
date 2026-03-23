@@ -1,0 +1,182 @@
+{
+  "name": "call",
+  "version": "15.7.9",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Custom",
+        "raw": "call:index:Custom"
+      },
+      "description": "A custom resource that supports method calls",
+      "inputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "value",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "elementId": {
+        "name": "Custom/providerValue",
+        "raw": "call:index:Custom/providerValue"
+      },
+      "description": "The `providerValue` method of the `call` package's Custom resource. Returns the resource's provider's `value` and the resource's `value` concatenated.",
+      "inputProperties": [
+        {
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Custom",
+                "raw": "call:index:Custom"
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "result",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "name": "Custom/providerValueResult",
+            "raw": "call:index:Custom/providerValueResult"
+          }
+        }
+      }
+    },
+    {
+      "elementId": {
+        "namespace": [
+          "providers"
+        ],
+        "name": "call/identity",
+        "raw": "pulumi:providers:call/identity"
+      },
+      "description": "The `identity` method of the `call` package's provider. Returns the provider's `value` configuration unaltered.",
+      "inputProperties": [
+        {
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "namespace": [
+                  "providers"
+                ],
+                "name": "call",
+                "raw": "pulumi:providers:call"
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "result",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
+              "providers"
+            ],
+            "name": "call/identityResult",
+            "raw": "pulumi:providers:call/identityResult"
+          }
+        }
+      }
+    },
+    {
+      "elementId": {
+        "namespace": [
+          "providers"
+        ],
+        "name": "call/prefixed",
+        "raw": "pulumi:providers:call/prefixed"
+      },
+      "description": "The `prefixed` method of the `call` package's provider. Accepts a string and returns the provider's `value` configuration prefixed with that string.",
+      "inputProperties": [
+        {
+          "name": "__self__",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "namespace": [
+                  "providers"
+                ],
+                "name": "call",
+                "raw": "pulumi:providers:call"
+              }
+            }
+          }
+        },
+        {
+          "name": "prefix",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "result",
+          "type": {
+            "stringType": {}
+          }
+        }
+      ],
+      "returnType": {
+        "refType": {
+          "typeRef": {
+            "namespace": [
+              "providers"
+            ],
+            "name": "call/prefixedResult",
+            "raw": "pulumi:providers:call/prefixedResult"
+          }
+        }
+      }
+    }
+  ],
+  "provider": {
+    "description": "The `call` package's provider resource",
+    "inputProperties": [
+      {
+        "name": "value",
+        "type": {
+          "stringType": {}
+        }
+      }
+    ],
+    "outputProperties": [
+      {
+        "name": "value",
+        "type": {
+          "stringType": {}
+        }
+      }
+    ]
+  }
+}

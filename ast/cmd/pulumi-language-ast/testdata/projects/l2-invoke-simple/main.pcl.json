@@ -1,0 +1,138 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "hello",
+        "logicalName": "hello",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "invoke",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "simple-invoke::myInvoke"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "value": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "hello"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal": {
+              "each": [
+                {
+                  "traverseAttr": {
+                    "name": "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "goodbye",
+        "logicalName": "goodbye",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "invoke",
+                "args": [
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "simple-invoke::myInvoke"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "value": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "goodbye"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal": {
+              "each": [
+                {
+                  "traverseAttr": {
+                    "name": "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple-invoke",
+      "version": "10.0.0"
+    }
+  ]
+}

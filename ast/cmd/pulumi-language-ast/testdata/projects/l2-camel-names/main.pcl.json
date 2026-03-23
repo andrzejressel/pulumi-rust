@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "firstResource",
+        "logicalName": "firstResource",
+        "token": "camelNames:CoolModule:SomeResource",
+        "inputs": [
+          {
+            "name": "theInput",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "secondResource",
+        "logicalName": "secondResource",
+        "token": "camelNames:CoolModule:SomeResource",
+        "inputs": [
+          {
+            "name": "theInput",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "firstResource"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "theOutput"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "thirdResource",
+        "logicalName": "thirdResource",
+        "token": "camelNames:CoolModule:SomeResource",
+        "inputs": [
+          {
+            "name": "theInput",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          },
+          {
+            "name": "resourceName",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "my-cluster"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "camelNames",
+      "version": "19.0.0"
+    }
+  ]
+}

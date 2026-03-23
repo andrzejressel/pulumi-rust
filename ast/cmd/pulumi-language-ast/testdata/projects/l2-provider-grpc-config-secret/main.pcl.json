@@ -1,0 +1,569 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "config_grpc_provider",
+        "logicalName": "config_grpc_provider",
+        "token": "pulumi:providers:config-grpc",
+        "inputs": [
+          {
+            "name": "string1",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
+                      {
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "config-grpc::toSecret"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "string1": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "SECRET"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "type": {
+                          "composite": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseAttr": {
+                        "name": "string1"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "int1",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
+                      {
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "config-grpc::toSecret"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "int1": {
+                                "literalValueExpression": {
+                                  "numberValue": 1234567890
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "type": {
+                          "composite": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseAttr": {
+                        "name": "int1"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "num1",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
+                      {
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "config-grpc::toSecret"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "num1": {
+                                "literalValueExpression": {
+                                  "numberValue": 123456.789
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "type": {
+                          "composite": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseAttr": {
+                        "name": "num1"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "bool1",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
+                      {
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "config-grpc::toSecret"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "bool1": {
+                                "literalValueExpression": {
+                                  "boolValue": true
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "type": {
+                          "composite": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseAttr": {
+                        "name": "bool1"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "listString1",
+            "value": {
+              "relativeTraversalExpression": {
+                "source": {
+                  "functionCallExpression": {
+                    "name": "invoke",
+                    "args": [
+                      {
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "config-grpc::toSecret"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "value": {
+                          "objectConsExpression": {
+                            "properties": {
+                              "listString1": {
+                                "tupleConsExpression": {
+                                  "items": [
+                                    {
+                                      "templateExpression": {
+                                        "parts": [
+                                          {
+                                            "literalValueExpression": {
+                                              "stringValue": "SECRET"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "templateExpression": {
+                                        "parts": [
+                                          {
+                                            "literalValueExpression": {
+                                              "stringValue": "SECRET2"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "type": {
+                          "composite": {}
+                        }
+                      }
+                    ]
+                  }
+                },
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseAttr": {
+                        "name": "listString1"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "listString2",
+            "value": {
+              "tupleConsExpression": {
+                "items": [
+                  {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "VALUE"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "relativeTraversalExpression": {
+                      "source": {
+                        "functionCallExpression": {
+                          "name": "invoke",
+                          "args": [
+                            {
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "config-grpc::toSecret"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "type": {
+                                "stringType": {}
+                              }
+                            },
+                            {
+                              "value": {
+                                "objectConsExpression": {
+                                  "properties": {
+                                    "string1": {
+                                      "templateExpression": {
+                                        "parts": [
+                                          {
+                                            "literalValueExpression": {
+                                              "stringValue": "SECRET"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "type": {
+                                "composite": {}
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "traversal": {
+                        "each": [
+                          {
+                            "traverseAttr": {
+                              "name": "string1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "mapString2",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "key1": {
+                    "templateExpression": {
+                      "parts": [
+                        {
+                          "literalValueExpression": {
+                            "stringValue": "value1"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "key2": {
+                    "relativeTraversalExpression": {
+                      "source": {
+                        "functionCallExpression": {
+                          "name": "invoke",
+                          "args": [
+                            {
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "config-grpc::toSecret"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "type": {
+                                "stringType": {}
+                              }
+                            },
+                            {
+                              "value": {
+                                "objectConsExpression": {
+                                  "properties": {
+                                    "string1": {
+                                      "templateExpression": {
+                                        "parts": [
+                                          {
+                                            "literalValueExpression": {
+                                              "stringValue": "SECRET"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "type": {
+                                "composite": {}
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "traversal": {
+                        "each": [
+                          {
+                            "traverseAttr": {
+                              "name": "string1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "objString2",
+            "value": {
+              "objectConsExpression": {
+                "properties": {
+                  "x": {
+                    "relativeTraversalExpression": {
+                      "source": {
+                        "functionCallExpression": {
+                          "name": "invoke",
+                          "args": [
+                            {
+                              "value": {
+                                "templateExpression": {
+                                  "parts": [
+                                    {
+                                      "literalValueExpression": {
+                                        "stringValue": "config-grpc::toSecret"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "type": {
+                                "stringType": {}
+                              }
+                            },
+                            {
+                              "value": {
+                                "objectConsExpression": {
+                                  "properties": {
+                                    "string1": {
+                                      "templateExpression": {
+                                        "parts": [
+                                          {
+                                            "literalValueExpression": {
+                                              "stringValue": "SECRET"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "type": {
+                                "composite": {}
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "traversal": {
+                        "each": [
+                          {
+                            "traverseAttr": {
+                              "name": "string1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "config",
+        "logicalName": "config",
+        "token": "config-grpc:index:ConfigFetcher",
+        "options": {
+          "provider": {
+            "scopeTraversalExpression": {
+              "rootName": "config_grpc_provider",
+              "traversal": {
+                "each": [
+                  {
+                    "traverseRoot": {
+                      "name": "config_grpc_provider"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "config-grpc",
+      "version": "1.0.0"
+    }
+  ]
+}

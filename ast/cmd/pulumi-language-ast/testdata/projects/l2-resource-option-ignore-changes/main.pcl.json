@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "ignoreChanges",
+        "logicalName": "ignoreChanges",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {
+          "ignoreChanges": {
+            "tupleConsExpression": {
+              "items": [
+                {
+                  "scopeTraversalExpression": {
+                    "rootName": "value",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "value"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "name": "notIgnoreChanges",
+        "logicalName": "notIgnoreChanges",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

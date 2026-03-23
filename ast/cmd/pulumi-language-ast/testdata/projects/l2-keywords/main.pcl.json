@@ -1,0 +1,238 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "firstResource",
+        "logicalName": "firstResource",
+        "token": "keywords:index:SomeResource",
+        "inputs": [
+          {
+            "name": "builtins",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "builtins"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "lambda",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "lambda"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "property",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "property"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "secondResource",
+        "logicalName": "secondResource",
+        "token": "keywords:index:SomeResource",
+        "inputs": [
+          {
+            "name": "builtins",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "firstResource"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "builtins"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "lambda",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "firstResource"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "lambda"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "property",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "firstResource",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "firstResource"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "property"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "lambdaModuleResource",
+        "logicalName": "lambdaModuleResource",
+        "token": "keywords:lambda:SomeResource",
+        "inputs": [
+          {
+            "name": "builtins",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "builtins"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "lambda",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "lambda"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "property",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "property"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "lambdaResource",
+        "logicalName": "lambdaResource",
+        "token": "keywords:index:Lambda",
+        "inputs": [
+          {
+            "name": "builtins",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "builtins"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "lambda",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "lambda"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "property",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "property"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "keywords",
+      "version": "20.0.0"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "name": "primitive-ref",
+  "version": "11.0.0",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Resource",
+        "raw": "primitive-ref:index:Resource"
+      },
+      "inputProperties": [
+        {
+          "name": "data",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "primitive-ref:index:Data"
+              }
+            }
+          }
+        }
+      ],
+      "outputProperties": [
+        {
+          "name": "data",
+          "type": {
+            "refType": {
+              "typeRef": {
+                "name": "Data",
+                "raw": "primitive-ref:index:Data"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "elementId": {
+        "name": "Data",
+        "raw": "primitive-ref:index:Data"
+      },
+      "globalTypeValue": {
+        "object": {
+          "properties": [
+            {
+              "name": "boolArray",
+              "type": {
+                "arrayType": {
+                  "boolType": {}
+                }
+              }
+            },
+            {
+              "name": "boolean",
+              "type": {
+                "boolType": {}
+              }
+            },
+            {
+              "name": "float",
+              "type": {
+                "numberType": {}
+              }
+            },
+            {
+              "name": "integer",
+              "type": {
+                "intType": {}
+              }
+            },
+            {
+              "name": "string",
+              "type": {
+                "stringType": {}
+              }
+            },
+            {
+              "name": "stringMap",
+              "type": {
+                "mapType": {
+                  "stringType": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "provider": {}
+}

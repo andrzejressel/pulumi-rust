@@ -1,0 +1,13 @@
+{
+  "name": "sync",
+  "version": "3.0.0-alpha.1.internal+exp.sha.2143768",
+  "resources": [
+    {
+      "elementId": {
+        "name": "Block",
+        "raw": "sync:index:Block"
+      }
+    }
+  ],
+  "provider": {}
+}

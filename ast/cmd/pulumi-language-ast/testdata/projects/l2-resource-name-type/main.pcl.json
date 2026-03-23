@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "res1",
+        "logicalName": "res1",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "name",
+        "logicalName": "name",
+        "value": {
+          "functionCallExpression": {
+            "name": "pulumiResourceName",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res1",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res1"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "type",
+        "logicalName": "type",
+        "value": {
+          "functionCallExpression": {
+            "name": "pulumiResourceType",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "res1",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "res1"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}

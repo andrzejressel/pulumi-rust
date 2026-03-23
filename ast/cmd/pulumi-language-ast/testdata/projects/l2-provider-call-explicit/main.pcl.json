@@ -1,0 +1,293 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "explicitProv",
+        "logicalName": "explicitProv",
+        "token": "pulumi:providers:call",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "explicitProvValue"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "explicitRes",
+        "logicalName": "explicitRes",
+        "token": "call:index:Custom",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "explicitValue"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "options": {
+          "provider": {
+            "scopeTraversalExpression": {
+              "rootName": "explicitProv",
+              "traversal": {
+                "each": [
+                  {
+                    "traverseRoot": {
+                      "name": "explicitProv"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "explicitProviderValue",
+        "logicalName": "explicitProviderValue",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
+                  {
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "explicitRes",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "explicitRes"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "providerValue"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "objectConsExpression": {}
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal": {
+              "each": [
+                {
+                  "traverseAttr": {
+                    "name": "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "explicitProvFromIdentity",
+        "logicalName": "explicitProvFromIdentity",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
+                  {
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "explicitProv",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "explicitProv"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "identity"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "objectConsExpression": {}
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal": {
+              "each": [
+                {
+                  "traverseAttr": {
+                    "name": "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "explicitProvFromPrefixed",
+        "logicalName": "explicitProvFromPrefixed",
+        "value": {
+          "relativeTraversalExpression": {
+            "source": {
+              "functionCallExpression": {
+                "name": "call",
+                "args": [
+                  {
+                    "value": {
+                      "scopeTraversalExpression": {
+                        "rootName": "explicitProv",
+                        "traversal": {
+                          "each": [
+                            {
+                              "traverseRoot": {
+                                "name": "explicitProv"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "templateExpression": {
+                        "parts": [
+                          {
+                            "literalValueExpression": {
+                              "stringValue": "prefixed"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "type": {
+                      "stringType": {}
+                    }
+                  },
+                  {
+                    "value": {
+                      "objectConsExpression": {
+                        "properties": {
+                          "prefix": {
+                            "templateExpression": {
+                              "parts": [
+                                {
+                                  "literalValueExpression": {
+                                    "stringValue": "call-prefix-"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type": {
+                      "composite": {}
+                    }
+                  }
+                ]
+              }
+            },
+            "traversal": {
+              "each": [
+                {
+                  "traverseAttr": {
+                    "name": "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "call",
+      "version": "15.7.9"
+    }
+  ]
+}

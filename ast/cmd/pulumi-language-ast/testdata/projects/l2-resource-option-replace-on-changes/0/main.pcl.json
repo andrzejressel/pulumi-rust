@@ -1,0 +1,192 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "schemaReplace",
+        "logicalName": "schemaReplace",
+        "token": "replaceonchanges:index:ResourceA",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          },
+          {
+            "name": "replaceProp",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "optionReplace",
+        "logicalName": "optionReplace",
+        "token": "replaceonchanges:index:ResourceB",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "bothReplaceValue",
+        "logicalName": "bothReplaceValue",
+        "token": "replaceonchanges:index:ResourceA",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          },
+          {
+            "name": "replaceProp",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "bothReplaceProp",
+        "logicalName": "bothReplaceProp",
+        "token": "replaceonchanges:index:ResourceA",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          },
+          {
+            "name": "replaceProp",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "regularUpdate",
+        "logicalName": "regularUpdate",
+        "token": "replaceonchanges:index:ResourceB",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "noChange",
+        "logicalName": "noChange",
+        "token": "replaceonchanges:index:ResourceB",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "wrongPropChange",
+        "logicalName": "wrongPropChange",
+        "token": "replaceonchanges:index:ResourceA",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          },
+          {
+            "name": "replaceProp",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "multiplePropReplace",
+        "logicalName": "multiplePropReplace",
+        "token": "replaceonchanges:index:ResourceA",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          },
+          {
+            "name": "replaceProp",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "replaceonchanges",
+      "version": "25.0.0"
+    }
+  ]
+}

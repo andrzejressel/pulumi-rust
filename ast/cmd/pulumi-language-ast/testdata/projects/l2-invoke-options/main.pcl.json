@@ -1,0 +1,154 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "explicitProvider",
+        "logicalName": "explicitProvider",
+        "token": "pulumi:providers:simple-invoke"
+      }
+    },
+    {
+      "localVariable": {
+        "name": "data",
+        "logicalName": "data",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "simple-invoke::myInvoke"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "hello"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              },
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "parent": {
+                        "scopeTraversalExpression": {
+                          "rootName": "explicitProvider",
+                          "traversal": {
+                            "each": [
+                              {
+                                "traverseRoot": {
+                                  "name": "explicitProvider"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "pluginDownloadUrl": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "https://example.com/github/example"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "provider": {
+                        "scopeTraversalExpression": {
+                          "rootName": "explicitProvider",
+                          "traversal": {
+                            "each": [
+                              {
+                                "traverseRoot": {
+                                  "name": "explicitProvider"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "version": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "10.0.0"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "hello",
+        "logicalName": "hello",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "data",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "data"
+                  }
+                },
+                {
+                  "traverseAttr": {
+                    "name": "result"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "simple-invoke",
+      "version": "10.0.0"
+    }
+  ]
+}

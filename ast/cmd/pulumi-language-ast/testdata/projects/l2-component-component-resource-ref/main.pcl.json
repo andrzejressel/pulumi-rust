@@ -1,0 +1,136 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "component1",
+        "logicalName": "component1",
+        "token": "component:index:ComponentCustomRefOutput",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "templateExpression": {
+                "parts": [
+                  {
+                    "literalValueExpression": {
+                      "stringValue": "foo-bar-baz"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "component2",
+        "logicalName": "component2",
+        "token": "component:index:ComponentCustomRefInputOutput",
+        "inputs": [
+          {
+            "name": "inputRef",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "component1",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "component1"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "ref"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "custom1",
+        "logicalName": "custom1",
+        "token": "component:index:Custom",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "component2",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "component2"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "inputRef"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "value"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "custom2",
+        "logicalName": "custom2",
+        "token": "component:index:Custom",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "scopeTraversalExpression": {
+                "rootName": "component2",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "component2"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "outputRef"
+                      }
+                    },
+                    {
+                      "traverseAttr": {
+                        "name": "value"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "component",
+      "version": "13.3.7"
+    }
+  ]
+}

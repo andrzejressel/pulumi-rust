@@ -1,0 +1,214 @@
+{
+  "nodes": [
+    {
+      "outputVariable": {
+        "name": "secret",
+        "logicalName": "secret",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeSecret"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "goodbye"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "array",
+        "logicalName": "array",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeArray"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "the word"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "map",
+        "logicalName": "map",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeMap"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "hello"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "secretMap",
+        "logicalName": "secretMap",
+        "value": {
+          "functionCallExpression": {
+            "name": "invoke",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "scalar-returns::invokeMap"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "objectConsExpression": {
+                    "properties": {
+                      "value": {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "secret"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "scalar-returns",
+      "version": "21.0.0"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "resource": {
+        "name": "replacementTrigger",
+        "logicalName": "replacementTrigger",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "unknown",
+        "logicalName": "unknown",
+        "token": "output:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "numberValue": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "unknownReplacementTrigger",
+        "logicalName": "unknownReplacementTrigger",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    },
+    {
+      "resource": {
+        "name": "notReplacementTrigger",
+        "logicalName": "notReplacementTrigger",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "name": "secretReplacementTrigger",
+        "logicalName": "secretReplacementTrigger",
+        "token": "simple:index:Resource",
+        "inputs": [
+          {
+            "name": "value",
+            "value": {
+              "literalValueExpression": {
+                "boolValue": true
+              }
+            }
+          }
+        ],
+        "options": {}
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "name": "output",
+      "version": "23.0.0"
+    },
+    {
+      "name": "simple",
+      "version": "2.0.0"
+    }
+  ]
+}
