@@ -7,12 +7,8 @@ import "C"
 import (
 	"fmt"
 
-<<<<<<< Updated upstream
-	"github.com/andrzejressel/pulumi-ast/codegen/ast"
 	"github.com/andrzejressel/pulumi-ast/codegen/shared"
-=======
 	"github.com/andrzejressel/pulumi-rust/ast/codegen/ast"
->>>>>>> Stashed changes
 	"github.com/hashicorp/hcl/v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
