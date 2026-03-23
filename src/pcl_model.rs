@@ -66,7 +66,7 @@ pub struct ConfigVariable {
     pub name: String,
     pub logical_name: String,
     pub config_type: ConfigType,
-    pub default_value: Expression,
+    pub default_value: Option<Expression>,
 }
 
 #[derive(Clone, PartialEq, Debug)]
@@ -363,10 +363,7 @@ fn map_config_variable(config: pb::ConfigVariable) -> ConfigVariable {
         name: config.name,
         logical_name: config.logical_name,
         config_type: map_config_type(config.config_type),
-        default_value: map_expression(required(
-            config.default_value,
-            "config_variable.default_value",
-        )),
+        default_value: config.default_value.map(map_expression),
     }
 }
 
