@@ -3,7 +3,6 @@ module github.com/andrzejressel/pulumi-rust
 go 1.26.1
 
 require (
-	github.com/andrzejressel/pulumi-ast v0.0.0-20260314231716-7b7fb80bc44c
 	github.com/hashicorp/hcl/v2 v2.24.0
 	github.com/ihciah/rust2go v0.0.0-20260314034108-6f06b0697c1b
 	github.com/pulumi/pulumi/pkg/v3 v3.226.0
@@ -20,7 +19,7 @@ require (
 	cloud.google.com/go/iam v1.1.6 // indirect
 	cloud.google.com/go/logging v1.9.0 // indirect
 	cloud.google.com/go/longrunning v0.5.5 // indirect
-	cloud.google.com/go/storage v1.39.1 // indirect
+	cloud.google.com/go/storage v1.39.1 // indirectcd 
 	dario.cat/mergo v1.0.0 // indirect
 	github.com/AlecAivazis/survey/v2 v2.3.7 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.17.0 // indirect
