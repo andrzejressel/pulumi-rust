@@ -1,9 +1,0 @@
-[package]
-name = "pulumi-rust"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-anyhow = "1.0.102"
-#pulumi_gestalt_rust = "0.0.7"
-pulumi_gestalt_rust = { git = "https://github.com/andrzejressel/pulumi-gestalt", rev = "a036c7c1a6a2a6ccec2fbfd8d57c6ca7dc088102" }
