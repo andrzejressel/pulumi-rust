@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/andrzejressel/pulumi-ast/codegen/ast"
+	"github.com/andrzejressel/pulumi-rust/ast/codegen/ast"
 	"github.com/hashicorp/hcl/v2"
 	hclsyntax "github.com/pulumi/pulumi/pkg/v3/codegen/hcl2/syntax"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/pcl"

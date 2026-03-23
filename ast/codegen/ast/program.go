@@ -4,8 +4,8 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"github.com/andrzejressel/pulumi-ast/codegen/shared"
-	astproto "github.com/andrzejressel/pulumi-ast/protobuf/schemapcl"
+	"github.com/andrzejressel/pulumi-rust/ast/codegen/shared"
+	astproto "github.com/andrzejressel/pulumi-rust/ast/protobuf/schemapcl"
 	"github.com/hashicorp/hcl/v2"
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/hcl2/model"

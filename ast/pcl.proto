@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pulumipcl;
 
-option go_package = "github.com/andrzejressel/pulumi-ast/codegen/ast/schemapcl/schemapcl;schemapcl";
+option go_package = "github.com/andrzejressel/pulumi-rust/ast/codegen/ast/schemapcl/schemapcl;schemapcl";
 
 message PclProtobufProgram {
   repeated Node nodes = 1;
