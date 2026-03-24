@@ -73,9 +73,7 @@ func TestLanguage(t *testing.T) {
 	})
 	require.NoError(t, err)
 
-	testNames := tests.Tests
-
-	for _, tt := range testNames {
+	for _, tt := range tests.Tests {
 		tt := tt
 		t.Run(tt, func(t *testing.T) {
 			t.Parallel()
