@@ -8,7 +8,7 @@ replace github.com/pulumi/pulumi/sdk/v3 => ../pulumi/sdk
 require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/hashicorp/hcl/v2 v2.24.0
-	github.com/pulumi/pulumi/pkg/v3 v3.226.0
+	github.com/pulumi/pulumi/pkg/v3 v3.227.0
 	github.com/pulumi/pulumi/sdk/v3 v3.227.0
 	github.com/stretchr/testify v1.11.1
 	github.com/zclconf/go-cty v1.17.0
