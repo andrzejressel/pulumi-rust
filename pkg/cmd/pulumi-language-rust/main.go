@@ -205,6 +205,7 @@ func (host *rustLanguageHost) constructEnv(req *pulumirpc.RunRequest, config, co
 	maybeAppendEnv("tracing", host.tracing)
 	maybeAppendEnv("config", config)
 	maybeAppendEnv("config_secret_keys", configSecretKeys)
+	maybeAppendEnv("organization", req.GetOrganization())
 
 	return env
 }
