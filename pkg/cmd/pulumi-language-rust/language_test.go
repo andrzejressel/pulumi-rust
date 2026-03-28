@@ -74,7 +74,7 @@ func TestLanguage(t *testing.T) {
 			{
 				Path:        "Cargo.toml",
 				Pattern:     `(?m)# PULUMI_GESTALT_RUST START(.|\n)*PULUMI_GESTALT_RUST END`,
-				Replacement: "",
+				Replacement: "pulumi_gestalt_rust = \"VERSION\"",
 			},
 		},
 	})
