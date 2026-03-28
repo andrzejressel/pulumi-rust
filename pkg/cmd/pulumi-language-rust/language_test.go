@@ -110,7 +110,6 @@ func TestLanguage(t *testing.T) {
 // skip them with an informative message until they are fixed.
 var expectedFailures = map[string]string{
 	"l1-builtin-can":                               "unsupported config variable type: map(string)",
-	"l1-builtin-cwd":                               "sdk snapshot validation for large: walk expected dir: lstat testdata/sdks/large-4.3.2: no such file or directory",
 	"l1-builtin-info":                              "sdk snapshot validation for component: walk expected dir: lstat testdata/sdks/component-13.3.7: no such file or directory",
 	"l1-builtin-list":                              "unsupported config variable type: list(string)",
 	"l1-builtin-object":                            "unsupported config variable type: map(string)",
