@@ -28,9 +28,16 @@ test:
     cd ast && just test
     cd pkg && just test
 
+# For example just test-single "TestLanguage/l1-builtin-cwd"
+test-single TEST_NAME:
+    cd pkg && just test-single {{TEST_NAME}}
+
 regenerate-test:
     cd ast && just regenerate-test
     cd pkg && just regenerate-test
+
+regenerate-test-single TEST_NAME:
+    cd pkg && just regenerate-test-single {{TEST_NAME}}
 
 # Generates files in `pkg/target` for easier introspection
 test-local $LOCAL_TEST="1":
