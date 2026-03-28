@@ -70,6 +70,13 @@ func TestLanguage(t *testing.T) {
 		SnapshotDirectory:    snapshotDir,
 		//CoreSdkVersion:       sdk.Version.String(), // It default to pulumi version - I would have to research it
 		LanguageInfo: "{}",
+		SnapshotEdits: []*testingrpc.PrepareLanguageTestsRequest_Replacement{
+			{
+				Path:        "Cargo.toml",
+				Pattern:     `(?m)# PULUMI_GESTALT_RUST START(.|\n)*PULUMI_GESTALT_RUST END`,
+				Replacement: "pulumi_gestalt_rust = \"VERSION\"",
+			},
+		},
 	})
 	require.NoError(t, err)
 
