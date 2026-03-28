@@ -5,6 +5,3 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.102"
-#pulumi_gestalt_rust = "0.0.7"
-#pulumi_gestalt_rust = { path = "/home/andrzej/MojeProgramy/pulumi-gestalt/crates/rust" }
-pulumi_gestalt_rust = { git = "https://github.com/andrzejressel/pulumi-gestalt", rev = "8f3dcb8a00a789bcb9da85f3b8a509c76d685333" }
