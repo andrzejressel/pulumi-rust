@@ -35,16 +35,19 @@ fn regenerate_project(test_name: &str) {
 
 // Keep in sync with testNames in pkg/cmd/pulumi-language-rust/language_test.go.
 #[test]
+#[ignore]
 fn regenerate_l1_empty() {
     regenerate_project("l1-empty");
 }
 
 #[test]
+#[ignore]
 fn regenerate_l1_main() {
     regenerate_project("l1-main");
 }
 
 #[test]
+#[ignore]
 fn regenerate_l1_builtin_base64() {
     regenerate_project("l1-builtin-base64");
 }

@@ -155,6 +155,25 @@ fn convert_stdlib_function_call(name: &str, args: String, arg_count: usize) -> R
             ensure_arity(name, arg_count, 1)?;
             Ok(format!("pulumi_gestalt_rust::stdlib::to_base64({})", args))
         }
+        "cwd" => {
+            ensure_arity(name, arg_count, 0)?;
+            Ok(
+                "pulumi_gestalt_rust::stdlib::cwd().expect(\"Failed to get current directory\")"
+                    .to_string(),
+            )
+        }
+        "stack" => {
+            ensure_arity(name, arg_count, 0)?;
+            Ok("(&context.get_stack()).to_string()".to_string())
+        }
+        "organization" => {
+            ensure_arity(name, arg_count, 0)?;
+            Ok("(&context.get_organization()).to_string()".to_string())
+        }
+        "project" => {
+            ensure_arity(name, arg_count, 0)?;
+            Ok("(&context.get_project()).to_string()".to_string())
+        }
         _ => bail!("Unsupported stdlib function: {}", name),
     }
 }
