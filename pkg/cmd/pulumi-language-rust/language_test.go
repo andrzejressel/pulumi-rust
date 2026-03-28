@@ -72,7 +72,7 @@ func TestLanguage(t *testing.T) {
 		LanguageInfo: "{}",
 		SnapshotEdits: []*testingrpc.PrepareLanguageTestsRequest_Replacement{
 			{
-				Path:        "Cargo\\.toml",
+				Path:        "Cargo.toml",
 				Pattern:     `(?m)# PULUMI_GESTALT_RUST START(.|\n)*PULUMI_GESTALT_RUST END`,
 				Replacement: "pulumi_gestalt_rust = \"VERSION\"",
 			},
