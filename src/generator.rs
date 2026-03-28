@@ -157,7 +157,10 @@ fn convert_stdlib_function_call(name: &str, args: String, arg_count: usize) -> R
         }
         "cwd" => {
             ensure_arity(name, arg_count, 0)?;
-            Ok("pulumi_gestalt_rust::stdlib::cwd().expect(\"Failed to get current directory\")".to_string())
+            Ok(
+                "pulumi_gestalt_rust::stdlib::cwd().expect(\"Failed to get current directory\")"
+                    .to_string(),
+            )
         }
         _ => bail!("Unsupported stdlib function: {}", name),
     }
