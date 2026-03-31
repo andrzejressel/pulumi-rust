@@ -59,11 +59,14 @@ message ConfigVariable {
   Expression defaultValue = 4;
 }
 
-enum ConfigType {
-  STRING = 0;
-  NUMBER = 1;
-  INT = 2;
-  BOOL = 3;
+message ConfigType {
+  oneof value {
+    Empty stringType = 1;
+    Empty numberType = 2;
+    Empty intType = 3;
+    Empty boolType = 4;
+    ConfigType listType = 5;
+  }
 }
 
 message OutputVariable {

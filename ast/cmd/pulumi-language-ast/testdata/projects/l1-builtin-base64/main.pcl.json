@@ -3,7 +3,10 @@
     {
       "configVariable": {
         "name": "input",
-        "logicalName": "input"
+        "logicalName": "input",
+        "configType": {
+          "stringType": {}
+        }
       }
     },
     {

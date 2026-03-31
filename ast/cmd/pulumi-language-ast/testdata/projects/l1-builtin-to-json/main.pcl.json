@@ -1,0 +1,248 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aString",
+        "logicalName": "aString",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aNumber",
+        "logicalName": "aNumber",
+        "configType": {
+          "numberType": {}
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aList",
+        "logicalName": "aList",
+        "configType": {
+          "listType": {
+            "stringType": {}
+          }
+        }
+      }
+    },
+    {
+      "configVariable": {
+        "name": "aSecret",
+        "logicalName": "aSecret",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "stringOutput",
+        "logicalName": "stringOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aString",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aString"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "numberOutput",
+        "logicalName": "numberOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aNumber",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aNumber"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "numberType": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "boolOutput",
+        "logicalName": "boolOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "literalValueExpression": {
+                    "boolValue": true
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "arrayOutput",
+        "logicalName": "arrayOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "tupleConsExpression": {
+                    "items": [
+                      {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "x"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "y"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "templateExpression": {
+                          "parts": [
+                            {
+                              "literalValueExpression": {
+                                "stringValue": "z"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "objectOutput",
+        "logicalName": "objectOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "objectConsExpression": {}
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "localVariable": {
+        "name": "nestedObject",
+        "logicalName": "nestedObject",
+        "value": {
+          "objectConsExpression": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "nestedOutput",
+        "logicalName": "nestedOutput",
+        "value": {
+          "functionCallExpression": {
+            "name": "toJSON",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "nestedObject",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "nestedObject"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

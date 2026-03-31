@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aNumber",
+        "logicalName": "aNumber",
+        "configType": {
+          "numberType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "roundtrip",
+        "logicalName": "roundtrip",
+        "value": {
+          "scopeTraversalExpression": {
+            "rootName": "aNumber",
+            "traversal": {
+              "each": [
+                {
+                  "traverseRoot": {
+                    "name": "aNumber"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "theSecretNumber",
+        "logicalName": "theSecretNumber",
+        "value": {
+          "binaryOpExpression": {
+            "left": {
+              "scopeTraversalExpression": {
+                "rootName": "aNumber",
+                "traversal": {
+                  "each": [
+                    {
+                      "traverseRoot": {
+                        "name": "aNumber"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "right": {
+              "literalValueExpression": {
+                "numberValue": 1.25
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
