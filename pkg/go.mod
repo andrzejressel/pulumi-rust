@@ -6,7 +6,7 @@ require (
 	github.com/hashicorp/hcl/v2 v2.24.0
 	github.com/ihciah/rust2go v0.0.0-20260314034108-6f06b0697c1b
 	github.com/pulumi/pulumi/pkg/v3 v3.227.0
-	github.com/pulumi/pulumi/sdk/v3 v3.227.0
+	github.com/pulumi/pulumi/sdk/v3 v3.228.0
 	github.com/stretchr/testify v1.11.1
 	go.opentelemetry.io/otel v1.42.0
 	google.golang.org/grpc v1.79.3
