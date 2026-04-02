@@ -4,7 +4,9 @@
       "configVariable": {
         "name": "configLexicalName",
         "logicalName": "cC-Charlie_charlie.😃⁉️",
-        "configType": "BOOL"
+        "configType": {
+          "boolType": {}
+        }
       }
     },
     {

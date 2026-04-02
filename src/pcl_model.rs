@@ -253,12 +253,13 @@ pub struct TraverseSplat {
     pub each: Traversal,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub enum ConfigType {
     String,
     Number,
     Int,
     Bool,
+    List(Box<ConfigType>),
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
@@ -362,7 +363,7 @@ fn map_config_variable(config: pb::ConfigVariable) -> ConfigVariable {
     ConfigVariable {
         name: config.name,
         logical_name: config.logical_name,
-        config_type: map_config_type(config.config_type),
+        config_type: map_config_type(required(config.config_type, "config_variable.config_type")),
         default_value: config.default_value.map(map_expression),
     }
 }
@@ -636,14 +637,13 @@ fn map_traverse_splat(value: pb::TraverseSplat) -> TraverseSplat {
     }
 }
 
-fn map_config_type(value: i32) -> ConfigType {
-    match pb::ConfigType::try_from(value)
-        .unwrap_or_else(|_| panic!("config_variable.config_type is invalid: {value}"))
-    {
-        pb::ConfigType::String => ConfigType::String,
-        pb::ConfigType::Number => ConfigType::Number,
-        pb::ConfigType::Int => ConfigType::Int,
-        pb::ConfigType::Bool => ConfigType::Bool,
+fn map_config_type(value: pb::ConfigType) -> ConfigType {
+    match required(value.value, "config_type.value") {
+        pb::config_type::Value::StringType(_) => ConfigType::String,
+        pb::config_type::Value::NumberType(_) => ConfigType::Number,
+        pb::config_type::Value::IntType(_) => ConfigType::Int,
+        pb::config_type::Value::BoolType(_) => ConfigType::Bool,
+        pb::config_type::Value::ListType(v) => ConfigType::List(Box::new(map_config_type(*v))),
     }
 }
 
@@ -758,19 +758,64 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(expected = "config_variable.config_type is invalid")]
-    fn panics_on_invalid_config_type() {
+    #[should_panic(expected = "config_variable.config_type is required")]
+    fn panics_on_missing_config_type() {
         let _ = map_program(pb::PclProtobufProgram {
             nodes: vec![pb::Node {
                 value: Some(pb::node::Value::ConfigVariable(pb::ConfigVariable {
                     name: "cfg".to_string(),
                     logical_name: "cfgLogical".to_string(),
-                    config_type: 999,
+                    config_type: None,
                     default_value: Some(string_expr()),
                 })),
             }],
             plugins: vec![],
         });
+    }
+
+    #[test]
+    #[should_panic(expected = "config_type.value is required")]
+    fn panics_on_missing_config_type_value() {
+        let _ = map_program(pb::PclProtobufProgram {
+            nodes: vec![pb::Node {
+                value: Some(pb::node::Value::ConfigVariable(pb::ConfigVariable {
+                    name: "cfg".to_string(),
+                    logical_name: "cfgLogical".to_string(),
+                    config_type: Some(pb::ConfigType { value: None }),
+                    default_value: Some(string_expr()),
+                })),
+            }],
+            plugins: vec![],
+        });
+    }
+
+    #[test]
+    fn maps_list_config_type() {
+        let mapped = map_program(pb::PclProtobufProgram {
+            nodes: vec![pb::Node {
+                value: Some(pb::node::Value::ConfigVariable(pb::ConfigVariable {
+                    name: "cfg".to_string(),
+                    logical_name: "cfgLogical".to_string(),
+                    config_type: Some(pb::ConfigType {
+                        value: Some(pb::config_type::Value::ListType(Box::new(pb::ConfigType {
+                            value: Some(pb::config_type::Value::StringType(pb::Empty {})),
+                        }))),
+                    }),
+                    default_value: Some(string_expr()),
+                })),
+            }],
+            plugins: vec![],
+        });
+
+        match &mapped.nodes[0].value {
+            node::Value::ConfigVariable(config) => {
+                assert_eq!(
+                    config.config_type,
+                    ConfigType::List(Box::new(ConfigType::String))
+                );
+            }
+            other => panic!("expected config variable node, got {other:?}"),
+        }
     }
 
     #[test]

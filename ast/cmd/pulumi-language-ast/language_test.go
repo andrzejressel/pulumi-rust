@@ -109,7 +109,6 @@ var expectedFailures = map[string]string{
 	"l3-for-resource":                        "unsupported expression type: for-expression",
 	"policy-dryrun":                          "unsupported operation type in expression lowering",
 	"provider-alias-component":               "requires language providers directory support for conformance-component",
-	"l1-builtin-list":                        "unsupported config variable type: list(string)",
 	"l3-splat":                               "unsupported expression type: splat-expression",
 	"policy-simple":                          "unsupported operation type in expression lowering",
 	"l1-builtin-object":                      "unsupported config variable type: map(string)",
