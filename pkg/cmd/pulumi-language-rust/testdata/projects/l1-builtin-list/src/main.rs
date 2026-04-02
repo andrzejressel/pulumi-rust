@@ -16,7 +16,7 @@ fn pulumi_main(context: &pulumi_gestalt_rust::Context) -> Result<()> {
         "elementOutput1",
         &context
             .new_output(
-                &pulumi_gestalt_rust::stdlib::element(aList, 1)
+                &pulumi_gestalt_rust::stdlib::element(&aList, 1)
                     .expect("Element should exist"),
             ),
     );
@@ -24,17 +24,17 @@ fn pulumi_main(context: &pulumi_gestalt_rust::Context) -> Result<()> {
         "elementOutput2",
         &context
             .new_output(
-                &pulumi_gestalt_rust::stdlib::element(aList, 2)
+                &pulumi_gestalt_rust::stdlib::element(&aList, 2)
                     .expect("Element should exist"),
             ),
     );
     pulumi_gestalt_rust::add_export(
         "joinOutput",
-        &context.new_output(&pulumi_gestalt_rust::stdlib::join("|", aList)),
+        &context.new_output(&pulumi_gestalt_rust::stdlib::join("|", &aList)),
     );
     pulumi_gestalt_rust::add_export(
         "lengthOutput",
-        &context.new_output(&pulumi_gestalt_rust::stdlib::length(aList)),
+        &context.new_output(&pulumi_gestalt_rust::stdlib::length(&aList)),
     );
     pulumi_gestalt_rust::add_export(
         "splitOutput",
