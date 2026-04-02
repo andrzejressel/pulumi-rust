@@ -535,24 +535,51 @@ func transformOutput(output *pcl.OutputVariable) (*astproto.OutputVariable, erro
 	}, nil
 }
 
+func transformConfigType(variableType model.Type) (*astproto.ConfigType, error) {
+	variableType = pcl.UnwrapOption(model.ResolveOutputs(variableType))
+
+	switch variableType {
+	case model.StringType:
+		return &astproto.ConfigType{
+			Value: &astproto.ConfigType_StringType{StringType: &astproto.Empty{}},
+		}, nil
+	case model.NumberType:
+		return &astproto.ConfigType{
+			Value: &astproto.ConfigType_NumberType{NumberType: &astproto.Empty{}},
+		}, nil
+	case model.IntType:
+		return &astproto.ConfigType{
+			Value: &astproto.ConfigType_IntType{IntType: &astproto.Empty{}},
+		}, nil
+	case model.BoolType:
+		return &astproto.ConfigType{
+			Value: &astproto.ConfigType_BoolType{BoolType: &astproto.Empty{}},
+		}, nil
+	default:
+		switch variableType := variableType.(type) {
+		case *model.ListType:
+			elementType, err := transformConfigType(variableType.ElementType)
+			if err != nil {
+				return nil, err
+			}
+			return &astproto.ConfigType{
+				Value: &astproto.ConfigType_ListType{ListType: elementType},
+			}, nil
+		default:
+			return nil, fmt.Errorf("unknown config variable type: %v", variableType)
+		}
+	}
+}
+
 func transformConfigVariable(variable *pcl.ConfigVariable) (*astproto.ConfigVariable, error) {
 	defaultValue, err := transformExpression(variable.DefaultValue)
 	if err != nil {
 		return nil, err
 	}
 
-	var configType astproto.ConfigType
-	switch variable.Type() {
-	case model.StringType:
-		configType = astproto.ConfigType_STRING
-	case model.NumberType:
-		configType = astproto.ConfigType_NUMBER
-	case model.IntType:
-		configType = astproto.ConfigType_INT
-	case model.BoolType:
-		configType = astproto.ConfigType_BOOL
-	default:
-		return nil, fmt.Errorf("unknown config variable type: %v", variable.Type())
+	configType, err := transformConfigType(variable.Type())
+	if err != nil {
+		return nil, err
 	}
 
 	return &astproto.ConfigVariable{

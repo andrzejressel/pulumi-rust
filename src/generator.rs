@@ -1,7 +1,8 @@
 use crate::pcl_model::node::Value;
 use crate::pcl_model::{
-    ConfigVariable, Expression, LocalVariable, Node, OutputVariable, PclProtobufProgram,
-    expression, literal_value_expression, traverse_index, traverser,
+    ConfigType, ConfigVariable, Expression, LocalVariable, Node, OutputVariable,
+    PclProtobufProgram, TemplateExpression, TupleConsExpression, expression,
+    literal_value_expression, traverse_index, traverser,
 };
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
@@ -44,10 +45,45 @@ fn convert_node(node: &Node) -> Result<String> {
 }
 
 fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
-    Ok(format!(
-        "let {} = context.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-        config_variable.name, config_variable.name, config_variable.name
-    ))
+    match &config_variable.config_type {
+        ConfigType::String => Ok(format!(
+            "let {} = context.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+            config_variable.name, config_variable.name, config_variable.name
+        )),
+        ConfigType::Number => Ok(format!(
+            "let {} = context.require_config_deserialize::<f64>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+            config_variable.name, config_variable.name, config_variable.name
+        )),
+        ConfigType::Int => Ok(format!(
+            "let {} = context.require_config_deserialize::<i64>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+            config_variable.name, config_variable.name, config_variable.name
+        )),
+        ConfigType::Bool => Ok(format!(
+            "let {} = context.require_config_deserialize::<bool>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+            config_variable.name, config_variable.name, config_variable.name
+        )),
+        ConfigType::List(ct) => match **ct {
+            ConfigType::String => Ok(format!(
+                "let {} = context.require_config_deserialize::<Vec<String>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name, config_variable.name, config_variable.name
+            )),
+            ConfigType::Number => Ok(format!(
+                "let {} = context.require_config_deserialize::<Vec<f64>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name, config_variable.name, config_variable.name
+            )),
+            ConfigType::Int => Ok(format!(
+                "let {} = context.require_config_deserialize::<Vec<i64>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name, config_variable.name, config_variable.name
+            )),
+            ConfigType::Bool => Ok(format!(
+                "let {} = context.require_config_deserialize::<Vec<bool>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+                config_variable.name, config_variable.name, config_variable.name
+            )),
+            ConfigType::List(_) => {
+                bail!("Cannot use list of lists")
+            }
+        },
+    }
 }
 
 fn convert_local_variable(local_variable: &LocalVariable) -> Result<String> {
@@ -73,8 +109,12 @@ fn convert_expression(expression: &Expression) -> Result<String> {
             literal_value_expression::Value::NumberValue(n) => Ok(n.to_string()),
             literal_value_expression::Value::BoolValue(b) => Ok(b.to_string()),
         },
-        expression::Value::TemplateExpression(_) => {
-            bail!("TemplateExpression not yet supported")
+        expression::Value::TemplateExpression(TemplateExpression { parts }) if parts.len() == 1 => {
+            let el = &parts[0];
+            convert_expression(el)
+        }
+        expression::Value::TemplateExpression(expr) => {
+            bail!("TemplateExpression not yet supported [{expr:?}]")
         }
         expression::Value::IndexExpression(_) => {
             bail!("IndexExpression not yet supported")
@@ -82,8 +122,14 @@ fn convert_expression(expression: &Expression) -> Result<String> {
         expression::Value::ObjectConsExpression(_) => {
             bail!("ObjectConsExpression not yet supported")
         }
-        expression::Value::TupleConsExpression(_) => {
-            bail!("TupleConsExpression not yet supported")
+        expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
+            let converted_items = items
+                .iter()
+                .map(convert_expression)
+                .collect::<Result<Vec<_>>>()
+                .context("Failed to convert tuple items")?
+                .join(", ");
+            Ok(format!("vec!({})", converted_items))
         }
         expression::Value::FunctionCallExpression(function_call) => {
             let args = function_call
@@ -94,10 +140,13 @@ fn convert_expression(expression: &Expression) -> Result<String> {
                 .collect::<Result<Vec<_>>>()
                 .context("Failed to convert function call arguments")?
                 .join(", ");
-            Ok(
-                convert_stdlib_function_call(&function_call.name, args, function_call.args.len())
-                    .context("Failed to convert function call")?,
+            Ok(convert_stdlib_function_call(
+                &function_call.name,
+                args,
+                function_call.args.iter().map(|a| &a.value).collect(),
+                function_call.args.len(),
             )
+            .context("Failed to convert function call")?)
         }
         expression::Value::RelativeTraversalExpression(_) => {
             bail!("RelativeTraversalExpression not yet supported")
@@ -142,7 +191,12 @@ fn convert_expression(expression: &Expression) -> Result<String> {
     }
 }
 
-fn convert_stdlib_function_call(name: &str, args: String, arg_count: usize) -> Result<String> {
+fn convert_stdlib_function_call(
+    name: &str,
+    args: String,
+    args_pure: Vec<&Expression>,
+    arg_count: usize,
+) -> Result<String> {
     match name {
         "fromBase64" => {
             ensure_arity(name, arg_count, 1)?;
@@ -154,6 +208,48 @@ fn convert_stdlib_function_call(name: &str, args: String, arg_count: usize) -> R
         "toBase64" => {
             ensure_arity(name, arg_count, 1)?;
             Ok(format!("pulumi_gestalt_rust::stdlib::to_base64({})", args))
+        }
+        "element" => {
+            ensure_arity(name, arg_count, 2)?;
+            let first_arg = convert_expression(args_pure[0])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?;
+            let second_arg = convert_expression(args_pure[1])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[1]))?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::element(&{}, {}).expect(\"Element should exist\")",
+                first_arg, second_arg
+            ))
+        }
+        "join" => {
+            ensure_arity(name, arg_count, 2)?;
+            let first_arg = convert_expression(args_pure[0])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?;
+            let second_arg = convert_expression(args_pure[1])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[1]))?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::join({}, &{})",
+                first_arg, second_arg
+            ))
+        }
+        "length" => {
+            ensure_arity(name, arg_count, 1)?;
+            let first_arg = convert_expression(args_pure[0])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::length(&{})",
+                first_arg
+            ))
+        }
+        "split" => {
+            ensure_arity(name, arg_count, 2)?;
+            Ok(format!("pulumi_gestalt_rust::stdlib::split({})", args))
+        }
+        "singleOrNone" => {
+            ensure_arity(name, arg_count, 1)?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::single_or_none({}).expect(\"Should get first element\")",
+                args
+            ))
         }
         "cwd" => {
             ensure_arity(name, arg_count, 0)?;
