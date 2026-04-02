@@ -50,39 +50,23 @@ fn convert_config_variable(config_variable: &ConfigVariable) -> Result<String> {
             "let {} = context.require_config(None, \"{}\").expect(\"Expected config [{}] to exist\");",
             config_variable.name, config_variable.name, config_variable.name
         )),
-        ConfigType::Number => Ok(format!(
-            "let {} = context.require_config_deserialize::<f64>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-            config_variable.name, config_variable.name, config_variable.name
+        config_type => Ok(format!(
+            "let {} = context.require_config_deserialize::<{}>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
+            config_variable.name,
+            generate_config_type(config_type),
+            config_variable.name,
+            config_variable.name
         )),
-        ConfigType::Int => Ok(format!(
-            "let {} = context.require_config_deserialize::<i64>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-            config_variable.name, config_variable.name, config_variable.name
-        )),
-        ConfigType::Bool => Ok(format!(
-            "let {} = context.require_config_deserialize::<bool>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-            config_variable.name, config_variable.name, config_variable.name
-        )),
-        ConfigType::List(ct) => match **ct {
-            ConfigType::String => Ok(format!(
-                "let {} = context.require_config_deserialize::<Vec<String>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-                config_variable.name, config_variable.name, config_variable.name
-            )),
-            ConfigType::Number => Ok(format!(
-                "let {} = context.require_config_deserialize::<Vec<f64>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-                config_variable.name, config_variable.name, config_variable.name
-            )),
-            ConfigType::Int => Ok(format!(
-                "let {} = context.require_config_deserialize::<Vec<i64>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-                config_variable.name, config_variable.name, config_variable.name
-            )),
-            ConfigType::Bool => Ok(format!(
-                "let {} = context.require_config_deserialize::<Vec<bool>>(None, \"{}\").expect(\"Expected config [{}] to exist\");",
-                config_variable.name, config_variable.name, config_variable.name
-            )),
-            ConfigType::List(_) => {
-                bail!("Cannot use list of lists")
-            }
-        },
+    }
+}
+
+fn generate_config_type(config_type: &ConfigType) -> String {
+    match config_type {
+        ConfigType::String => "String".to_string(),
+        ConfigType::Number => "f64".to_string(),
+        ConfigType::Int => "i64".to_string(),
+        ConfigType::Bool => "bool".to_string(),
+        ConfigType::List(inner) => format!("Vec<{}>", generate_config_type(inner)),
     }
 }
 
@@ -284,4 +268,61 @@ fn ensure_arity(name: &str, got: usize, expected: usize) -> Result<()> {
         expected,
         got
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{convert_config_variable, generate_config_type};
+    use crate::pcl_model::{ConfigType, ConfigVariable};
+
+    fn config_variable_with_type(config_type: ConfigType) -> ConfigVariable {
+        ConfigVariable {
+            name: "cfg".to_string(),
+            logical_name: "cfgLogical".to_string(),
+            config_type,
+            default_value: None,
+        }
+    }
+
+    #[test]
+    fn generates_primitive_config_types() {
+        assert_eq!(generate_config_type(&ConfigType::String), "String");
+        assert_eq!(generate_config_type(&ConfigType::Number), "f64");
+        assert_eq!(generate_config_type(&ConfigType::Int), "i64");
+        assert_eq!(generate_config_type(&ConfigType::Bool), "bool");
+    }
+
+    #[test]
+    fn generates_nested_list_config_type() {
+        let nested = ConfigType::List(Box::new(ConfigType::List(Box::new(ConfigType::List(
+            Box::new(ConfigType::Int),
+        )))));
+
+        assert_eq!(generate_config_type(&nested), "Vec<Vec<Vec<i64>>>");
+    }
+
+    #[test]
+    fn converts_nested_list_config_variable() {
+        let nested = ConfigType::List(Box::new(ConfigType::List(Box::new(ConfigType::Number))));
+        let config_variable = config_variable_with_type(nested);
+
+        let generated = convert_config_variable(&config_variable).expect("conversion should work");
+
+        assert_eq!(
+            generated,
+            "let cfg = context.require_config_deserialize::<Vec<Vec<f64>>>(None, \"cfg\").expect(\"Expected config [cfg] to exist\");"
+        );
+    }
+
+    #[test]
+    fn keeps_string_on_require_config() {
+        let config_variable = config_variable_with_type(ConfigType::String);
+
+        let generated = convert_config_variable(&config_variable).expect("conversion should work");
+
+        assert_eq!(
+            generated,
+            "let cfg = context.require_config(None, \"cfg\").expect(\"Expected config [cfg] to exist\");"
+        );
+    }
 }
