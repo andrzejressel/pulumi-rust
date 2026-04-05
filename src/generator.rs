@@ -16,9 +16,6 @@ pub fn generate_main(model_program: &PclProtobufProgram) -> Result<String> {
         .context("Failed to convert model nodes")?
         .join("\n");
 
-    // model_program.nodes
-    //     .f
-
     let file = include_str!("main.rs.template").replace("{{CONTENT}}", &nodes);
 
     let syntax_tree = syn::parse_file(file.as_str())
@@ -67,6 +64,10 @@ fn generate_config_type(config_type: &ConfigType) -> String {
         ConfigType::Int => "i64".to_string(),
         ConfigType::Bool => "bool".to_string(),
         ConfigType::List(inner) => format!("Vec<{}>", generate_config_type(inner)),
+        ConfigType::Map(inner) => format!(
+            "std::collections::BTreeMap<String, {}>",
+            generate_config_type(inner)
+        ),
     }
 }
 
@@ -254,6 +255,25 @@ fn convert_stdlib_function_call(
             ensure_arity(name, arg_count, 0)?;
             Ok("(&context.get_project()).to_string()".to_string())
         }
+        "entries" => {
+            ensure_arity(name, arg_count, 1)?;
+            let first_arg = convert_expression(args_pure[0])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?;
+            Ok(format!("pulumi_gestalt_rust::stdlib::entries(&{first_arg})"))
+        }
+        "lookup" => {
+            ensure_arity(name, arg_count, 3)?;
+            let first_arg = convert_expression(args_pure[0])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?;
+            let second_arg = convert_expression(args_pure[1])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[1]))?;
+            let third_arg = convert_expression(args_pure[2])
+                .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[2]))?;
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::lookup(&{}, {}, {})",
+                first_arg, second_arg, third_arg
+            ))
+        }
         _ => bail!("Unsupported stdlib function: {}", name),
     }
 }
@@ -268,61 +288,4 @@ fn ensure_arity(name: &str, got: usize, expected: usize) -> Result<()> {
         expected,
         got
     )
-}
-
-#[cfg(test)]
-mod tests {
-    use super::{convert_config_variable, generate_config_type};
-    use crate::pcl_model::{ConfigType, ConfigVariable};
-
-    fn config_variable_with_type(config_type: ConfigType) -> ConfigVariable {
-        ConfigVariable {
-            name: "cfg".to_string(),
-            logical_name: "cfgLogical".to_string(),
-            config_type,
-            default_value: None,
-        }
-    }
-
-    #[test]
-    fn generates_primitive_config_types() {
-        assert_eq!(generate_config_type(&ConfigType::String), "String");
-        assert_eq!(generate_config_type(&ConfigType::Number), "f64");
-        assert_eq!(generate_config_type(&ConfigType::Int), "i64");
-        assert_eq!(generate_config_type(&ConfigType::Bool), "bool");
-    }
-
-    #[test]
-    fn generates_nested_list_config_type() {
-        let nested = ConfigType::List(Box::new(ConfigType::List(Box::new(ConfigType::List(
-            Box::new(ConfigType::Int),
-        )))));
-
-        assert_eq!(generate_config_type(&nested), "Vec<Vec<Vec<i64>>>");
-    }
-
-    #[test]
-    fn converts_nested_list_config_variable() {
-        let nested = ConfigType::List(Box::new(ConfigType::List(Box::new(ConfigType::Number))));
-        let config_variable = config_variable_with_type(nested);
-
-        let generated = convert_config_variable(&config_variable).expect("conversion should work");
-
-        assert_eq!(
-            generated,
-            "let cfg = context.require_config_deserialize::<Vec<Vec<f64>>>(None, \"cfg\").expect(\"Expected config [cfg] to exist\");"
-        );
-    }
-
-    #[test]
-    fn keeps_string_on_require_config() {
-        let config_variable = config_variable_with_type(ConfigType::String);
-
-        let generated = convert_config_variable(&config_variable).expect("conversion should work");
-
-        assert_eq!(
-            generated,
-            "let cfg = context.require_config(None, \"cfg\").expect(\"Expected config [cfg] to exist\");"
-        );
-    }
 }

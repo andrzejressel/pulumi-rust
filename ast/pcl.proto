@@ -66,6 +66,7 @@ message ConfigType {
     Empty intType = 3;
     Empty boolType = 4;
     ConfigType listType = 5;
+    ConfigType mapType = 6;
   }
 }
 
