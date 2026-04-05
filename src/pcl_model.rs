@@ -260,6 +260,7 @@ pub enum ConfigType {
     Int,
     Bool,
     List(Box<ConfigType>),
+    Map(Box<ConfigType>),
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
@@ -644,6 +645,7 @@ fn map_config_type(value: pb::ConfigType) -> ConfigType {
         pb::config_type::Value::IntType(_) => ConfigType::Int,
         pb::config_type::Value::BoolType(_) => ConfigType::Bool,
         pb::config_type::Value::ListType(v) => ConfigType::List(Box::new(map_config_type(*v))),
+        pb::config_type::Value::MapType(v) => ConfigType::Map(Box::new(map_config_type(*v))),
     }
 }
 
@@ -812,6 +814,35 @@ mod tests {
                 assert_eq!(
                     config.config_type,
                     ConfigType::List(Box::new(ConfigType::String))
+                );
+            }
+            other => panic!("expected config variable node, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn maps_map_config_type() {
+        let mapped = map_program(pb::PclProtobufProgram {
+            nodes: vec![pb::Node {
+                value: Some(pb::node::Value::ConfigVariable(pb::ConfigVariable {
+                    name: "cfg".to_string(),
+                    logical_name: "cfgLogical".to_string(),
+                    config_type: Some(pb::ConfigType {
+                        value: Some(pb::config_type::Value::MapType(Box::new(pb::ConfigType {
+                            value: Some(pb::config_type::Value::IntType(pb::Empty {})),
+                        }))),
+                    }),
+                    default_value: Some(string_expr()),
+                })),
+            }],
+            plugins: vec![],
+        });
+
+        match &mapped.nodes[0].value {
+            node::Value::ConfigVariable(config) => {
+                assert_eq!(
+                    config.config_type,
+                    ConfigType::Map(Box::new(ConfigType::Int))
                 );
             }
             other => panic!("expected config variable node, got {other:?}"),

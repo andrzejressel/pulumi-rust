@@ -111,7 +111,6 @@ var expectedFailures = map[string]string{
 	"provider-alias-component":               "requires language providers directory support for conformance-component",
 	"l3-splat":                               "unsupported expression type: splat-expression",
 	"policy-simple":                          "unsupported operation type in expression lowering",
-	"l1-builtin-object":                      "unsupported config variable type: map(string)",
 	"l3-range":                               "unsupported config variable type: list(string)",
 	"provider-ignore-changes-component":      "requires language providers directory support for conformance-component",
 	"l3-for":                                 "unsupported config variable type: list(string)",
