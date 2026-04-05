@@ -259,7 +259,9 @@ fn convert_stdlib_function_call(
             ensure_arity(name, arg_count, 1)?;
             let first_arg = convert_expression(args_pure[0])
                 .context_with(|| format!("Failed to convert argument [{:?}]", args_pure[0]))?;
-            Ok(format!("pulumi_gestalt_rust::stdlib::entries(&{first_arg})"))
+            Ok(format!(
+                "pulumi_gestalt_rust::stdlib::entries(&{first_arg})"
+            ))
         }
         "lookup" => {
             ensure_arity(name, arg_count, 3)?;

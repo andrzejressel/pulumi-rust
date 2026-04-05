@@ -840,7 +840,10 @@ mod tests {
 
         match &mapped.nodes[0].value {
             node::Value::ConfigVariable(config) => {
-                assert_eq!(config.config_type, ConfigType::Map(Box::new(ConfigType::Int)));
+                assert_eq!(
+                    config.config_type,
+                    ConfigType::Map(Box::new(ConfigType::Int))
+                );
             }
             other => panic!("expected config variable node, got {other:?}"),
         }
