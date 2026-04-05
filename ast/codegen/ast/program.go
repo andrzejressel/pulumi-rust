@@ -565,6 +565,14 @@ func transformConfigType(variableType model.Type) (*astproto.ConfigType, error) 
 			return &astproto.ConfigType{
 				Value: &astproto.ConfigType_ListType{ListType: elementType},
 			}, nil
+		case *model.MapType:
+			elementType, err := transformConfigType(variableType.ElementType)
+			if err != nil {
+				return nil, err
+			}
+			return &astproto.ConfigType{
+				Value: &astproto.ConfigType_MapType{MapType: elementType},
+			}, nil
 		default:
 			return nil, fmt.Errorf("unknown config variable type: %v", variableType)
 		}
